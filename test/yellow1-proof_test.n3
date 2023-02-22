@@ -1,0 +1,36 @@
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix pml: <http://provenanceweb.org/ns/pml#>.
+@prefix xpl: <http://niche.cs.dal.ca/xpl#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix var: <http://eyereasoner.github.io/var#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/1893620644282676494#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+
+
+skolem:lemma1 a r:Inference;
+  r:gives {
+    :patientA :isStratified :YellowZone.
+    :patientA xsd:dueTo :hasPhlemAmount.
+  };
+  r:evidence (
+    skolem:lemma3
+    skolem:lemma3
+  );
+  r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA"]];
+  r:rule skolem:lemma4.
+
+
+skolem:lemma2 a r:Inference;
+  r:gives {
+    :patientA :isStratified :YellowZone.
+    :patientA xsd:dueTo :hasColoredPhlem.
+  };
+  r:evidence (
+    skolem:lemma3
+    skolem:lemma5
+  );
+  r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA"]];
+  r:rule skolem:lemma6.

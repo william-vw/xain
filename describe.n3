@@ -170,35 +170,35 @@
 } => {	?x x:conclusionStr ?str2 } .
 
 
-# (describe inferences in some more detail)
-{	?x a x:InferenceNode ; 
-		r:rule ?extraction .
+# # (describe inferences in some more detail)
+# {	?x a x:InferenceNode ; 
+# 		r:rule ?extraction .
 	
-	?extraction x:conclusionStr ?ruleStr .
+# 	?extraction x:conclusionStr ?ruleStr .
 	 
-	?extraction!r:because!r:source log:uri ?source .
+# 	?extraction!r:because!r:source log:uri ?source .
 	
-	( ?assign
-	{	?x r:binding ?binding . ?binding!r:variable n3:uri ?var . ?binding!r:boundTo n3:uri ?uri .
-		( ?uri ".*?#(.*)" ) string:scrape ?ln . ( ":" ?ln ) string:concatenation ?ln2 .
-		( ?var ".*#(.*)" ) string:scrape ?var2 .
-		( "<div class='assign'><span class='var'>var:" ?var2 "</span> = <span class='val uri'>" ?ln2 "</span></div>" ) 
-			string:concatenation ?assign .
+# 	( ?assign
+# 	{	?x r:binding ?binding . ?binding!r:variable n3:uri ?var . ?binding!r:boundTo n3:uri ?uri .
+# 		( ?uri ".*?#(.*)" ) string:scrape ?ln . ( ":" ?ln ) string:concatenation ?ln2 .
+# 		( ?var ".*#(.*)" ) string:scrape ?var2 .
+# 		( "<div class='assign'><span class='var'>var:" ?var2 "</span> = <span class='val uri'>" ?ln2 "</span></div>" ) 
+# 			string:concatenation ?assign .
 		
-	} ?uriAssigns) log:collectAllIn _:x .
+# 	} ?uriAssigns) log:collectAllIn _:x .
 	
-	( ?assign
-	{	?x r:binding ?binding . ?binding!r:variable n3:uri ?var . 
-		?binding r:boundTo ?lit . ?lit log:rawType log:Literal . ( "\"" ?lit "\"" ) string:concatenation ?lit2 .
-		( ?var ".*#(.*)" ) string:scrape ?var2 .
-		( "<div class='assign'><span class='var'>var:" ?var2 "</span> = <span class='val lit'>" ?lit2 "</span></div>" ) 
-			string:concatenation ?assign .
+# 	( ?assign
+# 	{	?x r:binding ?binding . ?binding!r:variable n3:uri ?var . 
+# 		?binding r:boundTo ?lit . ?lit log:rawType log:Literal . ( "\"" ?lit "\"" ) string:concatenation ?lit2 .
+# 		( ?var ".*#(.*)" ) string:scrape ?var2 .
+# 		( "<div class='assign'><span class='var'>var:" ?var2 "</span> = <span class='val lit'>" ?lit2 "</span></div>" ) 
+# 			string:concatenation ?assign .
 			
-	} ?litAssigns) log:collectAllIn _:x .
+# 	} ?litAssigns) log:collectAllIn _:x .
 	
-	( ?uriAssigns ?litAssigns ) list:append ?assigns .
-	?assigns e:sort ?assigns2 .
+# 	( ?uriAssigns ?litAssigns ) list:append ?assigns .
+# 	?assigns e:sort ?assigns2 .
 	
-	?assigns2 string:concatenation ?bindingStr .
+# 	?assigns2 string:concatenation ?bindingStr .
 	
-} => { ?x x:ruleStr ?ruleStr ; x:sourceStr ?source ; x:bindingStr ?bindingStr } .
+# } => { ?x x:ruleStr ?ruleStr ; x:sourceStr ?source ; x:bindingStr ?bindingStr } .

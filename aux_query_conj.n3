@@ -1,0 +1,79 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix pml: <http://provenanceweb.org/ns/pml#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix r: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix x: <http://wvw.org/xai#>.
+@prefix copd: <http://niche.cs.dal.ca/ns/copd.owl#>.
+@base <http://wvw.org/xai#>.
+
+# lemmas used by top-level lemmas as root-nodes
+{	?x!r:component!r:evidence list:member ?i .
+	
+	# avoid listing "supporting" inferences
+	# i.e., any lemmas that support a root-node (lemma used by top-level lemma)
+	_:t log:notIncludes { 
+		?y!r:component!r:evidence!list:member!r:evidence list:member ?i
+	} .
+
+} => {	
+	?i a x:IntermRootNode , x:InferenceNode
+} .
+
+# (recursively) process all evidences for root-nodes
+{	?inf a x:InferenceNode .
+	?inf!r:evidence list:member ?inf2
+		
+} => { 
+	?inf2 a x:InferenceNode
+} .
+
+{	
+	# collect all unique variable values of the sought-after inference
+	( ( ?p ?zone ) {
+		?i a x:IntermRootNode ; r:gives ?x .
+		?x log:includes { ?p copd:isStratified ?zone } .
+
+	} ?cells ) log:collectAllIn _:t .
+	
+	?cells list:unique ?uniqueCells .
+
+	# for each variable-value pair: 
+	# collect all nodes that infer it, and gather their evidences
+	# merge all evidences into single list
+	(?combinedEv {
+		?uniqueCells list:member ( ?p ?zone ) .
+
+		( ?ev {
+			?i a x:IntermRootNode ; r:gives ?x .
+			?x log:includes { ?p copd:isStratified ?zone } .
+			# gather their evidence
+			?i r:evidence ?ev .	
+
+		} ?evs) log:collectAllIn _:t .
+
+		# merge evidences into single list
+		?evs!list:append list:unique ?combinedEv .
+
+	} ?combinedEvs) log:collectAllIn _:t .
+
+	# for each variable-value pair: 
+	# create a root-node, and attach collected evidences
+	?uniqueCells list:iterate ( ?i ( ?p ?zone ) ) .
+	( ?combinedEvs ?i ) list:memberAt ?ev .
+
+} => {
+	[
+		a x:RootNode , x:InferenceNode ;
+		r:gives { ?p copd:isStratified ?zone } ;
+		r:evidence ?ev
+	]
+} .

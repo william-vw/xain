@@ -5,6 +5,90 @@
 @prefix pml: <http://provenanceweb.org/ns/pml#> . 
 @prefix xpl: <http://niche.cs.dal.ca/xpl#> .
 
-	{?p :hasColoredPhlem true}
+	{?p :hasPhlemAmount :Moderate}
+=>
+	{?p :isStratified :YellowZone ; xsd:dueTo :hasPhlemAmount} .
+
+	{?p :hasColoredPhlem "true"^^xsd:boolean}
+=>
+	{?p :isStratified :YellowZone ; xsd:dueTo :hasColoredPhlem} .
+
+	{?p :hasSwollenAnkle "true"^^xsd:boolean}
 =>
 	{?p :isStratified :YellowZone} .
+
+	{?p :hasActivityExertion :Moderate}
+=>
+	{?p :isStratified :YellowZone} .
+
+	{?p :hasCyanosis "true"^^xsd:boolean}
+=>
+	{?p :isStratified :RedZone} .
+
+	{?p :hasChestPain "true"^^xsd:boolean}
+=>
+	{?p :isStratified :RedZone} .
+
+	{?p :hasActivityExertion :Severe}
+=>
+	{?p :isStratified :RedZone} .
+
+	{?p :hasCough :Severe}
+=>
+	{?p :isStratified :RedZone} .
+
+	{?p :hasLow02Saturation "true"^^xsd:boolean}
+=>
+	{?p :isStratified :RedZone} .
+
+	{?p :hasFever :Severe}
+=>
+	{?p :isStratified :RedZone} .
+
+	{?p :hasConfusion "true"^^xsd:boolean}
+=>
+	{?p :isStratified :RedZone} .
+
+# 	{?p :hasPhlemAmountValue ?v} greaterThan{?v 5} lessThan{?v 8}
+# =>
+# 	{?p :hasPhlemAmount :Moderate} .
+
+# 	{?p :hasPhlemAmountValue ?v} ge{?v 8}
+# =>
+# 	{?p :hasPhlemAmount :Severe} .
+
+# 	{?p :hasActivityExertionValue ?v} greaterThan{?v 5} lessThan{?v 8}
+# =>
+# 	{?p :hasActivityExertion :Moderate} .
+
+# 	{?p :hasActivityExertionValue ?v} ge{?v 8}
+# =>
+# 	{?p :hasActivityExertion :Severe} .
+
+# 	{?p :hasCoughValue ?v} greaterThan{?v 5} lessThan{?v 8}
+# =>
+# 	{?p :hasCough :Moderate} .
+
+# 	{?p :hasCoughValue ?v} ge{?v 8}
+# =>
+# 	{?p :hasCough :Severe} .
+
+# 	{?p :has02SaturationValue ?v} lessThan{?v 88}
+# =>
+# 	{?p :hasLow02Saturation "true"^^xsd:boolean} .
+
+# 	{?p :hasFeverValue ?v} greaterThan{?v 37} lessThan{?v 39.5}
+# =>
+# 	{?p :hasFever :Moderate} .
+
+# 	{?p :hasFeverValue ?v} ge{?v 39.5}
+# =>
+# 	{?p :hasFever :Severe} .
+
+# 	{?env :hasHumidityValue ?v} greaterThan{?v 50}
+# =>
+# 	{?env :hasHighHumidity "true"^^xsd:boolean}  .
+
+	{?env :hasHighHumidity "true"^^xsd:boolean}
+=>
+	{?env :recommendation :avoidGoingOutside}  .

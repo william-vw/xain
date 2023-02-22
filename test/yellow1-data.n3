@@ -6,4 +6,5 @@
 @prefix xpl: <http://niche.cs.dal.ca/xpl#> .
 
 :patientA a xpl:Subject ;
-	:hasColoredPhlem true .
+	:hasColoredPhlem true ;
+	:hasPhlemAmount :Moderate .

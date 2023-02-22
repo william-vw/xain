@@ -35,21 +35,21 @@
 	
 	?lis string:concatenation ?lisStr .
 	
-	?inf x:conclusionStr ?label ;
-		x:ruleStr ?ruleStr ;
-		x:sourceStr ?sourceStr ;
-		x:bindingStr ?bindingStr .
+	?inf x:conclusionStr ?label .
+		# x:ruleStr ?ruleStr ;
+		# x:sourceStr ?sourceStr ;
+		# x:bindingStr ?bindingStr .
 	
 	( ?label "</span><span" "</span><br /><span" ) string:replace ?label2 .
 	
-	( 	"<div class='rule'>" ?ruleStr "</div>"
-		"<div class='bindings'>" ?bindingStr "</div>"
-		"<div class='source'>(from: " ?sourceStr ")</div>" ) string:concatenation ?ruleInfo .	
+	# ( 	"<div class='rule'>" ?ruleStr "</div>"
+	# 	"<div class='bindings'>" ?bindingStr "</div>"
+	# 	"<div class='source'>(from: " ?sourceStr ")</div>" ) string:concatenation ?ruleInfo .	
 	
 	(	"<li class='inf'>" 
 			?label2 " "
-			"<span class='showHideRule'>(show rule)</span>"
-			"<div class='ruleInfo'>" ?ruleInfo "</div>"
+			# "<span class='showHideRule'>(show rule)</span>"
+			# "<div class='ruleInfo'>" ?ruleInfo "</div>"
 			"<ul>" ?lisStr "</ul>"
 		"</li>"
 	) string:concatenation ?html .
