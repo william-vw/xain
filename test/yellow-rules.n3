@@ -1,3 +1,4 @@
+@prefix math: <http://www.w3.org/2000/10/swap/math#> . 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -49,9 +50,9 @@
 =>
 	{?p :isStratified :RedZone} .
 
-# 	{?p :hasPhlemAmountValue ?v} greaterThan{?v 5} lessThan{?v 8}
-# =>
-# 	{?p :hasPhlemAmount :Moderate} .
+	{?p :hasPhlemAmountValue ?v . ?v math:greaterThan 5 ; math:lessThan 8}
+=>
+	{?p :hasPhlemAmount :Moderate} .
 
 # 	{?p :hasPhlemAmountValue ?v} ge{?v 8}
 # =>

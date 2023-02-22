@@ -7,4 +7,5 @@
 
 :patientA a xpl:Subject ;
 	:hasColoredPhlem true ;
-	:hasPhlemAmount :Moderate .
+	# :hasPhlemAmount :Moderate .
+	:hasPhlemAmountValue 7 .
