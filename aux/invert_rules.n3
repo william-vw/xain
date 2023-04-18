@@ -1,0 +1,108 @@
+# @alsoload ../test/yellow-rules.n3
+
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix x: <http://wvw.org/xai#> .
+
+
+{
+   ?x => ?y ;
+       a x:Rule .
+   ?x x:get ?x2 .
+   ?y x:get ?y2 .
+}
+=> 
+{
+   ?y2 => ?x2 
+} .
+
+
+#
+{
+   ?f x:get ?f2 
+}
+<= 
+{
+   ?f log:rawType log:Formula .
+   (
+       {
+           ?s2 ?p2 ?o2 
+       }
+       {
+           ?f e:graphMember 
+           {
+               ?s ?p ?o 
+           } .
+           ?s x:get ?s2 .
+           ?p x:get ?p2 .
+           ?o x:get ?o2 .
+       }
+       ?rws
+   ) log:collectAllIn _:t .
+   ?rws log:conjunction ?f2 .
+} .
+
+
+#
+{
+   ?c x:get ?c2 
+}
+<= 
+{
+   ?c log:rawType log:List .
+   (
+       ?e2
+       {
+           ?c!list:member x:get ?e2 
+       }
+       ?c2
+   )
+} .
+
+
+#
+{
+   ?t x:get ?t2 
+}
+<= 
+{
+   ?t log:rawType log:ForAll .
+   ?t e:label ?l .
+   ?l log:skolem ?t2 .
+   ( "!" ) e:derive true 
+} .
+
+
+#
+{
+   ?t x:get ?t2 
+}
+<= 
+{
+   ?t log:rawType log:Other .
+   ?t log:uri ?tStr .
+   ?tStr string:matches "http://www.w3.org/2000/10/swap/.*" .
+   ( ?tStr "http://www.w3.org/2000/10/swap/" "http://wvw.org/xai/swap/" )!string:replace <-log:uri ?t2 .
+   ( "!" ) e:derive true 
+} .
+
+
+#
+{
+   ?t x:get ?t 
+}
+<= 
+{
+   ?t log:rawType log:Other .
+   ?t!log:uri string:notMatches "http://www.w3.org/2000/10/swap/.*" .
+   ( "!" ) e:derive true 
+} .
+
+
+#
+{
+   ?t x:get ?t 
+}
+<= {} .

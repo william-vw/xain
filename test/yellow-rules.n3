@@ -3,6 +3,7 @@
 @prefix pml: <http://provenanceweb.org/ns/pml#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix x: <http://wvw.org/xai#> .
 @prefix xpl: <http://niche.cs.dal.ca/xpl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -12,78 +13,122 @@
 }
 => 
 {
-   ?p :isStratified :YellowZone
-} .
+   ?p :isStratified :YellowZone 
+}
+;
+   a x:Rule .
+
+#
 {
    ?p :hasColoredPhlem "true"^^xsd:boolean 
 }
 => 
 {
-   ?p :isStratified :YellowZone
-} .
+   ?p :isStratified :YellowZone 
+}
+;
+   a x:Rule .
+
+#
 {
    ?p :hasSwollenAnkle "true"^^xsd:boolean 
 }
 => 
 {
    ?p :isStratified :YellowZone 
-} .
+}
+;
+   a x:Rule .
+
+#
 {
    ?p :hasActivityExertion :Moderate 
 }
 => 
 {
    ?p :isStratified :YellowZone 
-} .
+}
+;
+   a x:Rule .
+
+#
 {
    ?p :hasCyanosis "true"^^xsd:boolean 
 }
 => 
 {
    ?p :isStratified :RedZone 
-} .
+}
+;
+   a x:Rule .
+
+#
 {
    ?p :hasChestPain "true"^^xsd:boolean 
 }
 => 
 {
    ?p :isStratified :RedZone 
-} .
+}
+;
+   a x:Rule .
+
+#
 {
    ?p :hasActivityExertion :Severe 
 }
 => 
 {
    ?p :isStratified :RedZone 
-} .
+}
+;
+   a x:Rule .
+
+#
 {
    ?p :hasCough :Severe 
 }
 => 
 {
    ?p :isStratified :RedZone 
-} .
+}
+;
+   a x:Rule .
+
+#
 {
    ?p :hasLow02Saturation "true"^^xsd:boolean 
 }
 => 
 {
    ?p :isStratified :RedZone 
-} .
+}
+;
+   a x:Rule .
+
+#
 {
    ?p :hasFever :Severe 
 }
 => 
 {
    ?p :isStratified :RedZone 
-} .
+}
+;
+   a x:Rule .
+
+#
 {
    ?p :hasConfusion "true"^^xsd:boolean 
 }
 => 
 {
    ?p :isStratified :RedZone 
-} .
+}
+;
+   a x:Rule .
+
+#
 {
    ?p :hasPhlemAmountValue ?v .
    ?v math:greaterThan 5 ;
@@ -92,47 +137,56 @@
 => 
 {
    ?p :hasPhlemAmount :Moderate 
-} .
+}
+;
+   a x:Rule .
 
 # 	{?p :hasPhlemAmountValue ?v} ge{?v 8}
 # =>
-# 	{?p :hasPhlemAmount :Severe} .
+# 	{?p :hasPhlemAmount :Severe} ; a x:Rule .
 
 # 	{?p :hasActivityExertionValue ?v} greaterThan{?v 5} lessThan{?v 8}
 # =>
-# 	{?p :hasActivityExertion :Moderate} .
+# 	{?p :hasActivityExertion :Moderate} ; a x:Rule .
 
 # 	{?p :hasActivityExertionValue ?v} ge{?v 8}
 # =>
-# 	{?p :hasActivityExertion :Severe} .
+# 	{?p :hasActivityExertion :Severe} ; a x:Rule .
 
 # 	{?p :hasCoughValue ?v} greaterThan{?v 5} lessThan{?v 8}
 # =>
-# 	{?p :hasCough :Moderate} .
+# 	{?p :hasCough :Moderate} ; a x:Rule .
 
 # 	{?p :hasCoughValue ?v} ge{?v 8}
 # =>
-# 	{?p :hasCough :Severe} .
+# 	{?p :hasCough :Severe} ; a x:Rule .
 
 # 	{?p :has02SaturationValue ?v} lessThan{?v 88}
 # =>
-# 	{?p :hasLow02Saturation "true"^^xsd:boolean} .
+# 	{?p :hasLow02Saturation "true"^^xsd:boolean} ; a x:Rule .
 
 # 	{?p :hasFeverValue ?v} greaterThan{?v 37} lessThan{?v 39.5}
 # =>
-# 	{?p :hasFever :Moderate} .
+# 	{?p :hasFever :Moderate} ; a x:Rule .
 
 # 	{?p :hasFeverValue ?v} ge{?v 39.5}
 # =>
-# 	{?p :hasFever :Severe} .
+# 	{?p :hasFever :Severe} ; a x:Rule .
 
 # 	{?env :hasHumidityValue ?v} greaterThan{?v 50}
 # =>
 # 	{?env :hasHighHumidity "true"^^xsd:boolean}  .
+
+
+#
 {
    ?env :hasHighHumidity "true"^^xsd:boolean 
 }
 => 
 {
    ?env :recommendation :avoidGoingOutside 
-} .
+}
+;
+   a x:Rule .
+
+#
