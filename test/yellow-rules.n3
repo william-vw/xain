@@ -1,58 +1,98 @@
-@prefix math: <http://www.w3.org/2000/10/swap/math#> . 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix pml: <http://provenanceweb.org/ns/pml#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-@prefix pml: <http://provenanceweb.org/ns/pml#> . 
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xpl: <http://niche.cs.dal.ca/xpl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-	{?p :hasPhlemAmount :Moderate}
-=>
-	{?p :isStratified :YellowZone ; xsd:dueTo :hasPhlemAmount} .
 
-	{?p :hasColoredPhlem "true"^^xsd:boolean}
-=>
-	{?p :isStratified :YellowZone ; xsd:dueTo :hasColoredPhlem} .
-
-	{?p :hasSwollenAnkle "true"^^xsd:boolean}
-=>
-	{?p :isStratified :YellowZone} .
-
-	{?p :hasActivityExertion :Moderate}
-=>
-	{?p :isStratified :YellowZone} .
-
-	{?p :hasCyanosis "true"^^xsd:boolean}
-=>
-	{?p :isStratified :RedZone} .
-
-	{?p :hasChestPain "true"^^xsd:boolean}
-=>
-	{?p :isStratified :RedZone} .
-
-	{?p :hasActivityExertion :Severe}
-=>
-	{?p :isStratified :RedZone} .
-
-	{?p :hasCough :Severe}
-=>
-	{?p :isStratified :RedZone} .
-
-	{?p :hasLow02Saturation "true"^^xsd:boolean}
-=>
-	{?p :isStratified :RedZone} .
-
-	{?p :hasFever :Severe}
-=>
-	{?p :isStratified :RedZone} .
-
-	{?p :hasConfusion "true"^^xsd:boolean}
-=>
-	{?p :isStratified :RedZone} .
-
-	{?p :hasPhlemAmountValue ?v . ?v math:greaterThan 5 ; math:lessThan 8}
-=>
-	{?p :hasPhlemAmount :Moderate} .
+{
+   ?p :hasPhlemAmount :Moderate 
+}
+=> 
+{
+   ?p :isStratified :YellowZone
+} .
+{
+   ?p :hasColoredPhlem "true"^^xsd:boolean 
+}
+=> 
+{
+   ?p :isStratified :YellowZone
+} .
+{
+   ?p :hasSwollenAnkle "true"^^xsd:boolean 
+}
+=> 
+{
+   ?p :isStratified :YellowZone 
+} .
+{
+   ?p :hasActivityExertion :Moderate 
+}
+=> 
+{
+   ?p :isStratified :YellowZone 
+} .
+{
+   ?p :hasCyanosis "true"^^xsd:boolean 
+}
+=> 
+{
+   ?p :isStratified :RedZone 
+} .
+{
+   ?p :hasChestPain "true"^^xsd:boolean 
+}
+=> 
+{
+   ?p :isStratified :RedZone 
+} .
+{
+   ?p :hasActivityExertion :Severe 
+}
+=> 
+{
+   ?p :isStratified :RedZone 
+} .
+{
+   ?p :hasCough :Severe 
+}
+=> 
+{
+   ?p :isStratified :RedZone 
+} .
+{
+   ?p :hasLow02Saturation "true"^^xsd:boolean 
+}
+=> 
+{
+   ?p :isStratified :RedZone 
+} .
+{
+   ?p :hasFever :Severe 
+}
+=> 
+{
+   ?p :isStratified :RedZone 
+} .
+{
+   ?p :hasConfusion "true"^^xsd:boolean 
+}
+=> 
+{
+   ?p :isStratified :RedZone 
+} .
+{
+   ?p :hasPhlemAmountValue ?v .
+   ?v math:greaterThan 5 ;
+       math:lessThan 8 
+}
+=> 
+{
+   ?p :hasPhlemAmount :Moderate 
+} .
 
 # 	{?p :hasPhlemAmountValue ?v} ge{?v 8}
 # =>
@@ -89,7 +129,10 @@
 # 	{?env :hasHumidityValue ?v} greaterThan{?v 50}
 # =>
 # 	{?env :hasHighHumidity "true"^^xsd:boolean}  .
-
-	{?env :hasHighHumidity "true"^^xsd:boolean}
-=>
-	{?env :recommendation :avoidGoingOutside}  .
+{
+   ?env :hasHighHumidity "true"^^xsd:boolean 
+}
+=> 
+{
+   ?env :recommendation :avoidGoingOutside 
+} .

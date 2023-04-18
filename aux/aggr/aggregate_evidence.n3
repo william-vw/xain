@@ -1,0 +1,56 @@
+# @alsoload /Users/wvw/git/n3/eye-js/explain/test/yellow1-proof.n3 aux.n3
+
+@prefix copd: <http://niche.cs.dal.ca/ns/copd.owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix n3: <http://www.w3.org/2004/06/rei#> .
+@prefix pml: <http://provenanceweb.org/ns/pml#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix x: <http://wvw.org/xai#> .
+@base <http://wvw.org/xai#> .
+
+#
+{
+   (
+       ?inf
+       {
+           ?i a x:RootNode ;
+               r:gives ?concl .
+           (
+               ?concl
+               {
+                   ?a x:padding ?a 
+               }
+           ) e:graphDifference ?inf .
+       }
+       ?infs
+   ) log:collectAllIn _:t .
+   ?infs list:unique ?uniqueInfs .
+#    "T0" log:trace ?uniqueInfs .
+   ?uniqueInfs list:member ?inf .
+   (
+       ?ev
+       {
+           ?i a x:RootNode .
+           ?i!r:gives log:includes ?inf .
+           ?i r:evidence ?ev .
+       }
+       ?evs
+   ) log:collectAllIn _:t .
+   ?evs!list:append list:unique ?combinedEv .
+#    "T1" log:trace ?combinedEv .
+}
+=> 
+{
+   [ a x:RootNode , x:InferenceNode ;
+       r:gives ?inf ;
+       r:evidences ?combinedEv 
+   ]
+} .

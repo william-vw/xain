@@ -1,0 +1,29 @@
+@prefix x: <http://wvw.org/xai#> .
+@base <http://wvw.org/xai#> .
+
+
+{
+   ?x x:description ?d 
+}
+=> 
+{
+   ?x x:description ?d 
+} .
+
+#
+{
+   ?x x:conclusionStr ?d 
+}
+=> 
+{
+   ?x x:conclusionStr ?d 
+} .
+
+#
+{
+   ?x x:output ?o 
+}
+=> 
+{
+   ?x x:output ?o
+} .

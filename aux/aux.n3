@@ -1,0 +1,58 @@
+# @alsoload /Users/wvw/git/n3/eye-js/explain/test/yellow1-proof.n3
+
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix n3: <http://www.w3.org/2004/06/rei#> .
+@prefix pml: <http://provenanceweb.org/ns/pml#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix x: <http://wvw.org/xai#> .
+@base <http://wvw.org/xai#> .
+
+
+# consider anything below the root-nodes as inference-nodes 
+# (ignore inferences that prove the query)
+{
+   ?x!r:component!r:evidence list:member ?i .
+}
+=> 
+{
+   ?i a x:InferenceNode 
+} .
+
+#
+{
+   ?parent a x:InferenceNode .
+   ?parent!r:evidence list:member ?i .
+   ?i a r:Inference .
+}
+=> 
+{
+   ?i a x:InferenceNode 
+} .
+
+
+# root-nodes = lemmas used _only_ by "top-level lemmas"
+# (top-level lemmas prove the query)
+{
+   ?x!r:component!r:evidence list:member ?i .
+   (
+       ?y
+       {
+           ?y a x:InferenceNode .
+           ?y!r:evidence list:member ?i 
+       }
+       ( )
+   ) log:collectAllIn _:t .
+}
+=> 
+{
+   ?i a x:RootNode 
+} .
