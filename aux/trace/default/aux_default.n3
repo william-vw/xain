@@ -14,21 +14,12 @@
 @prefix x: <http://wvw.org/xai#> .
 @base <http://wvw.org/xai#> .
 
-# #
-# {
-#    ?i a x:RootNode 
-# }
-# => 
-# {
-#    ?i a x:RootNode 
-# } .
-
 
 #
 {
-   ?i a x:NodeOfInterest 
+   ?n x:support ?support 
 }
-=> 
+<= 
 {
-   ?i a x:NodeOfInterest
+   ?n r:evidence ?support 
 } .

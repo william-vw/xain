@@ -1,3 +1,5 @@
+# @alsoload ../../test/contrastive/yellow-goal-proof.n3
+
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
@@ -14,21 +16,44 @@
 @prefix x: <http://wvw.org/xai#> .
 @base <http://wvw.org/xai#> .
 
-# #
-# {
-#    ?i a x:RootNode 
-# }
-# => 
-# {
-#    ?i a x:RootNode 
-# } .
+
+#
+{
+   ?e a r:Extraction .
+   ?x!r:evidence list:member ?e .
+}
+=> 
+{
+   ?e a x:RootNode , x:NodeOfInterest 
+} .
 
 
 #
 {
-   ?i a x:NodeOfInterest 
+   ?n a x:NodeOfInterest .
+   ?n list:in ?x!r:evidence .
+   _:t log:notIncludes 
+   {
+       ?y r:component ?x 
+   } .
 }
 => 
 {
-   ?i a x:NodeOfInterest
+   ?x a x:NodeOfInterest 
+} .
+
+
+#
+{
+   ?n x:support ?support 
+}
+<= 
+{
+   (
+       ?x
+       {
+           ?n list:in ?x 
+       }
+       ?support
+   ) log:collectAllIn _:t .
 } .

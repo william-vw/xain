@@ -1,4 +1,4 @@
-# @alsoload ../../test/yellow1-proof.n3 ../../aux/aux.n3 ../../aux/aggr/aggregate_evidence.n3 describe.n3
+# @alsoload ../../test/yellow1-proof.n3 ../../aux/trace/aux_trace.n3 ../../aux/trace/aggr/aux_aggr.n3 ../../aux/trace/aggr/aggregate_evidence.n3 describe.n3
 
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix list: <http://www.w3.org/2000/10/swap/list#> .
@@ -28,8 +28,8 @@
 
 #
 {
-   ?inf a x:InferenceNode ;
-       r:evidences ?evidences .
+   ?inf a x:NodeOfInterest ;
+       x:aggrEvidence ?evidences .
    ?evidences list:removeDuplicates ?evidences2 .
    (
        ?li
@@ -40,7 +40,6 @@
        ?lis
    ) log:collectAllIn _:x .
    ?evidences2!list:length math:equalTo ?lis!list:length .
-
    ?lis string:concatenation ?lisStr .
    ?inf x:conclusionStr ?label .
 		# x:ruleStr ?ruleStr ;
@@ -54,7 +53,7 @@
    ( "<li class='inf'>" ?label2 " "
 			# "<span class='showHideRule'>(show rule)</span>"
 			# "<div class='ruleInfo'>" ?ruleInfo "</div>"
-"<ul>" ?lisStr "</ul>" "</li>" ) string:concatenation ?html .
+   "<ul>" ?lisStr "</ul>" "</li>" ) string:concatenation ?html .
 }
 => 
 {

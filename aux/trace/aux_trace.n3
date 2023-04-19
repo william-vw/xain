@@ -17,25 +17,25 @@
 @base <http://wvw.org/xai#> .
 
 
-# consider anything below the root-nodes as inference-nodes 
+# consider anything below the root-nodes as nodes of interest
 # (ignore inferences that prove the query)
 {
    ?x!r:component!r:evidence list:member ?i .
 }
 => 
 {
-   ?i a x:InferenceNode 
+   ?i a x:NodeOfInterest
 } .
 
 #
 {
-   ?parent a x:InferenceNode .
+   ?parent a x:NodeOfInterest .
    ?parent!r:evidence list:member ?i .
    ?i a r:Inference .
 }
 => 
 {
-   ?i a x:InferenceNode 
+   ?i a x:NodeOfInterest 
 } .
 
 
@@ -46,7 +46,7 @@
    (
        ?y
        {
-           ?y a x:InferenceNode .
+           ?y a x:NodeOfInterest .
            ?y!r:evidence list:member ?i 
        }
        ( )

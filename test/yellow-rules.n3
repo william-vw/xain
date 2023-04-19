@@ -16,7 +16,7 @@
    ?p :isStratified :YellowZone 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 #
 {
@@ -27,7 +27,7 @@
    ?p :isStratified :YellowZone 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 #
 {
@@ -38,7 +38,7 @@
    ?p :isStratified :YellowZone 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 #
 {
@@ -49,7 +49,7 @@
    ?p :isStratified :YellowZone 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 #
 {
@@ -60,7 +60,7 @@
    ?p :isStratified :RedZone 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 #
 {
@@ -71,7 +71,7 @@
    ?p :isStratified :RedZone 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 #
 {
@@ -82,7 +82,7 @@
    ?p :isStratified :RedZone 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 #
 {
@@ -93,7 +93,7 @@
    ?p :isStratified :RedZone 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 #
 {
@@ -104,7 +104,7 @@
    ?p :isStratified :RedZone 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 #
 {
@@ -115,7 +115,7 @@
    ?p :isStratified :RedZone 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 #
 {
@@ -126,7 +126,7 @@
    ?p :isStratified :RedZone 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 #
 {
@@ -139,39 +139,39 @@
    ?p :hasPhlemAmount :Moderate 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 # 	{?p :hasPhlemAmountValue ?v} ge{?v 8}
 # =>
-# 	{?p :hasPhlemAmount :Severe} ; a x:Rule .
+# 	{?p :hasPhlemAmount :Severe} ; a x:InputRule .
 
 # 	{?p :hasActivityExertionValue ?v} greaterThan{?v 5} lessThan{?v 8}
 # =>
-# 	{?p :hasActivityExertion :Moderate} ; a x:Rule .
+# 	{?p :hasActivityExertion :Moderate} ; a x:InputRule .
 
 # 	{?p :hasActivityExertionValue ?v} ge{?v 8}
 # =>
-# 	{?p :hasActivityExertion :Severe} ; a x:Rule .
+# 	{?p :hasActivityExertion :Severe} ; a x:InputRule .
 
 # 	{?p :hasCoughValue ?v} greaterThan{?v 5} lessThan{?v 8}
 # =>
-# 	{?p :hasCough :Moderate} ; a x:Rule .
+# 	{?p :hasCough :Moderate} ; a x:InputRule .
 
 # 	{?p :hasCoughValue ?v} ge{?v 8}
 # =>
-# 	{?p :hasCough :Severe} ; a x:Rule .
+# 	{?p :hasCough :Severe} ; a x:InputRule .
 
 # 	{?p :has02SaturationValue ?v} lessThan{?v 88}
 # =>
-# 	{?p :hasLow02Saturation "true"^^xsd:boolean} ; a x:Rule .
+# 	{?p :hasLow02Saturation "true"^^xsd:boolean} ; a x:InputRule .
 
 # 	{?p :hasFeverValue ?v} greaterThan{?v 37} lessThan{?v 39.5}
 # =>
-# 	{?p :hasFever :Moderate} ; a x:Rule .
+# 	{?p :hasFever :Moderate} ; a x:InputRule .
 
 # 	{?p :hasFeverValue ?v} ge{?v 39.5}
 # =>
-# 	{?p :hasFever :Severe} ; a x:Rule .
+# 	{?p :hasFever :Severe} ; a x:InputRule .
 
 # 	{?env :hasHumidityValue ?v} greaterThan{?v 50}
 # =>
@@ -187,6 +187,6 @@
    ?env :recommendation :avoidGoingOutside 
 }
 ;
-   a x:Rule .
+   a x:InputRule .
 
 #

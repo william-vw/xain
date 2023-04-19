@@ -15,9 +15,13 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
 @prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3713658188420975414#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/1235657875869484659#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
-
+{
+    ?U_0 => ?U_0.
+} => {
+    ?U_0 => ?U_0.
+}.
 {
     ?U_1 :hasPhlemAmount :Moderate.
 } => {
@@ -88,6 +92,6 @@
     ?U_14 :hasHighHumidity true.
 }.
 
-#2023-04-19T14:57:42.929Z in=15 out=14 ent=14 step=59 brake=2 inf=57380 sec=0.038 inf/sec=1510000
+#2023-04-19T15:53:20.004Z in=28 out=14 ent=14 step=59 brake=2 inf=68935 sec=0.028 inf/sec=2461964
 #ENDS
 

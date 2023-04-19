@@ -1,4 +1,4 @@
-# @alsoload /Users/wvw/git/n3/eye-js/explain/test/yellow1-proof.n3 aux.n3
+# @alsoload /Users/wvw/git/n3/eye-js/explain/test/yellow1-proof.n3 aux_trace.n3
 
 @prefix copd: <http://niche.cs.dal.ca/ns/copd.owl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
@@ -49,8 +49,8 @@
 }
 => 
 {
-   [ a x:RootNode , x:InferenceNode ;
+   [ a x:RootNode , x:NodeOfInterest ;
        r:gives ?inf ;
-       r:evidences ?combinedEv 
+       x:aggrEvidence ?combinedEv 
    ]
 } .

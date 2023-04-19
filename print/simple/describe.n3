@@ -29,7 +29,7 @@
 # (all terms to be described are indicated as "x:term"s)
 
 {   ?x r:gives ?value . # formula
-	?x!rdf:type list:in ( x:InferenceNode r:Extraction r:Fact ) .
+	?x!rdf:type list:in ( x:NodeOfInterest r:Extraction r:Fact ) .
 
 	?value e:labelvars ?valuel.
 	?valuel log:includes { ?s ?p ?o } .
@@ -146,7 +146,7 @@
 # finalize
 
 # (using "x:description"s of terms, generate strings for "r:gives"s)
-{	?x!rdf:type list:in ( x:InferenceNode r:Extraction r:Fact ) .
+{	?x!rdf:type list:in ( x:NodeOfInterest r:Extraction r:Fact ) .
     ?x r:gives ?value .
     ?value e:labelvars ?valuel .
 
@@ -171,7 +171,7 @@
 
 
 # # (describe inferences in some more detail)
-# {	?x a x:InferenceNode ; 
+# {	?x a x:NodeOfInterest ; 
 # 		r:rule ?extraction .
 	
 # 	?extraction x:conclusionStr ?ruleStr .

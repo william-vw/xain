@@ -33,69 +33,29 @@
     <div id="out"></div>
 
     <script type="module">
-        async function explain() {
+
+        async function trace(rules, data, aggregate) {
             let start = performance.now();
 
-
-            // - load data
-
-            // let rules = await get('test/socrates.n3');
-
-            // let rules = await get('test/yellow-rules.n3');
-            // let data = await get('test/yellow1-data.n3');
-            
-            let rules = await get('test/contrastive/yellow-rules-inv.n3');
-            let data = await get('test/contrastive/yellow-goal.n3');            
-
-            // - load rules
-
-            let queryHeads = await get("query_heads.n3");
-
-            let aux = await get("aux/aux.n3");
-            let aux_dist_rules = await get("aux/aggr/distinguish_rules.n3");
-            let aux_aggr_ev = await get("aux/aggr/aggregate_evidence.n3");
-
-            let describe = await get("print/simple/describe.n3");
-            let collect = await get("print/simple/collect.n3");
-            let query = await get("print/simple/query.n3");
-
-
-            // - aggregate evidence (if needed)
-            // (distinguish rules with same heads)
-
-            // rules = await eyereasoner.n3reasoner(rules, aux_dist_rules);
-            // console.log("aggr ev\n", rules);
+            // - aggregate evidences (if needed)
+            if (aggregate) {
+                // (distinguish rules with same heads)
+                rules = await eyereasoner.n3reasoner(rules, await get("aux/trace/aggr/distinguish_rules.n3"));
+                // console.log("aggr ev\n", rules);
+            }
 
 
             // - collect rule heads (use as query later)
-
-            let heads = await eyereasoner.n3reasoner(rules, queryHeads);
+            let heads = await eyereasoner.n3reasoner(rules, await get("query_heads.n3"));
             // console.log("heads (original rules)\n", heads);
 
 
-            // - (test: ensure there are inferences to begin with)
-            // let out = await eyeWithFlags(
-            //     [{ path: 'data.n3', data: data }, { path: './rules.n3', data: rules }],
-            //     ['--n3', './data.n3', './rules.n3', '--pass-only-new']
-            // );
-            // console.log("out\n", out);
-
-
             // - generate proof for these inferences
-
-            // -- with data
             let proof = await eyeWithFlags(
                 [{ path: 'data.n3', data: data }, { path: './rules.n3', data: rules }, { path: 'heads.n3', data: heads }],
                 ['--n3', './data.n3', './rules.n3', '--query', './heads.n3']
             );
-
-            // // -- without data
-            // // let proof = await eyeWithFlags(
-            // //     [{ path: './rules.n3', data: rules }, { path: 'heads.n3', data: heads }],
-            // //     ['--n3', './rules.n3', '--query', './heads.n3']
-            // // );
-
-            console.log("proof\n", proof);
+            // console.log("proof\n", proof);
 
 
             // // - (test)
@@ -103,48 +63,81 @@
             // let query_test = await get("query_test.n3");
             // let out = await eyeWithFlags([
             //     { path: 'proof.n3', data: proof },
-            //     { path: 'aux.n3', data: aux },
+            //     { path: 'aux_trace.n3', data: aux },
             //     { path: 'aux_aggr_ev.n3', data: aux_aggr_ev },
             //     { path: 'describe.n3', data: describe },
             //     { path: 'collect.n3', data: collect },
             //     { path: 'query_test.n3', data: query_test }
             // ],
-            //     ['--nope', '--n3', './proof.n3', './aux.n3', './aux_aggr_ev.n3', './describe.n3', './collect.n3', '--query', './query_test.n3']
+            //     ['--nope', '--n3', './proof.n3', './aux_trace.n3', './aux_aggr_ev.n3', './describe.n3', './collect.n3', '--query', './query_test.n3']
             // );
             // console.log("out\n", out);
 
 
-            // // - print
-            // // TODO merge these two steps
-            // // (provide saliency to collectAllIn??)
+            // - annotate
+            let datasets = [
+                { path: 'proof.n3', data: proof },
+                { path: 'aux_trace.n3', data: await get("aux/trace/aux_trace.n3") }
+            ];
+            let paths = ['./proof.n3', './aux_trace.n3'];
+            if (aggregate) {
+                datasets.push({ path: 'aggregate_evidence.n3', data: await get("aux/trace/aggr/aggregate_evidence.n3") });
+                paths.push('./aggregate_evidence.n3');
+                datasets.push({ path: 'aux_aggr.n3', data: await get("aux/trace/aggr/aux_aggr.n3") });
+                paths.push('./aux_aggr.n3');
+            }
 
-            // let annotated = await eyeWithFlags([
-            //     { path: 'proof.n3', data: proof },
-            //     { path: 'aux.n3', data: aux },
-            //     { path: 'aux_aggr_ev.n3', data: aux_aggr_ev }
-            // ],
-            //     ['--nope', '--n3', './proof.n3', './aux.n3', './aux_aggr_ev.n3', '--pass-all']
-            // );
-            // // console.log("annotated\n", annotated);
+            let annotated = await eyeWithFlags(datasets,
+                ['--nope', '--n3', ...paths, '--pass-all']
+            );
+            // console.log("annotated\n", annotated);
 
-            // let out = await eyeWithFlags([
-            //     { path: 'annotated.n3', data: annotated },
-            //     { path: 'describe.n3', data: describe },
-            //     { path: 'collect.n3', data: collect },
-            //     { path: 'query.n3', data: query }
-            // ],
-            //     ['--strings', '--n3', './annotated.n3', './describe.n3', './collect.n3', '--query', './query.n3']
-            // );
+            let end = performance.now();
+            console.log("time?", (end - start));
 
-            // $('#out').html(out);
-            // console.log("out\n", out);
+            return annotated;
+        }
 
+
+        async function simplePrint(annotated) {
+            let start = performance.now();
+
+            let describe = await get("print/simple/describe.n3");
+            let collect = await get("print/simple/collect.n3");
+            let query = await get("print/simple/query.n3");
+
+            let out = await eyeWithFlags([
+                { path: 'annotated.n3', data: annotated },
+                { path: 'describe.n3', data: describe },
+                { path: 'collect.n3', data: collect },
+                { path: 'query.n3', data: query }
+            ],
+                ['--strings', '--n3', './annotated.n3', './describe.n3', './collect.n3', '--query', './query.n3']
+            );
+
+            $('#out').html(out);
+            console.log("out\n", out);
 
             let end = performance.now();
             console.log("time?", (end - start));
         }
 
-        explain();
+
+        // let rules = await get('test/socrates.n3');
+        let rules = await get('test/yellow-rules.n3');
+        let data = await get('test/yellow1-data.n3');
+        // let rules = await get('test/contrastive/yellow-rules-inv.n3');
+        // let data = await get('test/contrastive/yellow-goal.n3');
+
+        // - (test: ensure there are inferences to begin with)
+        // let out = await eyeWithFlags(
+        //     [{ path: 'data.n3', data: data }, { path: './rules.n3', data: rules }],
+        //     ['--n3', './data.n3', './rules.n3', '--pass-only-new']
+        // );
+        // console.log("out\n", out);
+
+        let annotated = await trace(rules, data, true);
+        simplePrint(annotated);
 
     </script>
 
