@@ -17,9 +17,18 @@
 
 #
 {
-   ?n x:support ?support 
-}
-<= 
-{
    ?n r:evidence ?support 
+}
+=>
+{
+   ?n x:evidence ?support 
+} .
+
+#
+{
+   ?n r:gives ?gives
+}
+=>
+{
+   ?n x:gives ?gives
 } .

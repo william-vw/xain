@@ -5,15 +5,35 @@
     <script src="https://eyereasoner.github.io/eye-js/latest/index.js"></script>
 
     <script>
-        function get(path) {
-            return new Promise((resolve, reject) => {
-                $.get(path, resolve);
-            });
-        }
+        async function eyeWithConfig(config) {
+            let files = [];
+            let flags = [];
 
-        async function getAsFile(path, file, Module) {
-            let data = await get(path);
-            Module.FS.writeFile(file, data);
+            let n3Flags = [];
+            for (let entry of config.n3) {
+                files.push(await load(entry));
+                n3Flags.push(`./${entry.name}`);
+            }
+
+            if (config.strings)
+                flags.push('--strings');
+
+            flags.push('--n3');
+            flags.push(...n3Flags);
+
+            if (config.query) {
+                files.push(await load(config.query));
+                flags.push('--query', `./${config.query.name}`);
+
+            } else if (config.passOnlyNew)
+                flags.push('--pass-only-new');
+
+            else if (config.passAll)
+                flags.push('--pass-all');
+
+            // console.log(flags);
+
+            return eyeWithFlags(files, flags);
         }
 
         async function eyeWithFlags(files, flags) {
@@ -21,11 +41,25 @@
             const Module = await eyereasoner.SwiplEye({ print: (str) => { output += str + "\n" }, arguments: ['-q'] });
 
             for (let file of files)
-                Module.FS.writeFile(file.path, file.data);
+                Module.FS.writeFile(file.name, file.data);
 
             eyereasoner.queryOnce(Module, 'main', flags);
             return output;
         }
+
+        async function load(entry) {
+            if (entry.path)
+                entry.data = await get(entry.path);
+
+            return entry;
+        }
+
+        function get(path) {
+            return new Promise((resolve, reject) => {
+                $.get(path, resolve);
+            });
+        }
+
     </script>
 </head>
 
@@ -34,11 +68,11 @@
 
     <script type="module">
 
-        async function trace(rules, data, aggregate) {
+        async function trace(rules, data, options, printFn) {
             let start = performance.now();
 
             // - aggregate evidences (if needed)
-            if (aggregate) {
+            if (options.aggregate) {
                 // (distinguish rules with same heads)
                 rules = await eyereasoner.n3reasoner(rules, await get("aux/trace/aggr/distinguish_rules.n3"));
                 // console.log("aggr ev\n", rules);
@@ -51,75 +85,54 @@
 
 
             // - generate proof for these inferences
-            let proof = await eyeWithFlags(
-                [{ path: 'data.n3', data: data }, { path: './rules.n3', data: rules }, { path: 'heads.n3', data: heads }],
-                ['--n3', './data.n3', './rules.n3', '--query', './heads.n3']
-            );
+            let proof = await eyeWithConfig({
+                n3: [
+                    { name: 'data.n3', data: data },
+                    { name: 'rules.n3', data: rules }
+                ],
+                query: { name: 'heads.n3', data: heads }
+            });
             // console.log("proof\n", proof);
 
+            // let proof = await get("test/yellow1-proof.n3");
 
-            // // - (test)
+            // - setup config for main reasoning run
+            let config =
+            {
+                n3: [
+                    { name: 'proof.n3', data: proof },
+                    { name: 'aux_trace.n3', path: "aux/trace/aux_trace.n3" }
+                ]
+            };
 
-            // let query_test = await get("query_test.n3");
-            // let out = await eyeWithFlags([
-            //     { path: 'proof.n3', data: proof },
-            //     { path: 'aux_trace.n3', data: aux },
-            //     { path: 'aux_aggr_ev.n3', data: aux_aggr_ev },
-            //     { path: 'describe.n3', data: describe },
-            //     { path: 'collect.n3', data: collect },
-            //     { path: 'query_test.n3', data: query_test }
-            // ],
-            //     ['--nope', '--n3', './proof.n3', './aux_trace.n3', './aux_aggr_ev.n3', './describe.n3', './collect.n3', '--query', './query_test.n3']
-            // );
-            // console.log("out\n", out);
+            if (options.aggregate)
+                config.n3.push(
+                    { name: 'aux_aggr.n3', path: "aux/trace/aggr/aux_aggr.n3" },
+                    { name: 'aggregate_evidence.n3', path: "aux/trace/aggr/aggregate_evidence.n3" });
+            else
+                config.n3.push({ name: 'aux_default', path: 'aux/trace/default/aux_default.n3' });
 
+            // - add config for printing
+            printFn(config);
 
-            // - annotate
-            let datasets = [
-                { path: 'proof.n3', data: proof },
-                { path: 'aux_trace.n3', data: await get("aux/trace/aux_trace.n3") }
-            ];
-            let paths = ['./proof.n3', './aux_trace.n3'];
-            if (aggregate) {
-                datasets.push({ path: 'aggregate_evidence.n3', data: await get("aux/trace/aggr/aggregate_evidence.n3") });
-                paths.push('./aggregate_evidence.n3');
-                datasets.push({ path: 'aux_aggr.n3', data: await get("aux/trace/aggr/aux_aggr.n3") });
-                paths.push('./aux_aggr.n3');
-            }
+            // console.log("config:", config);
 
-            let annotated = await eyeWithFlags(datasets,
-                ['--nope', '--n3', ...paths, '--pass-all']
-            );
-            // console.log("annotated\n", annotated);
+            let out = await eyeWithConfig(config);
+            console.log(out);
 
             let end = performance.now();
             console.log("time?", (end - start));
 
-            return annotated;
+            return out;
         }
 
 
-        async function simplePrint(annotated) {
-            let start = performance.now();
-
-            let describe = await get("print/simple/describe.n3");
-            let collect = await get("print/simple/collect.n3");
-            let query = await get("print/simple/query.n3");
-
-            let out = await eyeWithFlags([
-                { path: 'annotated.n3', data: annotated },
-                { path: 'describe.n3', data: describe },
-                { path: 'collect.n3', data: collect },
-                { path: 'query.n3', data: query }
-            ],
-                ['--strings', '--n3', './annotated.n3', './describe.n3', './collect.n3', '--query', './query.n3']
-            );
-
-            $('#out').html(out);
-            console.log("out\n", out);
-
-            let end = performance.now();
-            console.log("time?", (end - start));
+        async function simplePrint(config) {
+            config.strings = true;
+            config.n3.push(
+                { name: 'describe.n3', path: "print/simple/describe.n3" },
+                { name: 'collect.n3', path: "print/simple/collect.n3" });
+            config.query = { name: 'query.n3', path: "print/simple/query.n3" };
         }
 
 
@@ -136,10 +149,12 @@
         // );
         // console.log("out\n", out);
 
-        let annotated = await trace(rules, data, true);
-        simplePrint(annotated);
-
+        let out = await trace(rules, data, { aggregate: true }, simplePrint);
+        
+        $('#out').html(out);
     </script>
+
+    <div id="out"></div>
 
 </body>
 

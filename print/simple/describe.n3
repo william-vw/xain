@@ -1,3 +1,5 @@
+# @alsoload ../../test/yellow1-proof.n3 ../../aux/trace/aux_trace.n3 ../../aux/trace/aggr/aux_aggr.n3 ../../aux/trace/aggr/aggregate_evidence.n3
+
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc: <http://purl.org/dc/terms/> .
@@ -28,7 +30,7 @@
 # divide
 # (all terms to be described are indicated as "x:term"s)
 
-{   ?x r:gives ?value . # formula
+{   ?x x:gives ?value . # formula
 	?x!rdf:type list:in ( x:NodeOfInterest r:Extraction r:Fact ) .
 
 	?value e:labelvars ?valuel.
@@ -147,9 +149,8 @@
 
 # (using "x:description"s of terms, generate strings for "r:gives"s)
 {	?x!rdf:type list:in ( x:NodeOfInterest r:Extraction r:Fact ) .
-    ?x r:gives ?value .
+    ?x x:gives ?value .
     ?value e:labelvars ?valuel .
-
     ( ?str
     {	?valuel e:graphMember ?m .
         ?m log:includes { ?s ?p ?o } .
@@ -162,7 +163,6 @@
         	string:concatenation ?str .
 
     } ?strs ) log:collectAllIn _:x .
-    
     ?strs!list:length math:equalTo ?value!graph:length .
     
     ( ?strs " " ) string:join ?str2 .

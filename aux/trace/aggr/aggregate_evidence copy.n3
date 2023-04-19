@@ -1,3 +1,6 @@
+# @alsoload ../../../test/yellow1-proof.n3 ../aux_trace.n3
+
+@prefix copd: <http://niche.cs.dal.ca/ns/copd.owl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
@@ -15,37 +18,32 @@
 @base <http://wvw.org/xai#> .
 
 
-# TODO
-# try changing these rules to backward
-
 #
 {
-   ?n a x:NodeOfInterest ;
-       x:aggrGives ?gives 
+   ?x a x:NodeOfInterest ;
+       r:gives ?concl .
+   #
+   (
+       ?concl
+       {
+           ?a x:padding ?a 
+       }
+   ) e:graphDifference ?inf .
+   #
+   (
+       ?ev
+       {
+           ?i a x:NodeOfInterest .
+           ?i!r:gives log:includes ?inf .
+           ?i r:evidence ?ev .
+       }
+       ?evs
+   ) log:collectAllIn _:t .
+   #
+   ?evs!list:append list:unique ?uniqueEv .
 }
-=>
+=> 
 {
-   ?n x:gives ?gives 
+   ?x x:aggrEvidence ?uniqueEv ;
+       x:aggrGives ?inf 
 } .
-
-
-#
-{
-   ?n!rdf:type list:in ( r:Fact r:Extraction ) .
-   ?n r:gives ?gives 
-}
-=>
-{
-   ?n x:gives ?gives 
-} .
-
-
-#
-{
-   ?n x:aggrEvidence ?support 
-}
-=>
-{
-   ?n x:evidence ?support 
-} .
-

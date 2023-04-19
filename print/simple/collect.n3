@@ -29,7 +29,7 @@
 #
 {
    ?inf a x:NodeOfInterest ;
-       x:aggrEvidence ?evidences .
+       x:evidence ?evidences .
    ?evidences list:removeDuplicates ?evidences2 .
    (
        ?li

@@ -17,6 +17,10 @@
 @base <http://wvw.org/xai#> .
 
 
+# TODO
+# try changing these rules to backward
+
+
 #
 {
    ?e a r:Extraction .
@@ -28,10 +32,11 @@
 } .
 
 
-#
+# propagate x:NodeOfInterest upward
 {
    ?n a x:NodeOfInterest .
    ?n list:in ?x!r:evidence .
+   #
    _:t log:notIncludes 
    {
        ?y r:component ?x 
@@ -45,15 +50,17 @@
 
 #
 {
-   ?n x:support ?support 
-}
-<= 
-{
+   ?n a x:NodeOfInterest .
    (
        ?x
        {
-           ?n list:in ?x 
+           ?n list:in ?x!r:evidence .
+           ?x a x:NodeOfInterest
        }
        ?support
    ) log:collectAllIn _:t .
+}
+=> 
+{
+   ?n x:evidence ?support 
 } .

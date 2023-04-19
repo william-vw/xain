@@ -27,7 +27,7 @@
    ?i a x:NodeOfInterest
 } .
 
-#
+# propagate x:NodeOfInterest downward
 {
    ?parent a x:NodeOfInterest .
    ?parent!r:evidence list:member ?i .

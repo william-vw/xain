@@ -1,4 +1,4 @@
-# @alsoload /Users/wvw/git/n3/eye-js/explain/test/yellow1-proof.n3 aux_trace.n3
+# @alsoload ../../../test/yellow1-proof.n3 ../aux_trace.n3
 
 @prefix copd: <http://niche.cs.dal.ca/ns/copd.owl#> .
 @prefix dc: <http://purl.org/dc/terms/> .
@@ -11,46 +11,95 @@
 @prefix pml: <http://provenanceweb.org/ns/pml#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix r: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix string: <http://www.w3.org/2000/10/swap/string#> .
 @prefix x: <http://wvw.org/xai#> .
 @base <http://wvw.org/xai#> .
 
+
 #
 {
+   ?x a x:NodeOfInterest ;
+       r:gives ?concl .
+   ?concl x:unpad ?inf .
+   
+   # aggregation did not already occur for same inference
+   ?y a x:NodeOfInterest .
+   ?y log:notEqualTo ?x .
+   ?y!r:gives log:includes ?inf .
    (
-       ?inf
+       ?y
        {
-           ?i a x:RootNode ;
-               r:gives ?concl .
-           (
-               ?concl
-               {
-                   ?a x:padding ?a 
-               }
-           ) e:graphDifference ?inf .
+           ?y x:aggrEvidence ?k 
        }
-       ?infs
+       ( )
    ) log:collectAllIn _:t .
-   ?infs list:unique ?uniqueInfs .
-#    "T0" log:trace ?uniqueInfs .
-   ?uniqueInfs list:member ?inf .
+   #
+   ?inf x:collectEvidences ?allEvs 
+}
+=> 
+{
+   ?x x:aggrEvidence ?allEvs ;
+       x:aggrGives ?inf 
+} .
+
+
+#
+{
+   ?x a x:NodeOfInterest ;
+       r:gives ?concl .
+   ?concl x:unpad ?inf .
+
+   # no same inference exists
+   (
+       ?y
+       {
+           ?y a x:NodeOfInterest .
+           ?y log:notEqualTo ?x .
+           ?y!r:gives log:includes ?inf .
+       }
+       ( )
+   ) log:collectAllIn _:t .
+   #
+   ?inf x:collectEvidences ?allEvs 
+}
+=> 
+{
+   ?x x:aggrEvidence ?allEvs ;
+       x:aggrGives ?inf 
+} .
+
+
+#
+{
+   ?padded x:unpad ?inf 
+}
+<= 
+{
+   (
+       ?padded
+       {
+           ?a x:padding ?a 
+       }
+   ) e:graphDifference ?inf .
+} .
+
+#
+{
+   ?inf x:collectEvidences ?allEvs 
+}
+<= 
+{
    (
        ?ev
        {
-           ?i a x:RootNode .
+           ?i a x:NodeOfInterest .
            ?i!r:gives log:includes ?inf .
            ?i r:evidence ?ev .
        }
        ?evs
    ) log:collectAllIn _:t .
-   ?evs!list:append list:unique ?combinedEv .
-#    "T1" log:trace ?combinedEv .
-}
-=> 
-{
-   [ a x:RootNode , x:NodeOfInterest ;
-       r:gives ?inf ;
-       x:aggrEvidence ?combinedEv 
-   ]
+   #
+   ?evs!list:append list:unique ?allEvs .
 } .

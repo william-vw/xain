@@ -18,7 +18,8 @@
    (
        ?root
        {
-           ?root a x:RootNode 
+           ?root a x:RootNode ;
+               x:gives ?inf .
        }
        ?roots
    ) log:collectAllIn _:x .
@@ -32,9 +33,7 @@
        }
        ?htmls
    ) log:collectAllIn _:x .
-   "T2" log:trace ( ?roots ?htmls ) .
    ?roots!list:length math:equalTo ?htmls!list:length .
-
    ?htmls string:concatenation ?lis .
    ( "<html>" "<head>" "</head>" "<body><ul>" ?lis "</ul></body>" "</html>" ) string:concatenation ?doc .
 }
