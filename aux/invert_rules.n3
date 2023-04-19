@@ -5,17 +5,19 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix string: <http://www.w3.org/2000/10/swap/string#> .
 @prefix x: <http://wvw.org/xai#> .
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
 
 
 {
-   ?x => ?y ;
-       a x:Rule .
-   ?x x:get ?x2 .
-   ?y x:get ?y2 .
+   ?x => ?y ; a x:Rule .
+   "x" log:trace ?x .
+   ?x!e:labelvars x:get ?x2 .
+   ?y!e:labelvars x:get ?y2 .
+   "x2" log:trace ( ?y2 ?x2 ) .
 }
 => 
 {
-   ?y2 => ?x2 
+   ?y2 => ?x2
 } .
 
 
@@ -42,6 +44,8 @@
        ?rws
    ) log:collectAllIn _:t .
    ?rws log:conjunction ?f2 .
+   "T0" log:trace ( ?f2 ) .
+   # ( "!" ) e:derive true 
 } .
 
 
@@ -58,20 +62,9 @@
            ?c!list:member x:get ?e2 
        }
        ?c2
-   )
-} .
-
-
-#
-{
-   ?t x:get ?t2 
-}
-<= 
-{
-   ?t log:rawType log:ForAll .
-   ?t e:label ?l .
-   ?l log:skolem ?t2 .
-   ( "!" ) e:derive true 
+   ) log:collectAllIn _:t .
+   "T0.5" log:trace ( ?c2 ) .
+   # ( "!" ) e:derive true 
 } .
 
 
@@ -84,8 +77,10 @@
    ?t log:rawType log:Other .
    ?t log:uri ?tStr .
    ?tStr string:matches "http://www.w3.org/2000/10/swap/.*" .
-   ( ?tStr "http://www.w3.org/2000/10/swap/" "http://wvw.org/xai/swap/" )!string:replace <-log:uri ?t2 .
-   ( "!" ) e:derive true 
+   ( ?tStr "http://www.w3.org/2000/10/swap/" "http://wvw.org/xai/swap/" ) string:replace ?tStr2 .
+   ?t2 log:uri ?tStr2 .
+   "T2" log:trace ( ?t2 ) .
+   # ( "!" ) e:derive true 
 } .
 
 
@@ -97,7 +92,8 @@
 {
    ?t log:rawType log:Other .
    ?t!log:uri string:notMatches "http://www.w3.org/2000/10/swap/.*" .
-   ( "!" ) e:derive true 
+   "T3" log:trace ( ?t ) .
+   # ( "!" ) e:derive true 
 } .
 
 
@@ -105,4 +101,9 @@
 {
    ?t x:get ?t 
 }
-<= {} .
+<= 
+{
+   ?t log:rawType log:Literal .
+   "T4" log:trace ( ?t ) .
+   # ( "!" ) e:derive true 
+} .

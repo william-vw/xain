@@ -1,0 +1,3 @@
+@prefix x: <http://wvw.org/xai#> .
+
+?x => ?y ; a x:Rule .
