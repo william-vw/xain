@@ -17,36 +17,48 @@
 @base <http://wvw.org/xai#> .
 
 
-# consider anything below the root-nodes as nodes of interest
-# (ignore inferences that prove the query)
+# any inference is a node
+# (ignore "top-level lemmas", i.e., inferences that prove the query)
 {
    ?x!r:component!r:evidence list:member ?i .
 }
 => 
 {
-   ?i a x:NodeOfInterest
+   ?i a x:Node 
 } .
 
-# propagate x:NodeOfInterest downward
+# propagate x:Node
 {
-   ?parent a x:NodeOfInterest .
+   ?parent a x:Node .
    ?parent!r:evidence list:member ?i .
    ?i a r:Inference .
 }
 => 
 {
-   ?i a x:NodeOfInterest 
+   ?i a x:Node 
 } .
 
 
-# root-nodes = lemmas used _only_ by "top-level lemmas"
-# (top-level lemmas prove the query)
+# facts & extractions are leafs
+{
+   ?x!rdf:type list:in ( r:Fact r:Extraction ) .
+   # (make sure they're relevant to an inference)
+   ?y!r:evidence list:member ?x
+}
+=> 
+{
+   ?x a x:Leaf 
+} .
+
+
+# root-nodes = lemmas used only by "top-level lemmas"
 {
    ?x!r:component!r:evidence list:member ?i .
+   # not used elsewhere as evidence
    (
        ?y
        {
-           ?y a x:NodeOfInterest .
+           ?y a x:Node .
            ?y!r:evidence list:member ?i 
        }
        ( )

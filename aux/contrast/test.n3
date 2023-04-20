@@ -1,5 +1,3 @@
-# @alsoload ../../test/contrastive/yellow-goal-proof.n3
-
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
@@ -16,51 +14,36 @@
 @prefix x: <http://wvw.org/xai#> .
 @base <http://wvw.org/xai#> .
 
+:a r:evidence ( :e ) .
+:e a r:Extraction .
 
-# TODO
-# try changing these rules to backward
+# query
+{
+   ?x a x:Node
+}
+=> 
+{
+   <> :out ?x
+} .
 
 
 #
+{
+   ?e a x:Node 
+}
+<= 
 {
    ?e a r:Extraction .
    ?x!r:evidence list:member ?e .
-}
-=> 
-{
-   ?e a x:RootNode , x:NodeOfInterest 
 } .
 
 
-# propagate x:NodeOfInterest upward
+# propagate x:Node upward
 {
-   ?n a x:NodeOfInterest .
+   ?x a x:Node 
+}
+<= 
+{
+   ?n a x:Node .
    ?n list:in ?x!r:evidence .
-   #
-   _:t log:notIncludes 
-   {
-       ?y r:component ?x 
-   } .
-}
-=> 
-{
-   ?x a x:NodeOfInterest 
-} .
-
-
-#
-{
-   ?n a x:NodeOfInterest .
-   (
-       ?x
-       {
-           ?n list:in ?x!r:evidence .
-           ?x a x:NodeOfInterest
-       }
-       ?support
-   ) log:collectAllIn _:t .
-}
-=> 
-{
-   ?n x:evidence ?support 
 } .

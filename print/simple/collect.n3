@@ -1,4 +1,4 @@
-# @alsoload ../../test/yellow1-proof.n3 ../../aux/trace/aux_trace.n3 ../../aux/trace/aggr/aux_aggr.n3 ../../aux/trace/aggr/aggregate_evidence.n3 describe.n3
+# @alsoload ../../test/contrast/yellow-inv-interm.n3 describe.n3
 
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix list: <http://www.w3.org/2000/10/swap/list#> .
@@ -14,10 +14,10 @@
 @base <http://wvw.org/xai#> .
 
 
+#
 {
-   ?x a ?type .
-   ?type list:in ( r:Extraction r:Fact ) .
-   ?x x:conclusionStr ?str .
+   ?x a x:Leaf ;
+        x:conclusionStr ?str .
    ( "<li class='fact'>" ?str "</li>" ) string:concatenation ?html .
 }
 => 
@@ -25,22 +25,23 @@
    ?x x:output ?html 
 } .
 
-
 #
 {
-   ?inf a x:NodeOfInterest ;
+   ?inf a x:Node ;
        x:evidence ?evidences .
    ?evidences list:removeDuplicates ?evidences2 .
    (
        ?li
        {
            ?evidence list:in ?evidences2 ;
-               x:output ?li 
+               x:output ?li .
        }
        ?lis
-   ) log:collectAllIn _:x .
-   ?evidences2!list:length math:equalTo ?lis!list:length .
+   ) log:collectAllIn _:t .
+   ?evidences2 list:length ?l .
+   ?lis list:length ?l .
    ?lis string:concatenation ?lisStr .
+   #
    ?inf x:conclusionStr ?label .
 		# x:ruleStr ?ruleStr ;
 		# x:sourceStr ?sourceStr ;

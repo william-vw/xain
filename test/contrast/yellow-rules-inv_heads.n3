@@ -1,5 +1,5 @@
-#Processed by EYE v3.16.0
-#eye --n3 query_heads.n3 test/contrastive/yellow-rules-inv.n3 --pass-only-new
+# Processed by EYE v3.20.10 (2023-04-20)
+# eye --n3 query_heads.n3 test/contrast/yellow-rules-inv.n3 --pass-only-new
 
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
@@ -15,7 +15,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
 @prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/1235657875869484659#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2439600244228630342#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 {
     ?U_0 => ?U_0.
@@ -92,6 +92,6 @@
     ?U_14 :hasHighHumidity true.
 }.
 
-#2023-04-19T15:53:20.004Z in=28 out=14 ent=14 step=59 brake=2 inf=68935 sec=0.028 inf/sec=2461964
-#ENDS
+# 2023-04-20T23:09:28.648Z in=15 out=14 ent=14 step=59 brake=2 inf=57785 sec=0.036 inf/sec=1605139
+# ENDS
 

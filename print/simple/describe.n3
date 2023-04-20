@@ -1,4 +1,4 @@
-# @alsoload ../../test/yellow1-proof.n3 ../../aux/trace/aux_trace.n3 ../../aux/trace/aggr/aux_aggr.n3 ../../aux/trace/aggr/aggregate_evidence.n3
+# @alsoload ../../test/contrast/yellow-inv-interm.n3
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -31,7 +31,7 @@
 # (all terms to be described are indicated as "x:term"s)
 
 {   ?x x:gives ?value . # formula
-	?x!rdf:type list:in ( x:NodeOfInterest r:Extraction r:Fact ) .
+	?x!rdf:type list:in ( x:Node r:Extraction r:Fact ) .
 
 	?value e:labelvars ?valuel.
 	?valuel log:includes { ?s ?p ?o } .
@@ -52,8 +52,7 @@
 	?t log:rawType log:Formula .
 	?t e:labelvars ?tl .
 	
-	?tl e:graphMember ?m .
-	?m log:includes { ?s ?p ?o } .
+	?tl log:includes { ?s ?p ?o } .
 
 } => { 	?tl x:term ?s , ?p , ?o } . 
 
@@ -90,6 +89,14 @@
 	( "\"" ?t "\"" ) string:concatenation ?t2 .
 
 	?t log:localN3String ?ts .
+
+} => { ?ts x:description ?t2 } .
+
+
+{ 	?value x:term ?t .
+	?t log:rawType log:ForAll .
+	?t e:label ?l .
+    ?l log:localN3String ?ts .
 
 } => { ?ts x:description ?t2 } .
 
@@ -148,7 +155,7 @@
 # finalize
 
 # (using "x:description"s of terms, generate strings for "r:gives"s)
-{	?x!rdf:type list:in ( x:NodeOfInterest r:Extraction r:Fact ) .
+{	?x!rdf:type list:in ( x:Node x:Leaf ) .
     ?x x:gives ?value .
     ?value e:labelvars ?valuel .
     ( ?str
@@ -162,7 +169,7 @@
         ( "<span class='triple'><span class='subject'>" ?sd "</span> <span class='predicate'>" ?pd "</span> <span class='object'>" ?od "</span> .</span>" ) 
         	string:concatenation ?str .
 
-    } ?strs ) log:collectAllIn _:x .
+    } ?strs ) log:collectAllIn _:t .
     ?strs!list:length math:equalTo ?value!graph:length .
     
     ( ?strs " " ) string:join ?str2 .
@@ -171,7 +178,7 @@
 
 
 # # (describe inferences in some more detail)
-# {	?x a x:NodeOfInterest ; 
+# {	?x a x:Node ; 
 # 		r:rule ?extraction .
 	
 # 	?extraction x:conclusionStr ?ruleStr .

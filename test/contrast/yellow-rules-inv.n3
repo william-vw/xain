@@ -1,5 +1,5 @@
-#Processed by EYE v3.16.0
-#eye --nope --n3 aux/invert_rules.n3 test/yellow-rules.n3 --pass-only-new --quantify http://eyereasoner.github.io/var#
+# Processed by EYE v3.20.10 (2023-04-20)
+# eye --nope --n3 aux/contrast/invert_rules.n3 test/yellow-rules.n3 --pass-only-new --quantify http://eyereasoner.github.io/var#
 
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
@@ -14,47 +14,6 @@
 @prefix xpl: <http://niche.cs.dal.ca/xpl#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
-{
-    ?U_14 :hasPhlemAmount :Moderate.
-} a x:InputRule.
-{
-    ?U_15 :hasColoredPhlem true.
-} a x:InputRule.
-{
-    ?U_16 :hasSwollenAnkle true.
-} a x:InputRule.
-{
-    ?U_17 :hasActivityExertion :Moderate.
-} a x:InputRule.
-{
-    ?U_18 :hasCyanosis true.
-} a x:InputRule.
-{
-    ?U_19 :hasChestPain true.
-} a x:InputRule.
-{
-    ?U_20 :hasActivityExertion :Severe.
-} a x:InputRule.
-{
-    ?U_21 :hasCough :Severe.
-} a x:InputRule.
-{
-    ?U_22 :hasLow02Saturation true.
-} a x:InputRule.
-{
-    ?U_23 :hasFever :Severe.
-} a x:InputRule.
-{
-    ?U_24 :hasConfusion true.
-} a x:InputRule.
-{
-    ?U_25 :hasPhlemAmountValue ?U_26.
-    ?U_26 math:greaterThan 5 .
-    ?U_26 math:lessThan 8.
-} a x:InputRule.
-{
-    ?U_27 :hasHighHumidity true.
-} a x:InputRule.
 {
     ?t_0 :isStratified :YellowZone.
 } => {
@@ -130,6 +89,6 @@
     ?t_0 :hasPhlemAmount :Moderate.
 }.
 
-#2023-04-19T15:53:19.960Z in=32 out=27 ent=14 step=41 brake=5 inf=1084461 sec=0.090 inf/sec=12049567
-#ENDS
+# 2023-04-20T23:08:19.622Z in=32 out=14 ent=14 step=41 brake=5 inf=189233 sec=0.046 inf/sec=4113761
+# ENDS
 

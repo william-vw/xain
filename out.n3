@@ -1,0 +1,348 @@
+#Processed by EYE v3.16.0
+#eye --n3 test/contrast/yellow-inv-interm.n3 print/simple/describe.n3 print/simple/collect.n3 print/simple/query.n3 --pass-only-new
+
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix pml: <http://provenanceweb.org/ns/pml#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix x: <http://wvw.org/xai#>.
+@prefix xpl: <http://niche.cs.dal.ca/xpl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix var: <http://eyereasoner.github.io/var#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3595430894923640078#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#proof> x:gives {
+    :patientA :hasPhlemAmount :Moderate.
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+}.
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma2> x:gives {
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+}.
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma4> x:gives {
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma5> x:gives {
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+}.
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma6> x:gives {
+    {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma8> x:gives {
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma9> x:gives {
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+    }.
+}.
+{
+    :patientA :hasPhlemAmount :Moderate.
+} x:term :patientA.
+{
+    :patientA :hasPhlemAmount :Moderate.
+} x:term :hasPhlemAmount.
+{
+    :patientA :hasPhlemAmount :Moderate.
+} x:term :Moderate.
+{
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+} x:term {
+    var:x_0 :hasPhlemAmount :Moderate.
+}.
+{
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+} x:term log:implies.
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term :patientA.
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term :hasPhlemAmountValue.
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term var:x_0.
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term <http://wvw.org/xai/swap/math#greaterThan>.
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term 5 .
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term <http://wvw.org/xai/swap/math#lessThan>.
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term 8 .
+{
+    {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+    }.
+} x:term {
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+}.
+{
+    {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+    }.
+} x:term log:implies.
+{
+    :patientA :isStratified :YellowZone.
+} x:term :patientA.
+{
+    :patientA :isStratified :YellowZone.
+} x:term :isStratified.
+{
+    :patientA :isStratified :YellowZone.
+} x:term :YellowZone.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+} x:term {
+    var:x_0 :isStratified :YellowZone.
+}.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+} x:term log:implies.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+} x:term {
+    var:x_0 :hasPhlemAmount :Moderate.
+}.
+{
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+    }.
+} x:term {
+    var:x_0 :hasPhlemAmount :Moderate.
+}.
+{
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+    }.
+} x:term log:implies.
+{
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+    }.
+} x:term {
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+}.
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term :patientA.
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term :hasPhlemAmountValue.
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term var:x_0.
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term <http://wvw.org/xai/swap/math#greaterThan>.
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term 5 .
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term <http://wvw.org/xai/swap/math#lessThan>.
+{
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term 8 .
+{
+    var:x_0 :hasPhlemAmount :Moderate.
+} x:term var:x_0.
+{
+    var:x_0 :hasPhlemAmount :Moderate.
+} x:term :hasPhlemAmount.
+{
+    var:x_0 :hasPhlemAmount :Moderate.
+} x:term :Moderate.
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term var:x_0.
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term :hasPhlemAmountValue.
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term var:x_1.
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term <http://wvw.org/xai/swap/math#greaterThan>.
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term 5 .
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term <http://wvw.org/xai/swap/math#lessThan>.
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+} x:term 8 .
+{
+    var:x_0 :isStratified :YellowZone.
+} x:term var:x_0.
+{
+    var:x_0 :isStratified :YellowZone.
+} x:term :isStratified.
+{
+    var:x_0 :isStratified :YellowZone.
+} x:term :YellowZone.
+"5" x:description "\"5\"".
+"8" x:description "\"8\"".
+":patientA" x:description ":patientA".
+":hasPhlemAmount" x:description ":hasPhlemAmount".
+":Moderate" x:description ":Moderate".
+"log:implies" x:description ":implies".
+":hasPhlemAmountValue" x:description ":hasPhlemAmountValue".
+"var:x_0" x:description ":x_0".
+"<http://wvw.org/xai/swap/math#greaterThan>" x:description ":greaterThan".
+"<http://wvw.org/xai/swap/math#lessThan>" x:description ":lessThan".
+":isStratified" x:description ":isStratified".
+":YellowZone" x:description ":YellowZone".
+"var:x_1" x:description ":x_1".
+"var:x_0 :hasPhlemAmount :Moderate" x:description "{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmount</span> <span class='object'>:Moderate</span> .</span> }".
+"var:x_0 :hasPhlemAmountValue var:x_1.\nvar:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .\nvar:x_1 <http://wvw.org/xai/swap/math#lessThan> 8" x:description "{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmountValue</span> <span class='object'>:x_1</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:greaterThan</span> <span class='object'>\"5\"</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:lessThan</span> <span class='object'>\"8\"</span> .</span> }".
+"var:x_0 :isStratified :YellowZone" x:description "{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:isStratified</span> <span class='object'>:YellowZone</span> .</span> }".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma4> x:conclusionStr "<span class='triple'><span class='subject'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmount</span> <span class='object'>:Moderate</span> .</span> }</span> <span class='predicate'>:implies</span> <span class='object'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmount</span> <span class='object'>:Moderate</span> .</span> }</span> .</span>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma6> x:conclusionStr "<span class='triple'><span class='subject'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmountValue</span> <span class='object'>:x_1</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:greaterThan</span> <span class='object'>\"5\"</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:lessThan</span> <span class='object'>\"8\"</span> .</span> }</span> <span class='predicate'>:implies</span> <span class='object'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmountValue</span> <span class='object'>:x_1</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:greaterThan</span> <span class='object'>\"5\"</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:lessThan</span> <span class='object'>\"8\"</span> .</span> }</span> .</span>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma7> x:conclusionStr "<span class='triple'><span class='subject'>:patientA</span> <span class='predicate'>:isStratified</span> <span class='object'>:YellowZone</span> .</span>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma8> x:conclusionStr "<span class='triple'><span class='subject'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:isStratified</span> <span class='object'>:YellowZone</span> .</span> }</span> <span class='predicate'>:implies</span> <span class='object'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmount</span> <span class='object'>:Moderate</span> .</span> }</span> .</span>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma9> x:conclusionStr "<span class='triple'><span class='subject'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmount</span> <span class='object'>:Moderate</span> .</span> }</span> <span class='predicate'>:implies</span> <span class='object'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmountValue</span> <span class='object'>:x_1</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:greaterThan</span> <span class='object'>\"5\"</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:lessThan</span> <span class='object'>\"8\"</span> .</span> }</span> .</span>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma3> x:conclusionStr "<span class='triple'><span class='subject'>:patientA</span> <span class='predicate'>:hasPhlemAmount</span> <span class='object'>:Moderate</span> .</span>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma5> x:conclusionStr "<span class='triple'><span class='subject'>:patientA</span> <span class='predicate'>:hasPhlemAmountValue</span> <span class='object'>:x_0</span> .</span> <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:greaterThan</span> <span class='object'>\"5\"</span> .</span> <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:lessThan</span> <span class='object'>\"8\"</span> .</span>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma4> x:output "<li class='fact'><span class='triple'><span class='subject'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmount</span> <span class='object'>:Moderate</span> .</span> }</span> <span class='predicate'>:implies</span> <span class='object'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmount</span> <span class='object'>:Moderate</span> .</span> }</span> .</span></li>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma6> x:output "<li class='fact'><span class='triple'><span class='subject'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmountValue</span> <span class='object'>:x_1</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:greaterThan</span> <span class='object'>\"5\"</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:lessThan</span> <span class='object'>\"8\"</span> .</span> }</span> <span class='predicate'>:implies</span> <span class='object'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmountValue</span> <span class='object'>:x_1</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:greaterThan</span> <span class='object'>\"5\"</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:lessThan</span> <span class='object'>\"8\"</span> .</span> }</span> .</span></li>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma7> x:output "<li class='fact'><span class='triple'><span class='subject'>:patientA</span> <span class='predicate'>:isStratified</span> <span class='object'>:YellowZone</span> .</span></li>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma8> x:output "<li class='fact'><span class='triple'><span class='subject'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:isStratified</span> <span class='object'>:YellowZone</span> .</span> }</span> <span class='predicate'>:implies</span> <span class='object'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmount</span> <span class='object'>:Moderate</span> .</span> }</span> .</span></li>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma9> x:output "<li class='fact'><span class='triple'><span class='subject'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmount</span> <span class='object'>:Moderate</span> .</span> }</span> <span class='predicate'>:implies</span> <span class='object'>{ <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:hasPhlemAmountValue</span> <span class='object'>:x_1</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:greaterThan</span> <span class='object'>\"5\"</span> .</span> <span class='triple'><span class='subject'>:x_1</span> <span class='predicate'>:lessThan</span> <span class='object'>\"8\"</span> .</span> }</span> .</span></li>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma5> x:output "<li class='inf'><span class='triple'><span class='subject'>:patientA</span> <span class='predicate'>:hasPhlemAmountValue</span> <span class='object'>:x_0</span> .</span> <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:greaterThan</span> <span class='object'>\"5\"</span> .</span> <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:lessThan</span> <span class='object'>\"8\"</span> .</span> <ul></ul></li>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma3> x:output "<li class='inf'><span class='triple'><span class='subject'>:patientA</span> <span class='predicate'>:hasPhlemAmount</span> <span class='object'>:Moderate</span> .</span> <ul><li class='inf'><span class='triple'><span class='subject'>:patientA</span> <span class='predicate'>:hasPhlemAmountValue</span> <span class='object'>:x_0</span> .</span> <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:greaterThan</span> <span class='object'>\"5\"</span> .</span> <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:lessThan</span> <span class='object'>\"8\"</span> .</span> <ul></ul></li></ul></li>".
+<http://eyereasoner.github.io/.well-known/genid/46915191580452261#lemma7> x:output "<li class='inf'><span class='triple'><span class='subject'>:patientA</span> <span class='predicate'>:isStratified</span> <span class='object'>:YellowZone</span> .</span> <ul><li class='inf'><span class='triple'><span class='subject'>:patientA</span> <span class='predicate'>:hasPhlemAmount</span> <span class='object'>:Moderate</span> .</span> <ul><li class='inf'><span class='triple'><span class='subject'>:patientA</span> <span class='predicate'>:hasPhlemAmountValue</span> <span class='object'>:x_0</span> .</span> <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:greaterThan</span> <span class='object'>\"5\"</span> .</span> <span class='triple'><span class='subject'>:x_0</span> <span class='predicate'>:lessThan</span> <span class='object'>\"8\"</span> .</span> <ul></ul></li></ul></li></ul></li>".
+
+#2023-04-20T21:38:24.959Z in=122 out=81 ent=89 step=1029 brake=10 inf=2217375 sec=0.166 inf/sec=13357681
+#ENDS
+

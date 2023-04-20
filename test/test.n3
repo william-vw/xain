@@ -19,6 +19,6 @@
 @prefix x: <http://wvw.org/xai#>.
 
 _:sk_4 a x:RootNode.
-_:sk_4 a x:NodeOfInterest.
+_:sk_4 a x:Node.
 _:sk_4 r:evidence (skolem:lemma7 skolem:lemma9).
 _:sk_4 x:conclusionStr "<span class='triple'><span class='subject'>:patientA</span> <span class='predicate'>:isStratified</span> <span class='object'>:YellowZone</span> .</span>".

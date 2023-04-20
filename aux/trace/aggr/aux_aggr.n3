@@ -20,7 +20,7 @@
 
 #
 {
-   ?n a x:NodeOfInterest ;
+   ?n a x:Node ;
        x:aggrGives ?gives 
 }
 =>

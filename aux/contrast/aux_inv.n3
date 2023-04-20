@@ -1,0 +1,92 @@
+# @alsoload ../../test/contrast/yellow-goal-proof.n3
+
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix n3: <http://www.w3.org/2004/06/rei#> .
+@prefix pml: <http://provenanceweb.org/ns/pml#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix x: <http://wvw.org/xai#> .
+@base <http://wvw.org/xai#> .
+
+
+# topsy-turvy time
+
+# extractions are root nodes
+{
+   ?e a r:Extraction .
+   # (make sure they're relevant to an inference)
+   ?x!r:evidence list:member ?e .
+}
+=> 
+{
+   ?e a x:RootNode , x:Node 
+} .
+
+
+# gather inverted evidences for each element
+# (i.e., for element n, x:evidence's are all elements where n occurs as evidence)
+{
+   ?n!rdf:type list:in ( r:Fact r:Extraction r:Inference ) .
+   (
+       ?x
+       {
+           # n occurs as evidence for x
+           ?n list:in ?x!r:evidence .
+           # (ignore top-level lemmas)
+           _:t log:notIncludes 
+           {
+               ?z r:component ?x 
+           }
+       }
+       # all x's where n occurs as evidence
+       ?support
+   ) log:collectAllIn ( ?ctx 2 ) .
+}
+=> 
+{
+   ?n x:evidence ?support 
+} .
+
+
+# propagate x:Node
+{
+   ?y a x:Node .
+   ?y!x:evidence list:member ?x .
+   
+   # (not a leaf)
+   ?x!x:evidence!list:length math:greaterThan 0 
+}
+=> 
+{
+   ?x a x:Node 
+} .
+
+
+# if no evidence, then leaf
+{
+   ?x x:evidence ( ) .
+   # (make sure they're relevant to an inference)
+   ?y!x:evidence list:member ?x .
+}
+=> 
+{
+   ?x a x:Leaf 
+} .
+
+
+# yes
+{
+   ?x!r:gives e:labelvars ?gives 
+}
+=> 
+{
+   ?x x:gives ?gives 
+} .

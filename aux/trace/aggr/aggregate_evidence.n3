@@ -20,12 +20,12 @@
 
 #
 {
-   ?x a x:NodeOfInterest ;
+   ?x a x:Node ;
        r:gives ?concl .
    ?concl x:unpad ?inf .
    
    # aggregation did not already occur for same inference
-   ?y a x:NodeOfInterest .
+   ?y a x:Node .
    ?y log:notEqualTo ?x .
    ?y!r:gives log:includes ?inf .
    (
@@ -47,7 +47,7 @@
 
 #
 {
-   ?x a x:NodeOfInterest ;
+   ?x a x:Node ;
        r:gives ?concl .
    ?concl x:unpad ?inf .
 
@@ -55,7 +55,7 @@
    (
        ?y
        {
-           ?y a x:NodeOfInterest .
+           ?y a x:Node .
            ?y log:notEqualTo ?x .
            ?y!r:gives log:includes ?inf .
        }
@@ -94,7 +94,7 @@
    (
        ?ev
        {
-           ?i a x:NodeOfInterest .
+           ?i a x:Node .
            ?i!r:gives log:includes ?inf .
            ?i r:evidence ?ev .
        }

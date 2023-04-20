@@ -17,6 +17,8 @@
 
             if (config.strings)
                 flags.push('--strings');
+            if (config.nope)
+                flags.push('--nope');
 
             flags.push('--n3');
             flags.push(...n3Flags);
@@ -30,6 +32,9 @@
 
             else if (config.passAll)
                 flags.push('--pass-all');
+
+            if (config.quantify)
+                flags.push('--quantify', config.quantify);
 
             // console.log(flags);
 
@@ -75,30 +80,18 @@
             if (options.aggregate) {
                 // (distinguish rules with same heads)
                 rules = await eyereasoner.n3reasoner(rules, await get("aux/trace/aggr/distinguish_rules.n3"));
-                // console.log("aggr ev\n", rules);
+                // console.log("aggr evidences\n", rules);
             }
 
-
-            // - collect rule heads (use as query later)
-            let heads = await eyereasoner.n3reasoner(rules, await get("query_heads.n3"));
-            // console.log("heads (original rules)\n", heads);
-
-
-            // - generate proof for these inferences
-            let proof = await eyeWithConfig({
-                n3: [
-                    { name: 'data.n3', data: data },
-                    { name: 'rules.n3', data: rules }
-                ],
-                query: { name: 'heads.n3', data: heads }
-            });
-            // console.log("proof\n", proof);
-
+            // - get proof for rules
+            let proof = await prove(rules, data);
             // let proof = await get("test/yellow1-proof.n3");
 
             // - setup config for main reasoning run
             let config =
             {
+                nope: true,
+                passAll: true,
                 n3: [
                     { name: 'proof.n3', data: proof },
                     { name: 'aux_trace.n3', path: "aux/trace/aux_trace.n3" }
@@ -112,13 +105,8 @@
             else
                 config.n3.push({ name: 'aux_default', path: 'aux/trace/default/aux_default.n3' });
 
-            // - add config for printing
-            printFn(config);
-
-            // console.log("config:", config);
-
+            // reason!
             let out = await eyeWithConfig(config);
-            console.log(out);
 
             let end = performance.now();
             console.log("time?", (end - start));
@@ -126,21 +114,85 @@
             return out;
         }
 
+        async function contrast(rules, goal, options, printFn) {
+            let start = performance.now();
 
-        async function simplePrint(config) {
-            config.strings = true;
-            config.n3.push(
-                { name: 'describe.n3', path: "print/simple/describe.n3" },
-                { name: 'collect.n3', path: "print/simple/collect.n3" });
-            config.query = { name: 'query.n3', path: "print/simple/query.n3" };
+            // - invert rules first
+            // rules += "\n\n" + await get("aux/contrast/invert_rules.n3");
+            rules = await eyeWithConfig({
+                nope: true,
+                passOnlyNew: true,
+                quantify: "http://eyereasoner.github.io/var#",
+                n3: [
+                    { name: 'rules.n3', data: rules },
+                    { name: 'invert_rules.n3', path: "aux/contrast/invert_rules.n3" }
+                ],
+            });
+            // console.log("inverted rules:\n", rules);
+
+            // - get proof for rules
+            let proof = await prove(rules, goal);
+
+            // - setup config for main reasoning run
+            let config =
+            {
+                nope: true,
+                passAll: true,
+                n3: [
+                    { name: 'proof.n3', data: proof },
+                    { name: 'aux_inv.n3', path: "aux/contrast/aux_inv.n3" }
+                ]
+            };
+
+            // reason!
+            let out = await eyeWithConfig(config);
+
+            let end = performance.now();
+            console.log("time?", (end - start));
+
+            return out;
         }
 
+        async function prove(rules, data) {
+            // - collect rule heads (use as query later)
+            let heads = await eyereasoner.n3reasoner(rules, await get("query_heads.n3"));
+            // console.log("heads (original rules)\n", heads);
+
+            // - generate proof for these inferences
+            let proof = await eyeWithConfig({
+                n3: [
+                    { name: 'data.n3', data: data },
+                    { name: 'rules.n3', data: rules }
+                ],
+                query: { name: 'heads.n3', data: heads }
+            });
+            // console.log("proof\n", proof);
+
+            return proof;
+        }
+
+        async function simplePrint(input) {
+            // (testing)
+            let out = eyeWithConfig({
+                strings: true,
+                nope: true,
+
+                // passOnlyNew: true,
+                query: { name: 'query.n3', path: "print/simple/query.n3" },
+
+                n3: [
+                    { name: 'input.n3', data: input },
+                    { name: 'describe.n3', path: "print/simple/describe.n3" },
+                    { name: 'collect.n3', path: "print/simple/collect.n3" },
+
+                    // { name: 'query.n3', path: "print/simple/query.n3" }
+                ]
+            });
+
+            return out;
+        }
 
         // let rules = await get('test/socrates.n3');
-        let rules = await get('test/yellow-rules.n3');
-        let data = await get('test/yellow1-data.n3');
-        // let rules = await get('test/contrastive/yellow-rules-inv.n3');
-        // let data = await get('test/contrastive/yellow-goal.n3');
 
         // - (test: ensure there are inferences to begin with)
         // let out = await eyeWithFlags(
@@ -149,9 +201,21 @@
         // );
         // console.log("out\n", out);
 
-        let out = await trace(rules, data, { aggregate: true }, simplePrint);
-        
-        $('#out').html(out);
+        // - trace
+        // let rules = await get('test/yellow-rules.n3');
+        // let data = await get('test/yellow1-data.n3');
+        // let input = await trace(rules, data, { aggregate: true }, simplePrint);
+
+        // - contrast
+        let rules = await get('test/yellow-rules.n3');
+        let data = await get('test/contrast/yellow-goal.n3');
+        let input = await contrast(rules, data, {}, simplePrint);
+
+        // console.log("input:\n", input);
+        let output = await simplePrint(input);
+
+        // console.log("output:\n", output);
+        $('#out').html(output);
     </script>
 
     <div id="out"></div>

@@ -26,9 +26,9 @@
 
 #
 {
-   ?i a x:NodeOfInterest 
+   ?i a x:Node 
 }
 => 
 {
-   ?i a x:NodeOfInterest
+   ?i a x:Node
 } .
