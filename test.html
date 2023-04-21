@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://eyereasoner.github.io/eye-js/latest/index.js"></script>
+    <script src="lib/aux.js"></script>
+    <script src="lib/explain.js"></script>
+</head>
+
+<body>
+    <div id="out"></div>
+
+    <script type="module">
+
+        // - trace
+        // let rules = await get('test/yellow-rules.n3');
+        // let data = await get('test/yellow1-data.n3');
+        // let input = await trace(rules, data, { aggregate: true }, simplePrint);
+
+        // - contrast
+        // let rules = await get('test/yellow-rules.n3');
+        // let data = await get('test/contrast/yellow-goal.n3');
+        // let input = await contrast(rules, data, {}, simplePrint);
+
+        // - (test: ensure there are inferences to begin with)
+        // let out = await eyeWithFlags(
+        //     [{ path: 'data.n3', data: data }, { path: './rules.n3', data: rules }],
+        //     ['--n3', './data.n3', './rules.n3', '--pass-only-new']
+        // );
+        // console.log("out\n", out);
+
+        // // console.log("input:\n", input);
+        // let output = await simplePrint(input);
+
+        // // console.log("output:\n", output);
+        // $('#out').html(output);
+    </script>
+</body>
+
+</html>

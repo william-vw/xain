@@ -1,24 +1,99 @@
-@prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix prov: <http://www.w3.org/ns/prov#>.
-@prefix pml: <http://provenanceweb.org/ns/pml#>.
-@prefix xpl: <http://niche.cs.dal.ca/xpl#>.
-@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
-@prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/1893620644282676494#>.
-@prefix n3: <http://www.w3.org/2004/06/rei#>.
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix dc: <http://purl.org/dc/terms/>.
-@prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
-@prefix list: <http://www.w3.org/2000/10/swap/list#>.
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.
-@prefix string: <http://www.w3.org/2000/10/swap/string#>.
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix x: <http://wvw.org/xai#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix pml: <http://provenanceweb.org/ns/pml#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix x: <http://wvw.org/xai#> .
+@prefix xpl: <http://niche.cs.dal.ca/xpl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:sk_4 a x:RootNode.
-_:sk_4 a x:Node.
-_:sk_4 r:evidence (skolem:lemma7 skolem:lemma9).
-_:sk_4 x:conclusionStr "<span class='triple'><span class='subject'>:patientA</span> <span class='predicate'>:isStratified</span> <span class='object'>:YellowZone</span> .</span>".
+
+# recommender rules
+#
+{
+   ?p :hasPhlemAmountValue 10
+}
+=>
+{
+   ?p :hasPhlemAmount :Moderate 
+}
+;
+   a x:Rule .
+
+
+# invert rules
+{
+   ?x => ?y ; a x:Rule .
+   ?x!e:labelvars x:get ?x2 .
+   ?y!e:labelvars x:get ?y2 .
+   "y2 x2" log:trace ( ?y2 ?x2 ) .
+
+}
+=> 
+{
+	?y2 => ?x2
+} .
+
+
+#
+{
+   ?f x:get ?f2 
+}
+<= 
+{
+   ?f log:rawType log:Formula .
+   (
+       {
+           ?s2 ?p2 ?o2 
+       }
+       {
+           ?f e:graphMember 
+           {
+               ?s ?p ?o 
+           } .
+           # this step is required
+           # (also replacing builtins predicates with dummy predicates)
+           ?s x:get ?s2 .
+           ?p x:get ?p2 .
+           ?o x:get ?o2 .
+       }
+       ?rws
+   ) log:collectAllIn _:t .
+   ?rws log:conjunction ?f2 .
+   "f2" log:trace ( ?f2 ) .
+} .
+
+
+# #
+# {
+#    ?t x:get ?t2 
+# }
+# <= 
+# {
+#    ?t log:rawType log:ForAll .
+#    ?t e:label ?l .
+#    ?l log:skolem ?t2 .
+#    "t2 (forAll)" log:trace ( ?t2 ) .
+# } .
+
+
+#
+{
+   ?t x:get ?t 
+}
+<= 
+{
+   ?t log:rawType log:Other .
+} .
+
+
+#
+{
+   ?t x:get ?t 
+}
+<= 
+{
+   ?t log:rawType log:Literal .
+} .

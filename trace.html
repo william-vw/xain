@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="https://eyereasoner.github.io/eye-js/latest/index.js"></script>
+    <script src="lib/aux.js"></script>
+    <script src="lib/explain.js"></script>
+    <script>
+        async function doTrace() {
+            $('#out').html("<img src='img/loading.gif'>");
+
+            let start = performance.now();
+
+            let rules = await get('test/yellow-rules.n3');
+            let data = await get('test/yellow1-data.n3');
+            let input = await trace(rules, data, { aggregate: true }, simplePrint);
+
+            // console.log("input:\n", input);
+            let output = await simplePrint(input);
+
+            let end = performance.now();
+            console.log("total:", (end - start));
+
+            // console.log("output:\n", output);
+            $('#out').html(output);
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <button id="trace" onclick="doTrace()">trace</button>
+
+    <div id="out"></div>
+</body>
+
+</html>
