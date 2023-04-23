@@ -36,7 +36,8 @@
    ) log:collectAllIn ( ?ctx 5 ) .
    ?roots!list:length math:equalTo ?htmls!list:length .
    ?htmls string:concatenation ?lis .
-   ( "<html>" "<head>" "</head>" "<body><ul>" ?lis "</ul></body>" "</html>" ) string:concatenation ?doc .
+   #
+   ?lis x:printRootNode ?doc .
 }
 => 
 {

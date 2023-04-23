@@ -21,6 +21,17 @@
 # (all terms to be described are indicated as "x:term"s)
 
 {
+   ?cc x:expandCamelCase ?exp 
+}
+<= 
+{
+   ( ?cc "([A-Z][a-z]+)" ) string:scrapeAll ?groups .
+   ( ?groups string:lowerCase ) list:map ?lcGroups .
+   ( ?lcGroups " " ) string:join ?exp 
+} .
+
+#
+{
    ?x x:gives ?value . # formula
    ?x!rdf:type list:in ( x:Node r:Extraction r:Fact ) .
    ?value e:labelvars ?valuel .
@@ -152,8 +163,7 @@
 {
    ?x!rdf:type list:in ( x:Node x:Leaf ) .
    ?x x:gives ?value .
-   ?value e:labelvars ?valuel .
-   ?valuel x:printFormula ?str .
+   ?value!e:labelvars x:printFormula ?str .
 }
 => 
 {

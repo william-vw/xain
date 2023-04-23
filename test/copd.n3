@@ -2,21 +2,46 @@
 @prefix math: <http://www.w3.org/2000/10/swap/math#> .
 @prefix pml: <http://provenanceweb.org/ns/pml#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix x: <http://wvw.org/xai#> .
 @prefix xpl: <http://niche.cs.dal.ca/xpl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:hasPhlemAmount rdfs:label "phlegm amount" .
-:hasColoredPhlem rdfs:label "colored phlegm" .
-:hasSwollenAnkle rdfs:label "swollen ankle" .
-:hasActivityExertion rdfs:label "activity exertion" .
-:hasCyanosis rdfs:label "cyanosis" .
-:hasChestPain rdfs:label "chest pain" .
-:hasCough rdfs:label "cough" .
-:hasLow02Saturation rdfs:label "low O2 saturation" .
-:hasFever rdfs:label "fever" .
-:hasConfusion rdfs:label "confusion" .
-:hasPhlemAmount rdfs:label "phlegm amount" .
-:hasPhlemAmountValue rdfs:label "phlegm amount" .
-:hasHighHumidity rdfs:label "high humidity" .
+:hasPhlemAmountValue rdfs:label "phlem amount" ;
+   x:explanation [
+       x:object :xyz ;
+       x:icon "fa-disease" ;
+       x:summary "Phlem Amount Value." 
+   ] .
+#
+:isStratified x:explanation [
+   x:object :YellowZone ;
+   x:icon "fa-exclamation-circle" ;
+   x:style "text-orange" ;
+   x:summary "This means you should follow your action plan immediately. If your symptoms don't improve after 48 hours, seek medical care immediately." 
+] .
+#
+:hasActivityExertion x:explanation [
+   x:object :Moderate ;
+   x:icon "fa-face-tongue-sweat" ;
+   x:summary "High levels of exertion when doing activities is a known factor for flare-ups." 
+] .
+#
+:hasColoredPhlem x:explanation [
+   x:object true ;
+   x:icon "fa-disease" ;
+   x:summary "Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups." 
+] .
+#
+:hasSwollenAnkle x:explanation [
+   x:object true ;
+   x:icon "fa-disease" ;
+   x:summary "Swollen Ankle." 
+] .
+#
+:hasPhlemAmount x:explanation [
+   x:object :Moderate ;
+   x:icon "fa-disease" ;
+   x:summary "Phlem Amount." 
+] .

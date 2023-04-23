@@ -27,7 +27,7 @@
 }
 => 
 {
-   ?e a x:RootNode , x:Node 
+   ?e a x:RootNode , x:Node
 } .
 
 
@@ -60,25 +60,23 @@
 {
    ?y a x:Node .
    ?y!x:evidence list:member ?x .
-   
    # (not a leaf)
-   ?x!x:evidence!list:length math:greaterThan 0 
+   ?x!x:evidence!list:length math:greaterThan 0 .
 }
 => 
 {
-   ?x a x:Node 
+   ?x a x:Node .
 } .
 
 
 # if no evidence, then leaf
 {
-   ?x x:evidence ( ) .
-   # (make sure they're relevant to an inference)
    ?y!x:evidence list:member ?x .
+   ?x x:evidence ( ) .
 }
 => 
 {
-   ?x a x:Leaf 
+   ?x a x:Leaf
 } .
 
 

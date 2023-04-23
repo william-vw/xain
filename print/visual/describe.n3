@@ -21,7 +21,7 @@
 }
 <= 
 {
-   ?ln string:lowerCase ?ln2 
+   ?ln x:expandCamelCase ?ln2 
 } .
 
 #
@@ -84,7 +84,6 @@
            ?strs!list:length math:equalTo ?f!graph:length .
            ( ?strs " " ) string:join ?str .
        }
-
    ) log:ifThenElseIn _:t .
 } .
 

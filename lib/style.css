@@ -1,0 +1,108 @@
+.text-orange {
+	color: orange;
+}
+
+.text-red {
+	color: #d32f2f;
+}
+
+.text-green {
+	color: green;
+}
+
+.text-section {
+	color: #0284c7;
+}
+
+.text-expl {
+	color: #0891b2;
+}
+
+.text-counterfact {
+	color: rgb(95, 169, 95);
+}
+
+.text-counterfact div.col-2 {
+	font-size: 48px;
+}
+
+.text-counterfact div.col-10 {
+	font-size: 18px;
+}
+
+.bg-expl {
+	background-color: #0891b2;
+}
+
+.bg-section {
+	background-color: #0284c7;
+}
+
+.icon-2 {
+	font-size: 2rem;
+}
+
+.icon-3 {
+	font-size: 3.5rem;
+}
+
+.icon-4 {
+	font-size: 2.75rem;
+}
+
+h5 {
+	font-size: 24px;
+}
+
+.dropdown-toggle {
+	background-color: rgb(8, 145, 178);
+	border: rgb(8, 145, 178)
+}
+
+.btn-advice {
+	background-color: #0284c7;
+	color: white;
+	margin: 25px 25px 0 25px;
+	font-size: 24px;
+}
+
+.card-content {
+	margin-left: 15px;
+	font-size: 20px;
+	padding-right: 15px;
+}
+
+.card-content ol li {
+	font-size: 20px;
+}
+
+.card-embedded-link {
+	margin-left: 15px;
+	font-style: italic;
+}
+
+body > div {
+	overflow-y: scroll;
+	padding-bottom: 90px;
+}
+
+.zone {
+	font-size: 32px
+}
+
+.zone-text {
+	font-size: 20px;
+	font-style: italic;
+}
+
+.back_btn {
+	cursor: pointer;
+}
+
+body {
+	width: 600px;
+}
+
+.bg-section {
+	width: 600px;
+}

@@ -58,7 +58,6 @@
        }
        ?strs
    ) log:collectAllIn _:x .
-   "T0" log:trace ( ?strs ) .
    ?strs!list:length math:equalTo ?f!graph:length .
    #
    ( ?strs " " ) string:join ?str2 .

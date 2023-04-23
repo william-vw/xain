@@ -1,6 +1,7 @@
 # @alsoload ../../test/contrast/yellow-inv-interm.n3 describe.n3
 
 @prefix dc: <http://purl.org/dc/terms/> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
 @prefix list: <http://www.w3.org/2000/10/swap/list#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix math: <http://www.w3.org/2000/10/swap/math#> .
@@ -17,7 +18,7 @@
 #
 {
    ?x a x:Leaf ;
-        x:conclusionStr ?str .
+       x:conclusionStr ?str .
    ( "<li class='fact'>" ?str "</li>" ) string:concatenation ?html .
 }
 => 
@@ -29,32 +30,22 @@
 {
    ?inf a x:Node ;
        x:evidence ?evidences .
+   # gather evidences & their strings
    ?evidences list:removeDuplicates ?evidences2 .
    (
        ?li
        {
-           ?evidence list:in ?evidences2 ;
-               x:output ?li .
+           ?evidence list:in ?evidences2 .
+           ?evidence x:collectLabel ?li .
        }
        ?lis
    ) log:collectAllIn _:t .
-   ?evidences2 list:length ?l .
-   ?lis list:length ?l .
+   ?evidences2 list:length ?lis!list:length .
    ?lis string:concatenation ?lisStr .
    #
-   ?inf x:conclusionStr ?label .
-		# x:ruleStr ?ruleStr ;
-		# x:sourceStr ?sourceStr ;
-		# x:bindingStr ?bindingStr .
-   ( ?label "</span><span" "</span><br /><span" ) string:replace ?label2 .
-	
-	# ( 	"<div class='rule'>" ?ruleStr "</div>"
-	# 	"<div class='bindings'>" ?bindingStr "</div>"
-	# 	"<div class='source'>(from: " ?sourceStr ")</div>" ) string:concatenation ?ruleInfo .
-   ( "<li class='inf'>" ?label2 " "
-			# "<span class='showHideRule'>(show rule)</span>"
-			# "<div class='ruleInfo'>" ?ruleInfo "</div>"
-   "<ul>" ?lisStr "</ul>" "</li>" ) string:concatenation ?html .
+   ?inf x:collectLabel ?label .
+   #
+   ( ?label ?lisStr ) string:concatenation ?html .
 }
 => 
 {

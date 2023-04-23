@@ -24,7 +24,7 @@
 }
 => 
 {
-   ?i a x:Node 
+   ?i a x:Node
 } .
 
 # propagate x:Node
