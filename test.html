@@ -18,9 +18,9 @@
         // let input = await trace(rules, data, { aggregate: true }, simplePrint);
 
         // - contrast
-        // let rules = await get('test/yellow-rules.n3');
-        // let data = await get('test/contrast/yellow-goal.n3');
-        // let input = await contrast(rules, data, {}, simplePrint);
+        let rules = await get('test/yellow-rules.n3');
+        let data = await get('test/contrast/yellow-goal.n3');
+        let input = await contrast(rules, data, {});
 
         // - (test: ensure there are inferences to begin with)
         // let out = await eyeWithFlags(
@@ -30,10 +30,10 @@
         // console.log("out\n", out);
 
         // // console.log("input:\n", input);
-        // let output = await simplePrint(input);
+        let output = await visualPrint(input, 'test/copd.n3');
 
-        // // console.log("output:\n", output);
-        // $('#out').html(output);
+        console.log("output:\n", output);
+        $('#out').html(output);
     </script>
 </body>
 

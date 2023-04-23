@@ -1,0 +1,100 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix n3: <http://www.w3.org/2004/06/rei#> .
+@prefix pml: <http://provenanceweb.org/ns/pml#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix x: <http://wvw.org/xai#> .
+@prefix xmath: <http://wvw.org/xai/swap/math#> .
+@base <http://wvw.org/xai#> .
+
+#
+{
+   ?ln x:printLocalName ?ln2 .
+}
+<= 
+{
+   ?ln string:lowerCase ?ln2 
+} .
+
+#
+{
+   ?l x:printLabel ?l .
+}
+<= {} .
+
+#
+{
+   ?t x:printLiteral ?t 
+}
+<= {} .
+
+#
+{
+   ( ?s ?p ?o ) x:printTriple ?str .
+}
+<= 
+{
+   ?o list:in ( true false ) .
+   ?p!log:localN3String x:description ?pd .
+   ( "<span class='triple'><span class='predicate'>" ?pd "</span></span>" ) string:concatenation ?str .
+   ( "!" ) e:derive true 
+} .
+
+#
+{
+   ?f x:printFormula ?str 
+}
+<= 
+{
+   (
+       {
+           ?f log:equalTo 
+           {
+               ?x ?p ?y .
+               ?y xmath:greaterThan ?l ;
+                   xmath:lessThan ?u 
+           }
+       }
+       {
+           ?p!log:localN3String x:description ?pd .
+           ?l!log:localN3String x:description ?ld .
+           ?u!log:localN3String x:description ?ud .
+           ( "<span class='triple'><span class='predicate'>" ?pd "</span> between " ?ld " and " ?ud "</span>" ) string:concatenation ?str .
+       }
+       {
+           (
+               ?str
+               {
+                   ?f log:includes 
+                   {
+                       ?s ?p ?o 
+                   } .
+                   ( ?s ?p ?o ) x:printTriple ?str .
+               }
+               ?strs
+           ) log:collectAllIn _:x .
+           ?strs!list:length math:equalTo ?f!graph:length .
+           ( ?strs " " ) string:join ?str .
+       }
+
+   ) log:ifThenElseIn _:t .
+} .
+
+#
+{
+   ( ?s ?p ?o ) x:printTriple ?str .
+}
+<= 
+{
+   ?p!log:localN3String x:description ?pd .
+   ?o!log:localN3String x:description ?od .
+   ( "<span class='triple'><span class='object'>" ?od "</span> <span class='predicate'>" ?pd "</span></span>" ) string:concatenation ?str .
+} .

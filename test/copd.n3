@@ -1,0 +1,22 @@
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix pml: <http://provenanceweb.org/ns/pml#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix x: <http://wvw.org/xai#> .
+@prefix xpl: <http://niche.cs.dal.ca/xpl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:hasPhlemAmount rdfs:label "phlegm amount" .
+:hasColoredPhlem rdfs:label "colored phlegm" .
+:hasSwollenAnkle rdfs:label "swollen ankle" .
+:hasActivityExertion rdfs:label "activity exertion" .
+:hasCyanosis rdfs:label "cyanosis" .
+:hasChestPain rdfs:label "chest pain" .
+:hasCough rdfs:label "cough" .
+:hasLow02Saturation rdfs:label "low O2 saturation" .
+:hasFever rdfs:label "fever" .
+:hasConfusion rdfs:label "confusion" .
+:hasPhlemAmount rdfs:label "phlegm amount" .
+:hasPhlemAmountValue rdfs:label "phlegm amount" .
+:hasHighHumidity rdfs:label "high humidity" .
