@@ -1,0 +1,34 @@
+# Processed by EYE v3.20.10 (2023-04-20)
+# eye --nope --n3 test/contrast/yellow-inv-interm.n3 print/describe.n3 print/visual/describe.n3 print/visual/collect.n3 print/visual/copd/collect.n3 test/copd.n3 --query test/query/query_test.n3
+
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix x: <http://wvw.org/xai#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix pml: <http://provenanceweb.org/ns/pml#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xpl: <http://niche.cs.dal.ca/xpl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix var: <http://eyereasoner.github.io/var#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2247905493297217998#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix xmath: <http://wvw.org/xai/swap/math#>.
+
+<http://eyereasoner.github.io/.well-known/genid/3960037565168032064#lemma6> <file:///Users/wvw/git/n3/eye-js/explain/test/query/query_test.n3#out> "<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlem amount</span></span><h5>\n         </div>\n         <p class=\"card-content\">Phlem Amount. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n".
+<http://eyereasoner.github.io/.well-known/genid/3960037565168032064#lemma8> <file:///Users/wvw/git/n3/eye-js/explain/test/query/query_test.n3#out> "<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>colored phlem</span></span><h5>\n         </div>\n         <p class=\"card-content\">Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n".
+<http://eyereasoner.github.io/.well-known/genid/3960037565168032064#lemma10> <file:///Users/wvw/git/n3/eye-js/explain/test/query/query_test.n3#out> "<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>swollen ankle</span></span><h5>\n         </div>\n         <p class=\"card-content\">Swollen Ankle. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n".
+<http://eyereasoner.github.io/.well-known/genid/3960037565168032064#lemma12> <file:///Users/wvw/git/n3/eye-js/explain/test/query/query_test.n3#out> "<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-face-tongue-sweat card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>activity exertion</span></span><h5>\n         </div>\n         <p class=\"card-content\">High levels of exertion when doing activities is a known factor for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n".
+<http://eyereasoner.github.io/.well-known/genid/3960037565168032064#lemma14> <file:///Users/wvw/git/n3/eye-js/explain/test/query/query_test.n3#out> "<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>phlem amount</span> between 5 and 8</span><h5>\n         </div>\n         <p class=\"card-content\">Phlem Amount Value. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n".
+<http://eyereasoner.github.io/.well-known/genid/3960037565168032064#lemma16> <file:///Users/wvw/git/n3/eye-js/explain/test/query/query_test.n3#out> "<div class=\"card rounded-0 border-0 mb-0 bg-section\">\n   <div class=\"row g-0 text-white\">\n      <div class=\"col-sm-12\">\n         <h5 class=\"m-3\">You are in:<h5>\n      </div>\n   </div>\n</div>\n\n<div class=\"card rounded-0 border-0 bg-white\">\n   <div class=\"row g-0 text-orange\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-exclamation-circle card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title pb-1 zone\">yellow zone</h5>\n            <p class=\"card-text mb-0 mt-1 zone-text\">This means you should follow your action plan immediately. If your symptoms don't improve after 48 hours, seek medical care immediately.</p>\n         </div>\n      </div>\n   </div>\n</div>\n\n<div class=\"card rounded-0 border-0 my-0 bg-expl\">\n   <div class=\"row g-0\">\n      <div class=\"col-sm-12\">\n         <h5 class=\"m-3 text-white\">Because you have:<h5>\n      </div>\n   </div>\n</div>".
+
+# 2023-04-24T11:51:04.809Z in=290 out=6 ent=114 step=725 brake=5 inf=1377309 sec=0.106 inf/sec=12993481
+# ENDS
+

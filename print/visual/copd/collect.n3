@@ -14,7 +14,7 @@
 
 #
 
-:inf_template rdf:value """<div class="card rounded-0 border-0 mb-0 bg-section">
+:recomm0_template rdf:value """<div class="card rounded-0 border-0 mb-0 bg-section">
    <div class="row g-0 text-white">
       <div class="col-sm-12">
          <h5 class="m-3">You are in:<h5>
@@ -36,6 +36,7 @@
    </div>
 </div>
 
+
 <div class="card rounded-0 border-0 my-0 bg-expl">
    <div class="row g-0">
       <div class="col-sm-12">
@@ -43,6 +44,37 @@
       </div>
    </div>
 </div>""" .
+
+#
+:recomm1_template rdf:value """<div class="card rounded-0 border-0 mb-0 bg-section">
+   <div class="row g-0 text-white">
+      <div class="col-sm-12">
+         <h5 class="m-3">Risk factor:<h5>
+      </div>
+   </div>
+</div>
+
+<div class="card rounded-0 border-0 bg-white">
+   <div class="row g-0 align-items-center text-section">
+      <div class="col-2 text-center">
+         <i class="fas %s card-img-top h-100 p-3 ms-2 mt-1 icon-3"></i>
+      </div>
+      <div class="col-9">
+         <div class="card-body">
+            <h3 class="card-title fw-bold">%s<h3>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div class="card rounded-0 border-0 my-0 bg-expl">
+   <div class="row g-0">
+      <div class="col-sm-12">
+         <h5 class="m-3 text-white">Relation with COPD:<h5>
+      </div>
+   </div>
+</div>""" .
+
 #
 :reason_template rdf:value """<div class="card border-0 mb-2 bg-white">
    <div class="row g-0 align-items-center text-expl"
@@ -63,7 +95,7 @@
 
 #
 {
-   ?inf x:collectLabel ?label 
+   ?inf x:recommLabel ?label 
 }
 <= 
 {
@@ -84,7 +116,7 @@
                x:style ?style ;
                x:summary ?summ 
            ] .
-           :inf_template rdf:value ?template .
+           :recomm0_template rdf:value ?template .
            ( ?template ?style ?icon ?descr ?summ ) string:format ?label .
        }
        {
@@ -92,12 +124,33 @@
            #
            ?p x:explanation [
                # x:object ?o ;
-               x:icon ?icon ;
-               x:summary ?summ 
+               x:icon ?icon 
            ] .
-           :reason_template rdf:value ?template .
-           ( ?template ?icon ?descr ?summ ) string:format ?label .
+           :recomm1_template rdf:value ?template .
+           ( ?template ?icon ?descr ) string:format ?label .
        }
    ) log:ifThenElseIn _:t .
    #
+} .
+
+
+#
+{
+   ?inf x:reasonLabel ?label 
+}
+<= 
+{
+   ?inf!x:gives!e:labelvars log:includes 
+   {
+       ?s ?p ?o 
+   } .
+   ?inf x:conclusionStr ?descr .
+           #
+   ?p x:explanation [
+       # x:object ?o ;
+       x:icon ?icon ;
+       x:summary ?summ 
+   ] .
+   :reason_template rdf:value ?template .
+   ( ?template ?icon ?descr ?summ ) string:format ?label .
 } .

@@ -36,14 +36,19 @@
        ?li
        {
            ?evidence list:in ?evidences2 .
-           ?evidence x:collectLabel ?li .
+           ?evidence x:reasonLabel ?li .
        }
        ?lis
    ) log:collectAllIn _:t .
-   ?evidences2 list:length ?lis!list:length .
-   ?lis string:concatenation ?lisStr .
+   # TODO this should not be needed
+   ?lis list:removeDuplicates ?lis2 .
+   # (for debugging; things often go wrong w/ reasonLabel)
+   ?evidences2 list:length ?l .
+   ?lis2 list:length ?l2 .
+   ?evidences2 list:length ?lis2!list:length .
+   ?lis2 string:concatenation ?lisStr .
    #
-   ?inf x:collectLabel ?label .
+   ?inf x:recommLabel ?label .
    #
    ( ?label ?lisStr ) string:concatenation ?html .
 }

@@ -5,3 +5,6 @@ eye --n3 query_heads.n3 test/contrast/yellow-rules-inv.n3 --pass-only-new > test
 eye --n3 test/contrast/yellow-goal.n3 test/contrast/yellow-rules-inv.n3 --query test/contrast/yellow-rules-inv_heads.n3 > test/contrast/yellow-goal-proof.n3
 eye --nope --n3 test/contrast/yellow-goal-proof.n3 aux/contrast/aux_inv.n3 --pass-all > test/contrast/yellow-inv-interm.n3
 eye --strings --n3 test/contrast/yellow-inv-interm.n3 print/simple/describe.n3 print/simple/collect.n3 print/simple/query.n3
+
+# test printing
+eye --nope --n3 test/contrast/yellow-inv-interm.n3 print/describe.n3 print/visual/describe.n3 print/visual/collect.n3 print/visual/copd/collect.n3 test/copd.n3 --query test/query/query_test.n3 > out.txt

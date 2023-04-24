@@ -16,28 +16,17 @@
 
 {
    (
-       ?root
-       {
-           ?root a x:RootNode ;
-               x:gives ?inf .
-       }
-       ?roots
-   ) log:collectAllIn ( ?ctx 5 ) .
-   ?roots list:removeDuplicates ?uniqueRoots .
-   ?uniqueRoots!list:length math:greaterThan 0 .
-   #
-   (
        ?html
        {
-           ?uniqueRoots list:member ?root .
-           ?root x:output ?html 
+           ?root a x:NodeToPrint ;
+               x:gives ?inf .
+           ?root x:output ?html . 
        }
        ?htmls
    ) log:collectAllIn ( ?ctx 5 ) .
-   ?roots!list:length math:equalTo ?htmls!list:length .
    ?htmls string:concatenation ?lis .
    #
-   ?lis x:printRootNode ?doc .
+   ?lis x:printNode ?doc .
 }
 => 
 {

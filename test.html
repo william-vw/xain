@@ -24,17 +24,16 @@
     <script type="module">
 
         // - trace
-        // let rules = await get('test/yellow-rules.n3');
-        // let data = await get('test/yellow1-data.n3');
-        // let input = await trace(rules, data, { aggregate: true });
-
-        // let output = await new SimplePrinter().print(input);
+        let rules = await get('test/yellow-rules.n3');
+        let data = await get('test/yellow1-data.n3');
+        let input = await trace(rules, data, { aggregate: true });
 
         // - contrast
-        let rules = await get('test/yellow-rules.n3');
-        let data = await get('test/contrast/yellow-goal.n3');
-        let input = await contrast(rules, data, {});
+        // let rules = await get('test/yellow-rules.n3');
+        // let data = await get('test/contrast/yellow-goal.n3');
+        // let input = await contrast(rules, data, {});
 
+        // let output = await new SimplePrinter().print(input);
         let output = await new CopdPrinter().print(input, 'test/copd.n3');
 
         // - (test: ensure there are inferences to begin with)
@@ -45,7 +44,7 @@
         // console.log("out\n", out);
 
         // console.log("input:\n", input);
-        // console.log("output:\n", output);
+        console.log("output:\n", output);
 
         $('#out').html(output);
     </script>
