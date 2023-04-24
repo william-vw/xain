@@ -14,6 +14,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix string: <http://www.w3.org/2000/10/swap/string#> .
 @prefix x: <http://wvw.org/xai#> .
+@prefix xmath: <http://wvw.org/xai/swap/math#> .
 @base <http://wvw.org/xai#> .
 
 
@@ -24,7 +25,7 @@
 }
 => 
 {
-   ?i a x:Node
+   ?i a x:Node 
 } .
 
 # propagate x:Node
@@ -43,7 +44,7 @@
 {
    ?x!rdf:type list:in ( r:Fact r:Extraction ) .
    # (make sure they're relevant to an inference)
-   ?y!r:evidence list:member ?x
+   ?y!r:evidence list:member ?x 
 }
 => 
 {
@@ -67,4 +68,62 @@
 => 
 {
    ?i a x:RootNode 
+} .
+
+
+# TODO find a way to avoid the same (expensive) check twice
+# or shenanigans like "_:t log:notIncludes { ?n x:evidence .. }"
+
+#
+{
+   ?n x:intermEvidence ?support .
+   ?n x:mergeGives ?f .
+   ?f log:includes 
+   {
+       ?y math:greaterThan ?a .
+       ?y math:lessThan ?b .
+   } .
+   # "T1" log:trace ( ?n ?f ) .
+}
+=> 
+{
+   _:b1 a x:Leaf ;
+       x:gives ?f .
+   ?n x:evidence ( _:b1 ) 
+} .
+
+
+#
+{
+   ?n x:intermEvidence ?support .
+   ?n x:mergeGives ?f .
+   ?f log:notIncludes 
+   {
+       ?y math:greaterThan ?a .
+       ?y math:lessThan ?b .
+   } .
+   # "T2" log:trace ( ?n ?f ) .
+}
+=> 
+{
+   ?n x:evidence ?support 
+} .
+
+
+#
+{
+   ?n x:mergeGives ?f 
+}
+<= 
+{
+   ?n x:intermEvidence ?support .
+   (
+       ?t
+       {
+           ?support list:member ?m .
+           ?m x:gives ?t 
+       }
+       ?ts
+   ) log:collectAllIn _:t .
+   ?ts log:conjunction ?f .
 } .

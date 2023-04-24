@@ -46,6 +46,5 @@
 }
 =>
 {
-   ?n x:evidence ?support 
+   ?n x:intermEvidence ?support 
 } .
-

@@ -1,5 +1,5 @@
 # Processed by EYE v3.20.10 (2023-04-20)
-# eye --nope --n3 test/contrast/yellow-inv-interm.n3 print/describe.n3 print/visual/describe.n3 print/visual/collect.n3 print/visual/copd/collect.n3 test/copd.n3 --query test/query/query_test.n3
+# eye --nope --n3 test/contrast/yellow-inv-interm.n3 print/describe.n3 print/visual/describe.n3 print/visual/collect.n3 print/visual/copd/collect.n3 test/copd.n3 print/visual/query.n3 print/visual/copd/query.n3 --pass-only-new
 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
@@ -15,20 +15,466 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
 @prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2247905493297217998#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/1359796500363909722#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 @prefix dc: <http://purl.org/dc/terms/>.
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix xmath: <http://wvw.org/xai/swap/math#>.
 
-<http://eyereasoner.github.io/.well-known/genid/3960037565168032064#lemma6> <file:///Users/wvw/git/n3/eye-js/explain/test/query/query_test.n3#out> "<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlem amount</span></span><h5>\n         </div>\n         <p class=\"card-content\">Phlem Amount. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n".
-<http://eyereasoner.github.io/.well-known/genid/3960037565168032064#lemma8> <file:///Users/wvw/git/n3/eye-js/explain/test/query/query_test.n3#out> "<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>colored phlem</span></span><h5>\n         </div>\n         <p class=\"card-content\">Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n".
-<http://eyereasoner.github.io/.well-known/genid/3960037565168032064#lemma10> <file:///Users/wvw/git/n3/eye-js/explain/test/query/query_test.n3#out> "<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>swollen ankle</span></span><h5>\n         </div>\n         <p class=\"card-content\">Swollen Ankle. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n".
-<http://eyereasoner.github.io/.well-known/genid/3960037565168032064#lemma12> <file:///Users/wvw/git/n3/eye-js/explain/test/query/query_test.n3#out> "<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-face-tongue-sweat card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>activity exertion</span></span><h5>\n         </div>\n         <p class=\"card-content\">High levels of exertion when doing activities is a known factor for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n".
-<http://eyereasoner.github.io/.well-known/genid/3960037565168032064#lemma14> <file:///Users/wvw/git/n3/eye-js/explain/test/query/query_test.n3#out> "<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>phlem amount</span> between 5 and 8</span><h5>\n         </div>\n         <p class=\"card-content\">Phlem Amount Value. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n".
-<http://eyereasoner.github.io/.well-known/genid/3960037565168032064#lemma16> <file:///Users/wvw/git/n3/eye-js/explain/test/query/query_test.n3#out> "<div class=\"card rounded-0 border-0 mb-0 bg-section\">\n   <div class=\"row g-0 text-white\">\n      <div class=\"col-sm-12\">\n         <h5 class=\"m-3\">You are in:<h5>\n      </div>\n   </div>\n</div>\n\n<div class=\"card rounded-0 border-0 bg-white\">\n   <div class=\"row g-0 text-orange\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-exclamation-circle card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title pb-1 zone\">yellow zone</h5>\n            <p class=\"card-text mb-0 mt-1 zone-text\">This means you should follow your action plan immediately. If your symptoms don't improve after 48 hours, seek medical care immediately.</p>\n         </div>\n      </div>\n   </div>\n</div>\n\n<div class=\"card rounded-0 border-0 my-0 bg-expl\">\n   <div class=\"row g-0\">\n      <div class=\"col-sm-12\">\n         <h5 class=\"m-3 text-white\">Because you have:<h5>\n      </div>\n   </div>\n</div>".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#proof> x:gives {
+    :patientA :hasPhlemAmount :Moderate.
+    :patientA :hasColoredPhlem true.
+    :patientA :hasSwollenAnkle true.
+    :patientA :hasActivityExertion :Moderate.
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 xmath:greaterThan 5 .
+    var:x_0 xmath:lessThan 8.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma5> x:gives {
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 xmath:greaterThan 5 .
+    var:x_0 xmath:lessThan 8.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma7> x:gives {
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma9> x:gives {
+    {
+        var:x_0 :hasColoredPhlem true.
+    } => {
+        var:x_0 :hasColoredPhlem true.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma11> x:gives {
+    {
+        var:x_0 :hasSwollenAnkle true.
+    } => {
+        var:x_0 :hasSwollenAnkle true.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma13> x:gives {
+    {
+        var:x_0 :hasActivityExertion :Moderate.
+    } => {
+        var:x_0 :hasActivityExertion :Moderate.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma14> x:gives {
+    :patientA :hasPhlemAmountValue var:x_0.
+    var:x_0 xmath:greaterThan 5 .
+    var:x_0 xmath:lessThan 8.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma15> x:gives {
+    {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 xmath:greaterThan 5 .
+        var:x_1 xmath:lessThan 8.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 xmath:greaterThan 5 .
+        var:x_1 xmath:lessThan 8.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma17> x:gives {
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma18> x:gives {
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasColoredPhlem true.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma19> x:gives {
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasSwollenAnkle true.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma20> x:gives {
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasActivityExertion :Moderate.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma21> x:gives {
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 xmath:greaterThan 5 .
+        var:x_1 xmath:lessThan 8.
+    }.
+}.
+{
+    :patientA :hasPhlemAmount :Moderate.
+} x:term :patientA.
+{
+    :patientA :hasPhlemAmount :Moderate.
+} x:term :hasPhlemAmount.
+{
+    :patientA :hasPhlemAmount :Moderate.
+} x:term :Moderate.
+{
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+} x:term {
+    var:x_0 :hasPhlemAmount :Moderate.
+}.
+{
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+} x:term log:implies.
+{
+    {
+        var:x_0 :hasColoredPhlem true.
+    } => {
+        var:x_0 :hasColoredPhlem true.
+    }.
+} x:term {
+    var:x_0 :hasColoredPhlem true.
+}.
+{
+    {
+        var:x_0 :hasColoredPhlem true.
+    } => {
+        var:x_0 :hasColoredPhlem true.
+    }.
+} x:term log:implies.
+{
+    {
+        var:x_0 :hasSwollenAnkle true.
+    } => {
+        var:x_0 :hasSwollenAnkle true.
+    }.
+} x:term {
+    var:x_0 :hasSwollenAnkle true.
+}.
+{
+    {
+        var:x_0 :hasSwollenAnkle true.
+    } => {
+        var:x_0 :hasSwollenAnkle true.
+    }.
+} x:term log:implies.
+{
+    {
+        var:x_0 :hasActivityExertion :Moderate.
+    } => {
+        var:x_0 :hasActivityExertion :Moderate.
+    }.
+} x:term {
+    var:x_0 :hasActivityExertion :Moderate.
+}.
+{
+    {
+        var:x_0 :hasActivityExertion :Moderate.
+    } => {
+        var:x_0 :hasActivityExertion :Moderate.
+    }.
+} x:term log:implies.
+{
+    {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 xmath:greaterThan 5 .
+        var:x_1 xmath:lessThan 8.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 xmath:greaterThan 5 .
+        var:x_1 xmath:lessThan 8.
+    }.
+} x:term {
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 xmath:greaterThan 5 .
+    var:x_1 xmath:lessThan 8.
+}.
+{
+    {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 xmath:greaterThan 5 .
+        var:x_1 xmath:lessThan 8.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 xmath:greaterThan 5 .
+        var:x_1 xmath:lessThan 8.
+    }.
+} x:term log:implies.
+{
+    :patientA :isStratified :YellowZone.
+} x:term :patientA.
+{
+    :patientA :isStratified :YellowZone.
+} x:term :isStratified.
+{
+    :patientA :isStratified :YellowZone.
+} x:term :YellowZone.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+} x:term {
+    var:x_0 :isStratified :YellowZone.
+}.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+} x:term log:implies.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasPhlemAmount :Moderate.
+    }.
+} x:term {
+    var:x_0 :hasPhlemAmount :Moderate.
+}.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasColoredPhlem true.
+    }.
+} x:term {
+    var:x_0 :isStratified :YellowZone.
+}.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasColoredPhlem true.
+    }.
+} x:term log:implies.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasColoredPhlem true.
+    }.
+} x:term {
+    var:x_0 :hasColoredPhlem true.
+}.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasSwollenAnkle true.
+    }.
+} x:term {
+    var:x_0 :isStratified :YellowZone.
+}.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasSwollenAnkle true.
+    }.
+} x:term log:implies.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasSwollenAnkle true.
+    }.
+} x:term {
+    var:x_0 :hasSwollenAnkle true.
+}.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasActivityExertion :Moderate.
+    }.
+} x:term {
+    var:x_0 :isStratified :YellowZone.
+}.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasActivityExertion :Moderate.
+    }.
+} x:term log:implies.
+{
+    {
+        var:x_0 :isStratified :YellowZone.
+    } => {
+        var:x_0 :hasActivityExertion :Moderate.
+    }.
+} x:term {
+    var:x_0 :hasActivityExertion :Moderate.
+}.
+{
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 xmath:greaterThan 5 .
+        var:x_1 xmath:lessThan 8.
+    }.
+} x:term {
+    var:x_0 :hasPhlemAmount :Moderate.
+}.
+{
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 xmath:greaterThan 5 .
+        var:x_1 xmath:lessThan 8.
+    }.
+} x:term log:implies.
+{
+    {
+        var:x_0 :hasPhlemAmount :Moderate.
+    } => {
+        var:x_0 :hasPhlemAmountValue var:x_1.
+        var:x_1 xmath:greaterThan 5 .
+        var:x_1 xmath:lessThan 8.
+    }.
+} x:term {
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 xmath:greaterThan 5 .
+    var:x_1 xmath:lessThan 8.
+}.
+{
+    var:x_0 :hasPhlemAmount :Moderate.
+} x:term var:x_0.
+{
+    var:x_0 :hasPhlemAmount :Moderate.
+} x:term :hasPhlemAmount.
+{
+    var:x_0 :hasPhlemAmount :Moderate.
+} x:term :Moderate.
+{
+    var:x_0 :hasColoredPhlem true.
+} x:term var:x_0.
+{
+    var:x_0 :hasColoredPhlem true.
+} x:term :hasColoredPhlem.
+{
+    var:x_0 :hasColoredPhlem true.
+} x:term true.
+{
+    var:x_0 :hasSwollenAnkle true.
+} x:term var:x_0.
+{
+    var:x_0 :hasSwollenAnkle true.
+} x:term :hasSwollenAnkle.
+{
+    var:x_0 :hasSwollenAnkle true.
+} x:term true.
+{
+    var:x_0 :hasActivityExertion :Moderate.
+} x:term var:x_0.
+{
+    var:x_0 :hasActivityExertion :Moderate.
+} x:term :hasActivityExertion.
+{
+    var:x_0 :hasActivityExertion :Moderate.
+} x:term :Moderate.
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 xmath:greaterThan 5 .
+    var:x_1 xmath:lessThan 8.
+} x:term var:x_0.
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 xmath:greaterThan 5 .
+    var:x_1 xmath:lessThan 8.
+} x:term :hasPhlemAmountValue.
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 xmath:greaterThan 5 .
+    var:x_1 xmath:lessThan 8.
+} x:term var:x_1.
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 xmath:greaterThan 5 .
+    var:x_1 xmath:lessThan 8.
+} x:term xmath:greaterThan.
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 xmath:greaterThan 5 .
+    var:x_1 xmath:lessThan 8.
+} x:term 5 .
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 xmath:greaterThan 5 .
+    var:x_1 xmath:lessThan 8.
+} x:term xmath:lessThan.
+{
+    var:x_0 :hasPhlemAmountValue var:x_1.
+    var:x_1 xmath:greaterThan 5 .
+    var:x_1 xmath:lessThan 8.
+} x:term 8 .
+{
+    var:x_0 :isStratified :YellowZone.
+} x:term var:x_0.
+{
+    var:x_0 :isStratified :YellowZone.
+} x:term :isStratified.
+{
+    var:x_0 :isStratified :YellowZone.
+} x:term :YellowZone.
+":hasPhlemAmountValue" x:description "phlem amount".
+"true" x:description true.
+"5" x:description 5 .
+"8" x:description 8 .
+":patientA" x:description "".
+":hasPhlemAmount" x:description "phlem amount".
+":Moderate" x:description "moderate".
+"log:implies" x:description "".
+":isStratified" x:description "stratified".
+":YellowZone" x:description "yellow zone".
+"var:x_0" x:description "".
+":hasColoredPhlem" x:description "colored phlem".
+":hasSwollenAnkle" x:description "swollen ankle".
+":hasActivityExertion" x:description "activity exertion".
+"var:x_1" x:description "".
+"xmath:greaterThan" x:description "than".
+"xmath:lessThan" x:description "than".
+"var:x_0 :hasPhlemAmount :Moderate" x:description "<span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlem amount</span></span>".
+"var:x_0 :hasColoredPhlem true" x:description "<span class='triple'><span class='predicate'>colored phlem</span></span>".
+"var:x_0 :hasSwollenAnkle true" x:description "<span class='triple'><span class='predicate'>swollen ankle</span></span>".
+"var:x_0 :hasActivityExertion :Moderate" x:description "<span class='triple'><span class='object'>moderate</span> <span class='predicate'>activity exertion</span></span>".
+"var:x_0 :hasPhlemAmountValue var:x_1.\nvar:x_1 xmath:greaterThan 5 .\nvar:x_1 xmath:lessThan 8" x:description "<span class='triple'><span class='predicate'>phlem amount</span> between 5 and 8</span>".
+"var:x_0 :isStratified :YellowZone" x:description "<span class='triple'><span class='object'>yellow zone</span> <span class='predicate'>stratified</span></span>".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma16> x:conclusionStr "<span class='triple'><span class='object'>yellow zone</span> <span class='predicate'>stratified</span></span>".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma6> x:conclusionStr "<span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlem amount</span></span>".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma14> x:conclusionStr "<span class='triple'><span class='predicate'>phlem amount</span> between 5 and 8</span>".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma8> x:conclusionStr "<span class='triple'><span class='predicate'>colored phlem</span></span>".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma10> x:conclusionStr "<span class='triple'><span class='predicate'>swollen ankle</span></span>".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma12> x:conclusionStr "<span class='triple'><span class='object'>moderate</span> <span class='predicate'>activity exertion</span></span>".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma14> x:output "<li class='fact'><span class='triple'><span class='predicate'>phlem amount</span> between 5 and 8</span></li>".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma8> x:output "<li class='fact'><span class='triple'><span class='predicate'>colored phlem</span></span></li>".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma10> x:output "<li class='fact'><span class='triple'><span class='predicate'>swollen ankle</span></span></li>".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma12> x:output "<li class='fact'><span class='triple'><span class='object'>moderate</span> <span class='predicate'>activity exertion</span></span></li>".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma16> x:output "<div class=\"card rounded-0 border-0 mb-0 bg-section\">\n   <div class=\"row g-0 text-white\">\n      <div class=\"col-sm-12\">\n         <h5 class=\"m-3\">You are in:<h5>\n      </div>\n   </div>\n</div>\n\n<div class=\"card rounded-0 border-0 bg-white\">\n   <div class=\"row g-0 text-orange\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-exclamation-circle card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title pb-1 zone\">yellow zone</h5>\n            <p class=\"card-text mb-0 mt-1 zone-text\">This means you should follow your action plan immediately. If your symptoms don't improve after 48 hours, seek medical care immediately.</p>\n         </div>\n      </div>\n   </div>\n</div>\n\n\n<div class=\"card rounded-0 border-0 my-0 bg-expl\">\n   <div class=\"row g-0\">\n      <div class=\"col-sm-12\">\n         <h5 class=\"m-3 text-white\">Because you have:<h5>\n      </div>\n   </div>\n</div><div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlem amount</span></span><h5>\n         </div>\n         <p class=\"card-content\">Phlem Amount. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>colored phlem</span></span><h5>\n         </div>\n         <p class=\"card-content\">Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>swollen ankle</span></span><h5>\n         </div>\n         <p class=\"card-content\">Swollen Ankle. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-face-tongue-sweat card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>activity exertion</span></span><h5>\n         </div>\n         <p class=\"card-content\">High levels of exertion when doing activities is a known factor for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n".
+<http://eyereasoner.github.io/.well-known/genid/1072840620454867818#lemma6> x:output "<div class=\"card rounded-0 border-0 mb-0 bg-section\">\n   <div class=\"row g-0 text-white\">\n      <div class=\"col-sm-12\">\n         <h5 class=\"m-3\">Risk factor:<h5>\n      </div>\n   </div>\n</div>\n\n<div class=\"card rounded-0 border-0 bg-white\">\n   <div class=\"row g-0 align-items-center text-section\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h3 class=\"card-title fw-bold\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlem amount</span></span><h3>\n         </div>\n      </div>\n   </div>\n</div>\n\n<div class=\"card rounded-0 border-0 my-0 bg-expl\">\n   <div class=\"row g-0\">\n      <div class=\"col-sm-12\">\n         <h5 class=\"m-3 text-white\">Relation with COPD:<h5>\n      </div>\n   </div>\n</div><div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>phlem amount</span> between 5 and 8</span><h5>\n         </div>\n         <p class=\"card-content\">Phlem Amount Value. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n".
+1 log:outputString "<div class=\"py-0 bg-white\">\n\t<div class=\"container-fluid mx-0 px-0\"><div class=\"card rounded-0 border-0 mb-0 bg-section\">\n   <div class=\"row g-0 text-white\">\n      <div class=\"col-sm-12\">\n         <h5 class=\"m-3\">You are in:<h5>\n      </div>\n   </div>\n</div>\n\n<div class=\"card rounded-0 border-0 bg-white\">\n   <div class=\"row g-0 text-orange\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-exclamation-circle card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title pb-1 zone\">yellow zone</h5>\n            <p class=\"card-text mb-0 mt-1 zone-text\">This means you should follow your action plan immediately. If your symptoms don't improve after 48 hours, seek medical care immediately.</p>\n         </div>\n      </div>\n   </div>\n</div>\n\n\n<div class=\"card rounded-0 border-0 my-0 bg-expl\">\n   <div class=\"row g-0\">\n      <div class=\"col-sm-12\">\n         <h5 class=\"m-3 text-white\">Because you have:<h5>\n      </div>\n   </div>\n</div><div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlem amount</span></span><h5>\n         </div>\n         <p class=\"card-content\">Phlem Amount. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>colored phlem</span></span><h5>\n         </div>\n         <p class=\"card-content\">Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>swollen ankle</span></span><h5>\n         </div>\n         <p class=\"card-content\">Swollen Ankle. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-face-tongue-sweat card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>activity exertion</span></span><h5>\n         </div>\n         <p class=\"card-content\">High levels of exertion when doing activities is a known factor for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n<div class=\"card rounded-0 border-0 mb-0 bg-section\">\n   <div class=\"row g-0 text-white\">\n      <div class=\"col-sm-12\">\n         <h5 class=\"m-3\">Risk factor:<h5>\n      </div>\n   </div>\n</div>\n\n<div class=\"card rounded-0 border-0 bg-white\">\n   <div class=\"row g-0 align-items-center text-section\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h3 class=\"card-title fw-bold\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlem amount</span></span><h3>\n         </div>\n      </div>\n   </div>\n</div>\n\n<div class=\"card rounded-0 border-0 my-0 bg-expl\">\n   <div class=\"row g-0\">\n      <div class=\"col-sm-12\">\n         <h5 class=\"m-3 text-white\">Relation with COPD:<h5>\n      </div>\n   </div>\n</div><div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\"\n      onclick=\"location.href='xyz';\"\n      style=\"cursor: pointer\">\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>phlem amount</span> between 5 and 8</span><h5>\n         </div>\n         <p class=\"card-content\">Phlem Amount Value. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n<div class=\"fixed-bottom bg-section\">\n\t\t\t<div class=\"row g-0 text-white\">\n\t\t\t\t<div class=\"col-3 text-center back_btn\" onclick=\"history.back()\">\n\t\t\t\t\t<i class=\"fas fa-arrow-left card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t<i class=\"fas fa-home card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t<i class=\"fas fa-capsules card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center\" onclick=\"location.href='./';\">\n\t\t\t\t\t<i class=\"fas fa-bars card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>".
 
-# 2023-04-24T11:51:04.809Z in=290 out=6 ent=114 step=725 brake=5 inf=1377309 sec=0.106 inf/sec=12993481
+# 2023-04-24T22:36:37.994Z in=296 out=102 ent=109 step=1434 brake=9 inf=2142405 sec=0.157 inf/sec=13645892
 # ENDS
 

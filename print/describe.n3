@@ -30,7 +30,7 @@
    ( ?lcGroups " " ) string:join ?exp 
 } .
 
-#
+# TODO narrow this down to only nodes
 {
    ?x x:gives ?value . # formula
    ?x!rdf:type list:in ( x:Node r:Extraction r:Fact ) .

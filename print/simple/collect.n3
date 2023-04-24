@@ -17,7 +17,7 @@
 #
 {
    ?x a x:Leaf ;
-        x:conclusionStr ?str .
+       x:conclusionStr ?str .
    ( "<li class='fact'>" ?str "</li>" ) string:concatenation ?html .
 }
 => 
@@ -35,11 +35,14 @@
        {
            ?evidence list:in ?evidences2 ;
                x:output ?li .
+         #   "T0" log:trace ( ?evidence ?li ) .
        }
        ?lis
    ) log:collectAllIn _:t .
    ?evidences2 list:length ?l .
-   ?lis list:length ?l .
+   ?lis list:length ?l2 .
+   # "T1" log:trace ( ?inf ?l ?l2 ?evidences2 ) .
+   ?l math:equalTo ?l2 .
    ?lis string:concatenation ?lisStr .
    #
    ?inf x:conclusionStr ?label .
@@ -54,7 +57,7 @@
    ( "<li class='inf'>" ?label2 " "
 			# "<span class='showHideRule'>(show rule)</span>"
 			# "<div class='ruleInfo'>" ?ruleInfo "</div>"
-   "<ul>" ?lisStr "</ul>" "</li>" ) string:concatenation ?html .
+"<ul>" ?lisStr "</ul>" "</li>" ) string:concatenation ?html .
 }
 => 
 {

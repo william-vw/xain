@@ -145,7 +145,7 @@
        ?s ?p ?o 
    } .
    ?inf x:conclusionStr ?descr .
-           #
+   #
    ?p x:explanation [
        # x:object ?o ;
        x:icon ?icon ;

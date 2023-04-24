@@ -57,11 +57,14 @@
    (
        {
            ?f log:equalTo 
+           # TODO too bad we can't restrict this any further
            {
                ?x ?p ?y .
-               ?y xmath:greaterThan ?l ;
-                   xmath:lessThan ?u 
-           }
+               ?y ?gt ?l ;
+                   ?lt ?u .
+           } .
+           ?gt log:localName "greaterThan" .
+           ?lt log:localName "lessThan" .
        }
        {
            ?p!log:localN3String x:description ?pd .

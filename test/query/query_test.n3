@@ -14,9 +14,18 @@
 
 
 {
-   ?x x:collectLabel ?l
+   ?x x:recommLabel ?l
 }
 => 
 {
-   ?x :out ?l
+   ?x :recomm ?l
+} .
+
+
+{
+   ?x x:reasonLabel ?l
+}
+=> 
+{
+   ?x :reason ?l
 } .

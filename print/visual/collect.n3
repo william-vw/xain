@@ -28,8 +28,8 @@
 
 #
 {
-   ?inf a x:Node ;
-       x:evidence ?evidences .
+   ?inf a x:Node .
+   ?inf x:evidence ?evidences .
    # gather evidences & their strings
    ?evidences list:removeDuplicates ?evidences2 .
    (
