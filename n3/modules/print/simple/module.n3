@@ -3,14 +3,14 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix x: <http://wvw.org/xai#> .
 
+:proof a x:AnnotatedProof ;
+    rdfs:comment "output from a 'proof' module" .
+#
+:output mod:path "n3/tmp/print-simple.html" .
+
 :print_simple a mod:Module ;
-   mod:parameters ( [ id :proof
-        a x:AnnotatedProof ;
-        rdfs:comment "output from a 'proof' module" 
-   ] ) ;
-   mod:returns [ id :output
-        mod:path "n3/tmp/print-simple.html" 
-   ] ;
+   mod:parameters ( :proof ) ;
+   mod:returns :output ;
    #
    mod:steps ( [
        rdfs:comment "generate simple HTML" ;

@@ -4,98 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <script src="lib/rdflib/rdflib.min.js"></script>
+    <script src="https://eyereasoner.github.io/eye-js/latest/index.js"></script>
+    <script src="lib/aux.js"></script>
     <script src="lib/mod4n3.js"></script>
 </head>
 
 <body>
     <script type="module">
-        const rdf = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
-        const rdfs = $rdf.Namespace("http://www.w3.org/2000/01/rdf-schema#");
-        const mod = $rdf.Namespace("http://www.w3.org/2000/10/swap/module#");
-        const x = $rdf.Namespace("http://wvw.org/xai");
+        let reasoner = new EyeReasoner();
 
-        $rdf.NamedNode.prototype.localName = function () {
-            let uri = this.uri;
-            let idx = uri.indexOf('#');
-            if (idx == -1)
-                idx = uri.indexOf('/');
-            return uri.slice(idx + 1);
-        }
+        // let path = "http://localhost:8000/n3/modules/proof/trace/default/module.n3";
+        let path = "http://localhost:8000/n3/modules/run.n3"
 
-        class Module {
-
-            constructor(path) {
-                this.path = path;
-            }
-
-            async init() {
-                this.store = $rdf.graph();
-
-                let fetcher = new $rdf.Fetcher(this.store, 5000);
-                await fetcher.load(this.path)
-            }
-
-            async run(params) {
-                this.params = {};
-                for (let key in params)
-                    this.params[key] = await this.resolvePath(params[key]);
-
-                this.outputs = {};
-
-                let module = this.store.any(undefined, rdf("type"), mod("Module"))
-                console.log("module", module);
-
-                let steps = this.store.any(module, mod("steps"));
-                for (let step of steps.elements)
-                    await this.runStep(step);
-            }
-
-            async runStep(step) {
-                console.log("step", step);
-                let target = this.store.any(step, mod("target")).localName();
-                console.log("target", target);
-
-                this.inputs = [];
-
-                let inputs = this.store.any(step, mod("input"));
-                for (let input of inputs.elements)
-                    this.inputs.push(await this.resolve(input));
-
-                console.log("# inputs:", this.inputs.length);
-
-                let query = this.store.any(step, mod("query"));
-                this.query = (query ? this.resolve(query) : null);
-            }
-
-            async resolve(ref) {
-                var resolved;
-                if (ref.uri in this.params)
-                    resolved = this.params[ref.uri];
-                else if (ref.uri in this.outputs)
-                    resolved = this.outputs[ref.uri];
-                else {
-                    let path = this.store.any(ref, mod("path"));
-                    if (!path || path.termType != 'Literal')
-                        throw `cannot resolve: ${ref}`;
-                    else
-                        resolved = await this.resolvePath(path.value);
-                }
-                return resolved;
-            }
-
-            async resolvePath(ref) {
-                return await (await fetch(path)).text();
-            }
-        }
-
-        let path = "http://localhost:8000/n3/modules/proof/trace/default/module.n3";
-        let module = new Module(path);
+        let module = new Module(path, reasoner);
         await module.init();
 
-        module.run({
-            'http://wvw.org/xai#rules': "http://localhost:8000/n3/test/yellow-rules.n3",
-            'http://wvw.org/xai#data': "http://localhost:8000/n3/test/yellow1-data.n3",
-        });
+        let output = await module.run([
+            { path: "http://localhost:8000/n3/test/yellow-rules.n3" },
+            { path: "http://localhost:8000/n3/test/yellow1-data.n3" }
+        ]);
+        console.log(output);
     </script>
 </body>
 

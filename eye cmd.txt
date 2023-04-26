@@ -1,3 +1,5 @@
+eye --nope --n3 n3/test/yellow1-proof.n3 n3/modules/proof/trace/aux_trace.n3 n3/modules/proof/trace/default/aux_default.n3 n3/modules/print/describe.n3 n3/modules/print/simple/describe.n3 n3/modules/print/simple/collect.n3 --query n3/modules/print/simple/query.n3 --pass-only-new
+
 eye --strings --n3 test/yellow1-proof.n3 aux/trace/aux_trace.n3 aux/trace/aggr/aux_aggr.n3 aux/trace/aggr/aggregate_evidence.n3 print/describe.n3 print/simple/describe.n3 print/simple/collect.n3 --query print/simple/query.n3
 eye --strings --n3 test/yellow1-proof.n3 aux/trace/aux_trace.n3 aux/trace/aggr/aux_aggr.n3 aux/trace/aggr/aggregate_evidence.n3 print/describe.n3 print/visual/describe.n3 print/visual/collect.n3 print/visual/copd/collect.n3 test/copd.n3 print/visual/query.n3 print/visual/copd/query.n3
 
