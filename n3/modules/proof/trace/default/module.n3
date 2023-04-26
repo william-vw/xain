@@ -1,0 +1,43 @@
+@prefix : <http://wvw.org/xai#> .
+@prefix mod: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix x: <http://wvw.org/xai#> .
+
+:default_trace a mod:Module ;
+   mod:parameters ( [ id :rules
+        rdfs:comment "ruleset" 
+   ] [ id :data
+        rdfs:comment "dataset" 
+   ] ) ;
+   mod:returns [ id :output
+        a x:AnnotatedProof ;
+        mod:path "n3/tmp/proof-default-aux.n3" 
+   ] ;
+   #
+   mod:steps ( [
+       rdfs:comment "get heads of rules" ;
+       mod:target mod:deductions ;
+       mod:input ( :rules [
+           mod:path "n3/modules/proof/query_heads.n3" 
+       ] ) ;
+       mod:output [ id :step1_output
+            mod:path "n3/tmp/rules-default-heads.n3" 
+       ] 
+   ] [
+       rdfs:comment "prove the rule heads based on the given data and rules" ;
+       mod:target mod:proof ;
+       mod:input ( :data :rules ) ;
+       mod:query :step1_output ;
+       mod:output [ id :step2_output
+            mod:path "n3/tmp/proof-default.n3" 
+       ] 
+   ] [
+       rdfs:comment "annotate the generated proof" ;
+       mod:target mod:deductions ;
+       mod:input ( :step2_output [
+           mod:path "n3/modules/proof/trace/aux_trace.n3" 
+       ] [
+           mod:path "n3/modules/proof/trace/default/aux_default.n3" 
+       ] ) ;
+       mod:output :output 
+   ] ) .

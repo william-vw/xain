@@ -1,0 +1,30 @@
+@prefix : <http://wvw.org/xai#> .
+@prefix mod: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix x: <http://wvw.org/xai#> .
+
+:contrast_run a mod:Run ;
+   mod:parameters ( [ id :rules
+        mod:path "n3/test/yellow-rules.n3" 
+   ] [ id :goal
+        mod:path "n3/test/contrast/yellow-goal.n3" 
+   ] [ id :ontology
+        mod:path "n3/test/copd.n3" 
+   ] ) ;
+   mod:returns :html ;
+   #
+   mod:steps ( [
+       mod:target [
+           a mod:Module ;
+           mod:path "n3/modules/proof/contrast/module.n3" ;
+       ] ;
+       mod:input ( :rules :goal ) ;
+       mod:output :annotated_proof 
+   ] [
+       mod:target [
+           a mod:Module ;
+           mod:path "n3/modules/print/visual/module.n3" 
+       ] ;
+       mod:input ( :annotated_proof :ontology ) ;
+       mod:output :html 
+   ] ) .

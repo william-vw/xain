@@ -1,0 +1,35 @@
+@prefix : <http://wvw.org/xai#> .
+@prefix mod: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix x: <http://wvw.org/xai#> .
+
+:print_simple a mod:Module ;
+   mod:parameters ( [ id :proof
+        a x:AnnotatedProof ;
+        rdfs:comment "output from a 'proof' module" 
+   ] ) ;
+   mod:returns [ id :output
+        mod:path "n3/tmp/print-simple.html" 
+   ] ;
+   #
+   mod:steps ( [
+       rdfs:comment "generate simple HTML" ;
+       mod:target mod:strings ;
+       mod:input ( :proof [
+           mod:path "n3/modules/print/describe.n3" 
+       ] [
+           mod:path "n3/modules/print/simple/describe.n3" 
+       ] [
+           mod:path "n3/modules/print/simple/collect.n3" 
+       ] ) ;
+       mod:query [
+           mod:path "n3/modules/print/simple/query.n3" 
+       ] ;
+       mod:output :output 
+   ] ) ;
+   #
+   mod:checks ( [
+       mod:path "n3/modules/print/checks/describe.n3" 
+   ] [
+       mod:path "n3/modules/print/checks/collect.n3 " 
+   ] ) .
