@@ -1,18 +1,20 @@
 @prefix : <http://wvw.org/xai#> .
-@prefix mod: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix mod: <http://www.w3.org/2000/10/swap/module#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix x: <http://wvw.org/xai#> .
 
+:rules rdfs:comment "ruleset" .
+:data rdfs:comment "dataset" .
+#
+:output a x:AnnotatedProof ;
+    mod:path "n3/tmp/proof-default-aux.n3" .
+#
+:step1_output mod:path "n3/tmp/rules-default-heads.n3" .
+:step2_output mod:path "n3/tmp/proof-default.n3" .
+#
 :default_trace a mod:Module ;
-   mod:parameters ( [ id :rules
-        rdfs:comment "ruleset" 
-   ] [ id :data
-        rdfs:comment "dataset" 
-   ] ) ;
-   mod:returns [ id :output
-        a x:AnnotatedProof ;
-        mod:path "n3/tmp/proof-default-aux.n3" 
-   ] ;
+   mod:parameters ( :rules :data ) ;
+   mod:returns :output ;
    #
    mod:steps ( [
        rdfs:comment "get heads of rules" ;
@@ -20,17 +22,13 @@
        mod:input ( :rules [
            mod:path "n3/modules/proof/query_heads.n3" 
        ] ) ;
-       mod:output [ id :step1_output
-            mod:path "n3/tmp/rules-default-heads.n3" 
-       ] 
+       mod:output :step1_output
    ] [
        rdfs:comment "prove the rule heads based on the given data and rules" ;
        mod:target mod:proof ;
        mod:input ( :data :rules ) ;
        mod:query :step1_output ;
-       mod:output [ id :step2_output
-            mod:path "n3/tmp/proof-default.n3" 
-       ] 
+       mod:output :step2_output
    ] [
        rdfs:comment "annotate the generated proof" ;
        mod:target mod:deductions ;
