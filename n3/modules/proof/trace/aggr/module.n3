@@ -1,0 +1,51 @@
+@prefix : <http://wvw.org/xai#> .
+@prefix mod: <http://www.w3.org/2000/10/swap/module#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix x: <http://wvw.org/xai#> .
+
+:rules rdfs:comment "ruleset" .
+:data rdfs:comment "dataset" .
+#
+:step1_out mod:path "n3/tmp/rules-disting.n3" .
+:step2_out mod:path "n3/tmp/rules-disting-heads.n3" .
+:step3_out mod:path "n3/tmp/proof-disting.n3" .
+#
+:output a x:AnnotatedProof ;
+   mod:path "n3/tmp/proof-aggr-aux.n3" .
+#
+:trace_aggregated a mod:Module ;
+   mod:parameters ( :rules :data ) ;
+   mod:returns :output ;
+   #
+   mod:steps ( [
+       rdfs:comment "distinguish rule heads with same contents" ;
+       mod:target mod:deductions ;
+       mod:input ( :rules [
+           mod:path "n3/modules/proof/trace/aggr/distinguish_rules.n3" 
+       ] ) ;
+       mod:output :step1_out 
+   ] [
+       rdfs:comment "get rule heads of distinguished rules" ;
+       mod:target mod:deductions ;
+       mod:input ( [
+           mod:path "n3/modules/proof/query_heads.n3" 
+       ] :step1_out ) ;
+       mod:output :step2_out 
+   ] [
+       rdfs:comment "prove the rule heads, based on the given data and distinguished rules" ;
+       mod:target mod:proof ;
+       mod:input ( :data :step1_out ) ;
+       mod:query :step2_out ;
+       mod:output :step3_out
+   ] [
+       rdfs:comment "aggregate evidences with same initial rule head; annotate the generated proof" ;
+       mod:target mod:closure ;
+       mod:input ( :step3_out [
+           mod:path "n3/modules/proof/trace/aggr/aggregate_evidence.n3" 
+       ] [
+           mod:path "n3/modules/proof/trace/aux_trace.n3" 
+       ] [
+           mod:path "n3/modules/proof/trace/aggr/aux_aggr.n3" 
+       ] ) ;
+       mod:output :output 
+   ] ) .

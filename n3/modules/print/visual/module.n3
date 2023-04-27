@@ -1,0 +1,40 @@
+@prefix : <http://wvw.org/xai#> .
+@prefix mod: <http://www.w3.org/2000/10/swap/module#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix x: <http://wvw.org/xai#> .
+
+#
+:proof a x:AnnotatedProof ;
+   rdfs:comment "output from a 'proof' module" .
+:ontology rdfs:comment "OWL ontology with rdfs:labels, x:explanations with icons & summaries" .
+#
+:output mod:path "n3/tmp/print-visual.html" .
+#
+:print_visual a mod:Module ;
+   mod:parameters ( :proof :ontology ) ;
+   mod:returns :output ;
+   #
+   mod:steps ( [
+       rdfs:comment "generate visual HTML" ;
+       mod:target mod:strings ;
+       mod:input ( :proof :ontology [
+           mod:path "n3/modules/print/describe.n3" 
+       ] [
+           mod:path "n3/modules/print/visual/describe.n3" 
+       ] [
+           mod:path "n3/modules/print/visual/collect.n3" 
+       ] [
+           mod:path "n3/modules/print/visual/copd/collect.n3" 
+       ] [
+           mod:path "n3/modules/print/visual/query.n3" 
+       ] [
+           mod:path "n3/modules/print/visual/copd/query.n3" 
+       ] ) ;
+       mod:output :output 
+   ] ) ;
+   # 
+   mod:checks ( [
+       mod:path "n3/modules/print/checks/describe.n3" 
+   ] [
+       mod:path "n3/modules/print/checks/collect.n3 " 
+   ] ) .

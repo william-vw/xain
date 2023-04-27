@@ -1,0 +1,92 @@
+# Processed by EYE v3.20.10 (2023-04-20)
+# eye --n3 n3/modules/proof/query_heads.n3 n3/tmp/rules-inv.n3 --pass-only-new
+
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix x: <http://wvw.org/xai#>.
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix pml: <http://provenanceweb.org/ns/pml#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix xpl: <http://niche.cs.dal.ca/xpl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix var: <http://eyereasoner.github.io/var#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3486984909314575367#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+{
+    ?U_0 :hasPhlemAmount :Moderate.
+} => {
+    ?U_0 :hasPhlemAmount :Moderate.
+}.
+{
+    ?U_3 :hasColoredPhlem true.
+} => {
+    ?U_3 :hasColoredPhlem true.
+}.
+{
+    ?U_6 :hasSwollenAnkle true.
+} => {
+    ?U_6 :hasSwollenAnkle true.
+}.
+{
+    ?U_9 :hasActivityExertion :Moderate.
+} => {
+    ?U_9 :hasActivityExertion :Moderate.
+}.
+{
+    ?U_12 :hasCyanosis true.
+} => {
+    ?U_12 :hasCyanosis true.
+}.
+{
+    ?U_15 :hasChestPain true.
+} => {
+    ?U_15 :hasChestPain true.
+}.
+{
+    ?U_18 :hasActivityExertion :Severe.
+} => {
+    ?U_18 :hasActivityExertion :Severe.
+}.
+{
+    ?U_21 :hasCough :Severe.
+} => {
+    ?U_21 :hasCough :Severe.
+}.
+{
+    ?U_24 :hasLow02Saturation true.
+} => {
+    ?U_24 :hasLow02Saturation true.
+}.
+{
+    ?U_27 :hasFever :Severe.
+} => {
+    ?U_27 :hasFever :Severe.
+}.
+{
+    ?U_30 :hasConfusion true.
+} => {
+    ?U_30 :hasConfusion true.
+}.
+{
+    ?U_33 :hasPhlemAmountValue ?U_39.
+    ?U_39 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    ?U_39 <http://wvw.org/xai/swap/math#lessThan> 8.
+} => {
+    ?U_33 :hasPhlemAmountValue ?U_39.
+    ?U_39 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    ?U_39 <http://wvw.org/xai/swap/math#lessThan> 8.
+}.
+{
+    ?U_36 :hasHighHumidity true.
+} => {
+    ?U_36 :hasHighHumidity true.
+}.
+
+# 2023-04-27T13:45:41.332Z in=15 out=13 ent=13 step=41 brake=2 inf=59102 sec=0.038 inf/sec=1555316
+# ENDS
+

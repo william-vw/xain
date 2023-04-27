@@ -1,0 +1,15 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@base <http://wvw.org/xai#> .
+
+
+{
+   ?x => ?y .
+   ?x log:notIncludes 
+   {
+       ?a log:implies ?b 
+   } .
+}
+=> 
+{
+   ?y => ?y 
+} .

@@ -1,0 +1,45 @@
+# @alsoload ../../test/contrast/yellow-inv-interm.n3 describe.n3 collect.n3
+
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix pml: <http://provenanceweb.org/ns/pml#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
+@prefix x: <http://wvw.org/xai#> .
+@base <http://wvw.org/xai#> .
+
+
+{
+   (
+       ?root
+       {
+           ?root a x:RootNode ;
+               x:gives ?inf .
+       }
+       ?roots
+   ) log:collectAllIn ( ?ctx 5 ) .
+   ?roots list:removeDuplicates ?uniqueRoots .
+   ?uniqueRoots!list:length math:greaterThan 0 .
+   #
+   (
+       ?html
+       {
+           ?uniqueRoots list:member ?root .
+           ?root x:output ?html 
+       }
+       ?htmls
+   ) log:collectAllIn ( ?ctx 5 ) .
+   ?roots!list:length math:equalTo ?htmls!list:length .
+   ?htmls string:concatenation ?lis .
+#    ( "<html>" "<head>" "</head>" "<body><ul>" ?lis "</ul></body>" "</html>" ) string:concatenation ?doc .
+    ( "<ul>" ?lis "</ul>" ) string:concatenation ?div .
+}
+=> 
+{
+   1 log:outputString ?div 
+} .

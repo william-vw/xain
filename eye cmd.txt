@@ -1,13 +1,27 @@
-eye --strings --n3 test/yellow1-proof.n3 aux/trace/aux_trace.n3 aux/trace/aggr/aux_aggr.n3 aux/trace/aggr/aggregate_evidence.n3 print/describe.n3 print/simple/describe.n3 print/simple/collect.n3 --query print/simple/query.n3
-eye --strings --n3 test/yellow1-proof.n3 aux/trace/aux_trace.n3 aux/trace/aggr/aux_aggr.n3 aux/trace/aggr/aggregate_evidence.n3 print/describe.n3 print/visual/describe.n3 print/visual/collect.n3 print/visual/copd/collect.n3 test/copd.n3 print/visual/query.n3 print/visual/copd/query.n3
+- trace_default
+eye --n3 n3/modules/proof/query_heads.n3 n3/test/yellow-rules.n3 --pass-only-new > n3/tmp/rule-heads.n3
+eye --n3 n3/test/yellow-rules.n3 n3/test/yellow1-data.n3 --query n3/tmp/rule-heads.n3 > n3/tmp/proof.n3
+eye --nope --n3 n3/tmp/proof.n3 n3/modules/proof/trace/aux_trace.n3 n3/modules/proof/trace/default/aux_default.n3 --pass-all > n3/tmp/proof-annotated.n3
+
+- trace_aggr
+eye --nope --n3 n3/test/yellow-rules.n3 n3/modules/proof/trace/aggr/distinguish_rules.n3 --pass-only-new > n3/tmp/rules-disting.n3
+eye --n3 n3/modules/proof/query_heads.n3 n3/tmp/rules-disting.n3 --pass-only-new > n3/tmp/rule-heads.n3
+eye --n3 n3/tmp/rules-disting.n3 n3/test/yellow1-data.n3 --query n3/tmp/rule-heads.n3 > n3/tmp/proof.n3
+eye --nope --n3 n3/tmp/proof.n3 n3/modules/proof/trace/aggr/aggregate_evidence.n3 n3/modules/proof/trace/aux_trace.n3 n3/modules/proof/trace/aggr/aux_aggr.n3 --pass-all > n3/tmp/proof-annotated.n3
+
+- contrast
+eye --nope --n3 n3/modules/proof/contrast/invert_rules.n3 n3/test/yellow-rules.n3 --pass-only-new --quantify http://eyereasoner.github.io/var# > n3/tmp/rules-inv.n3
+eye --n3 n3/modules/proof/query_heads.n3 n3/tmp/rules-inv.n3 --pass-only-new > n3/tmp/rule-heads.n3
+eye --n3 n3/test/contrast/yellow-goal.n3 n3/tmp/rules-inv.n3 --query n3/tmp/rule-heads.n3 > n3/tmp/proof.n3
+eye --nope --n3 n3/tmp/proof.n3 n3/modules/proof/contrast/aux_inv.n3 --pass-all > n3/tmp/proof-annotated.n3
 
 
-
-eye --nope --n3 aux/contrast/invert_rules.n3 test/yellow-rules.n3 --pass-only-new --quantify http://eyereasoner.github.io/var# > test/contrast/yellow-rules-inv.n3
-eye --n3 aux/query_heads.n3 test/contrast/yellow-rules-inv.n3 --pass-only-new > test/contrast/yellow-rules-inv_heads.n3
-eye --n3 test/contrast/yellow-goal.n3 test/contrast/yellow-rules-inv.n3 --query test/contrast/yellow-rules-inv_heads.n3 > test/contrast/yellow-goal-proof.n3
-eye --nope --n3 test/contrast/yellow-goal-proof.n3 aux/contrast/aux_inv.n3 --pass-all > test/contrast/yellow-inv-interm.n3
-
-eye --strings --n3 test/contrast/yellow-inv-interm.n3 print/describe.n3 print/simple/describe.n3 print/simple/collect.n3 --query print/simple/query.n3
+- print_simple
+eye --nope --n3 n3/tmp/proof-annotated.n3 n3/modules/print/describe.n3 n3/modules/print/simple/describe.n3 n3/modules/print/simple/collect.n3 n3/modules/print/simple/query.n3 --pass-only-new > n3/tmp/final.n3
 or
-eye --strings --n3 test/contrast/yellow-inv-interm.n3 print/describe.n3 print/visual/describe.n3 print/visual/collect.n3 print/visual/copd/collect.n3 test/copd.n3 print/visual/query.n3 print/visual/copd/query.n3
+eye --strings --n3 n3/tmp/proof-annotated.n3 n3/modules/print/describe.n3 n3/modules/print/simple/describe.n3 n3/modules/print/simple/collect.n3 --query n3/modules/print/simple/query.n3 > n3/tmp/final.html
+
+- print_visual
+eye --nope --n3 n3/tmp/proof-annotated.n3 n3/modules/print/describe.n3 n3/modules/print/visual/describe.n3 n3/modules/print/visual/collect.n3 n3/modules/print/visual/copd/collect.n3 n3/test/copd.n3 n3/modules/print/visual/query.n3 n3/modules/print/visual/copd/query.n3 --pass-only-new > n3/tmp/final.n3
+or
+eye --strings --n3 n3/tmp/proof-annotated.n3 n3/modules/print/describe.n3 n3/modules/print/visual/describe.n3 n3/modules/print/visual/collect.n3 n3/modules/print/visual/copd/collect.n3 n3/test/copd.n3 n3/modules/print/visual/query.n3 n3/modules/print/visual/copd/query.n3 > n3/tmp/final.html

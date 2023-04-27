@@ -1,0 +1,44 @@
+@prefix : <http://wvw.org/xai#> .
+@prefix mod: <http://www.w3.org/2000/10/swap/module#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix x: <http://wvw.org/xai#> .
+
+:rules rdfs:comment "ruleset" .
+:data rdfs:comment "dataset" .
+#
+:step1_output mod:path "n3/tmp/rules-default-heads.n3" .
+:step2_output mod:path "n3/tmp/proof-default.n3" .
+#
+:output a x:AnnotatedProof ;
+   mod:path "n3/tmp/proof-default-aux.n3" .
+#
+:trace_default a mod:Module ;
+   mod:parameters ( :rules :data ) ;
+   mod:returns :output ;
+   #
+   mod:steps ( [
+       rdfs:comment "get heads of rules" ;
+       mod:target mod:deductions ;
+       mod:input ( :rules [
+           mod:path "n3/modules/proof/query_heads.n3" 
+       ] ) ;
+       mod:options ( [
+           mod:quantify "http://eyereasoner.github.io/var#" 
+       ] ) ;
+       mod:output :step1_output 
+   ] [
+       rdfs:comment "prove the rule heads based on the given data and rules" ;
+       mod:target mod:proof ;
+       mod:input ( :data :rules ) ;
+       mod:query :step1_output ;
+       mod:output :step2_output 
+   ] [
+       rdfs:comment "annotate the generated proof" ;
+       mod:target mod:deductions ;
+       mod:input ( :step2_output [
+           mod:path "n3/modules/proof/trace/aux_trace.n3" 
+       ] [
+           mod:path "n3/modules/proof/trace/default/aux_default.n3" 
+       ] ) ;
+       mod:output :output 
+   ] ) .
