@@ -14,17 +14,15 @@
    mod:steps ( [
        mod:target [
            a mod:Module ;
-        #    mod:path "n3/modules/proof/trace/default/module.n3"
-        #    mod:path "n3/modules/proof/trace/aggr/module.n3"
-            mod:path "n3/modules/proof/contrast/module.n3"
+           mod:path "n3/modules/proof/trace/default/module.n3"
        ] ;
        mod:input ( :rules :data ) ;
        mod:output :annotated_proof 
    ] [
        mod:target [
            a mod:Module ;
-            mod:path "n3/modules/print/visual/module.n3" 
+           mod:path "n3/modules/print/simple/module.n3"
        ] ;
-       mod:input ( :annotated_proof :ontology ) ;
+       mod:input ( :annotated_proof ) ;
        mod:output :html 
    ] ) .

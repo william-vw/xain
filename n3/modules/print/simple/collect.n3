@@ -41,7 +41,7 @@
    ) log:collectAllIn _:t .
    ?evidences2 list:length ?l .
    ?lis list:length ?l2 .
-   "collect" log:trace ( ?inf ?l ?l2 ?evidences2 ) .
+   # "collect" log:trace ( ?inf ?l ?l2 ?evidences2 ) .
    ?l math:equalTo ?l2 .
    ?lis string:concatenation ?lisStr .
    #

@@ -22,45 +22,36 @@
 
 <body>
     <script type="module">
-        // - run-all
-        // let path = "n3/modules/run_simple.n3";
-        let path = "n3/modules/run_visual.n3";
-        // run-all: trace
-        // let inputs = [
-        //     { path: "n3/test/yellow-rules.n3" },
-        //     { path: "n3/test/yellow1-data.n3" },
-        //     { path: "n3/test/copd.n3" }
-        // ];
-        // run-all: contrast
+        // - runs
+        // let path = "n3/runs/default-visual.n3";
+        // let path = "n3/runs/aggr-visual.n3";
+        let path = "n3/runs/contrast-visual.n3";
         let inputs = [
             { path: "n3/test/yellow-rules.n3" },
-            { path: "n3/test/contrast/yellow-goal.n3" },
+            // { path: "n3/test/yellow-data.n3" }, // default / aggr
+            { path: "n3/test/contrast/red-goal.n3" }, // contrast
             { path: "n3/test/copd.n3" }
         ];
 
         // - trace
         // let path = "n3/modules/proof/trace/default/module.n3";
-        // let path = "n3/modules/proof/trace/aggr/module.n3";
+        // // let path = "n3/modules/proof/trace/aggr/module.n3";
         // let inputs = [
         //     { path: "n3/test/yellow-rules.n3" },
-        //     { path: "n3/test/yellow1-data.n3" },
-        //     { path: "n3/test/copd.n3" }
+        //     { path: "n3/test/yellow-data.n3" }
         // ];
 
-        // - contrast
+        // // - contrast
         // let path = "n3/modules/proof/contrast/module.n3";
         // let inputs = [
         //     { path: "n3/test/yellow-rules.n3" },
-        //     { path: "n3/test/contrast/yellow-goal.n3" },
-        //     { path: "n3/test/copd.n3" }
+        //     { path: "n3/test/contrast/red-goal.n3" }
         // ];
 
-        let reasoner = new EyeReasoner();
-        let module = new Module(path, reasoner);
-        await module.init();
+        let module = new Module(path, new EyeReasoner());
         let output = await module.run(inputs);
 
-        console.log("output", output.data);
+        // console.log("output", output.data);
         $("#output").html(output.data);
     </script>
 

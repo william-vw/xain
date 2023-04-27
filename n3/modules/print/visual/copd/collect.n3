@@ -111,22 +111,24 @@
            ?o!log:localN3String x:description ?descr .
            #
            ?p x:explanation [
-               # x:object ?o ;
+               x:object ?o ;
                x:icon ?icon ;
                x:style ?style ;
                x:summary ?summ 
            ] .
            :recomm0_template rdf:value ?template .
+         #   "recommLabel0" log:trace ( ?inf ?o ?icon ) .
            ( ?template ?style ?icon ?descr ?summ ) string:format ?label .
        }
        {
            ?inf x:conclusionStr ?descr .
            #
            ?p x:explanation [
-               # x:object ?o ;
+               x:object ?o ;
                x:icon ?icon 
            ] .
            :recomm1_template rdf:value ?template .
+         #   "recommLabel1" log:trace ( ?inf ?o ?icon ) .
            ( ?template ?icon ?descr ) string:format ?label .
        }
    ) log:ifThenElseIn _:t .
@@ -147,10 +149,11 @@
    ?inf x:conclusionStr ?descr .
    #
    ?p x:explanation [
-       # x:object ?o ;
+       x:object ?o ;
        x:icon ?icon ;
        x:summary ?summ 
    ] .
    :reason_template rdf:value ?template .
+   # "reasonLabel" log:trace ( ?inf ?o ?icon ) .
    ( ?template ?icon ?descr ?summ ) string:format ?label .
 } .

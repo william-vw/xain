@@ -1,0 +1,3 @@
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
+
+:patientA :isStratified :RedZone .

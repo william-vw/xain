@@ -8,12 +8,6 @@
 @prefix xpl: <http://niche.cs.dal.ca/xpl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:hasPhlemAmountValue rdfs:label "phlem amount" ;
-   x:explanation [
-       x:object :xyz ;
-       x:icon "fa-disease" ;
-       x:summary "Phlem Amount Value." 
-   ] .
 #
 :isStratified x:explanation [
    x:object :YellowZone ;
@@ -21,6 +15,20 @@
    x:style "text-orange" ;
    x:summary "This means you should follow your action plan immediately. If your symptoms don't improve after 48 hours, seek medical care immediately." 
 ] .
+#
+:isStratified x:explanation [
+   x:object :RedZone ;
+   x:icon "fa-exclamation-circle" ;
+   x:style "text-red" ;
+   x:summary "Red Zone." 
+] .
+#
+:hasPhlemAmountValue rdfs:label "phlem amount" ;
+   x:explanation [
+       x:object ?x ;
+       x:icon "fa-disease" ;
+       x:summary "Phlem Amount Value." 
+   ] .
 #
 :hasActivityExertion x:explanation [
    x:object :Moderate ;
@@ -44,4 +52,46 @@
    x:object :Moderate ;
    x:icon "fa-disease" ;
    x:summary "Phlem Amount." 
+] .
+#
+:hasCyanosis x:explanation [
+   x:object "true"^^xsd:boolean ;
+   x:icon "fa-disease" ;
+   x:summary "Cyanosis." 
+] .
+#
+:hasChestPain x:explanation [
+   x:object "true"^^xsd:boolean ;
+   x:icon "fa-disease" ;
+   x:summary "Chest Pain." 
+] .
+
+:hasActivityExertion x:explanation [
+   x:object :Severe ;
+   x:icon "fa-disease" ;
+   x:summary "Activity Exertion." 
+] .
+
+:hasCough x:explanation [
+   x:object :Severe ;
+   x:icon "fa-disease" ;
+   x:summary "Cough." 
+] .
+#
+:hasLow02Saturation x:explanation [
+   x:object "true"^^xsd:boolean ;
+   x:icon "fa-disease" ;
+   x:summary "Low 02 Saturation." 
+] .
+#
+:hasFever x:explanation [
+   x:object :Severe ;
+   x:icon "fa-disease" ;
+   x:summary "Fever." 
+] .
+#
+:hasConfusion x:explanation [
+   x:object "true"^^xsd:boolean ;
+   x:icon "fa-disease" ;
+   x:summary "Confusion." 
 ] .

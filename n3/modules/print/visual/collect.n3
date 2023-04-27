@@ -45,6 +45,7 @@
    # (for debugging; things often go wrong w/ reasonLabel)
    ?evidences2 list:length ?l .
    ?lis2 list:length ?l2 .
+   "collect" log:trace ( ?inf ?l ?l2 ) .
    ?evidences2 list:length ?lis2!list:length .
    ?lis2 string:concatenation ?lisStr .
    #

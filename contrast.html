@@ -1,17 +1,33 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="lib/rdflib/rdflib.min.js"></script>
     <script src="https://eyereasoner.github.io/eye-js/latest/index.js"></script>
-    <script src="lib/aux.js"></script>
-    <script src="lib/explain.js"></script>
+    <script src="lib/eye_aux.js"></script>
+    <script src="lib/mod4n3.js"></script>
+
+    <title>COPD Explanations</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b19fd139cc.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="lib/style.css" />
     <script>
-        function loaded() {
+
+    </script>
+    <script type="module">
+        window.loaded = function () {
             $('#contrast').append(`<option value='YellowZone'>YellowZone</option>`)
             $('#contrast').append(`<option value='RedZone'>RedZone</option>`)
         }
 
-        async function doContrast() {
+        window.doContrast = async function () {
             let outcome = $("#contrast").val();
             if (!outcome)
                 return;
@@ -21,30 +37,34 @@
 
             let start = performance.now();
 
-            let rules = await get('test/yellow-rules.n3');
             let data =
                 `@prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
                 :patientA :isStratified :${outcome} .`;
-            let input = await contrast(rules, data, {}, simplePrint);
 
-            // console.log("input:\n", input);
-            let output = await simplePrint(input);
+            let path = "n3/runs/contrast-visual.n3";
+            let inputs = [
+                { path: "n3/test/yellow-rules.n3" },
+                { name: "goal.n3", data: data },
+                { path: "n3/test/copd.n3" }
+            ];
+
+            let module = new Module(path, new EyeReasoner());
+            let output = await module.run(inputs);
 
             let end = performance.now();
             console.log("total:", (end - start));
 
-            // console.log("output:\n", output);
-            $('#out').html(output);
+            // console.log("output:\n", output.data);
+            $('#out').html(output.data);
         }
-
     </script>
 </head>
 
 <body onload="loaded()">
-
     <select id="contrast" onchange="doContrast()">
         <option></option>
     </select>
+    <br><br>
 
     <div id="out"></div>
 </body>
