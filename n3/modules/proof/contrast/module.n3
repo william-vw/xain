@@ -3,16 +3,19 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix x: <http://wvw.org/xai#> .
 
+:rules rdfs:comment "ruleset" .
+:goal rdfs:comment "inference to be explained" .
+#
+:step1_output mod:path "n3/tmp/rules-inv.n3" .
+:step2_output mod:path "n3/tmp/rules-inv-heads.n3" .
+:step3_output mod:path "n3/tmp/proof-inv.n3" .
+#
+:output a x:AnnotatedProof ;
+   mod:path "n3/tmp/proof-inv-aux.n3" .
+#
 :contrast a mod:Module ;
-   mod:parameters ( [ id :rules
-        rdfs:comment "ruleset" 
-   ] [ id :goal
-        rdfs:comment "inference to be explained" 
-   ] ) ;
-   mod:returns [ id :output
-        a x:AnnotatedProof ;
-        mod:path "n3/tmp/proof-inv-aux.n3" 
-   ] ;
+   mod:parameters ( :rules :goal ) ;
+   mod:returns :output ;
    #
    mod:steps ( [
        rdfs:comment "invert rules" ;
@@ -20,26 +23,23 @@
        mod:input ( :rules [
            mod:path "n3/modules/proof/contrast/invert_rules.n3" 
        ] ) ;
-       mod:output [ id :step1_output
-            mod:path "n3/tmp/rules-inv.n3" 
-       ] 
+       mod:options ( [
+           mod:quantify "http://eyereasoner.github.io/var#" 
+       ] ) ;
+       mod:output :step1_output 
    ] [
        rdfs:comment "get rule heads of inverted rules" ;
        mod:target mod:deductions ;
        mod:input ( :step1_output [
            mod:path "n3/modules/proof/query_heads.n3" 
        ] ) ;
-       mod:output [ id :step2_output
-            mod:path "n3/tmp/rules-inv-heads.n3" 
-       ] 
+       mod:output :step2_output 
    ] [
        rdfs:comment "prove the rule heads, based on the given goal and inverted rules" ;
        mod:target mod:proof ;
        mod:input ( :goal :step1_output ) ;
        mod:query :step2_output ;
-       mod:output [ id :step3_output
-            mod:path "n3/tmp/proof-inv.n3" 
-       ] 
+       mod:output :step3_output 
    ] [
        rdfs:comment "annotate the generated proof" ;
        mod:target mod:closure ;

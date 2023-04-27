@@ -6,7 +6,8 @@
 
 # make all rule heads unique by adding unique padding
 {
-   ?body => ?head .
+   ?body => ?head ;
+        a x:InputRule .
    ?head log:notIncludes 
    {
        ?a x:padding ?b 

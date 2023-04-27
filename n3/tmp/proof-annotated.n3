@@ -1,5 +1,5 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --nope --n3 ./proof.n3 ./aux_inv.n3 --pass-all
+# eye --nope --n3 ./n3_tmp_proof-inv.n3 ./n3_modules_proof_contrast_aux_inv.n3 --pass-all
 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
@@ -15,7 +15,7 @@
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
 @prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2327563365878104175#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3670451758780261463#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 @prefix dc: <http://purl.org/dc/terms/>.
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
@@ -95,9 +95,9 @@ skolem:lemma6 r:gives {
 }.
 skolem:lemma7 r:gives {
     {
-        ?U_119 :hasPhlemAmount :Moderate.
+        ?U_115 :hasPhlemAmount :Moderate.
     } => {
-        ?U_119 :hasPhlemAmount :Moderate.
+        ?U_115 :hasPhlemAmount :Moderate.
     }.
 }.
 skolem:lemma8 r:gives {
@@ -105,9 +105,9 @@ skolem:lemma8 r:gives {
 }.
 skolem:lemma9 r:gives {
     {
-        ?U_120 :hasColoredPhlem true.
+        ?U_116 :hasColoredPhlem true.
     } => {
-        ?U_120 :hasColoredPhlem true.
+        ?U_116 :hasColoredPhlem true.
     }.
 }.
 skolem:lemma10 r:gives {
@@ -115,9 +115,9 @@ skolem:lemma10 r:gives {
 }.
 skolem:lemma11 r:gives {
     {
-        ?U_121 :hasSwollenAnkle true.
+        ?U_117 :hasSwollenAnkle true.
     } => {
-        ?U_121 :hasSwollenAnkle true.
+        ?U_117 :hasSwollenAnkle true.
     }.
 }.
 skolem:lemma12 r:gives {
@@ -125,9 +125,9 @@ skolem:lemma12 r:gives {
 }.
 skolem:lemma13 r:gives {
     {
-        ?U_122 :hasActivityExertion :Moderate.
+        ?U_118 :hasActivityExertion :Moderate.
     } => {
-        ?U_122 :hasActivityExertion :Moderate.
+        ?U_118 :hasActivityExertion :Moderate.
     }.
 }.
 skolem:lemma14 r:gives {
@@ -137,13 +137,13 @@ skolem:lemma14 r:gives {
 }.
 skolem:lemma15 r:gives {
     {
-        ?U_123 :hasPhlemAmountValue ?U_124.
-        ?U_124 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        ?U_124 <http://wvw.org/xai/swap/math#lessThan> 8.
+        ?U_119 :hasPhlemAmountValue ?U_120.
+        ?U_120 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        ?U_120 <http://wvw.org/xai/swap/math#lessThan> 8.
     } => {
-        ?U_123 :hasPhlemAmountValue ?U_124.
-        ?U_124 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        ?U_124 <http://wvw.org/xai/swap/math#lessThan> 8.
+        ?U_119 :hasPhlemAmountValue ?U_120.
+        ?U_120 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        ?U_120 <http://wvw.org/xai/swap/math#lessThan> 8.
     }.
 }.
 skolem:lemma16 r:gives {
@@ -151,39 +151,39 @@ skolem:lemma16 r:gives {
 }.
 skolem:lemma17 r:gives {
     {
-        ?U_125 :isStratified :YellowZone.
+        ?U_121 :isStratified :YellowZone.
     } => {
-        ?U_125 :hasPhlemAmount :Moderate.
+        ?U_121 :hasPhlemAmount :Moderate.
     }.
 }.
 skolem:lemma18 r:gives {
     {
-        ?U_126 :isStratified :YellowZone.
+        ?U_122 :isStratified :YellowZone.
     } => {
-        ?U_126 :hasColoredPhlem true.
+        ?U_122 :hasColoredPhlem true.
     }.
 }.
 skolem:lemma19 r:gives {
     {
-        ?U_127 :isStratified :YellowZone.
+        ?U_123 :isStratified :YellowZone.
     } => {
-        ?U_127 :hasSwollenAnkle true.
+        ?U_123 :hasSwollenAnkle true.
     }.
 }.
 skolem:lemma20 r:gives {
     {
-        ?U_128 :isStratified :YellowZone.
+        ?U_124 :isStratified :YellowZone.
     } => {
-        ?U_128 :hasActivityExertion :Moderate.
+        ?U_124 :hasActivityExertion :Moderate.
     }.
 }.
 skolem:lemma21 r:gives {
     {
-        ?U_129 :hasPhlemAmount :Moderate.
+        ?U_125 :hasPhlemAmount :Moderate.
     } => {
-        ?U_129 :hasPhlemAmountValue ?U_130.
-        ?U_130 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        ?U_130 <http://wvw.org/xai/swap/math#lessThan> 8.
+        ?U_125 :hasPhlemAmountValue ?U_126.
+        ?U_126 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        ?U_126 <http://wvw.org/xai/swap/math#lessThan> 8.
     }.
 }.
 skolem:lemma1 r:evidence (skolem:lemma6).
@@ -277,18 +277,17 @@ skolem:lemma18 r:because _:bn_44.
 skolem:lemma19 r:because _:bn_45.
 skolem:lemma20 r:because _:bn_46.
 skolem:lemma21 r:because _:bn_47.
-_:bn_22 r:source <file:///heads.n3>.
-_:bn_26 r:source <file:///heads.n3>.
-_:bn_30 r:source <file:///heads.n3>.
-_:bn_34 r:source <file:///heads.n3>.
-_:bn_41 r:source <file:///heads.n3>.
-_:bn_42 r:source <file:///data.n3>.
-_:bn_43 r:source <file:///rules.n3>.
-_:bn_44 r:source <file:///rules.n3>.
-_:bn_45 r:source <file:///rules.n3>.
-_:bn_46 r:source <file:///rules.n3>.
-_:bn_47 r:source <file:///rules.n3>.
-skolem:lemma16 x:level 0 .
+_:bn_22 r:source <file:///n3_tmp_rules-inv-heads.n3>.
+_:bn_26 r:source <file:///n3_tmp_rules-inv-heads.n3>.
+_:bn_30 r:source <file:///n3_tmp_rules-inv-heads.n3>.
+_:bn_34 r:source <file:///n3_tmp_rules-inv-heads.n3>.
+_:bn_41 r:source <file:///n3_tmp_rules-inv-heads.n3>.
+_:bn_42 r:source <file:///n3_test_contrast_yellow-goal.n3>.
+_:bn_43 r:source <file:///n3_tmp_rules-inv.n3>.
+_:bn_44 r:source <file:///n3_tmp_rules-inv.n3>.
+_:bn_45 r:source <file:///n3_tmp_rules-inv.n3>.
+_:bn_46 r:source <file:///n3_tmp_rules-inv.n3>.
+_:bn_47 r:source <file:///n3_tmp_rules-inv.n3>.
 skolem:proof x:gives {
     :patientA :hasPhlemAmount :Moderate.
     :patientA :hasColoredPhlem true.
@@ -418,7 +417,6 @@ skolem:lemma21 x:gives {
 } => {
     ?U_6 a x:RootNode.
     ?U_6 a x:Node.
-    ?U_6 x:level 0.
 }.
 {
     ?U_9 a ?U_10.
@@ -435,32 +433,26 @@ skolem:lemma21 x:gives {
 }.
 {
     ?U_17 a x:Node.
-    ?U_17 x:level ?U_18.
-    ?U_17 x:evidence ?U_19.
-    ?U_19 list:member ?U_20.
-    ?U_20 x:evidence ?U_21.
-    ?U_21 list:length ?U_22.
-    ?U_22 math:greaterThan 0 .
-    (?U_18 1) math:sum ?U_23.
+    ?U_17 x:evidence ?U_18.
+    ?U_18 list:member ?U_19.
+    ?U_19 x:evidence ?U_20.
+    ?U_20 list:length ?U_21.
+    ?U_21 math:greaterThan 0.
 } => {
-    ?U_20 a x:Node.
-    ?U_20 x:level ?U_23.
+    ?U_19 a x:Node.
 }.
 {
-    ?U_24 x:evidence ?U_25.
-    ?U_25 list:member ?U_26.
-    ?U_26 x:evidence ().
-    ?U_24 x:level ?U_27.
-    (?U_27 1) math:sum ?U_28.
+    ?U_22 x:evidence ?U_23.
+    ?U_23 list:member ?U_24.
+    ?U_24 x:evidence ().
 } => {
-    ?U_26 a x:Leaf.
-    ?U_26 x:level ?U_28.
+    ?U_24 a x:Leaf.
 }.
 {
-    ?U_29 r:gives ?U_30.
-    ?U_30 e:labelvars ?U_31.
+    ?U_25 r:gives ?U_26.
+    ?U_26 e:labelvars ?U_27.
 } => {
-    ?U_29 x:gives ?U_31.
+    ?U_25 x:gives ?U_27.
 }.
 {
     skolem:proof r:gives {
@@ -468,9 +460,9 @@ skolem:lemma21 x:gives {
         :patientA :hasColoredPhlem true.
         :patientA :hasSwollenAnkle true.
         :patientA :hasActivityExertion :Moderate.
-        :patientA :hasPhlemAmountValue ?U_32.
-        ?U_32 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        ?U_32 <http://wvw.org/xai/swap/math#lessThan> 8.
+        :patientA :hasPhlemAmountValue ?U_28.
+        ?U_28 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        ?U_28 <http://wvw.org/xai/swap/math#lessThan> 8.
     }.
 } <= true.
 {
@@ -495,9 +487,9 @@ skolem:lemma21 x:gives {
 } <= true.
 {
     skolem:lemma5 r:gives {
-        :patientA :hasPhlemAmountValue ?U_33.
-        ?U_33 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        ?U_33 <http://wvw.org/xai/swap/math#lessThan> 8.
+        :patientA :hasPhlemAmountValue ?U_29.
+        ?U_29 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        ?U_29 <http://wvw.org/xai/swap/math#lessThan> 8.
     }.
 } <= true.
 {
@@ -508,9 +500,9 @@ skolem:lemma21 x:gives {
 {
     skolem:lemma7 r:gives {
         {
-            ?U_131 :hasPhlemAmount :Moderate.
+            ?U_127 :hasPhlemAmount :Moderate.
         } => {
-            ?U_131 :hasPhlemAmount :Moderate.
+            ?U_127 :hasPhlemAmount :Moderate.
         }.
     }.
 } <= true.
@@ -522,9 +514,9 @@ skolem:lemma21 x:gives {
 {
     skolem:lemma9 r:gives {
         {
-            ?U_132 :hasColoredPhlem true.
+            ?U_128 :hasColoredPhlem true.
         } => {
-            ?U_132 :hasColoredPhlem true.
+            ?U_128 :hasColoredPhlem true.
         }.
     }.
 } <= true.
@@ -536,9 +528,9 @@ skolem:lemma21 x:gives {
 {
     skolem:lemma11 r:gives {
         {
-            ?U_133 :hasSwollenAnkle true.
+            ?U_129 :hasSwollenAnkle true.
         } => {
-            ?U_133 :hasSwollenAnkle true.
+            ?U_129 :hasSwollenAnkle true.
         }.
     }.
 } <= true.
@@ -550,29 +542,29 @@ skolem:lemma21 x:gives {
 {
     skolem:lemma13 r:gives {
         {
-            ?U_134 :hasActivityExertion :Moderate.
+            ?U_130 :hasActivityExertion :Moderate.
         } => {
-            ?U_134 :hasActivityExertion :Moderate.
+            ?U_130 :hasActivityExertion :Moderate.
         }.
     }.
 } <= true.
 {
     skolem:lemma14 r:gives {
-        :patientA :hasPhlemAmountValue ?U_34.
-        ?U_34 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        ?U_34 <http://wvw.org/xai/swap/math#lessThan> 8.
+        :patientA :hasPhlemAmountValue ?U_30.
+        ?U_30 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+        ?U_30 <http://wvw.org/xai/swap/math#lessThan> 8.
     }.
 } <= true.
 {
     skolem:lemma15 r:gives {
         {
-            ?U_135 :hasPhlemAmountValue ?U_136.
-            ?U_136 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-            ?U_136 <http://wvw.org/xai/swap/math#lessThan> 8.
+            ?U_131 :hasPhlemAmountValue ?U_132.
+            ?U_132 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+            ?U_132 <http://wvw.org/xai/swap/math#lessThan> 8.
         } => {
-            ?U_135 :hasPhlemAmountValue ?U_136.
-            ?U_136 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-            ?U_136 <http://wvw.org/xai/swap/math#lessThan> 8.
+            ?U_131 :hasPhlemAmountValue ?U_132.
+            ?U_132 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+            ?U_132 <http://wvw.org/xai/swap/math#lessThan> 8.
         }.
     }.
 } <= true.
@@ -584,47 +576,47 @@ skolem:lemma21 x:gives {
 {
     skolem:lemma17 r:gives {
         {
-            ?U_137 :isStratified :YellowZone.
+            ?U_133 :isStratified :YellowZone.
         } => {
-            ?U_137 :hasPhlemAmount :Moderate.
+            ?U_133 :hasPhlemAmount :Moderate.
         }.
     }.
 } <= true.
 {
     skolem:lemma18 r:gives {
         {
-            ?U_138 :isStratified :YellowZone.
+            ?U_134 :isStratified :YellowZone.
         } => {
-            ?U_138 :hasColoredPhlem true.
+            ?U_134 :hasColoredPhlem true.
         }.
     }.
 } <= true.
 {
     skolem:lemma19 r:gives {
         {
-            ?U_139 :isStratified :YellowZone.
+            ?U_135 :isStratified :YellowZone.
         } => {
-            ?U_139 :hasSwollenAnkle true.
+            ?U_135 :hasSwollenAnkle true.
         }.
     }.
 } <= true.
 {
     skolem:lemma20 r:gives {
         {
-            ?U_140 :isStratified :YellowZone.
+            ?U_136 :isStratified :YellowZone.
         } => {
-            ?U_140 :hasActivityExertion :Moderate.
+            ?U_136 :hasActivityExertion :Moderate.
         }.
     }.
 } <= true.
 {
     skolem:lemma21 r:gives {
         {
-            ?U_141 :hasPhlemAmount :Moderate.
+            ?U_137 :hasPhlemAmount :Moderate.
         } => {
-            ?U_141 :hasPhlemAmountValue ?U_142.
-            ?U_142 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-            ?U_142 <http://wvw.org/xai/swap/math#lessThan> 8.
+            ?U_137 :hasPhlemAmountValue ?U_138.
+            ?U_138 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+            ?U_138 <http://wvw.org/xai/swap/math#lessThan> 8.
         }.
     }.
 } <= true.
@@ -633,11 +625,6 @@ skolem:lemma14 a x:Leaf.
 skolem:lemma8 a x:Leaf.
 skolem:lemma10 a x:Leaf.
 skolem:lemma12 a x:Leaf.
-skolem:lemma6 x:level 1 .
-skolem:lemma14 x:level 2 .
-skolem:lemma8 x:level 1 .
-skolem:lemma10 x:level 1 .
-skolem:lemma12 x:level 1 .
 skolem:lemma1 x:evidence ().
 skolem:lemma2 x:evidence ().
 skolem:lemma3 x:evidence ().
@@ -660,5 +647,5 @@ skolem:lemma19 x:evidence ().
 skolem:lemma20 x:evidence ().
 skolem:lemma21 x:evidence ().
 
-# 2023-04-23T20:34:06.908Z in=170 out=248 ent=304 step=1329 brake=5 inf=338773 sec=0.330 inf/sec=1026585
+# 2023-04-27T14:07:47.621Z in=170 out=242 ent=292 step=1314 brake=5 inf=333500 sec=0.131 inf/sec=2545802
 # ENDS

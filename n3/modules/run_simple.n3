@@ -1,0 +1,30 @@
+@prefix : <http://wvw.org/xai#> .
+@prefix mod: <http://www.w3.org/2000/10/swap/module#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix x: <http://wvw.org/xai#> .
+
+:annotated_proof mod:path "n3/tmp/proof-annotated.n3" .
+#
+:html mod:path "n3/tmp/print-simple.html" .
+#
+:trace_simple a mod:Module ;
+   mod:parameters ( :rules :data ) ;
+   mod:returns :html ;
+   #
+   mod:steps ( [
+       mod:target [
+           a mod:Module ;
+           mod:path "n3/modules/proof/trace/default/module.n3"
+        #    mod:path "n3/modules/proof/trace/aggr/module.n3"
+            # mod:path "n3/modules/proof/contrast/module.n3"
+       ] ;
+       mod:input ( :rules :data ) ;
+       mod:output :annotated_proof 
+   ] [
+       mod:target [
+           a mod:Module ;
+           mod:path "n3/modules/print/simple/module.n3"
+       ] ;
+       mod:input ( :annotated_proof ) ;
+       mod:output :html 
+   ] ) .

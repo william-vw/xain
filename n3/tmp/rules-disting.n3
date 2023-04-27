@@ -1,0 +1,99 @@
+# Processed by EYE v3.20.10 (2023-04-20)
+# eye --nope --n3 n3/test/yellow-rules.n3 n3/modules/proof/trace/aggr/distinguish_rules.n3 --pass-only-new
+
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix pml: <http://provenanceweb.org/ns/pml#>.
+@prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix x: <http://wvw.org/xai#>.
+@prefix xpl: <http://niche.cs.dal.ca/xpl#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/815917718126876828#>.
+
+{
+    ?U_0 :hasPhlemAmount :Moderate.
+} => {
+    ?U_0 :isStratified :YellowZone.
+    var:t_0 x:padding var:t_0.
+}.
+{
+    ?U_3 :hasColoredPhlem true.
+} => {
+    ?U_3 :isStratified :YellowZone.
+    var:t_1 x:padding var:t_1.
+}.
+{
+    ?U_6 :hasSwollenAnkle true.
+} => {
+    ?U_6 :isStratified :YellowZone.
+    var:t_2 x:padding var:t_2.
+}.
+{
+    ?U_9 :hasActivityExertion :Moderate.
+} => {
+    ?U_9 :isStratified :YellowZone.
+    var:t_3 x:padding var:t_3.
+}.
+{
+    ?U_12 :hasCyanosis true.
+} => {
+    ?U_12 :isStratified :RedZone.
+    var:t_4 x:padding var:t_4.
+}.
+{
+    ?U_15 :hasChestPain true.
+} => {
+    ?U_15 :isStratified :RedZone.
+    var:t_5 x:padding var:t_5.
+}.
+{
+    ?U_18 :hasActivityExertion :Severe.
+} => {
+    ?U_18 :isStratified :RedZone.
+    var:t_6 x:padding var:t_6.
+}.
+{
+    ?U_21 :hasCough :Severe.
+} => {
+    ?U_21 :isStratified :RedZone.
+    var:t_7 x:padding var:t_7.
+}.
+{
+    ?U_24 :hasLow02Saturation true.
+} => {
+    ?U_24 :isStratified :RedZone.
+    var:t_8 x:padding var:t_8.
+}.
+{
+    ?U_27 :hasFever :Severe.
+} => {
+    ?U_27 :isStratified :RedZone.
+    var:t_9 x:padding var:t_9.
+}.
+{
+    ?U_30 :hasConfusion true.
+} => {
+    ?U_30 :isStratified :RedZone.
+    var:t_10 x:padding var:t_10.
+}.
+{
+    ?U_33 :hasPhlemAmountValue ?U_34.
+    ?U_34 math:greaterThan 5 .
+    ?U_34 math:lessThan 8.
+} => {
+    ?U_33 :hasPhlemAmount :Moderate.
+    var:t_11 x:padding var:t_11.
+}.
+{
+    ?U_37 :hasHighHumidity true.
+} => {
+    ?U_37 :recommendation :avoidGoingOutside.
+    var:t_12 x:padding var:t_12.
+}.
+
+# 2023-04-27T13:28:49.572Z in=27 out=13 ent=13 step=26 brake=2 inf=75423 sec=0.036 inf/sec=2095083
+# ENDS
+

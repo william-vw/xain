@@ -33,7 +33,7 @@
 # TODO narrow this down to only nodes
 {
    ?x x:gives ?value . # formula
-   ?x!rdf:type list:in ( x:Node r:Extraction r:Fact ) .
+   ?x!rdf:type list:in ( x:Node x:Leaf ) .
    ?value e:labelvars ?valuel .
    ?valuel log:includes 
    {
