@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+        <script src="../lib/nav.js"></script>
+        <link rel="stylesheet" href="../lib/nav.css" />
+    </head>
+    <body>
+        <script>
+            window.nav = new NavStack('#recomm0');
+        </script>
+
+        <div id="out">
+            <div id="recomm0" onclick="nav.goto('id1')">hello</div>
+            <div id="id1" class="level_n" onclick="nav.goto('id2')">world</div>
+            <div id="id2" class="level_n" onclick="nav.goto('id3')">this</div>
+            <div id="id3" class="level_n" onclick="nav.gohome()">is</div>
+            <br>
+            <div onclick="nav.goback()">back</div>
+        </div>
+    </body>
+</html>

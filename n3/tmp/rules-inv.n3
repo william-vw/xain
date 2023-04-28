@@ -1,4 +1,4 @@
-# Processed by EYE v3.20.10 (2023-04-20)
+# Processed by EYE v3.21.1 (2023-04-23)
 # eye --nope --n3 n3/modules/proof/contrast/invert_rules.n3 n3/test/yellow-rules.n3 --pass-only-new --quantify http://eyereasoner.github.io/var#
 
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
@@ -89,6 +89,6 @@
     ?t_0 :hasPhlemAmount :Moderate.
 }.
 
-# 2023-04-27T19:54:31.337Z in=32 out=14 ent=14 step=41 brake=5 inf=189401 sec=0.044 inf/sec=4304568
+# 2023-04-28T13:20:54.618Z in=32 out=14 ent=14 step=41 brake=5 inf=189402 sec=0.046 inf/sec=4117435
 # ENDS
 

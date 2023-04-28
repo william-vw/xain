@@ -1,5 +1,6 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix func: <http://www.w3.org/2007/rif-builtin-function#> .
 @prefix list: <http://www.w3.org/2000/10/swap/list#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix math: <http://www.w3.org/2000/10/swap/math#> .
@@ -14,72 +15,79 @@
 
 #
 
-:recomm0_template rdf:value """<div class="card rounded-0 border-0 mb-0 bg-section">
-   <div class="row g-0 text-white">
-      <div class="col-sm-12">
-         <h5 class="m-3">You are in:<h5>
-      </div>
-   </div>
-</div>
-
-<div class="card rounded-0 border-0 bg-white">
-   <div class="row g-0 %s">
-      <div class="col-2 text-center">
-         <i class="fas %s card-img-top h-100 p-3 ms-2 mt-1 icon-3"></i>
-      </div>
-      <div class="col-9">
-         <div class="card-body">
-            <h5 class="card-title pb-1 zone">%s</h5>
-            <p class="card-text mb-0 mt-1 zone-text">%s</p>
+:recomm0_template rdf:value """
+<div id="recomm0">
+   <div class="card rounded-0 border-0 mb-0 bg-section">
+      <div class="row g-0 text-white">
+         <div class="col-sm-12">
+            <h5 class="m-3">You are in:<h5>
          </div>
       </div>
    </div>
-</div>
 
-
-<div class="card rounded-0 border-0 my-0 bg-expl">
-   <div class="row g-0">
-      <div class="col-sm-12">
-         <h5 class="m-3 text-white">Because you have:<h5>
-      </div>
-   </div>
-</div>""" .
-
-#
-:recomm1_template rdf:value """<div class="card rounded-0 border-0 mb-0 bg-section">
-   <div class="row g-0 text-white">
-      <div class="col-sm-12">
-         <h5 class="m-3">Risk factor:<h5>
-      </div>
-   </div>
-</div>
-
-<div class="card rounded-0 border-0 bg-white">
-   <div class="row g-0 align-items-center text-section">
-      <div class="col-2 text-center">
-         <i class="fas %s card-img-top h-100 p-3 ms-2 mt-1 icon-3"></i>
-      </div>
-      <div class="col-9">
-         <div class="card-body">
-            <h3 class="card-title fw-bold">%s<h3>
+   <div class="card rounded-0 border-0 bg-white">
+      <div class="row g-0 %s">
+         <div class="col-2 text-center">
+            <i class="fas %s card-img-top h-100 p-3 ms-2 mt-1 icon-3"></i>
+         </div>
+         <div class="col-9">
+            <div class="card-body">
+               <h5 class="card-title pb-1 zone">%s</h5>
+               <p class="card-text mb-0 mt-1 zone-text">%s</p>
+            </div>
          </div>
       </div>
    </div>
-</div>
 
-<div class="card rounded-0 border-0 my-0 bg-expl">
-   <div class="row g-0">
-      <div class="col-sm-12">
-         <h5 class="m-3 text-white">Relation with COPD:<h5>
+
+   <div class="card rounded-0 border-0 my-0 bg-expl">
+      <div class="row g-0">
+         <div class="col-sm-12">
+            <h5 class="m-3 text-white">Because you have:<h5>
+         </div>
       </div>
    </div>
+   _content_
 </div>""" .
 
 #
-:reason_template rdf:value """<div class="card border-0 mb-2 bg-white">
-   <div class="row g-0 align-items-center text-expl"
-      onclick="location.href='xyz';"
-      style="cursor: pointer">
+:recomm1_template rdf:value """
+<div id="%s" class="level_n">
+   <div class="card rounded-0 border-0 mb-0 bg-section">
+      <div class="row g-0 text-white">
+         <div class="col-sm-12">
+            <h5 class="m-3">Risk factor:<h5>
+         </div>
+      </div>
+   </div>
+
+   <div class="card rounded-0 border-0 bg-white">
+      <div class="row g-0 align-items-center text-section">
+         <div class="col-2 text-center">
+            <i class="fas %s card-img-top h-100 p-3 ms-2 mt-1 icon-3"></i>
+         </div>
+         <div class="col-9">
+            <div class="card-body">
+               <h3 class="card-title fw-bold">%s<h3>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="card rounded-0 border-0 my-0 bg-expl">
+      <div class="row g-0">
+         <div class="col-sm-12">
+            <h5 class="m-3 text-white">Relation with COPD:<h5>
+         </div>
+      </div>
+   </div>
+   _content_
+</div>""" .
+
+#
+:reason_template rdf:value """
+<div class="card border-0 mb-2 bg-white">
+   <div class="row g-0 align-items-center text-expl" %s>
       <div class="col-2 text-center">
          <i class="fas %s card-img-top h-100 p-3 ms-2 icon-3"></i>
       </div>
@@ -94,8 +102,11 @@
 """ .
 
 #
+:link_template rdf:value """onclick="nav.goto('%s');" style="cursor: pointer" """ .
+
+#
 {
-   ?inf x:recommLabel ?label 
+   ?inf x:recommContainer ?container
 }
 <= 
 {
@@ -117,8 +128,8 @@
                x:summary ?summ 
            ] .
            :recomm0_template rdf:value ?template .
-         #   "recommLabel0" log:trace ( ?inf ?o ?icon ) .
-           ( ?template ?style ?icon ?descr ?summ ) string:format ?label .
+           ( ?template ?style ?icon ?descr ?summ ) string:format ?container .
+           "recommContainer0" log:trace ( ?inf ?o ?icon ) .
        }
        {
            ?inf x:conclusionStr ?descr .
@@ -128,8 +139,9 @@
                x:icon ?icon 
            ] .
            :recomm1_template rdf:value ?template .
-         #   "recommLabel1" log:trace ( ?inf ?o ?icon ) .
-           ( ?template ?icon ?descr ) string:format ?label .
+           ?inf log:localName ?ln .
+           ( ?template ?ln ?icon ?descr ) string:format ?container .
+           "recommContainer1" log:trace ( ?inf ?o ?icon ) .
        }
    ) log:ifThenElseIn _:t .
    #
@@ -155,5 +167,19 @@
    ] .
    :reason_template rdf:value ?template .
    # "reasonLabel" log:trace ( ?inf ?o ?icon ) .
-   ( ?template ?icon ?descr ?summ ) string:format ?label .
+   (
+       {
+           ?inf x:evidence ?es .
+           ?inf!x:evidence!list:length math:greaterThan 0 .
+       }
+       {
+           :link_template rdf:value ?linkTemplate .
+           ?inf log:localName ?ln .
+           ( ?linkTemplate ?ln ) string:format ?attr .
+       }
+       {
+           ?attr log:equalTo "" 
+       }
+   ) log:ifThenElseIn _:t .
+   ( ?template ?attr ?icon ?descr ?summ ) string:format ?label .
 } .
