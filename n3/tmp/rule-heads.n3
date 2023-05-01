@@ -1,92 +1,44 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --n3 n3/modules/proof/query_heads.n3 n3/tmp/rules-inv.n3 --pass-only-new
+# eye --n3 n3/modules/proof/query_heads.n3 n3/test/copd/rules.n3 --pass-only-new
 
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix list: <http://www.w3.org/2000/10/swap/list#>.
-@prefix string: <http://www.w3.org/2000/10/swap/string#>.
-@prefix x: <http://wvw.org/xai#>.
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix xpl: <http://niche.cs.dal.ca/xpl#>.
+@prefix x: <http://wvw.org/xai#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
 @prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2699755403071021912#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3823829535353781700#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 {
-    ?U_0 :hasPhlemAmount :Moderate.
+    ?U_0 :isStratified :YellowZone.
 } => {
-    ?U_0 :hasPhlemAmount :Moderate.
+    ?U_0 :isStratified :YellowZone.
 }.
 {
-    ?U_3 :hasColoredPhlem true.
+    ?U_3 :hasPhlemAmount :Moderate.
 } => {
-    ?U_3 :hasColoredPhlem true.
+    ?U_3 :hasPhlemAmount :Moderate.
 }.
 {
-    ?U_6 :hasSwollenAnkle true.
+    ?U_7 :isStratified :RedZone.
 } => {
-    ?U_6 :hasSwollenAnkle true.
+    ?U_7 :isStratified :RedZone.
 }.
 {
-    ?U_9 :hasActivityExertion :Moderate.
+    ?U_10 :recommendation :avoidGoingOutside.
 } => {
-    ?U_9 :hasActivityExertion :Moderate.
+    ?U_10 :recommendation :avoidGoingOutside.
 }.
 {
-    ?U_12 :hasCyanosis true.
+    ?U_13 :hasHighHumidity true.
 } => {
-    ?U_12 :hasCyanosis true.
-}.
-{
-    ?U_15 :hasChestPain true.
-} => {
-    ?U_15 :hasChestPain true.
-}.
-{
-    ?U_18 :hasActivityExertion :Severe.
-} => {
-    ?U_18 :hasActivityExertion :Severe.
-}.
-{
-    ?U_21 :hasCough :Severe.
-} => {
-    ?U_21 :hasCough :Severe.
-}.
-{
-    ?U_24 :hasLow02Saturation true.
-} => {
-    ?U_24 :hasLow02Saturation true.
-}.
-{
-    ?U_27 :hasFever :Severe.
-} => {
-    ?U_27 :hasFever :Severe.
-}.
-{
-    ?U_30 :hasConfusion true.
-} => {
-    ?U_30 :hasConfusion true.
-}.
-{
-    ?U_33 :hasPhlemAmountValue ?U_39.
-    ?U_39 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-    ?U_39 <http://wvw.org/xai/swap/math#lessThan> 8.
-} => {
-    ?U_33 :hasPhlemAmountValue ?U_39.
-    ?U_39 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-    ?U_39 <http://wvw.org/xai/swap/math#lessThan> 8.
-}.
-{
-    ?U_36 :hasHighHumidity true.
-} => {
-    ?U_36 :hasHighHumidity true.
+    ?U_13 :hasHighHumidity true.
 }.
 
-# 2023-04-28T13:20:54.657Z in=15 out=13 ent=13 step=41 brake=2 inf=59100 sec=0.027 inf/sec=2188889
+# 2023-05-01T21:43:46.542Z in=29 out=5 ent=5 step=33 brake=2 inf=55323 sec=0.036 inf/sec=1536750
 # ENDS
 

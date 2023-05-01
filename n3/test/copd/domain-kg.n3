@@ -1,12 +1,14 @@
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
 @prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix xmath: <http://wvw.org/xai/swap/math#> .
 @prefix pml: <http://provenanceweb.org/ns/pml#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix x: <http://wvw.org/xai#> .
-@prefix xpl: <http://niche.cs.dal.ca/xpl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Zones
 
 #
 :isStratified x:explanation [
@@ -55,23 +57,21 @@
 ] .
 #
 :hasCyanosis x:explanation [
-   x:object "true"^^xsd:boolean ;
+   x:object true ;
    x:icon "fa-disease" ;
    x:summary "Cyanosis." 
 ] .
 #
 :hasChestPain x:explanation [
-   x:object "true"^^xsd:boolean ;
+   x:object true ;
    x:icon "fa-disease" ;
    x:summary "Chest Pain." 
 ] .
-
 :hasActivityExertion x:explanation [
    x:object :Severe ;
    x:icon "fa-disease" ;
    x:summary "Activity Exertion." 
 ] .
-
 :hasCough x:explanation [
    x:object :Severe ;
    x:icon "fa-disease" ;
@@ -79,7 +79,7 @@
 ] .
 #
 :hasLow02Saturation x:explanation [
-   x:object "true"^^xsd:boolean ;
+   x:object true ;
    x:icon "fa-disease" ;
    x:summary "Low 02 Saturation." 
 ] .
@@ -91,7 +91,55 @@
 ] .
 #
 :hasConfusion x:explanation [
-   x:object "true"^^xsd:boolean ;
+   x:object true ;
    x:icon "fa-disease" ;
    x:summary "Confusion." 
 ] .
+
+
+# Environment
+
+#
+:recommendation x:explanation [
+   x:object :avoidGoingOutside ;
+   x:style "text-orange" ;
+   x:icon "fa-disease" ;
+   x:summary "High Humidity." 
+] .
+
+#
+:hasHighHumidity x:explanation [
+   x:object true ;
+   x:icon "fa-disease" ;
+   x:summary "High Humidity." 
+] .
+
+#
+:hasLowTemperature x:explanation [
+   x:object true ;
+   x:icon "fa-disease" ;
+   x:summary "Low Temperature." 
+] .
+
+#
+:hasHighTemperature x:explanation [
+   x:object true ;
+   x:icon "fa-disease" ;
+   x:summary "High Temperature." 
+] .
+
+#
+:hasHumidityValue rdfs:label "humidity percentage" ;
+   x:explanation [
+       x:object ?x ;
+       x:icon "fa-disease" ;
+       x:summary "Humidity Percentage." 
+   ] .
+
+#
+:hasTemperatureValue rdfs:label "temperature" ;
+   x:explanation [
+       x:object ?x ;
+       x:icon "fa-disease" ;
+       x:summary "Temperature." 
+   ] .

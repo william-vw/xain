@@ -4,9 +4,10 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix x: <http://wvw.org/xai#> .
-@prefix xpl: <http://niche.cs.dal.ca/xpl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+
+# Yellow Zone
 
 {
    ?p :hasPhlemAmount :Moderate 
@@ -50,6 +51,22 @@
 }
 ;
    a x:InputRule .
+
+#
+{
+   ?p :hasPhlemAmountValue ?v .
+   ?v math:greaterThan 5 ;
+       math:lessThan 8 .
+}
+=> 
+{
+   ?p :hasPhlemAmount :Moderate 
+}
+;
+   a x:InputRule .
+
+
+# Red Zone
 
 #
 {
@@ -128,19 +145,6 @@
 ;
    a x:InputRule .
 
-#
-{
-   ?p :hasPhlemAmountValue ?v .
-   ?v math:greaterThan 5 ;
-       math:lessThan 8 
-}
-=> 
-{
-   ?p :hasPhlemAmount :Moderate 
-}
-;
-   a x:InputRule .
-
 # 	{?p :hasPhlemAmountValue ?v} ge{?v 8}
 # =>
 # 	{?p :hasPhlemAmount :Severe} ; a x:InputRule .
@@ -173,14 +177,12 @@
 # =>
 # 	{?p :hasFever :Severe} ; a x:InputRule .
 
-# 	{?env :hasHumidityValue ?v} greaterThan{?v 50}
-# =>
-# 	{?env :hasHighHumidity "true"^^xsd:boolean}  .
 
+# Environment
 
 #
 {
-   ?env :hasHighHumidity "true"^^xsd:boolean 
+   ?env :hasHighHumidity true 
 }
 => 
 {
@@ -189,4 +191,68 @@
 ;
    a x:InputRule .
 
+
 #
+{
+   ?env :hasLowTemperature true 
+}
+=> 
+{
+   ?env :recommendation :avoidGoingOutside 
+}
+;
+   a x:InputRule .
+
+
+#
+{
+   ?env :hasHighTemperature true 
+}
+=> 
+{
+   ?env :recommendation :avoidGoingOutside 
+}
+;
+   a x:InputRule .
+
+
+#
+{
+   ?env :hasHumidityValue ?v .
+   ?v math:greaterThan 50 ;
+      math:lessThan 100 .
+}
+=> 
+{
+   ?env :hasHighHumidity true 
+}
+;
+   a x:InputRule .
+
+
+#
+{
+   ?env :hasTemperatureValue ?v .
+   ?v math:greaterThan -10 ;
+      math:lessThan 0 .
+}
+=> 
+{
+   ?env :hasLowTemperature true 
+}
+;
+   a x:InputRule .
+
+
+#
+{
+   ?env :hasTemperatureValue ?v .
+   ?v math:greaterThan 32 ;
+      math:lessThan 50 .
+}
+=> 
+{
+   ?env :hasHighTemperature true 
+}
+;
+   a x:InputRule .

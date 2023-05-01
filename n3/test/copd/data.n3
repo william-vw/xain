@@ -1,0 +1,15 @@
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
+@prefix pml: <http://provenanceweb.org/ns/pml#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix x: <http://wvw.org/xai#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:patientA a :Subject .
+	# :hasColoredPhlem true ;
+	# :hasPhlemAmount :Moderate .
+   # :hasPhlemAmountValue 7 .
+
+:envA a :Environment ;
+   :hasHumidityValue 55 ;
+   :hasTemperatureValue -5 .

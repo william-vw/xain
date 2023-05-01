@@ -42,6 +42,7 @@
 }
 <= 
 {
+   # TODO for false, add a "not"
    ?o list:in ( true false ) .
    ?p!log:localN3String x:description ?pd .
    ( "<span class='triple'><span class='predicate'>" ?pd "</span></span>" ) string:concatenation ?str .
@@ -61,7 +62,7 @@
            {
                ?x ?p ?y .
                ?y ?gt ?l ;
-                   ?lt ?u .
+                  ?lt ?u .
            } .
            ?gt log:localName "greaterThan" .
            ?lt log:localName "lessThan" .

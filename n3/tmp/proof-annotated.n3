@@ -1,652 +1,353 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --nope --n3 n3/tmp/proof.n3 n3/modules/proof/contrast/aux_inv.n3 --pass-all
+# eye --nope --n3 n3/tmp/proof.n3 n3/modules/proof/trace/aux_trace.n3 n3/modules/proof/trace/default/aux_default.n3 --pass-all
 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix list: <http://www.w3.org/2000/10/swap/list#>.
-@prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix string: <http://www.w3.org/2000/10/swap/string#>.
-@prefix x: <http://wvw.org/xai#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix xpl: <http://niche.cs.dal.ca/xpl#>.
+@prefix x: <http://wvw.org/xai#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
 @prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2699755403071021912#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3823829535353781700#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 @prefix dc: <http://purl.org/dc/terms/>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix xmath: <http://wvw.org/xai/swap/math#>.
 
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#proof> a r:Proof.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#proof> a r:Conjunction.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma1> a r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma2> a r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma3> a r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma4> a r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma5> a r:Inference.
-_:bn_18 a r:Existential.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma6> a r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma7> a r:Extraction.
-_:bn_22 a r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma8> a r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma9> a r:Extraction.
-_:bn_26 a r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma10> a r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma11> a r:Extraction.
-_:bn_30 a r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma12> a r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma13> a r:Extraction.
-_:bn_34 a r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14> a r:Inference.
-_:bn_40 a r:Existential.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma15> a r:Extraction.
-_:bn_41 a r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma16> a r:Extraction.
-_:bn_42 a r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma17> a r:Extraction.
-_:bn_43 a r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma18> a r:Extraction.
-_:bn_44 a r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma19> a r:Extraction.
-_:bn_45 a r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma20> a r:Extraction.
-_:bn_46 a r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma21> a r:Extraction.
-_:bn_47 a r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma16> a x:RootNode.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma16> a x:Node.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#proof> r:component <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma1>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#proof> r:component <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma2>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#proof> r:component <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma3>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#proof> r:component <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma4>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#proof> r:component <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma5>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#proof> r:gives {
-    :patientA :hasPhlemAmount :Moderate.
-    :patientA :hasColoredPhlem true.
-    :patientA :hasSwollenAnkle true.
-    :patientA :hasActivityExertion :Moderate.
-    :patientA :hasPhlemAmountValue _:sk_3.
-    _:sk_3 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-    _:sk_3 <http://wvw.org/xai/swap/math#lessThan> 8.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#proof> a r:Proof.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#proof> a r:Conjunction.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma1> a r:Inference.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma2> a r:Inference.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3> a r:Inference.
+_:bn_7 a r:Fact.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma4> a r:Extraction.
+_:bn_13 a r:Parsing.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> a r:Inference.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma6> a r:Extraction.
+_:bn_17 a r:Parsing.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma7> a r:Extraction.
+_:bn_18 a r:Parsing.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma8> a r:Extraction.
+_:bn_19 a r:Parsing.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma9> a r:Extraction.
+_:bn_20 a r:Parsing.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3> a x:Node.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> a x:Node.
+_:bn_7 a x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma7> a x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#proof> r:component <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma1>.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#proof> r:component <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma2>.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#proof> r:gives {
+    :envA :hasHighHumidity true.
+    :envA :recommendation :avoidGoingOutside.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma1> r:gives {
-    :patientA :hasPhlemAmount :Moderate.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma1> r:gives {
+    :envA :hasHighHumidity true.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma2> r:gives {
-    :patientA :hasColoredPhlem true.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma2> r:gives {
+    :envA :recommendation :avoidGoingOutside.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma3> r:gives {
-    :patientA :hasSwollenAnkle true.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3> r:gives {
+    :envA :hasHighHumidity true.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma4> r:gives {
-    :patientA :hasActivityExertion :Moderate.
+_:bn_7 r:gives {
+    55 math:greaterThan 50.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma5> r:gives {
-    :patientA :hasPhlemAmountValue _:sk_4.
-    _:sk_4 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-    _:sk_4 <http://wvw.org/xai/swap/math#lessThan> 8.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma6> r:gives {
-    :patientA :hasPhlemAmount :Moderate.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma7> r:gives {
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma4> r:gives {
     {
-        ?U_115 :hasPhlemAmount :Moderate.
+        ?U_56 :hasHighHumidity true.
     } => {
-        ?U_115 :hasPhlemAmount :Moderate.
+        ?U_56 :hasHighHumidity true.
     }.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma8> r:gives {
-    :patientA :hasColoredPhlem true.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> r:gives {
+    :envA :recommendation :avoidGoingOutside.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma9> r:gives {
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma6> r:gives {
     {
-        ?U_116 :hasColoredPhlem true.
+        ?U_57 :recommendation :avoidGoingOutside.
     } => {
-        ?U_116 :hasColoredPhlem true.
+        ?U_57 :recommendation :avoidGoingOutside.
     }.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma10> r:gives {
-    :patientA :hasSwollenAnkle true.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma7> r:gives {
+    :envA :hasHumidityValue 55.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma11> r:gives {
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma8> r:gives {
     {
-        ?U_117 :hasSwollenAnkle true.
+        ?U_58 :hasHumidityValue ?U_59.
+        ?U_59 math:greaterThan 50.
     } => {
-        ?U_117 :hasSwollenAnkle true.
+        ?U_58 :hasHighHumidity true.
     }.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma12> r:gives {
-    :patientA :hasActivityExertion :Moderate.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma13> r:gives {
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma9> r:gives {
     {
-        ?U_118 :hasActivityExertion :Moderate.
+        ?U_60 :hasHighHumidity true.
     } => {
-        ?U_118 :hasActivityExertion :Moderate.
+        ?U_60 :recommendation :avoidGoingOutside.
     }.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14> r:gives {
-    :patientA :hasPhlemAmountValue _:sk_5.
-    _:sk_5 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-    _:sk_5 <http://wvw.org/xai/swap/math#lessThan> 8.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma15> r:gives {
-    {
-        ?U_119 :hasPhlemAmountValue ?U_120.
-        ?U_120 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        ?U_120 <http://wvw.org/xai/swap/math#lessThan> 8.
-    } => {
-        ?U_119 :hasPhlemAmountValue ?U_120.
-        ?U_120 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        ?U_120 <http://wvw.org/xai/swap/math#lessThan> 8.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma16> r:gives {
-    :patientA :isStratified :YellowZone.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma17> r:gives {
-    {
-        ?U_121 :isStratified :YellowZone.
-    } => {
-        ?U_121 :hasPhlemAmount :Moderate.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma18> r:gives {
-    {
-        ?U_122 :isStratified :YellowZone.
-    } => {
-        ?U_122 :hasColoredPhlem true.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma19> r:gives {
-    {
-        ?U_123 :isStratified :YellowZone.
-    } => {
-        ?U_123 :hasSwollenAnkle true.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma20> r:gives {
-    {
-        ?U_124 :isStratified :YellowZone.
-    } => {
-        ?U_124 :hasActivityExertion :Moderate.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma21> r:gives {
-    {
-        ?U_125 :hasPhlemAmount :Moderate.
-    } => {
-        ?U_125 :hasPhlemAmountValue ?U_126.
-        ?U_126 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        ?U_126 <http://wvw.org/xai/swap/math#lessThan> 8.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma1> r:evidence (<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma6>).
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma2> r:evidence (<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma8>).
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma3> r:evidence (<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma10>).
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma4> r:evidence (<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma12>).
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma5> r:evidence (<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14> <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14> <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14>).
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma6> r:evidence (<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma16>).
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma8> r:evidence (<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma16>).
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma10> r:evidence (<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma16>).
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma12> r:evidence (<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma16>).
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14> r:evidence (<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma6>).
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma1> r:binding _:bn_1.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma2> r:binding _:bn_4.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma3> r:binding _:bn_7.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma4> r:binding _:bn_10.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma5> r:binding _:bn_13.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma5> r:binding _:bn_16.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma6> r:binding _:bn_19.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma8> r:binding _:bn_23.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma10> r:binding _:bn_27.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma12> r:binding _:bn_31.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14> r:binding _:bn_35.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14> r:binding _:bn_38.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma1> r:evidence (<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3>).
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma2> r:evidence (<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5>).
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3> r:evidence (<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma7> _:bn_7).
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> r:evidence (<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3>).
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma1> r:binding _:bn_1.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma2> r:binding _:bn_4.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3> r:binding _:bn_8.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3> r:binding _:bn_11.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> r:binding _:bn_14.
 _:bn_1 r:variable _:bn_2.
 _:bn_4 r:variable _:bn_5.
-_:bn_7 r:variable _:bn_8.
-_:bn_10 r:variable _:bn_11.
-_:bn_13 r:variable _:bn_14.
-_:bn_16 r:variable _:bn_17.
-_:bn_19 r:variable _:bn_20.
-_:bn_23 r:variable _:bn_24.
-_:bn_27 r:variable _:bn_28.
-_:bn_31 r:variable _:bn_32.
-_:bn_35 r:variable _:bn_36.
-_:bn_38 r:variable _:bn_39.
+_:bn_8 r:variable _:bn_9.
+_:bn_11 r:variable _:bn_12.
+_:bn_14 r:variable _:bn_15.
 _:bn_2 n3:uri "http://eyereasoner.github.io/var#x_0".
-_:bn_3 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA".
+_:bn_3 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA".
 _:bn_5 n3:uri "http://eyereasoner.github.io/var#x_0".
-_:bn_6 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA".
-_:bn_8 n3:uri "http://eyereasoner.github.io/var#x_0".
-_:bn_9 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA".
-_:bn_11 n3:uri "http://eyereasoner.github.io/var#x_0".
-_:bn_12 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA".
-_:bn_14 n3:uri "http://eyereasoner.github.io/var#x_0".
-_:bn_15 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA".
-_:bn_17 n3:uri "http://eyereasoner.github.io/var#x_1".
-_:bn_20 n3:uri "http://eyereasoner.github.io/var#x_0".
-_:bn_21 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA".
-_:bn_24 n3:uri "http://eyereasoner.github.io/var#x_0".
-_:bn_25 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA".
-_:bn_28 n3:uri "http://eyereasoner.github.io/var#x_0".
-_:bn_29 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA".
-_:bn_32 n3:uri "http://eyereasoner.github.io/var#x_0".
-_:bn_33 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA".
-_:bn_36 n3:uri "http://eyereasoner.github.io/var#x_0".
-_:bn_37 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA".
-_:bn_39 n3:uri "http://eyereasoner.github.io/var#x_1".
+_:bn_6 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA".
+_:bn_9 n3:uri "http://eyereasoner.github.io/var#x_0".
+_:bn_10 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA".
+_:bn_12 n3:uri "http://eyereasoner.github.io/var#x_1".
+_:bn_15 n3:uri "http://eyereasoner.github.io/var#x_0".
+_:bn_16 n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA".
 _:bn_1 r:boundTo _:bn_3.
 _:bn_4 r:boundTo _:bn_6.
-_:bn_7 r:boundTo _:bn_9.
-_:bn_10 r:boundTo _:bn_12.
-_:bn_13 r:boundTo _:bn_15.
-_:bn_16 r:boundTo _:bn_18.
-_:bn_19 r:boundTo _:bn_21.
-_:bn_23 r:boundTo _:bn_25.
-_:bn_27 r:boundTo _:bn_29.
-_:bn_31 r:boundTo _:bn_33.
-_:bn_35 r:boundTo _:bn_37.
-_:bn_38 r:boundTo _:bn_40.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma1> r:rule <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma7>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma2> r:rule <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma9>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma3> r:rule <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma11>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma4> r:rule <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma13>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma5> r:rule <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma15>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma6> r:rule <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma17>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma8> r:rule <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma18>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma10> r:rule <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma19>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma12> r:rule <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma20>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14> r:rule <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma21>.
-_:bn_18 n3:nodeId "_:sk_0".
-_:bn_40 n3:nodeId "_:sk_0".
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma7> r:because _:bn_22.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma9> r:because _:bn_26.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma11> r:because _:bn_30.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma13> r:because _:bn_34.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma15> r:because _:bn_41.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma16> r:because _:bn_42.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma17> r:because _:bn_43.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma18> r:because _:bn_44.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma19> r:because _:bn_45.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma20> r:because _:bn_46.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma21> r:because _:bn_47.
-_:bn_22 r:source <file:///Users/wvw/git/n3/eye-js/explain/n3/tmp/rule-heads.n3>.
-_:bn_26 r:source <file:///Users/wvw/git/n3/eye-js/explain/n3/tmp/rule-heads.n3>.
-_:bn_30 r:source <file:///Users/wvw/git/n3/eye-js/explain/n3/tmp/rule-heads.n3>.
-_:bn_34 r:source <file:///Users/wvw/git/n3/eye-js/explain/n3/tmp/rule-heads.n3>.
-_:bn_41 r:source <file:///Users/wvw/git/n3/eye-js/explain/n3/tmp/rule-heads.n3>.
-_:bn_42 r:source <file:///Users/wvw/git/n3/eye-js/explain/n3/test/contrast/yellow-goal.n3>.
-_:bn_43 r:source <file:///Users/wvw/git/n3/eye-js/explain/n3/tmp/rules-inv.n3>.
-_:bn_44 r:source <file:///Users/wvw/git/n3/eye-js/explain/n3/tmp/rules-inv.n3>.
-_:bn_45 r:source <file:///Users/wvw/git/n3/eye-js/explain/n3/tmp/rules-inv.n3>.
-_:bn_46 r:source <file:///Users/wvw/git/n3/eye-js/explain/n3/tmp/rules-inv.n3>.
-_:bn_47 r:source <file:///Users/wvw/git/n3/eye-js/explain/n3/tmp/rules-inv.n3>.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#proof> x:gives {
-    :patientA :hasPhlemAmount :Moderate.
-    :patientA :hasColoredPhlem true.
-    :patientA :hasSwollenAnkle true.
-    :patientA :hasActivityExertion :Moderate.
-    :patientA :hasPhlemAmountValue var:x_0.
-    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
+_:bn_8 r:boundTo _:bn_10.
+_:bn_11 r:boundTo 55 .
+_:bn_14 r:boundTo _:bn_16.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma1> r:rule <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma4>.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma2> r:rule <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma6>.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3> r:rule <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma8>.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> r:rule <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma9>.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma4> r:because _:bn_13.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma6> r:because _:bn_17.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma7> r:because _:bn_18.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma8> r:because _:bn_19.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma9> r:because _:bn_20.
+_:bn_13 r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>.
+_:bn_17 r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>.
+_:bn_18 r:source <file:///Users/wvw/git/xai/xain/n3/test/copd/data.n3>.
+_:bn_19 r:source <file:///Users/wvw/git/xai/xain/n3/test/copd/rules.n3>.
+_:bn_20 r:source <file:///Users/wvw/git/xai/xain/n3/test/copd/rules.n3>.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma1> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3>).
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma2> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5>).
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma7> _:bn_7).
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3>).
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#proof> x:gives {
+    :envA :hasHighHumidity true.
+    :envA :recommendation :avoidGoingOutside.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma1> x:gives {
-    :patientA :hasPhlemAmount :Moderate.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma1> x:gives {
+    :envA :hasHighHumidity true.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma2> x:gives {
-    :patientA :hasColoredPhlem true.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma2> x:gives {
+    :envA :recommendation :avoidGoingOutside.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma3> x:gives {
-    :patientA :hasSwollenAnkle true.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3> x:gives {
+    :envA :hasHighHumidity true.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma4> x:gives {
-    :patientA :hasActivityExertion :Moderate.
+_:bn_7 x:gives {
+    55 math:greaterThan 50.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma5> x:gives {
-    :patientA :hasPhlemAmountValue var:x_0.
-    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma6> x:gives {
-    :patientA :hasPhlemAmount :Moderate.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma7> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma4> x:gives {
     {
-        var:x_0 :hasPhlemAmount :Moderate.
+        ?U_61 :hasHighHumidity true.
     } => {
-        var:x_0 :hasPhlemAmount :Moderate.
+        ?U_61 :hasHighHumidity true.
     }.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma8> x:gives {
-    :patientA :hasColoredPhlem true.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> x:gives {
+    :envA :recommendation :avoidGoingOutside.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma9> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma6> x:gives {
     {
-        var:x_0 :hasColoredPhlem true.
+        ?U_62 :recommendation :avoidGoingOutside.
     } => {
-        var:x_0 :hasColoredPhlem true.
+        ?U_62 :recommendation :avoidGoingOutside.
     }.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma10> x:gives {
-    :patientA :hasSwollenAnkle true.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma7> x:gives {
+    :envA :hasHumidityValue 55.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma11> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma8> x:gives {
     {
-        var:x_0 :hasSwollenAnkle true.
+        ?U_63 :hasHumidityValue ?U_64.
+        ?U_64 math:greaterThan 50.
     } => {
-        var:x_0 :hasSwollenAnkle true.
+        ?U_63 :hasHighHumidity true.
     }.
 }.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma12> x:gives {
-    :patientA :hasActivityExertion :Moderate.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma13> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma9> x:gives {
     {
-        var:x_0 :hasActivityExertion :Moderate.
+        ?U_65 :hasHighHumidity true.
     } => {
-        var:x_0 :hasActivityExertion :Moderate.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14> x:gives {
-    :patientA :hasPhlemAmountValue var:x_0.
-    var:x_0 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 8.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma15> x:gives {
-    {
-        var:x_0 :hasPhlemAmountValue var:x_1.
-        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
-    } => {
-        var:x_0 :hasPhlemAmountValue var:x_1.
-        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma16> x:gives {
-    :patientA :isStratified :YellowZone.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma17> x:gives {
-    {
-        var:x_0 :isStratified :YellowZone.
-    } => {
-        var:x_0 :hasPhlemAmount :Moderate.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma18> x:gives {
-    {
-        var:x_0 :isStratified :YellowZone.
-    } => {
-        var:x_0 :hasColoredPhlem true.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma19> x:gives {
-    {
-        var:x_0 :isStratified :YellowZone.
-    } => {
-        var:x_0 :hasSwollenAnkle true.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma20> x:gives {
-    {
-        var:x_0 :isStratified :YellowZone.
-    } => {
-        var:x_0 :hasActivityExertion :Moderate.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma21> x:gives {
-    {
-        var:x_0 :hasPhlemAmount :Moderate.
-    } => {
-        var:x_0 :hasPhlemAmountValue var:x_1.
-        var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        var:x_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+        ?U_65 :recommendation :avoidGoingOutside.
     }.
 }.
 {
-    ?U_6 a r:Extraction.
-    ?U_7 r:evidence ?U_8.
-    ?U_8 list:member ?U_6.
+    ?U_0 r:component ?U_1.
+    ?U_1 r:evidence ?U_2.
+    ?U_2 list:member ?U_3.
 } => {
-    ?U_6 a x:RootNode.
+    ?U_3 a x:Node.
+}.
+{
+    ?U_4 a x:Node.
+    ?U_4 r:evidence ?U_5.
+    ?U_5 list:member ?U_6.
+    ?U_6 a r:Inference.
+} => {
     ?U_6 a x:Node.
 }.
 {
-    ?U_9 a ?U_10.
-    ?U_10 list:in (r:Fact r:Extraction r:Inference).
-    (?U_11 {
-        ?U_9 list:in ?U_12.
-        ?U_11 r:evidence ?U_12.
-        ?U_13 log:notIncludes {
-            ?U_14 r:component ?U_11.
-        }.
-    } ?U_15) log:collectAllIn (?U_16 2).
+    ?U_7 a ?U_8.
+    ?U_8 list:in (r:Fact r:Extraction).
+    ?U_9 r:evidence ?U_10.
+    ?U_10 list:member ?U_7.
 } => {
-    ?U_9 x:evidence ?U_15.
+    ?U_7 a x:Leaf.
 }.
 {
-    ?U_17 a x:Node.
-    ?U_17 x:evidence ?U_18.
-    ?U_18 list:member ?U_19.
-    ?U_19 x:evidence ?U_20.
-    ?U_20 list:length ?U_21.
-    ?U_21 math:greaterThan 0.
+    ?U_11 r:component ?U_12.
+    ?U_12 r:evidence ?U_13.
+    ?U_13 list:member ?U_14.
+    (?U_15 {
+        ?U_15 a x:Node.
+        ?U_15 r:evidence ?U_16.
+        ?U_16 list:member ?U_14.
+    } ()) log:collectAllIn ?U_17.
 } => {
-    ?U_19 a x:Node.
+    ?U_14 a x:RootNode.
 }.
 {
-    ?U_22 x:evidence ?U_23.
-    ?U_23 list:member ?U_24.
-    ?U_24 x:evidence ().
+    ?U_18 x:intermEvidence ?U_19.
+    ?U_18 x:mergeGives ?U_20.
+    ?U_20 log:includes {
+        ?U_21 math:greaterThan ?U_22.
+        ?U_21 math:lessThan ?U_23.
+    }.
 } => {
-    ?U_24 a x:Leaf.
+    _:sk_24 a x:Leaf.
+    _:sk_24 x:gives ?U_20.
+    ?U_18 x:evidence (_:sk_24).
 }.
 {
-    ?U_25 r:gives ?U_26.
-    ?U_26 e:labelvars ?U_27.
+    ?U_25 x:intermEvidence ?U_26.
+    ?U_25 x:mergeGives ?U_27.
+    ?U_27 log:notIncludes {
+        ?U_28 math:greaterThan ?U_29.
+        ?U_28 math:lessThan ?U_30.
+    }.
 } => {
-    ?U_25 x:gives ?U_27.
+    ?U_25 x:evidence ?U_26.
 }.
 {
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#proof> r:gives {
-        :patientA :hasPhlemAmount :Moderate.
-        :patientA :hasColoredPhlem true.
-        :patientA :hasSwollenAnkle true.
-        :patientA :hasActivityExertion :Moderate.
-        :patientA :hasPhlemAmountValue ?U_28.
-        ?U_28 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        ?U_28 <http://wvw.org/xai/swap/math#lessThan> 8.
+    ?U_31 r:evidence ?U_32.
+} => {
+    ?U_31 x:intermEvidence ?U_32.
+}.
+{
+    ?U_33 r:gives ?U_34.
+} => {
+    ?U_33 x:gives ?U_34.
+}.
+{
+    <http://eyereasoner.github.io/.well-known/genid/45065512547013272#proof> r:gives {
+        :envA :hasHighHumidity true.
+        :envA :recommendation :avoidGoingOutside.
     }.
 } <= true.
 {
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma1> r:gives {
-        :patientA :hasPhlemAmount :Moderate.
+    <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma1> r:gives {
+        :envA :hasHighHumidity true.
     }.
 } <= true.
 {
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma2> r:gives {
-        :patientA :hasColoredPhlem true.
+    <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma2> r:gives {
+        :envA :recommendation :avoidGoingOutside.
     }.
 } <= true.
 {
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma3> r:gives {
-        :patientA :hasSwollenAnkle true.
+    <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3> r:gives {
+        :envA :hasHighHumidity true.
     }.
 } <= true.
 {
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma4> r:gives {
-        :patientA :hasActivityExertion :Moderate.
+    _:bn_7 r:gives {
+        55 math:greaterThan 50.
     }.
 } <= true.
 {
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma5> r:gives {
-        :patientA :hasPhlemAmountValue ?U_29.
-        ?U_29 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        ?U_29 <http://wvw.org/xai/swap/math#lessThan> 8.
-    }.
-} <= true.
-{
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma6> r:gives {
-        :patientA :hasPhlemAmount :Moderate.
-    }.
-} <= true.
-{
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma7> r:gives {
+    <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma4> r:gives {
         {
-            ?U_127 :hasPhlemAmount :Moderate.
+            ?U_66 :hasHighHumidity true.
         } => {
-            ?U_127 :hasPhlemAmount :Moderate.
+            ?U_66 :hasHighHumidity true.
         }.
     }.
 } <= true.
 {
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma8> r:gives {
-        :patientA :hasColoredPhlem true.
+    <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> r:gives {
+        :envA :recommendation :avoidGoingOutside.
     }.
 } <= true.
 {
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma9> r:gives {
+    <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma6> r:gives {
         {
-            ?U_128 :hasColoredPhlem true.
+            ?U_67 :recommendation :avoidGoingOutside.
         } => {
-            ?U_128 :hasColoredPhlem true.
+            ?U_67 :recommendation :avoidGoingOutside.
         }.
     }.
 } <= true.
 {
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma10> r:gives {
-        :patientA :hasSwollenAnkle true.
+    <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma7> r:gives {
+        :envA :hasHumidityValue 55.
     }.
 } <= true.
 {
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma11> r:gives {
+    <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma8> r:gives {
         {
-            ?U_129 :hasSwollenAnkle true.
+            ?U_68 :hasHumidityValue ?U_69.
+            ?U_69 math:greaterThan 50.
         } => {
-            ?U_129 :hasSwollenAnkle true.
+            ?U_68 :hasHighHumidity true.
         }.
     }.
 } <= true.
 {
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma12> r:gives {
-        :patientA :hasActivityExertion :Moderate.
-    }.
-} <= true.
-{
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma13> r:gives {
+    <http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma9> r:gives {
         {
-            ?U_130 :hasActivityExertion :Moderate.
+            ?U_70 :hasHighHumidity true.
         } => {
-            ?U_130 :hasActivityExertion :Moderate.
+            ?U_70 :recommendation :avoidGoingOutside.
         }.
     }.
 } <= true.
 {
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14> r:gives {
-        :patientA :hasPhlemAmountValue ?U_30.
-        ?U_30 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-        ?U_30 <http://wvw.org/xai/swap/math#lessThan> 8.
-    }.
-} <= true.
-{
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma15> r:gives {
-        {
-            ?U_131 :hasPhlemAmountValue ?U_132.
-            ?U_132 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-            ?U_132 <http://wvw.org/xai/swap/math#lessThan> 8.
-        } => {
-            ?U_131 :hasPhlemAmountValue ?U_132.
-            ?U_132 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-            ?U_132 <http://wvw.org/xai/swap/math#lessThan> 8.
-        }.
-    }.
-} <= true.
-{
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma16> r:gives {
-        :patientA :isStratified :YellowZone.
-    }.
-} <= true.
-{
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma17> r:gives {
-        {
-            ?U_133 :isStratified :YellowZone.
-        } => {
-            ?U_133 :hasPhlemAmount :Moderate.
-        }.
-    }.
-} <= true.
-{
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma18> r:gives {
-        {
-            ?U_134 :isStratified :YellowZone.
-        } => {
-            ?U_134 :hasColoredPhlem true.
-        }.
-    }.
-} <= true.
-{
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma19> r:gives {
-        {
-            ?U_135 :isStratified :YellowZone.
-        } => {
-            ?U_135 :hasSwollenAnkle true.
-        }.
-    }.
-} <= true.
-{
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma20> r:gives {
-        {
-            ?U_136 :isStratified :YellowZone.
-        } => {
-            ?U_136 :hasActivityExertion :Moderate.
-        }.
-    }.
-} <= true.
-{
-    <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma21> r:gives {
-        {
-            ?U_137 :hasPhlemAmount :Moderate.
-        } => {
-            ?U_137 :hasPhlemAmountValue ?U_138.
-            ?U_138 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-            ?U_138 <http://wvw.org/xai/swap/math#lessThan> 8.
-        }.
-    }.
-} <= true.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma6> a x:Node.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14> a x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma8> a x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma10> a x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma12> a x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma1> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma2> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma3> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma4> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma5> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma6> x:evidence (<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14>).
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma7> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma8> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma9> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma10> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma11> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma12> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma13> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma14> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma15> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma16> x:evidence (<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma6> <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma8> <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma10> <http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma12>).
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma17> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma18> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma19> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma20> x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/594545623197135403#lemma21> x:evidence ().
+    ?U_35 x:mergeGives ?U_36.
+} <= {
+    ?U_35 x:intermEvidence ?U_37.
+    (?U_38 {
+        ?U_37 list:member ?U_39.
+        ?U_39 x:gives ?U_38.
+    } ?U_40) log:collectAllIn ?U_41.
+    ?U_40 log:conjunction ?U_36.
+}.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> a x:RootNode.
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma1> x:evidence (<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3>).
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma2> x:evidence (<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5>).
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3> x:evidence (<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma7> _:bn_7).
+<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> x:evidence (<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3>).
 
-# 2023-04-28T13:20:54.756Z in=170 out=242 ent=292 step=1314 brake=5 inf=370422 sec=0.044 inf/sec=8418682
+# 2023-05-01T21:43:46.630Z in=81 out=116 ent=140 step=544 brake=4 inf=191681 sec=0.035 inf/sec=5476600
 # ENDS
 

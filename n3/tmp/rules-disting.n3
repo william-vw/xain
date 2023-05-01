@@ -1,5 +1,5 @@
-# Processed by EYE v3.20.10 (2023-04-20)
-# eye --nope --n3 n3/test/yellow-rules.n3 n3/modules/proof/trace/aggr/distinguish_rules.n3 --pass-only-new
+# Processed by EYE v3.21.1 (2023-04-23)
+# eye --nope --n3 n3/test/copd/rules.n3 n3/modules/proof/trace/aggr/distinguish_rules.n3 --pass-only-new
 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
@@ -7,11 +7,10 @@
 @prefix prov: <http://www.w3.org/ns/prov#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix x: <http://wvw.org/xai#>.
-@prefix xpl: <http://niche.cs.dal.ca/xpl#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/815917718126876828#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/4351979671130145061#>.
 
 {
     ?U_0 :hasPhlemAmount :Moderate.
@@ -38,53 +37,53 @@
     var:t_3 x:padding var:t_3.
 }.
 {
-    ?U_12 :hasCyanosis true.
+    ?U_12 :hasPhlemAmountValue ?U_13.
+    ?U_13 math:greaterThan 5 .
+    ?U_13 math:lessThan 8.
 } => {
-    ?U_12 :isStratified :RedZone.
+    ?U_12 :hasPhlemAmount :Moderate.
     var:t_4 x:padding var:t_4.
 }.
 {
-    ?U_15 :hasChestPain true.
+    ?U_16 :hasCyanosis true.
 } => {
-    ?U_15 :isStratified :RedZone.
+    ?U_16 :isStratified :RedZone.
     var:t_5 x:padding var:t_5.
 }.
 {
-    ?U_18 :hasActivityExertion :Severe.
+    ?U_19 :hasChestPain true.
 } => {
-    ?U_18 :isStratified :RedZone.
+    ?U_19 :isStratified :RedZone.
     var:t_6 x:padding var:t_6.
 }.
 {
-    ?U_21 :hasCough :Severe.
+    ?U_22 :hasActivityExertion :Severe.
 } => {
-    ?U_21 :isStratified :RedZone.
+    ?U_22 :isStratified :RedZone.
     var:t_7 x:padding var:t_7.
 }.
 {
-    ?U_24 :hasLow02Saturation true.
+    ?U_25 :hasCough :Severe.
 } => {
-    ?U_24 :isStratified :RedZone.
+    ?U_25 :isStratified :RedZone.
     var:t_8 x:padding var:t_8.
 }.
 {
-    ?U_27 :hasFever :Severe.
+    ?U_28 :hasLow02Saturation true.
 } => {
-    ?U_27 :isStratified :RedZone.
+    ?U_28 :isStratified :RedZone.
     var:t_9 x:padding var:t_9.
 }.
 {
-    ?U_30 :hasConfusion true.
+    ?U_31 :hasFever :Severe.
 } => {
-    ?U_30 :isStratified :RedZone.
+    ?U_31 :isStratified :RedZone.
     var:t_10 x:padding var:t_10.
 }.
 {
-    ?U_33 :hasPhlemAmountValue ?U_34.
-    ?U_34 math:greaterThan 5 .
-    ?U_34 math:lessThan 8.
+    ?U_34 :hasConfusion true.
 } => {
-    ?U_33 :hasPhlemAmount :Moderate.
+    ?U_34 :isStratified :RedZone.
     var:t_11 x:padding var:t_11.
 }.
 {
@@ -93,7 +92,29 @@
     ?U_37 :recommendation :avoidGoingOutside.
     var:t_12 x:padding var:t_12.
 }.
+{
+    ?U_40 :hasLowTemperature true.
+} => {
+    ?U_40 :recommendation :avoidGoingOutside.
+    var:t_13 x:padding var:t_13.
+}.
+{
+    ?U_43 :hasHumidityValue ?U_44.
+    ?U_44 math:greaterThan 50 .
+    ?U_44 math:lessThan 100.
+} => {
+    ?U_43 :hasHighHumidity true.
+    var:t_14 x:padding var:t_14.
+}.
+{
+    ?U_47 :hasTemperatureValue ?U_48.
+    ?U_48 math:greaterThan -10 .
+    ?U_48 math:lessThan 0.
+} => {
+    ?U_47 :hasLowTemperature true.
+    var:t_15 x:padding var:t_15.
+}.
 
-# 2023-04-27T13:28:49.572Z in=27 out=13 ent=13 step=26 brake=2 inf=75423 sec=0.036 inf/sec=2095083
+# 2023-05-01T21:14:54.633Z in=33 out=16 ent=16 step=32 brake=2 inf=93166 sec=0.035 inf/sec=2661886
 # ENDS
 

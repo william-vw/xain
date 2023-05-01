@@ -1,5 +1,5 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --nope --n3 n3/modules/proof/contrast/invert_rules.n3 n3/test/yellow-rules.n3 --pass-only-new --quantify http://eyereasoner.github.io/var#
+# eye --nope --n3 n3/modules/proof/contrast/invert_rules.n3 n3/test/copd/rules.n3 --pass-only-new --quantify http://eyereasoner.github.io/var#
 
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
@@ -11,7 +11,6 @@
 @prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix xpl: <http://niche.cs.dal.ca/xpl#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
 {
@@ -33,6 +32,13 @@
     ?t_0 :isStratified :YellowZone.
 } => {
     ?t_0 :hasActivityExertion :Moderate.
+}.
+{
+    ?t_0 :hasPhlemAmount :Moderate.
+} => {
+    ?t_0 :hasPhlemAmountValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 8.
 }.
 {
     ?t_0 :isStratified :RedZone.
@@ -70,16 +76,15 @@
     ?t_0 :hasConfusion true.
 }.
 {
-    ?t_0 :hasPhlemAmount :Moderate.
-} => {
-    ?t_0 :hasPhlemAmountValue _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 8.
-}.
-{
     ?t_0 :recommendation :avoidGoingOutside.
 } => {
     ?t_0 :hasHighHumidity true.
+}.
+{
+    ?t_0 :hasHighHumidity true.
+} => {
+    ?t_0 :hasHumidityValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 50.
 }.
 {
     ?t_0 :hasPhlemAmountValue ?t_1.
@@ -88,7 +93,13 @@
 } => {
     ?t_0 :hasPhlemAmount :Moderate.
 }.
+{
+    ?t_0 :hasHumidityValue ?t_1.
+    ?t_1 <http://wvw.org/xai/swap/math#greaterThan> 50.
+} => {
+    ?t_0 :hasHighHumidity true.
+}.
 
-# 2023-04-28T13:20:54.618Z in=32 out=14 ent=14 step=41 brake=5 inf=189402 sec=0.046 inf/sec=4117435
+# 2023-05-01T21:34:57.216Z in=34 out=16 ent=16 step=46 brake=5 inf=214064 sec=0.046 inf/sec=4653565
 # ENDS
 
