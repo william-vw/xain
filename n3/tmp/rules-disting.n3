@@ -10,123 +10,184 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/538268420073609628#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3496642823570857367#>.
 
 {
-    ?U_0 :hasPhlemAmount :Moderate.
+    ?U_0 :hasPhlegmAmount :Low.
+    ?U_0 :hasActivityExertion :Low.
 } => {
-    ?U_0 :isStratified :YellowZone.
+    ?U_0 :isStratified :GreenZone.
     var:t_0 x:padding var:t_0.
 }.
 {
-    ?U_3 :hasColoredPhlem true.
+    ?U_3 :hasPhlegmAmountValue ?U_4.
+    ?U_4 math:notGreaterThan 5.
 } => {
-    ?U_3 :isStratified :YellowZone.
+    ?U_3 :hasPhlegmAmount :Low.
     var:t_1 x:padding var:t_1.
 }.
 {
-    ?U_6 :hasSwollenAnkle true.
+    ?U_7 :hasActivityExertionValue ?U_8.
+    ?U_8 math:notGreaterThan 4.
 } => {
-    ?U_6 :isStratified :YellowZone.
+    ?U_7 :hasActivityExertion :Low.
     var:t_2 x:padding var:t_2.
 }.
 {
-    ?U_9 :hasActivityExertion :Moderate.
+    ?U_11 :hasPhlegmAmount :Moderate.
 } => {
-    ?U_9 :isStratified :YellowZone.
+    ?U_11 :isStratified :YellowZone.
     var:t_3 x:padding var:t_3.
 }.
 {
-    ?U_12 :hasPhlemAmountValue ?U_13.
-    ?U_13 math:greaterThan 5 .
-    ?U_13 math:lessThan 8.
+    ?U_14 :hasColoredPhlegm true.
 } => {
-    ?U_12 :hasPhlemAmount :Moderate.
+    ?U_14 :isStratified :YellowZone.
     var:t_4 x:padding var:t_4.
 }.
 {
-    ?U_16 :hasCyanosis true.
+    ?U_17 :hasActivityExertion :High.
 } => {
-    ?U_16 :isStratified :RedZone.
+    ?U_17 :isStratified :YellowZone.
     var:t_5 x:padding var:t_5.
 }.
 {
-    ?U_19 :hasChestPain true.
+    ?U_20 :hasPhlegmAmountValue ?U_21.
+    ?U_21 math:greaterThan 5 .
+    ?U_21 math:lessThan 8.
 } => {
-    ?U_19 :isStratified :RedZone.
+    ?U_20 :hasPhlegmAmount :Moderate.
     var:t_6 x:padding var:t_6.
 }.
 {
-    ?U_22 :hasActivityExertion :Severe.
+    ?U_24 :hasActivityExertionValue ?U_25.
+    ?U_25 math:greaterThan 4 .
+    ?U_25 math:lessThan 8.
 } => {
-    ?U_22 :isStratified :RedZone.
+    ?U_24 :hasActivityExertion :High.
     var:t_7 x:padding var:t_7.
 }.
 {
-    ?U_25 :hasCough :Severe.
+    ?U_28 :hasChestPain true.
 } => {
-    ?U_25 :isStratified :RedZone.
+    ?U_28 :isStratified :RedZone.
     var:t_8 x:padding var:t_8.
 }.
 {
-    ?U_28 :hasLow02Saturation true.
+    ?U_31 :hasPhlegmAmount :Severe.
 } => {
-    ?U_28 :isStratified :RedZone.
+    ?U_31 :isStratified :RedZone.
     var:t_9 x:padding var:t_9.
 }.
 {
-    ?U_31 :hasFever :Severe.
+    ?U_34 :hasActivityExertion :Severe.
 } => {
-    ?U_31 :isStratified :RedZone.
+    ?U_34 :isStratified :RedZone.
     var:t_10 x:padding var:t_10.
 }.
 {
-    ?U_34 :hasConfusion true.
+    ?U_37 :hasLow02Saturation true.
 } => {
-    ?U_34 :isStratified :RedZone.
+    ?U_37 :isStratified :RedZone.
     var:t_11 x:padding var:t_11.
 }.
 {
-    ?U_37 :hasHighHumidity true.
+    ?U_40 :hasPhlegmAmountValue ?U_41.
+    ?U_41 math:notLessThan 8.
 } => {
-    ?U_37 :recommendation :avoidGoingOutside.
+    ?U_40 :hasPhlegmAmount :Severe.
     var:t_12 x:padding var:t_12.
 }.
 {
-    ?U_40 :hasLowTemperature true.
+    ?U_44 :hasActivityExertionValue ?U_45.
+    ?U_45 math:notLessThan 8.
 } => {
-    ?U_40 :recommendation :avoidGoingOutside.
+    ?U_44 :hasActivityExertion :Severe.
     var:t_13 x:padding var:t_13.
 }.
 {
-    ?U_43 :hasHighTemperature true.
+    ?U_48 :has02SaturationValue ?U_49.
+    ?U_49 math:lessThan 88.
 } => {
-    ?U_43 :recommendation :avoidGoingOutside.
+    ?U_48 :hasLow02Saturation true.
     var:t_14 x:padding var:t_14.
 }.
 {
-    ?U_46 :hasHumidityValue ?U_47.
-    ?U_47 math:greaterThan 50.
+    ?U_52 :hasModerateHumidity true.
+    ?U_52 :hasModerateTemperature true.
 } => {
-    ?U_46 :hasHighHumidity true.
+    ?U_52 :recommendation :goOutside.
     var:t_15 x:padding var:t_15.
 }.
 {
-    ?U_50 :hasTemperatureValue ?U_51.
-    ?U_51 math:greaterThan -10.
+    ?U_55 :hasHumidityValue ?U_56.
+    ?U_56 math:notLessThan 10 .
+    ?U_56 math:notGreaterThan 50.
 } => {
-    ?U_50 :hasLowTemperature true.
+    ?U_55 :hasModerateHumidity true.
     var:t_16 x:padding var:t_16.
 }.
 {
-    ?U_54 :hasTemperatureValue ?U_55.
-    ?U_55 math:greaterThan 32 .
-    ?U_55 math:lessThan 50.
+    ?U_59 :hasTemperatureValue ?U_60.
+    ?U_60 math:notLessThan 0 .
+    ?U_60 math:notGreaterThan 32.
 } => {
-    ?U_54 :hasHighTemperature true.
+    ?U_59 :hasModerateTemperature true.
     var:t_17 x:padding var:t_17.
 }.
+{
+    ?U_63 :hasLowHumidity true.
+} => {
+    ?U_63 :recommendation :avoidGoingOutside.
+    var:t_18 x:padding var:t_18.
+}.
+{
+    ?U_66 :hasHighHumidity true.
+} => {
+    ?U_66 :recommendation :avoidGoingOutside.
+    var:t_19 x:padding var:t_19.
+}.
+{
+    ?U_69 :hasLowTemperature true.
+} => {
+    ?U_69 :recommendation :avoidGoingOutside.
+    var:t_20 x:padding var:t_20.
+}.
+{
+    ?U_72 :hasHighTemperature true.
+} => {
+    ?U_72 :recommendation :avoidGoingOutside.
+    var:t_21 x:padding var:t_21.
+}.
+{
+    ?U_75 :hasHumidityValue ?U_76.
+    ?U_76 math:lessThan 10.
+} => {
+    ?U_75 :hasLowHumidity true.
+    var:t_22 x:padding var:t_22.
+}.
+{
+    ?U_79 :hasHumidityValue ?U_80.
+    ?U_80 math:greaterThan 50.
+} => {
+    ?U_79 :hasHighHumidity true.
+    var:t_23 x:padding var:t_23.
+}.
+{
+    ?U_83 :hasTemperatureValue ?U_84.
+    ?U_84 math:lessThan 0.
+} => {
+    ?U_83 :hasLowTemperature true.
+    var:t_24 x:padding var:t_24.
+}.
+{
+    ?U_87 :hasTemperatureValue ?U_88.
+    ?U_88 math:greaterThan 32.
+} => {
+    ?U_87 :hasHighTemperature true.
+    var:t_25 x:padding var:t_25.
+}.
 
-# 2023-05-02T13:15:10.546Z in=37 out=18 ent=18 step=36 brake=2 inf=102539 sec=0.037 inf/sec=2771324
+# 2023-05-02T20:01:03.544Z in=53 out=26 ent=26 step=52 brake=2 inf=170536 sec=0.042 inf/sec=4060381
 # ENDS
 

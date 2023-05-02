@@ -1,318 +1,191 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --n3 n3/test/copd/goal.n3 n3/tmp/rules-inv.n3 --query n3/tmp/rule-heads.n3
+# eye --n3 n3/tmp/rules-disting.n3 n3/test/copd/data.n3 --query n3/tmp/rule-heads.n3
 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix x: <http://wvw.org/xai#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix string: <http://www.w3.org/2000/10/swap/string#>.
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3496642823570857367#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
-@prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2467485317503713499#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/433133948603915954#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#proof> a r:Proof, r:Conjunction;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma1>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma2>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma3>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma4>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma5>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma6>;
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#proof> a r:Proof, r:Conjunction;
+    r:component <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma1>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma2>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma3>;
     r:gives {
+        :envA :hasModerateTemperature true.
+        var:t_17 x:padding var:t_17.
         :envA :hasHighHumidity true.
-        :envA :hasLowTemperature true.
-        :envA :hasHighTemperature true.
-        :envA :hasHumidityValue _:sk_0.
-        _:sk_0 <http://wvw.org/xai/swap/math#greaterThan> 50 .
-        :envA :hasTemperatureValue _:sk_1.
-        _:sk_1 <http://wvw.org/xai/swap/math#greaterThan> -10 .
-        :envA :hasTemperatureValue _:sk_2.
-        _:sk_2 <http://wvw.org/xai/swap/math#greaterThan> 32 .
-        _:sk_2 <http://wvw.org/xai/swap/math#lessThan> 50 .
+        var:t_23 x:padding var:t_23.
+        :envA :recommendation :avoidGoingOutside.
+        var:t_19 x:padding var:t_19.
     }.
 
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma1> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma1> a r:Inference;
+    r:gives {
+        :envA :hasModerateTemperature true.
+        var:t_17 x:padding var:t_17.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma4>
+        <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma4>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma5>.
+
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma2> a r:Inference;
     r:gives {
         :envA :hasHighHumidity true.
+        var:t_23 x:padding var:t_23.
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma7>
+        <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma6>
+        <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma6>
     );
     r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma8>.
+    r:rule <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma7>.
 
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma2> a r:Inference;
-    r:gives {
-        :envA :hasLowTemperature true.
-    };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma9>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma10>.
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma3> a r:Inference;
-    r:gives {
-        :envA :hasHighTemperature true.
-    };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma11>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma12>.
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma4> a r:Inference;
-    r:gives {
-        :envA :hasHumidityValue _:sk_0.
-        _:sk_0 <http://wvw.org/xai/swap/math#greaterThan> 50 .
-    };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma13>
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma13>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo [ a r:Existential; n3:nodeId "_:sk_0"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma14>.
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma5> a r:Inference;
-    r:gives {
-        :envA :hasTemperatureValue _:sk_1.
-        _:sk_1 <http://wvw.org/xai/swap/math#greaterThan> -10 .
-    };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma15>
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma15>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo [ a r:Existential; n3:nodeId "_:sk_1"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma16>.
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma6> a r:Inference;
-    r:gives {
-        :envA :hasTemperatureValue _:sk_2.
-        _:sk_2 <http://wvw.org/xai/swap/math#greaterThan> 32 .
-        _:sk_2 <http://wvw.org/xai/swap/math#lessThan> 50 .
-    };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma17>
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma17>
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma17>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo [ a r:Existential; n3:nodeId "_:sk_2"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma18>.
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma7> a r:Inference;
-    r:gives {
-        :envA :hasHighHumidity true.
-    };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma19>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma20>.
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma8> a r:Extraction;
-    r:gives {
-        @forAll var:x_0. {
-            var:x_0 :hasHighHumidity true.
-        } => {
-            var:x_0 :hasHighHumidity true.
-        }.
-    };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma9> a r:Inference;
-    r:gives {
-        :envA :hasLowTemperature true.
-    };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma19>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma21>.
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma10> a r:Extraction;
-    r:gives {
-        @forAll var:x_0. {
-            var:x_0 :hasLowTemperature true.
-        } => {
-            var:x_0 :hasLowTemperature true.
-        }.
-    };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma11> a r:Inference;
-    r:gives {
-        :envA :hasHighTemperature true.
-    };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma19>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma22>.
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma12> a r:Extraction;
-    r:gives {
-        @forAll var:x_0. {
-            var:x_0 :hasHighTemperature true.
-        } => {
-            var:x_0 :hasHighTemperature true.
-        }.
-    };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma13> a r:Inference;
-    r:gives {
-        :envA :hasHumidityValue _:sk_0.
-        _:sk_0 <http://wvw.org/xai/swap/math#greaterThan> 50 .
-    };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma7>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo [ a r:Existential; n3:nodeId "_:sk_0"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma23>.
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma14> a r:Extraction;
-    r:gives {
-        @forAll var:x_0, var:x_1. {
-            var:x_0 :hasHumidityValue var:x_1.
-            var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 50.
-        } => {
-            var:x_0 :hasHumidityValue var:x_1.
-            var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 50.
-        }.
-    };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma15> a r:Inference;
-    r:gives {
-        :envA :hasTemperatureValue _:sk_1.
-        _:sk_1 <http://wvw.org/xai/swap/math#greaterThan> -10 .
-    };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma9>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo [ a r:Existential; n3:nodeId "_:sk_1"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma24>.
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma16> a r:Extraction;
-    r:gives {
-        @forAll var:x_0, var:x_1. {
-            var:x_0 :hasTemperatureValue var:x_1.
-            var:x_1 <http://wvw.org/xai/swap/math#greaterThan> -10.
-        } => {
-            var:x_0 :hasTemperatureValue var:x_1.
-            var:x_1 <http://wvw.org/xai/swap/math#greaterThan> -10.
-        }.
-    };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma17> a r:Inference;
-    r:gives {
-        :envA :hasTemperatureValue _:sk_2.
-        _:sk_2 <http://wvw.org/xai/swap/math#greaterThan> 32 .
-        _:sk_2 <http://wvw.org/xai/swap/math#lessThan> 50 .
-    };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma11>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo [ a r:Existential; n3:nodeId "_:sk_2"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma25>.
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma18> a r:Extraction;
-    r:gives {
-        @forAll var:x_0, var:x_1. {
-            var:x_0 :hasTemperatureValue var:x_1.
-            var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 32 .
-            var:x_1 <http://wvw.org/xai/swap/math#lessThan> 50.
-        } => {
-            var:x_0 :hasTemperatureValue var:x_1.
-            var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 32 .
-            var:x_1 <http://wvw.org/xai/swap/math#lessThan> 50.
-        }.
-    };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
-
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma19> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma3> a r:Inference;
     r:gives {
         :envA :recommendation :avoidGoingOutside.
+        var:t_19 x:padding var:t_19.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/copd/goal.n3>].
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma8>
+        <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma8>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma9>.
 
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma20> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma4> a r:Inference;
     r:gives {
-        @forAll var:x_0. {
-            var:x_0 :recommendation :avoidGoingOutside.
+        :envA :hasModerateTemperature true.
+        var:t_17 x:padding var:t_17.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma10>
+        [ a r:Fact; r:gives {5 math:notLessThan 0}]
+        [ a r:Fact; r:gives {5 math:notGreaterThan 32}]
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 5];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma11>.
+
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma5> a r:Extraction;
+    r:gives {
+        @forAll <http://eyereasoner.github.io/var#x_0>. {
+            <http://eyereasoner.github.io/var#x_0> :hasModerateTemperature true.
+            var:t_17 x:padding var:t_17.
         } => {
-            var:x_0 :hasHighHumidity true.
+            <http://eyereasoner.github.io/var#x_0> :hasModerateTemperature true.
+            var:t_17 x:padding var:t_17.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-inv.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma21> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma6> a r:Inference;
     r:gives {
-        @forAll var:x_0. {
-            var:x_0 :recommendation :avoidGoingOutside.
+        :envA :hasHighHumidity true.
+        var:t_23 x:padding var:t_23.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma12>
+        [ a r:Fact; r:gives {55 math:greaterThan 50}]
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 55];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma13>.
+
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma7> a r:Extraction;
+    r:gives {
+        @forAll <http://eyereasoner.github.io/var#x_0>. {
+            <http://eyereasoner.github.io/var#x_0> :hasHighHumidity true.
+            var:t_23 x:padding var:t_23.
         } => {
-            var:x_0 :hasLowTemperature true.
+            <http://eyereasoner.github.io/var#x_0> :hasHighHumidity true.
+            var:t_23 x:padding var:t_23.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-inv.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma22> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma8> a r:Inference;
     r:gives {
-        @forAll var:x_0. {
-            var:x_0 :recommendation :avoidGoingOutside.
+        :envA :recommendation :avoidGoingOutside.
+        var:t_19 x:padding var:t_19.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma6>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma14>.
+
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma9> a r:Extraction;
+    r:gives {
+        @forAll <http://eyereasoner.github.io/var#x_0>. {
+            <http://eyereasoner.github.io/var#x_0> :recommendation :avoidGoingOutside.
+            var:t_19 x:padding var:t_19.
         } => {
-            var:x_0 :hasHighTemperature true.
+            <http://eyereasoner.github.io/var#x_0> :recommendation :avoidGoingOutside.
+            var:t_19 x:padding var:t_19.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-inv.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma23> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma10> a r:Extraction;
     r:gives {
-        @forAll var:x_0. @forSome var:x_1. {
-            var:x_0 :hasHighHumidity true.
+        :envA :hasTemperatureValue 5 .
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/copd/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma11> a r:Extraction;
+    r:gives {
+        @forAll <http://eyereasoner.github.io/var#x_0>, <http://eyereasoner.github.io/var#x_1>. {
+            <http://eyereasoner.github.io/var#x_0> :hasTemperatureValue <http://eyereasoner.github.io/var#x_1>.
+            <http://eyereasoner.github.io/var#x_1> math:notLessThan 0 .
+            <http://eyereasoner.github.io/var#x_1> math:notGreaterThan 32.
         } => {
-            var:x_0 :hasHumidityValue var:x_1.
-            var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 50.
+            <http://eyereasoner.github.io/var#x_0> :hasModerateTemperature true.
+            var:t_17 x:padding var:t_17.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-inv.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma24> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma12> a r:Extraction;
     r:gives {
-        @forAll var:x_0. @forSome var:x_1. {
-            var:x_0 :hasLowTemperature true.
+        :envA :hasHumidityValue 55 .
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/copd/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma13> a r:Extraction;
+    r:gives {
+        @forAll <http://eyereasoner.github.io/var#x_0>, <http://eyereasoner.github.io/var#x_1>. {
+            <http://eyereasoner.github.io/var#x_0> :hasHumidityValue <http://eyereasoner.github.io/var#x_1>.
+            <http://eyereasoner.github.io/var#x_1> math:greaterThan 50.
         } => {
-            var:x_0 :hasTemperatureValue var:x_1.
-            var:x_1 <http://wvw.org/xai/swap/math#greaterThan> -10.
+            <http://eyereasoner.github.io/var#x_0> :hasHighHumidity true.
+            var:t_23 x:padding var:t_23.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-inv.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2578273520860781109#lemma25> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/1873011825013682341#lemma14> a r:Extraction;
     r:gives {
-        @forAll var:x_0. @forSome var:x_1. {
-            var:x_0 :hasHighTemperature true.
+        @forAll <http://eyereasoner.github.io/var#x_0>. {
+            <http://eyereasoner.github.io/var#x_0> :hasHighHumidity true.
         } => {
-            var:x_0 :hasTemperatureValue var:x_1.
-            var:x_1 <http://wvw.org/xai/swap/math#greaterThan> 32 .
-            var:x_1 <http://wvw.org/xai/swap/math#lessThan> 50.
+            <http://eyereasoner.github.io/var#x_0> :recommendation :avoidGoingOutside.
+            var:t_19 x:padding var:t_19.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-inv.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
 
-# 2023-05-02T13:54:52.876Z in=41 out=10 ent=20 step=30 brake=2 inf=120111 sec=0.029 inf/sec=4141759
+# 2023-05-02T20:01:03.631Z in=55 out=6 ent=12 step=16 brake=3 inf=154172 sec=0.032 inf/sec=4817875
 # ENDS
 

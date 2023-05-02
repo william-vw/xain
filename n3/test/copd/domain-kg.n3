@@ -1,17 +1,45 @@
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix math: <http://www.w3.org/2000/10/swap/math#> .
-@prefix xmath: <http://wvw.org/xai/swap/math#> .
 @prefix pml: <http://provenanceweb.org/ns/pml#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix x: <http://wvw.org/xai#> .
+@prefix xmath: <http://wvw.org/xai/swap/math#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+
+{
+   ?x a ?type .
+   ?type ?p ?y .
+   ?p!log:namespace <-log:uri x: 
+}
+=> 
+{
+   ?x ?p ?y 
+} .
+
+
 # Zones
+#
+:ZoneExplanation x:header1 "You are in:" ;
+   x:header2 "Because you have:" .
+#
+:ZoneReasonExplanation x:header1 "Risk Factor:" ;
+   x:header2 "Relation with COPD:" .
 
 #
 :isStratified x:explanation [
+   a :ZoneExplanation ;
+   x:object :GreenZone ;
+   x:icon "fa-exclamation-circle" ;
+   x:style "text-green" ;
+   x:summary "Your COPD is well controlled. We advise you to continue taking your medications as prescribed." 
+] .
+#
+:isStratified x:explanation [
+   a :ZoneExplanation ;
    x:object :YellowZone ;
    x:icon "fa-exclamation-circle" ;
    x:style "text-orange" ;
@@ -19,127 +47,189 @@
 ] .
 #
 :isStratified x:explanation [
+   a :ZoneExplanation ;
    x:object :RedZone ;
    x:icon "fa-exclamation-circle" ;
    x:style "text-red" ;
-   x:summary "Red Zone." 
+   x:summary "Take Action - Get Help! Call 911 for an ambulance to take you to the emergency room." 
 ] .
+
 #
-:hasPhlemAmountValue rdfs:label "phlem amount" ;
+:hasActivityExertionValue rdfs:label "activity level" ;
    x:explanation [
+       a :ZoneReasonExplanation ;
        x:object ?x ;
        x:icon "fa-disease" ;
-       x:summary "Phlem Amount Value." 
+       x:summary "Activity Exertion Value." 
    ] .
 #
 :hasActivityExertion x:explanation [
-   x:object :Moderate ;
+   a :ZoneReasonExplanation ;
+   x:object :Low ;
+   x:icon "fa-face-tongue-sweat" ;
+   x:summary "Low Activity Exertion." 
+] .
+#
+:hasActivityExertion x:explanation [
+   a :ZoneReasonExplanation ;
+   x:object :High ;
    x:icon "fa-face-tongue-sweat" ;
    x:summary "High levels of exertion when doing activities is a known factor for flare-ups." 
 ] .
 #
-:hasColoredPhlem x:explanation [
+:hasActivityExertion x:explanation [
+   a :ZoneReasonExplanation ;
+   x:object :Severe ;
+   x:icon "fa-disease" ;
+   x:summary "Severe Activity Exertion." 
+] .
+
+#
+:hasColoredPhlegm x:explanation [
+   a :ZoneReasonExplanation ;
    x:object true ;
    x:icon "fa-disease" ;
    x:summary "Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups." 
 ] .
+
 #
-:hasSwollenAnkle x:explanation [
-   x:object true ;
+:hasPhlegmAmountValue rdfs:label "phlegm amount" ;
+   x:explanation [
+       a :ZoneReasonExplanation ;
+       x:object ?x ;
+       x:icon "fa-disease" ;
+       x:summary "Phlegm Amount Value." 
+   ] .
+#
+:hasPhlegmAmount x:explanation [
+   a :ZoneReasonExplanation ;
+   x:object :Low ;
    x:icon "fa-disease" ;
-   x:summary "Swollen Ankle." 
+   x:summary "Low Phlegm Amount." 
 ] .
 #
-:hasPhlemAmount x:explanation [
+:hasPhlegmAmount x:explanation [
+   a :ZoneReasonExplanation ;
    x:object :Moderate ;
    x:icon "fa-disease" ;
-   x:summary "Phlem Amount." 
+   x:summary "Moderate Phlegm Amount." 
 ] .
 #
-:hasCyanosis x:explanation [
-   x:object true ;
+:hasPhlegmAmount x:explanation [
+   a :ZoneReasonExplanation ;
+   x:object :Severe ;
    x:icon "fa-disease" ;
-   x:summary "Cyanosis." 
+   x:summary "Severe Phlegm Amount." 
 ] .
+
 #
 :hasChestPain x:explanation [
+   a :ZoneReasonExplanation ;
    x:object true ;
    x:icon "fa-disease" ;
    x:summary "Chest Pain." 
 ] .
-:hasActivityExertion x:explanation [
-   x:object :Severe ;
-   x:icon "fa-disease" ;
-   x:summary "Activity Exertion." 
-] .
-:hasCough x:explanation [
-   x:object :Severe ;
-   x:icon "fa-disease" ;
-   x:summary "Cough." 
-] .
+
+
+#
+:has02SaturationValue rdfs:label "O2 saturation" ;
+   x:explanation [
+       a :ZoneReasonExplanation ;
+       x:object ?x ;
+       x:icon "fa-disease" ;
+       x:summary "O2 Saturation Value." 
+   ] .
 #
 :hasLow02Saturation x:explanation [
+   a :ZoneReasonExplanation ;
    x:object true ;
    x:icon "fa-disease" ;
    x:summary "Low 02 Saturation." 
 ] .
 #
-:hasFever x:explanation [
-   x:object :Severe ;
-   x:icon "fa-disease" ;
-   x:summary "Fever." 
-] .
-#
-:hasConfusion x:explanation [
-   x:object true ;
-   x:icon "fa-disease" ;
-   x:summary "Confusion." 
-] .
 
 
 # Environment
+#
+:RecommendationExplanation x:header1 "Today's recommendation:" ;
+   x:header2 "Because of:" .
+#
+:RecommendationReasonExplanation x:header1 "Risk Factor:" ;
+   x:header2 "Impact on COPD:" .
 
 #
 :recommendation x:explanation [
+   a :RecommendationExplanation ;
    x:object :avoidGoingOutside ;
    x:style "text-orange" ;
    x:icon "fa-disease" ;
    x:summary "Avoid Going Outside." 
 ] .
+#
+:recommendation x:explanation [
+   a :RecommendationExplanation ;
+   x:object :goOutside ;
+   x:style "text-green" ;
+   x:icon "fa-disease" ;
+   x:summary "Go Outside." 
+] .
 
 #
+:hasHumidityValue rdfs:label "humidity" ;
+   x:explanation [
+       a :RecommendationReasonExplanation ;
+       x:object ?x ;
+       x:icon "fa-disease" ;
+       x:summary "Humidity Value." 
+   ] .
+#
 :hasHighHumidity x:explanation [
+   a :RecommendationReasonExplanation ;
    x:object true ;
    x:icon "fa-disease" ;
    x:summary "High Humidity." 
 ] .
-
 #
-:hasLowTemperature x:explanation [
+:hasModerateHumidity x:explanation [
+   a :RecommendationReasonExplanation ;
    x:object true ;
    x:icon "fa-disease" ;
-   x:summary "Low Temperature." 
+   x:summary "Moderate Humidity." 
 ] .
-
 #
-:hasHighTemperature x:explanation [
+:hasLowHumidity x:explanation [
+   a :RecommendationReasonExplanation ;
    x:object true ;
    x:icon "fa-disease" ;
-   x:summary "High Temperature." 
+   x:summary "Low Humidity." 
 ] .
-
-#
-:hasHumidityValue rdfs:label "humidity percentage" ;
-   x:explanation [
-       x:object ?x ;
-       x:icon "fa-disease" ;
-       x:summary "Humidity Percentage." 
-   ] .
 
 #
 :hasTemperatureValue rdfs:label "temperature" ;
    x:explanation [
+       a :RecommendationReasonExplanation ;
        x:object ?x ;
        x:icon "fa-disease" ;
-       x:summary "Temperature." 
+       x:summary "Temperature Value." 
    ] .
+#
+:hasHighTemperature x:explanation [
+   a :RecommendationReasonExplanation ;
+   x:object true ;
+   x:icon "fa-disease" ;
+   x:summary "High Temperature." 
+] .
+#
+:hasModerateTemperature x:explanation [
+   a :RecommendationReasonExplanation ;
+   x:object true ;
+   x:icon "fa-disease" ;
+   x:summary "Moderate Temperature." 
+] .
+#
+:hasLowTemperature x:explanation [
+   a :RecommendationReasonExplanation ;
+   x:object true ;
+   x:icon "fa-disease" ;
+   x:summary "Low Temperature." 
+] .

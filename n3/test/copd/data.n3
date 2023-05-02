@@ -5,11 +5,24 @@
 @prefix x: <http://wvw.org/xai#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:patientA a :Subject .
-	# :hasColoredPhlem true ;
-	# :hasPhlemAmount :Moderate .
-   # :hasPhlemAmountValue 7 .
+# :patientA a :Subject ;
+# green
+   # :hasPhlegmAmountValue 5 ;
+   # :hasActivityExertionValue 3 .
+# yellow
+	# :hasColoredPhlegm true ;
+   # :hasPhlegmAmountValue 7 ;
+   # :hasActivityExertionValue 7 .
+# red
+	# :hasChestPain true ;
+   # :hasPhlegmAmountValue 8 ;
+   # :hasActivityExertionValue 9 ;
+   # :has02SaturationValue 85 .
 
 :envA a :Environment ;
-   # :hasHumidityValue 55 ;
-   :hasTemperatureValue 10 .
+   # avoid going outside
+   :hasHumidityValue 55 ;
+   :hasTemperatureValue 5 .
+   # go outside
+   # :hasHumidityValue 10 ;
+   # :hasTemperatureValue 10 .

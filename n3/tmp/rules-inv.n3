@@ -16,12 +16,12 @@
 {
     ?t_0 :isStratified :YellowZone.
 } => {
-    ?t_0 :hasPhlemAmount :Moderate.
+    ?t_0 :hasPhlegmAmount :Moderate.
 }.
 {
     ?t_0 :isStratified :YellowZone.
 } => {
-    ?t_0 :hasColoredPhlem true.
+    ?t_0 :hasColoredPhlegm true.
 }.
 {
     ?t_0 :isStratified :YellowZone.
@@ -34,9 +34,9 @@
     ?t_0 :hasActivityExertion :Moderate.
 }.
 {
-    ?t_0 :hasPhlemAmount :Moderate.
+    ?t_0 :hasPhlegmAmount :Moderate.
 } => {
-    ?t_0 :hasPhlemAmountValue _:t_1.
+    ?t_0 :hasPhlegmAmountValue _:t_1.
     _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
     _:t_1 <http://wvw.org/xai/swap/math#lessThan> 8.
 }.
@@ -110,11 +110,11 @@
     _:t_1 <http://wvw.org/xai/swap/math#lessThan> 50.
 }.
 {
-    ?t_0 :hasPhlemAmountValue ?t_1.
+    ?t_0 :hasPhlegmAmountValue ?t_1.
     ?t_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
     ?t_1 <http://wvw.org/xai/swap/math#lessThan> 8.
 } => {
-    ?t_0 :hasPhlemAmount :Moderate.
+    ?t_0 :hasPhlegmAmount :Moderate.
 }.
 {
     ?t_0 :hasHumidityValue ?t_1.

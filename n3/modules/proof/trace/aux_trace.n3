@@ -109,7 +109,7 @@
            {
                ?x ?p ?y 
            } .
-           ?p list:in ( math:greaterThan math:lessThan ) .
+           ?p list:in ( math:greaterThan math:lessThan math:notGreaterThan math:notLessThan ) .
        }
        ?cmps
    ) log:collectAllIn _:t .

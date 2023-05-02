@@ -61,7 +61,7 @@
        ?x ?p ?y .
        ?y ?cmp ?v .
    } .
-   ?cmp!log:localName list:in ( "greaterThan" "lessThan" ) .
+   ?cmp!log:localName list:in ( "greaterThan" "lessThan" "notGreaterThan" "notLessThan" ) .
    #
    ?p!log:localN3String x:description ?pd .
    ?cmp!log:localN3String x:description ?cd .
@@ -82,8 +82,8 @@
        ?y ?gt ?l ;
            ?lt ?u .
    } .
-   ?gt log:localName "greaterThan" .
-   ?lt log:localName "lessThan" .
+   ?gt!log:localName list:in ( "greaterThan" "notLessThan" ) .
+   ?lt!log:localName list:in ( "lessThan" "notGreaterThan" ) .
    #
    ?p!log:localN3String x:description ?pd .
    ?l!log:localN3String x:description ?ld .

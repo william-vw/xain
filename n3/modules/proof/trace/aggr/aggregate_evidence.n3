@@ -24,13 +24,14 @@
        r:gives ?concl .
    ?concl x:unpad ?inf .
    
-   # aggregation did not already occur for same inference
-   ?y a x:Node .
-   ?y log:notEqualTo ?x .
-   ?y!r:gives log:includes ?inf .
+   # aggregation did not already occur for same inference(s)
    (
        ?y
        {
+           ?y a x:Node .
+           ?y log:notEqualTo ?x .
+           ?y!r:gives log:includes ?inf .
+           #
            ?y x:aggrEvidence ?k 
        }
        ( )

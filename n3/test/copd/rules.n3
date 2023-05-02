@@ -6,11 +6,56 @@
 @prefix x: <http://wvw.org/xai#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+# for a more complete ruleset:
+# ~/git/xai/android/explainer_jre/data/cases/copd/rules_prov.jena
 
-# Yellow Zone
+
+# - Stratification
+
+# -- Green Zone
 
 {
-   ?p :hasPhlemAmount :Moderate 
+   ?p :hasPhlegmAmount :Low .
+   ?p :hasActivityExertion :Low 
+}
+=> 
+{
+   ?p :isStratified :GreenZone 
+}
+;
+   a x:InputRule .
+
+#
+{
+   ?p :hasPhlegmAmountValue ?v .
+   ?v math:notGreaterThan 5 
+}
+=> 
+{
+   ?p :hasPhlegmAmount :Low 
+}
+;
+   a x:InputRule .
+
+#
+{
+   ?p :hasActivityExertionValue ?v .
+   ?v math:notGreaterThan 4 
+}
+=> 
+{
+   ?p :hasActivityExertion :Low 
+}
+;
+   a x:InputRule .
+
+
+
+# -- Yellow Zone
+
+#
+{
+   ?p :hasPhlegmAmount :Moderate 
 }
 => 
 {
@@ -21,7 +66,7 @@
 
 #
 {
-   ?p :hasColoredPhlem "true"^^xsd:boolean 
+   ?p :hasColoredPhlegm true 
 }
 => 
 {
@@ -32,7 +77,7 @@
 
 #
 {
-   ?p :hasSwollenAnkle "true"^^xsd:boolean 
+   ?p :hasActivityExertion :High 
 }
 => 
 {
@@ -41,36 +86,40 @@
 ;
    a x:InputRule .
 
-#
-{
-   ?p :hasActivityExertion :Moderate 
-}
-=> 
-{
-   ?p :isStratified :YellowZone 
-}
-;
-   a x:InputRule .
 
 #
 {
-   ?p :hasPhlemAmountValue ?v .
+   ?p :hasPhlegmAmountValue ?v .
    ?v math:greaterThan 5 ;
        math:lessThan 8 .
 }
 => 
 {
-   ?p :hasPhlemAmount :Moderate 
+   ?p :hasPhlegmAmount :Moderate 
+}
+;
+   a x:InputRule .
+
+#
+{
+   ?p :hasActivityExertionValue ?v .
+   ?v math:greaterThan 4 ;
+       math:lessThan 8 .
+}
+=> 
+{
+   ?p :hasActivityExertion :High 
 }
 ;
    a x:InputRule .
 
 
-# Red Zone
+
+# -- Red Zone
 
 #
 {
-   ?p :hasCyanosis "true"^^xsd:boolean 
+   ?p :hasChestPain true 
 }
 => 
 {
@@ -81,7 +130,7 @@
 
 #
 {
-   ?p :hasChestPain "true"^^xsd:boolean 
+   ?p :hasPhlegmAmount :Severe 
 }
 => 
 {
@@ -103,7 +152,7 @@
 
 #
 {
-   ?p :hasCough :Severe 
+   ?p :hasLow02Saturation true 
 }
 => 
 {
@@ -114,71 +163,98 @@
 
 #
 {
-   ?p :hasLow02Saturation "true"^^xsd:boolean 
+   ?p :hasPhlegmAmountValue ?v .
+   ?v math:notLessThan 8 
 }
 => 
 {
-   ?p :isStratified :RedZone 
+   ?p :hasPhlegmAmount :Severe 
 }
 ;
    a x:InputRule .
 
 #
 {
-   ?p :hasFever :Severe 
+   ?p :hasActivityExertionValue ?v .
+   ?v math:notLessThan 8 
 }
 => 
 {
-   ?p :isStratified :RedZone 
+   ?p :hasActivityExertion :Severe 
 }
 ;
    a x:InputRule .
 
 #
 {
-   ?p :hasConfusion "true"^^xsd:boolean 
+   ?p :has02SaturationValue ?v .
+   ?v math:lessThan 88 
 }
 => 
 {
-   ?p :isStratified :RedZone 
+   ?p :hasLow02Saturation true 
 }
 ;
    a x:InputRule .
 
-# 	{?p :hasPhlemAmountValue ?v} ge{?v 8}
-# =>
-# 	{?p :hasPhlemAmount :Severe} ; a x:InputRule .
-
-# 	{?p :hasActivityExertionValue ?v} greaterThan{?v 5} lessThan{?v 8}
-# =>
-# 	{?p :hasActivityExertion :Moderate} ; a x:InputRule .
-
-# 	{?p :hasActivityExertionValue ?v} ge{?v 8}
-# =>
-# 	{?p :hasActivityExertion :Severe} ; a x:InputRule .
-
-# 	{?p :hasCoughValue ?v} greaterThan{?v 5} lessThan{?v 8}
-# =>
-# 	{?p :hasCough :Moderate} ; a x:InputRule .
-
-# 	{?p :hasCoughValue ?v} ge{?v 8}
-# =>
-# 	{?p :hasCough :Severe} ; a x:InputRule .
-
-# 	{?p :has02SaturationValue ?v} lessThan{?v 88}
-# =>
-# 	{?p :hasLow02Saturation "true"^^xsd:boolean} ; a x:InputRule .
-
-# 	{?p :hasFeverValue ?v} greaterThan{?v 37} lessThan{?v 39.5}
-# =>
-# 	{?p :hasFever :Moderate} ; a x:InputRule .
-
-# 	{?p :hasFeverValue ?v} ge{?v 39.5}
-# =>
-# 	{?p :hasFever :Severe} ; a x:InputRule .
 
 
-# Environment
+# - Environment
+
+# -- Go Outside
+
+#
+{
+   ?env :hasModerateHumidity true .
+   ?env :hasModerateTemperature true 
+}
+=> 
+{
+   ?env :recommendation :goOutside 
+}
+;
+   a x:InputRule .
+
+#
+{
+   ?env :hasHumidityValue ?v .
+   ?v math:notLessThan 10 ;
+       math:notGreaterThan 50 
+}
+=> 
+{
+   ?env :hasModerateHumidity true 
+}
+;
+   a x:InputRule .
+
+#
+{
+   ?env :hasTemperatureValue ?v .
+   ?v math:notLessThan 0 ;
+       math:notGreaterThan 32 
+}
+=> 
+{
+   ?env :hasModerateTemperature true 
+}
+;
+   a x:InputRule .
+
+
+
+# -- Avoid Going Outside
+
+#
+{
+   ?env :hasLowHumidity true 
+}
+=> 
+{
+   ?env :recommendation :avoidGoingOutside 
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -191,7 +267,6 @@
 ;
    a x:InputRule .
 
-
 #
 {
    ?env :hasLowTemperature true 
@@ -202,8 +277,7 @@
 }
 ;
    a x:InputRule .
-
-
+   
 #
 {
    ?env :hasHighTemperature true 
@@ -219,6 +293,18 @@
 #
 {
    ?env :hasHumidityValue ?v .
+   ?v math:lessThan 10 
+}
+=> 
+{
+   ?env :hasLowHumidity true 
+}
+;
+   a x:InputRule .
+
+#
+{
+   ?env :hasHumidityValue ?v .
    ?v math:greaterThan 50 
 }
 => 
@@ -227,7 +313,6 @@
 }
 ;
    a x:InputRule .
-
 
 #
 {
@@ -240,7 +325,6 @@
 }
 ;
    a x:InputRule .
-
 
 #
 {
