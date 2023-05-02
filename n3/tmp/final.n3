@@ -11,7 +11,7 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
 @prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3823829535353781700#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/271779186303185087#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 @prefix dc: <http://purl.org/dc/terms/>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
@@ -41,6 +41,24 @@
     55 math:greaterThan 50.
 } x:term 50 .
 {
+    :envA :hasLowTemperature true.
+} x:term :envA.
+{
+    :envA :hasLowTemperature true.
+} x:term :hasLowTemperature.
+{
+    :envA :hasLowTemperature true.
+} x:term true.
+{
+    -5 math:greaterThan -10.
+} x:term -5 .
+{
+    -5 math:greaterThan -10.
+} x:term math:greaterThan.
+{
+    -5 math:greaterThan -10.
+} x:term -10 .
+{
     :envA :recommendation :avoidGoingOutside.
 } x:term :envA.
 {
@@ -58,24 +76,87 @@
 {
     :envA :hasHumidityValue 55.
 } x:term 55 .
+{
+    :envA :hasTemperatureValue -5.
+} x:term :envA.
+{
+    :envA :hasTemperatureValue -5.
+} x:term :hasTemperatureValue.
+{
+    :envA :hasTemperatureValue -5.
+} x:term -5 .
+{
+    :envA :hasHumidityValue 55 .
+    55 math:greaterThan 50.
+} x:term :envA.
+{
+    :envA :hasHumidityValue 55 .
+    55 math:greaterThan 50.
+} x:term :hasHumidityValue.
+{
+    :envA :hasHumidityValue 55 .
+    55 math:greaterThan 50.
+} x:term 55 .
+{
+    :envA :hasHumidityValue 55 .
+    55 math:greaterThan 50.
+} x:term math:greaterThan.
+{
+    :envA :hasHumidityValue 55 .
+    55 math:greaterThan 50.
+} x:term 50 .
+{
+    :envA :hasTemperatureValue -5 .
+    -5 math:greaterThan -10.
+} x:term :envA.
+{
+    :envA :hasTemperatureValue -5 .
+    -5 math:greaterThan -10.
+} x:term :hasTemperatureValue.
+{
+    :envA :hasTemperatureValue -5 .
+    -5 math:greaterThan -10.
+} x:term -5 .
+{
+    :envA :hasTemperatureValue -5 .
+    -5 math:greaterThan -10.
+} x:term math:greaterThan.
+{
+    :envA :hasTemperatureValue -5 .
+    -5 math:greaterThan -10.
+} x:term -10 .
 ":hasHumidityValue" x:description "humidity percentage".
+":hasTemperatureValue" x:description "temperature".
 "true" x:description true.
 "55" x:description 55 .
 "50" x:description 50 .
+"-5" x:description -5 .
+"-10" x:description -10 .
 ":envA" x:description "".
 ":hasHighHumidity" x:description "high humidity".
 "math:greaterThan" x:description "than".
+":hasLowTemperature" x:description "low temperature".
 ":recommendation" x:description "".
 ":avoidGoingOutside" x:description "going outside".
-<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma3> x:conclusionStr "<span class='triple'><span class='predicate'>high humidity</span></span>".
-<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> x:conclusionStr "<span class='triple'><span class='object'>going outside</span> <span class='predicate'></span></span>".
-_:e_bn_7_1 x:conclusionStr "<span class='triple'><span class='object'>50</span> <span class='predicate'>than</span></span>".
-<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma7> x:conclusionStr "<span class='triple'><span class='object'>55</span> <span class='predicate'>humidity percentage</span></span>".
-_:e_bn_7_1 x:output "<li class='fact'><span class='triple'><span class='object'>50</span> <span class='predicate'>than</span></span></li>".
-<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma7> x:output "<li class='fact'><span class='triple'><span class='object'>55</span> <span class='predicate'>humidity percentage</span></span></li>".
-<http://eyereasoner.github.io/.well-known/genid/45065512547013272#lemma5> x:output "\n<div id=\"recomm0\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">You are in:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 text-orange\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h5 class=\"card-title pb-1 zone\">going outside</h5>\n               <p class=\"card-text mb-0 mt-1 zone-text\">High Humidity.</p>\n            </div>\n         </div>\n      </div>\n   </div>\n\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Because you have:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" onclick=\"nav.goto('lemma3');\" style=\"cursor: pointer\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>high humidity</span></span><h5>\n         </div>\n         <p class=\"card-content\">High Humidity. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div>".
-1 log:outputString "<div class=\"py-0 bg-white\">\n\t<div class=\"container-fluid mx-0 px-0\">\n<div id=\"recomm0\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">You are in:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 text-orange\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h5 class=\"card-title pb-1 zone\">going outside</h5>\n               <p class=\"card-text mb-0 mt-1 zone-text\">High Humidity.</p>\n            </div>\n         </div>\n      </div>\n   </div>\n\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Because you have:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" onclick=\"nav.goto('lemma3');\" style=\"cursor: pointer\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>high humidity</span></span><h5>\n         </div>\n         <p class=\"card-content\">High Humidity. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div><div class=\"fixed-bottom bg-section\">\n\t\t\t<div class=\"row g-0 text-white\">\n\t\t\t\t<div class=\"col-3 text-center back_btn\" onclick=\"nav.goback()\">\n\t\t\t\t\t<i class=\"fas fa-arrow-left card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center back_btn\" onclick=\"nav.gohome()\">\n\t\t\t\t\t<i class=\"fas fa-home card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t<i class=\"fas fa-capsules card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t<i class=\"fas fa-bars card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>".
+<http://eyereasoner.github.io/.well-known/genid/2355719533219337470#lemma4> x:conclusionStr "<span class='triple'><span class='predicate'>high humidity</span></span>".
+<http://eyereasoner.github.io/.well-known/genid/2355719533219337470#lemma6> x:conclusionStr "<span class='triple'><span class='predicate'>low temperature</span></span>".
+<http://eyereasoner.github.io/.well-known/genid/2355719533219337470#lemma8> x:conclusionStr "<span class='triple'><span class='object'>going outside</span> <span class='predicate'></span></span>".
+_:e_bn_10_1 x:conclusionStr "<span class='triple'><span class='object'>50</span> <span class='predicate'>than</span></span>".
+_:e_bn_17_1 x:conclusionStr "<span class='triple'><span class='object'>-10</span> <span class='predicate'>than</span></span>".
+<http://eyereasoner.github.io/.well-known/genid/2355719533219337470#lemma10> x:conclusionStr "<span class='triple'><span class='object'>55</span> <span class='predicate'>humidity percentage</span></span>".
+<http://eyereasoner.github.io/.well-known/genid/2355719533219337470#lemma12> x:conclusionStr "<span class='triple'><span class='object'>-5</span> <span class='predicate'>temperature</span></span>".
+_:e_sk_48_1 x:conclusionStr "<span class='triple'><span class='predicate'>humidity percentage</span> than 50</span>".
+_:e_sk_49_1 x:conclusionStr "<span class='triple'><span class='predicate'>temperature</span> than -10</span>".
+_:e_bn_10_1 x:output "<li class='fact'><span class='triple'><span class='object'>50</span> <span class='predicate'>than</span></span></li>".
+_:e_bn_17_1 x:output "<li class='fact'><span class='triple'><span class='object'>-10</span> <span class='predicate'>than</span></span></li>".
+<http://eyereasoner.github.io/.well-known/genid/2355719533219337470#lemma10> x:output "<li class='fact'><span class='triple'><span class='object'>55</span> <span class='predicate'>humidity percentage</span></span></li>".
+<http://eyereasoner.github.io/.well-known/genid/2355719533219337470#lemma12> x:output "<li class='fact'><span class='triple'><span class='object'>-5</span> <span class='predicate'>temperature</span></span></li>".
+_:e_sk_48_1 x:output "<li class='fact'><span class='triple'><span class='predicate'>humidity percentage</span> than 50</span></li>".
+_:e_sk_49_1 x:output "<li class='fact'><span class='triple'><span class='predicate'>temperature</span> than -10</span></li>".
+<http://eyereasoner.github.io/.well-known/genid/2355719533219337470#lemma4> x:output "\n<div id=\"lemma4\" class=\"level_n\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">Risk factor:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 align-items-center text-section\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h3 class=\"card-title fw-bold\"><span class='triple'><span class='predicate'>high humidity</span></span><h3>\n            </div>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Relation with COPD:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>humidity percentage</span> than 50</span><h5>\n         </div>\n         <p class=\"card-content\">Humidity Percentage. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div>".
+<http://eyereasoner.github.io/.well-known/genid/2355719533219337470#lemma8> x:output "\n<div id=\"recomm0\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">You are in:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 text-orange\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h5 class=\"card-title pb-1 zone\">going outside</h5>\n               <p class=\"card-text mb-0 mt-1 zone-text\">High Humidity.</p>\n            </div>\n         </div>\n      </div>\n   </div>\n\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Because you have:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" onclick=\"nav.goto('lemma4');\" style=\"cursor: pointer\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>high humidity</span></span><h5>\n         </div>\n         <p class=\"card-content\">High Humidity. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div>".
+1 log:outputString "<div class=\"py-0 bg-white\">\n\t<div class=\"container-fluid mx-0 px-0\">\n<div id=\"lemma4\" class=\"level_n\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">Risk factor:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 align-items-center text-section\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h3 class=\"card-title fw-bold\"><span class='triple'><span class='predicate'>high humidity</span></span><h3>\n            </div>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Relation with COPD:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>humidity percentage</span> than 50</span><h5>\n         </div>\n         <p class=\"card-content\">Humidity Percentage. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div>\n<div id=\"recomm0\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">You are in:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 text-orange\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h5 class=\"card-title pb-1 zone\">going outside</h5>\n               <p class=\"card-text mb-0 mt-1 zone-text\">High Humidity.</p>\n            </div>\n         </div>\n      </div>\n   </div>\n\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Because you have:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" onclick=\"nav.goto('lemma4');\" style=\"cursor: pointer\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>high humidity</span></span><h5>\n         </div>\n         <p class=\"card-content\">High Humidity. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div><div class=\"fixed-bottom bg-section\">\n\t\t\t<div class=\"row g-0 text-white\">\n\t\t\t\t<div class=\"col-3 text-center back_btn\" onclick=\"nav.goback()\">\n\t\t\t\t\t<i class=\"fas fa-arrow-left card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center back_btn\" onclick=\"nav.gohome()\">\n\t\t\t\t\t<i class=\"fas fa-home card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t<i class=\"fas fa-capsules card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t<i class=\"fas fa-bars card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>".
 
-# 2023-05-01T21:43:53.142Z in=231 out=29 ent=29 step=495 brake=9 inf=730802 sec=0.073 inf/sec=10010986
+# 2023-05-02T13:41:48.411Z in=298 out=62 ent=64 step=957 brake=9 inf=1249895 sec=0.101 inf/sec=12375198
 # ENDS
 

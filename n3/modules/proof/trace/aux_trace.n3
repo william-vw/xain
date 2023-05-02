@@ -71,18 +71,12 @@
 } .
 
 
-# TODO find a way to avoid the same (expensive) check twice
-# or shenanigans like "_:t log:notIncludes { ?n x:evidence .. }"
-
 #
 {
    ?n x:intermEvidence ?support .
-   ?n x:mergeGives ?f .
-   ?f log:includes 
-   {
-       ?y math:greaterThan ?a .
-       ?y math:lessThan ?b .
-   } .
+   ?support!x:getComparisons!list:length math:greaterThan 0 .
+   #
+   ?support x:mergeAllGives ?f .
    # "T1" log:trace ( ?n ?f ) .
 }
 => 
@@ -92,31 +86,43 @@
    ?n x:evidence ( _:b1 ) 
 } .
 
-
 #
 {
    ?n x:intermEvidence ?support .
-   ?n x:mergeGives ?f .
-   ?f log:notIncludes 
-   {
-       ?y math:greaterThan ?a .
-       ?y math:lessThan ?b .
-   } .
-   # "T2" log:trace ( ?n ?f ) .
+   ?support x:getComparisons ( ) .
+   # "T2" log:trace ( ?n ?support ) .
 }
 => 
 {
-   ?n x:evidence ?support 
+   ?n x:evidence ?support .
 } .
-
 
 #
 {
-   ?n x:mergeGives ?f 
+   ?support x:getComparisons ?cmps 
 }
 <= 
 {
-   ?n x:intermEvidence ?support .
+   (
+       ?p
+       {
+           ?support list:member ?m .
+           ?m!x:gives log:includes 
+           {
+               ?x ?p ?y 
+           } .
+           ?p list:in ( math:greaterThan math:lessThan ) .
+       }
+       ?cmps
+   ) log:collectAllIn _:t .
+} .
+
+#
+{
+   ?support x:mergeAllGives ?f 
+}
+<= 
+{
    (
        ?t
        {

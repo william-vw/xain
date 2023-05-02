@@ -1,99 +1,60 @@
+@prefix dc: <http://purl.org/dc/terms/> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
-@prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
-@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix n3: <http://www.w3.org/2004/06/rei#> .
 @prefix pml: <http://provenanceweb.org/ns/pml#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix r: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix string: <http://www.w3.org/2000/10/swap/string#> .
 @prefix x: <http://wvw.org/xai#> .
-@prefix x: <http://wvw.org/xai#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xmath: <http://wvw.org/xai/swap/math#> .
+@base <http://wvw.org/xai#> .
 
-
-# recommender rules
-#
+<> :support (
+   [
+       x:gives 
+       {
+           :a math:greaterThan 2 
+       }
+   ]
+   [
+       x:gives 
+       {
+           :a math:lessThan 5 
+       }
+   ]
+) .
 {
-   ?p :hasPhlemAmountValue 10
-}
-=>
-{
-   ?p :hasPhlemAmount :Moderate 
-}
-;
-   a x:Rule .
-
-
-# invert rules
-{
-   ?x => ?y ; a x:Rule .
-   ?x!e:labelvars x:get ?x2 .
-   ?y!e:labelvars x:get ?y2 .
-   "y2 x2" log:trace ( ?y2 ?x2 ) .
-
+   <> :support ?support .
+   ?support x:getComparisons ?cmps 
 }
 => 
 {
-	?y2 => ?x2
+   <> :out ?support , ?cmps 
 } .
-
 
 #
 {
-   ?f x:get ?f2 
+   ?support x:getComparisons ?cmps 
 }
 <= 
 {
-   ?f log:rawType log:Formula .
    (
+       ?p
        {
-           ?s2 ?p2 ?o2 
-       }
-       {
-           ?f e:graphMember 
+           ?support list:member ?m .
+           ?m x:gives ?g .
+           ?m!x:gives log:includes 
            {
-               ?s ?p ?o 
+               ?x ?p ?y 
            } .
-           # this step is required
-           # (also replacing builtins predicates with dummy predicates)
-           ?s x:get ?s2 .
-           ?p x:get ?p2 .
-           ?o x:get ?o2 .
+           ?p list:in ( math:greaterThan math:lessThan ) .
        }
-       ?rws
+       ?cmps
    ) log:collectAllIn _:t .
-   ?rws log:conjunction ?f2 .
-   "f2" log:trace ( ?f2 ) .
-} .
-
-
-# #
-# {
-#    ?t x:get ?t2 
-# }
-# <= 
-# {
-#    ?t log:rawType log:ForAll .
-#    ?t e:label ?l .
-#    ?l log:skolem ?t2 .
-#    "t2 (forAll)" log:trace ( ?t2 ) .
-# } .
-
-
-#
-{
-   ?t x:get ?t 
-}
-<= 
-{
-   ?t log:rawType log:Other .
-} .
-
-
-#
-{
-   ?t x:get ?t 
-}
-<= 
-{
-   ?t log:rawType log:Literal .
 } .

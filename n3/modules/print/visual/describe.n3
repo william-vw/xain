@@ -55,40 +55,64 @@
 }
 <= 
 {
+   # TODO too bad we can't restrict this any further
+   ?f log:equalTo 
+   {
+       ?x ?p ?y .
+       ?y ?cmp ?v .
+   } .
+   ?cmp!log:localName list:in ( "greaterThan" "lessThan" ) .
+   #
+   ?p!log:localN3String x:description ?pd .
+   ?cmp!log:localN3String x:description ?cd .
+   ?v!log:localN3String x:description ?vd .
+   ( "<span class='triple'><span class='predicate'>" ?pd "</span> " ?cd " " ?vd "</span>" ) string:concatenation ?str .
+   # "T1" log:trace ( ?pd ?cd ?vd ?str ) .
+   ( "!" ) e:derive true 
+} .
+
+#
+{
+   ?f x:printFormula ?str 
+}
+<= 
+{
+   ?f log:equalTo 
+   {
+       ?x ?p ?y .
+       ?y ?gt ?l ;
+           ?lt ?u .
+   } .
+   ?gt log:localName "greaterThan" .
+   ?lt log:localName "lessThan" .
+   #
+   ?p!log:localN3String x:description ?pd .
+   ?l!log:localN3String x:description ?ld .
+   ?u!log:localN3String x:description ?ud .
+   ( "<span class='triple'><span class='predicate'>" ?pd "</span> between " ?ld " and " ?ud "</span>" ) string:concatenation ?str .
+   ( "!" ) e:derive true 
+} .
+
+#
+{
+   ?f x:printFormula ?str 
+}
+<= 
+{
    (
+       ?str
        {
-           ?f log:equalTo 
-           # TODO too bad we can't restrict this any further
+           ?f log:includes 
            {
-               ?x ?p ?y .
-               ?y ?gt ?l ;
-                  ?lt ?u .
+               ?s ?p ?o 
            } .
-           ?gt log:localName "greaterThan" .
-           ?lt log:localName "lessThan" .
+           ( ?s ?p ?o ) x:printTriple ?str .
        }
-       {
-           ?p!log:localN3String x:description ?pd .
-           ?l!log:localN3String x:description ?ld .
-           ?u!log:localN3String x:description ?ud .
-           ( "<span class='triple'><span class='predicate'>" ?pd "</span> between " ?ld " and " ?ud "</span>" ) string:concatenation ?str .
-       }
-       {
-           (
-               ?str
-               {
-                   ?f log:includes 
-                   {
-                       ?s ?p ?o 
-                   } .
-                   ( ?s ?p ?o ) x:printTriple ?str .
-               }
-               ?strs
-           ) log:collectAllIn _:x .
-           ?strs!list:length math:equalTo ?f!graph:length .
-           ( ?strs " " ) string:join ?str .
-       }
-   ) log:ifThenElseIn _:t .
+       ?strs
+   ) log:collectAllIn _:x .
+   #
+   ?strs!list:length math:equalTo ?f!graph:length .
+   ( ?strs " " ) string:join ?str .
 } .
 
 #

@@ -1,44 +1,124 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --n3 n3/modules/proof/query_heads.n3 n3/test/copd/rules.n3 --pass-only-new
+# eye --n3 n3/modules/proof/query_heads.n3 n3/tmp/rules-inv.n3 --pass-only-new
 
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix x: <http://wvw.org/xai#>.
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix x: <http://wvw.org/xai#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
 @prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3823829535353781700#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2467485317503713499#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 {
-    ?U_0 :isStratified :YellowZone.
+    ?U_0 :hasPhlemAmount :Moderate.
 } => {
-    ?U_0 :isStratified :YellowZone.
+    ?U_0 :hasPhlemAmount :Moderate.
 }.
 {
-    ?U_3 :hasPhlemAmount :Moderate.
+    ?U_3 :hasColoredPhlem true.
 } => {
-    ?U_3 :hasPhlemAmount :Moderate.
+    ?U_3 :hasColoredPhlem true.
 }.
 {
-    ?U_7 :isStratified :RedZone.
+    ?U_6 :hasSwollenAnkle true.
 } => {
-    ?U_7 :isStratified :RedZone.
+    ?U_6 :hasSwollenAnkle true.
 }.
 {
-    ?U_10 :recommendation :avoidGoingOutside.
+    ?U_9 :hasActivityExertion :Moderate.
 } => {
-    ?U_10 :recommendation :avoidGoingOutside.
+    ?U_9 :hasActivityExertion :Moderate.
 }.
 {
-    ?U_13 :hasHighHumidity true.
+    ?U_12 :hasPhlemAmountValue ?U_54.
+    ?U_54 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    ?U_54 <http://wvw.org/xai/swap/math#lessThan> 8.
 } => {
-    ?U_13 :hasHighHumidity true.
+    ?U_12 :hasPhlemAmountValue ?U_54.
+    ?U_54 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    ?U_54 <http://wvw.org/xai/swap/math#lessThan> 8.
+}.
+{
+    ?U_15 :hasCyanosis true.
+} => {
+    ?U_15 :hasCyanosis true.
+}.
+{
+    ?U_18 :hasChestPain true.
+} => {
+    ?U_18 :hasChestPain true.
+}.
+{
+    ?U_21 :hasActivityExertion :Severe.
+} => {
+    ?U_21 :hasActivityExertion :Severe.
+}.
+{
+    ?U_24 :hasCough :Severe.
+} => {
+    ?U_24 :hasCough :Severe.
+}.
+{
+    ?U_27 :hasLow02Saturation true.
+} => {
+    ?U_27 :hasLow02Saturation true.
+}.
+{
+    ?U_30 :hasFever :Severe.
+} => {
+    ?U_30 :hasFever :Severe.
+}.
+{
+    ?U_33 :hasConfusion true.
+} => {
+    ?U_33 :hasConfusion true.
+}.
+{
+    ?U_36 :hasHighHumidity true.
+} => {
+    ?U_36 :hasHighHumidity true.
+}.
+{
+    ?U_39 :hasLowTemperature true.
+} => {
+    ?U_39 :hasLowTemperature true.
+}.
+{
+    ?U_42 :hasHighTemperature true.
+} => {
+    ?U_42 :hasHighTemperature true.
+}.
+{
+    ?U_45 :hasHumidityValue ?U_55.
+    ?U_55 <http://wvw.org/xai/swap/math#greaterThan> 50.
+} => {
+    ?U_45 :hasHumidityValue ?U_55.
+    ?U_55 <http://wvw.org/xai/swap/math#greaterThan> 50.
+}.
+{
+    ?U_48 :hasTemperatureValue ?U_56.
+    ?U_56 <http://wvw.org/xai/swap/math#greaterThan> -10.
+} => {
+    ?U_48 :hasTemperatureValue ?U_56.
+    ?U_56 <http://wvw.org/xai/swap/math#greaterThan> -10.
+}.
+{
+    ?U_51 :hasTemperatureValue ?U_57.
+    ?U_57 <http://wvw.org/xai/swap/math#greaterThan> 32 .
+    ?U_57 <http://wvw.org/xai/swap/math#lessThan> 50.
+} => {
+    ?U_51 :hasTemperatureValue ?U_57.
+    ?U_57 <http://wvw.org/xai/swap/math#greaterThan> 32 .
+    ?U_57 <http://wvw.org/xai/swap/math#lessThan> 50.
 }.
 
-# 2023-05-01T21:43:46.542Z in=29 out=5 ent=5 step=33 brake=2 inf=55323 sec=0.036 inf/sec=1536750
+# 2023-05-02T13:54:52.835Z in=23 out=18 ent=18 step=62 brake=2 inf=80241 sec=0.027 inf/sec=2971889
 # ENDS
 

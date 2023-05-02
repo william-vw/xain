@@ -10,7 +10,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/4351979671130145061#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/538268420073609628#>.
 
 {
     ?U_0 :hasPhlemAmount :Moderate.
@@ -99,22 +99,34 @@
     var:t_13 x:padding var:t_13.
 }.
 {
-    ?U_43 :hasHumidityValue ?U_44.
-    ?U_44 math:greaterThan 50 .
-    ?U_44 math:lessThan 100.
+    ?U_43 :hasHighTemperature true.
 } => {
-    ?U_43 :hasHighHumidity true.
+    ?U_43 :recommendation :avoidGoingOutside.
     var:t_14 x:padding var:t_14.
 }.
 {
-    ?U_47 :hasTemperatureValue ?U_48.
-    ?U_48 math:greaterThan -10 .
-    ?U_48 math:lessThan 0.
+    ?U_46 :hasHumidityValue ?U_47.
+    ?U_47 math:greaterThan 50.
 } => {
-    ?U_47 :hasLowTemperature true.
+    ?U_46 :hasHighHumidity true.
     var:t_15 x:padding var:t_15.
 }.
+{
+    ?U_50 :hasTemperatureValue ?U_51.
+    ?U_51 math:greaterThan -10.
+} => {
+    ?U_50 :hasLowTemperature true.
+    var:t_16 x:padding var:t_16.
+}.
+{
+    ?U_54 :hasTemperatureValue ?U_55.
+    ?U_55 math:greaterThan 32 .
+    ?U_55 math:lessThan 50.
+} => {
+    ?U_54 :hasHighTemperature true.
+    var:t_17 x:padding var:t_17.
+}.
 
-# 2023-05-01T21:14:54.633Z in=33 out=16 ent=16 step=32 brake=2 inf=93166 sec=0.035 inf/sec=2661886
+# 2023-05-02T13:15:10.546Z in=37 out=18 ent=18 step=36 brake=2 inf=102539 sec=0.037 inf/sec=2771324
 # ENDS
 

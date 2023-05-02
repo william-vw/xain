@@ -25,7 +25,19 @@
 }
 <= 
 {
-   ( ?cc "([A-Z][a-z]+)" ) string:scrapeAll ?groups .
+   ( ?cc "^([a-z]+)" ) string:scrapeAll ?group1 .
+   ( ?cc "([A-Z][a-z]+)+" ) string:scrapeAll ?group2 .
+   (
+       {
+           ?group1 log:equalTo ( "has" ) 
+       }
+       {
+           ?group2 log:equalTo ?groups 
+       }
+       {
+           ( ?group1 ?group2 ) list:append ?groups .
+       }
+   ) log:ifThenElseIn _:t .
    ( ?groups string:lowerCase ) list:map ?lcGroups .
    ( ?lcGroups " " ) string:join ?exp 
 } .

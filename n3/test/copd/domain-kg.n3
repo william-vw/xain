@@ -104,7 +104,7 @@
    x:object :avoidGoingOutside ;
    x:style "text-orange" ;
    x:icon "fa-disease" ;
-   x:summary "High Humidity." 
+   x:summary "Avoid Going Outside." 
 ] .
 
 #

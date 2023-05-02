@@ -81,10 +81,33 @@
     ?t_0 :hasHighHumidity true.
 }.
 {
+    ?t_0 :recommendation :avoidGoingOutside.
+} => {
+    ?t_0 :hasLowTemperature true.
+}.
+{
+    ?t_0 :recommendation :avoidGoingOutside.
+} => {
+    ?t_0 :hasHighTemperature true.
+}.
+{
     ?t_0 :hasHighHumidity true.
 } => {
     ?t_0 :hasHumidityValue _:t_1.
     _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 50.
+}.
+{
+    ?t_0 :hasLowTemperature true.
+} => {
+    ?t_0 :hasTemperatureValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> -10.
+}.
+{
+    ?t_0 :hasHighTemperature true.
+} => {
+    ?t_0 :hasTemperatureValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 32 .
+    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 50.
 }.
 {
     ?t_0 :hasPhlemAmountValue ?t_1.
@@ -99,7 +122,20 @@
 } => {
     ?t_0 :hasHighHumidity true.
 }.
+{
+    ?t_0 :hasTemperatureValue ?t_1.
+    ?t_1 <http://wvw.org/xai/swap/math#greaterThan> -10.
+} => {
+    ?t_0 :hasLowTemperature true.
+}.
+{
+    ?t_0 :hasTemperatureValue ?t_1.
+    ?t_1 <http://wvw.org/xai/swap/math#greaterThan> 32 .
+    ?t_1 <http://wvw.org/xai/swap/math#lessThan> 50.
+} => {
+    ?t_0 :hasHighTemperature true.
+}.
 
-# 2023-05-01T21:34:57.216Z in=34 out=16 ent=16 step=46 brake=5 inf=214064 sec=0.046 inf/sec=4653565
+# 2023-05-02T13:54:52.796Z in=42 out=22 ent=22 step=62 brake=5 inf=291259 sec=0.052 inf/sec=5601135
 # ENDS
 
