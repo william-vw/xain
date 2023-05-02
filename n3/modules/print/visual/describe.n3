@@ -67,7 +67,6 @@
    ?cmp!log:localN3String x:description ?cd .
    ?v!log:localN3String x:description ?vd .
    ( "<span class='triple'><span class='predicate'>" ?pd "</span> " ?cd " " ?vd "</span>" ) string:concatenation ?str .
-   # "T1" log:trace ( ?pd ?cd ?vd ?str ) .
    ( "!" ) e:derive true 
 } .
 

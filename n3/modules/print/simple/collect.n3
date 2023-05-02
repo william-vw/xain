@@ -35,7 +35,6 @@
        {
            ?evidence list:in ?evidences2 ;
                x:output ?li .
-         #   "T0" log:trace ( ?evidence ?li ) .
        }
        ?lis
    ) log:collectAllIn _:t .

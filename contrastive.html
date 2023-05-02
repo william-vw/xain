@@ -18,34 +18,30 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="lib/style.css" />
-    <script>
 
-    </script>
+    <script src="lib/nav.js"></script>
+    <link rel="stylesheet" href="lib/nav.css" />
+
     <script type="module">
-        window.loaded = function () {
-            $('#contrast').append(`<option value='YellowZone'>YellowZone</option>`)
-            $('#contrast').append(`<option value='RedZone'>RedZone</option>`)
-        }
-
         window.doContrast = async function () {
             let outcome = $("#contrast").val();
             if (!outcome)
                 return;
-            console.log("outcome:", outcome);
 
-            $('#out').html("<img src='img/turtle.gif'>");
-
-            let start = performance.now();
+            $('#out').html("<img src='img/loading.gif'>");
 
             let data =
                 `@prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
-                :patientA :isStratified :${outcome} .`;
+${outcome}`;
+            console.log("data:\n", data);
+
+            let start = performance.now();
 
             let path = "n3/runs/contrast-visual.n3";
             let inputs = [
-                { path: "n3/test/yellow-rules.n3" },
+                { path: "n3/test/copd/rules.n3" },
                 { name: "goal.n3", data: data },
-                { path: "n3/test/copd.n3" }
+                { path: "n3/test/copd/domain-kg.n3" }
             ];
 
             let module = new Module(path, new EyeReasoner());
@@ -54,19 +50,26 @@
             let end = performance.now();
             console.log("total:", (end - start));
 
+            window.nav = new NavStack('#recomm0');
             // console.log("output:\n", output.data);
             $('#out').html(output.data);
         }
     </script>
 </head>
 
-<body onload="loaded()">
+<body>
+    Choose outcome:
     <select id="contrast" onchange="doContrast()">
         <option></option>
+        <option value=":patientA :isStratified :YellowZone .">When am I in the Yellow Zone?</option>
+        <option value=":patientA :isStratified :RedZone .">When am I in the Red Zone?</option>
+        <option value=":envA :recommendation :avoidGoingOutside .">When should I avoid going outside?</option>
     </select>
     <br><br>
 
-    <div id="out"></div>
+    <div id="out">
+        <div class="tmp">Nothing ... Yet!</div>
+    </div>
 </body>
 
 </html>

@@ -99,10 +99,18 @@ body > div {
 	cursor: pointer;
 }
 
-body {
+.py-0 {
 	width: 600px;
+	vertical-align: top;
 }
 
 .bg-section {
 	width: 600px;
+}
+
+.tmp {
+	width: 600px;
+	text-align: center;
+	font-size: 24px;
+	margin-top: 50px;
 }

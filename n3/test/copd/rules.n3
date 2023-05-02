@@ -219,7 +219,7 @@
 #
 {
    ?env :hasHumidityValue ?v .
-   ?v math:greaterThan 50
+   ?v math:greaterThan 50 
 }
 => 
 {
@@ -232,7 +232,7 @@
 #
 {
    ?env :hasTemperatureValue ?v .
-   ?v math:greaterThan -10
+   ?v math:lessThan 0 
 }
 => 
 {
@@ -245,8 +245,7 @@
 #
 {
    ?env :hasTemperatureValue ?v .
-   ?v math:greaterThan 32 ;
-      math:lessThan 50 .
+   ?v math:greaterThan 32 
 }
 => 
 {

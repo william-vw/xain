@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="lib/rdflib/rdflib.min.js"></script>
+    <script src="https://eyereasoner.github.io/eye-js/latest/index.js"></script>
+    <script src="lib/eye_aux.js"></script>
+    <script src="lib/mod4n3.js"></script>
+
+    <title>COPD Explanations</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b19fd139cc.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="lib/style.css" />
+
+    <script src="lib/nav.js"></script>
+    <link rel="stylesheet" href="lib/nav.css" />
+
+    <script type="module">
+        window.doCounterFactual = async function () {
+            let humidity = $('#humidity_output').text().trim();
+            let temperature = $('#temperature_output').text().trim();
+            let wind = $('#wind_output').text().trim();
+            let weather = $('#weather_output').text().trim();
+            console.log(humidity, temperature, wind, weather);
+
+            $('#out').html("<img src='img/loading.gif'>");
+
+            let data =
+                `@prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
+:envA :hasHumidityValue ${humidity} .
+:envA :hasTemperatureValue ${temperature} .`;
+            console.log("data:\n", data);
+
+            let start = performance.now();
+
+            let path = "n3/runs/aggr-visual.n3";
+            let inputs = [
+                { path: "n3/test/copd/rules.n3" },
+                { name: "goal.n3", data: data },
+                { path: "n3/test/copd/domain-kg.n3" }
+            ];
+
+            let module = new Module(path, new EyeReasoner());
+            let output = await module.run(inputs);
+
+            let end = performance.now();
+            console.log("total:", (end - start));
+
+            window.nav = new NavStack('#recomm0');
+            // console.log("output:\n", output.data);
+            $('#out').html(output.data);
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td class="py-0 bg-white">
+                <div class="container-fluid mx-0 px-0">
+
+                    <div class="card rounded-0 border-0 my-0 bg-expl">
+                        <div class="row g-0">
+                            <div class="col-sm-12">
+                                <h5 class="m-3 text-white">Should I go outside when:<h5>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card border-0 mb-2 bg-white">
+                        <div class="row g-0 align-items-center text-expl">
+                            <div class="col-2 text-center">
+                                <i class="fas fa-droplet-percent card-img-top h-100 p-3 ms-2 icon-3"></i>
+                            </div>
+                            <div class="col-9">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-0">
+                                        <label for="humidity_range" class="form-label">Humidity: </label> <output
+                                            id="humidity_output">50</output>%
+                                    </h5>
+                                    <input type="range" class="form-range" min="0" max="100" step="10" default="50"
+                                        id="humidity_range" oninput="humidity_output.value = this.value">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-0 align-items-center text-expl">
+                            <div class="col-2 text-center">
+                                <i class="fas fa-temperature-half card-img-top h-100 p-3 ms-2 icon-3"></i>
+                            </div>
+                            <div class="col-9">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-0">
+                                        <label for="temperature_range" class="form-label">Temperature: </label> <output
+                                            id="temperature_output">10</output>&deg;C
+                                    </h5>
+                                    <input type="range" class="form-range" min="-30" max="30" step="1" value="10"
+                                        id="temperature_range" oninput="temperature_output.value = this.value">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-0 align-items-center text-expl">
+                            <div class="col-2 text-center">
+                                <i class="fas fa-wind card-img-top h-100 p-3 ms-2 icon-3"></i>
+                            </div>
+                            <div class="col-9">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-0">
+                                        <label for="wind" class="form-label">Wind</label>
+                                    </h5>
+                                    <div class="dropdown">
+                                        <button id="wind_output" class="btn btn-secondary dropdown-toggle" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            low
+                                        </button>
+                                        <ul id="wind" class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">low</a></li>
+                                            <li><a class="dropdown-item" href="#">moderate</a></li>
+                                            <li><a class="dropdown-item" href="#">high</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-0 align-items-center text-expl">
+                            <div class="col-2 text-center">
+                                <i class="fas fa-cloud card-img-top h-100 p-3 ms-2 icon-3"></i>
+                            </div>
+                            <div class="col-9">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-0">
+                                        <label for="air_quality_range" class="form-label">Thunderstorm</label>
+                                    </h5>
+                                    <div class="dropdown">
+                                        <button id="weather_output" class="btn btn-secondary dropdown-toggle"
+                                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            fair weather
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">fair weather</a></li>
+                                            <li><a class="dropdown-item" href="#">thunderstorms</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-info btn-advice" onclick="doCounterFactual()">Get
+                            advice</button>
+                    </div>
+
+                    <div class="fixed-bottom bg-section">
+                        <div class="row g-0 text-white">
+                            <div class="col-3 text-center back_btn" onclick="history.back()">
+                                <i class="fas fa-arrow-left card-img-top h-100 p-3 icon-2"></i>
+                            </div>
+                            <div class="col-3 text-center">
+                                <i class="fas fa-home card-img-top h-100 p-3 icon-2"></i>
+                            </div>
+                            <div class="col-3 text-center">
+                                <i class="fas fa-capsules card-img-top h-100 p-3 icon-2"></i>
+                            </div>
+                            <div class="col-3 text-center" onclick="location.href='./';">
+                                <i class="fas fa-bars card-img-top h-100 p-3 icon-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    $(".dropdown-menu li a").click(function () {
+                        $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+                        $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+                    });
+                </script>
+
+            </td>
+            <td class="py-0 bg-white">
+                <div id="out"></div>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

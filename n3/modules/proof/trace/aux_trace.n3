@@ -76,8 +76,7 @@
    ?n x:intermEvidence ?support .
    ?support!x:getComparisons!list:length math:greaterThan 0 .
    #
-   ?support x:mergeAllGives ?f .
-   # "T1" log:trace ( ?n ?f ) .
+   ?support x:mergeAllGives ?f 
 }
 => 
 {
@@ -90,7 +89,6 @@
 {
    ?n x:intermEvidence ?support .
    ?support x:getComparisons ( ) .
-   # "T2" log:trace ( ?n ?support ) .
 }
 => 
 {

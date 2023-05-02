@@ -129,7 +129,7 @@
            ] .
            :recomm0_template rdf:value ?template .
            ( ?template ?style ?icon ?descr ?summ ) string:format ?container .
-           "recommContainer0" log:trace ( ?inf ?o ?icon ) .
+         #   "recommContainer0" log:trace ( ?inf ?o ?icon ) .
        }
        {
            ?inf x:conclusionStr ?descr .
@@ -141,7 +141,7 @@
            :recomm1_template rdf:value ?template .
            ?inf log:localName ?ln .
            ( ?template ?ln ?icon ?descr ) string:format ?container .
-           "recommContainer1" log:trace ( ?inf ?o ?icon ) .
+         #   "recommContainer1" log:trace ( ?inf ?o ?icon ) .
        }
    ) log:ifThenElseIn _:t .
    #

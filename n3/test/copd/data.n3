@@ -11,5 +11,5 @@
    # :hasPhlemAmountValue 7 .
 
 :envA a :Environment ;
-   :hasHumidityValue 55 ;
-   :hasTemperatureValue -5 .
+   # :hasHumidityValue 55 ;
+   :hasTemperatureValue 10 .
