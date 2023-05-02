@@ -10,9 +10,9 @@
 @prefix x: <http://wvw.org/xai#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/3496642823570857367#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/2010737265281425209#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/433133948603915954#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/43860605769971061#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 {
     ?U_0 :isStratified :GreenZone.
@@ -197,6 +197,6 @@
     var:t_25 x:padding var:t_25.
 }.
 
-# 2023-05-02T20:01:03.586Z in=27 out=26 ent=26 step=78 brake=2 inf=112438 sec=0.030 inf/sec=3747933
+# 2023-05-02T21:50:27.443Z in=27 out=26 ent=26 step=78 brake=2 inf=112824 sec=0.031 inf/sec=3639484
 # ENDS
 

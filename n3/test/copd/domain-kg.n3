@@ -33,7 +33,7 @@
 :isStratified x:explanation [
    a :ZoneExplanation ;
    x:object :GreenZone ;
-   x:icon "fa-exclamation-circle" ;
+   x:icon "fa-check" ;
    x:style "text-green" ;
    x:summary "Your COPD is well controlled. We advise you to continue taking your medications as prescribed." 
 ] .
@@ -49,7 +49,7 @@
 :isStratified x:explanation [
    a :ZoneExplanation ;
    x:object :RedZone ;
-   x:icon "fa-exclamation-circle" ;
+   x:icon "fa-ban" ;
    x:style "text-red" ;
    x:summary "Take Action - Get Help! Call 911 for an ambulance to take you to the emergency room." 
 ] .
@@ -59,15 +59,15 @@
    x:explanation [
        a :ZoneReasonExplanation ;
        x:object ?x ;
-       x:icon "fa-disease" ;
-       x:summary "Activity Exertion Value." 
+       x:icon "fa-person-running" ;
+       x:summary "Level of activity exertion." 
    ] .
 #
 :hasActivityExertion x:explanation [
    a :ZoneReasonExplanation ;
    x:object :Low ;
-   x:icon "fa-face-tongue-sweat" ;
-   x:summary "Low Activity Exertion." 
+   x:icon "fa-face-grin-beam-sweat" ;
+   x:summary "High levels of exertion when doing activities is a known factor for flare-ups." 
 ] .
 #
 :hasActivityExertion x:explanation [
@@ -80,14 +80,14 @@
 :hasActivityExertion x:explanation [
    a :ZoneReasonExplanation ;
    x:object :Severe ;
-   x:icon "fa-disease" ;
-   x:summary "Severe Activity Exertion." 
+   x:icon "fa-face-tongue-sweat" ;
+   x:summary "Severe levels of exertion when doing activities is a strong factor for flare-ups." 
 ] .
 
 #
 :hasColoredPhlegm x:explanation [
    a :ZoneReasonExplanation ;
-   x:object true ;
+   x:object true , false ;
    x:icon "fa-disease" ;
    x:summary "Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups." 
 ] .
@@ -97,37 +97,37 @@
    x:explanation [
        a :ZoneReasonExplanation ;
        x:object ?x ;
-       x:icon "fa-disease" ;
-       x:summary "Phlegm Amount Value." 
+       x:icon "fa-scale-unbalanced" ;
+       x:summary "Amount of phlegm." 
    ] .
 #
 :hasPhlegmAmount x:explanation [
    a :ZoneReasonExplanation ;
    x:object :Low ;
    x:icon "fa-disease" ;
-   x:summary "Low Phlegm Amount." 
+   x:summary "Moderate or higher amounts of phlegm are an indicator for flare-ups." 
 ] .
 #
 :hasPhlegmAmount x:explanation [
    a :ZoneReasonExplanation ;
    x:object :Moderate ;
    x:icon "fa-disease" ;
-   x:summary "Moderate Phlegm Amount." 
+   x:summary "Moderate amounts of phlegm are an indicator for flare-ups." 
 ] .
 #
 :hasPhlegmAmount x:explanation [
    a :ZoneReasonExplanation ;
    x:object :Severe ;
    x:icon "fa-disease" ;
-   x:summary "Severe Phlegm Amount." 
+   x:summary "Severe amounts of phlegm are a very strong indicator for flare-ups." 
 ] .
 
 #
 :hasChestPain x:explanation [
    a :ZoneReasonExplanation ;
    x:object true ;
-   x:icon "fa-disease" ;
-   x:summary "Chest Pain." 
+   x:icon "fa-heart-half-stroke" ;
+   x:summary "Chest pain is a very strong indicator for flare-ups." 
 ] .
 
 
@@ -136,15 +136,15 @@
    x:explanation [
        a :ZoneReasonExplanation ;
        x:object ?x ;
-       x:icon "fa-disease" ;
-       x:summary "O2 Saturation Value." 
+       x:icon "fa-vial" ;
+       x:summary "O2 saturation value." 
    ] .
 #
 :hasLow02Saturation x:explanation [
    a :ZoneReasonExplanation ;
    x:object true ;
-   x:icon "fa-disease" ;
-   x:summary "Low 02 Saturation." 
+   x:icon "fa-mask-ventilator" ;
+   x:summary "Low oxygen saturation is a very strong indicator for flare-ups." 
 ] .
 #
 
@@ -161,17 +161,17 @@
 :recommendation x:explanation [
    a :RecommendationExplanation ;
    x:object :avoidGoingOutside ;
-   x:style "text-orange" ;
-   x:icon "fa-disease" ;
-   x:summary "Avoid Going Outside." 
+   x:style "text-section" ;
+   x:icon "fa-store-alt-slash" ;
+   x:summary "You should avoid going outside." 
 ] .
 #
 :recommendation x:explanation [
    a :RecommendationExplanation ;
    x:object :goOutside ;
-   x:style "text-green" ;
-   x:icon "fa-disease" ;
-   x:summary "Go Outside." 
+   x:style "text-section" ;
+   x:icon "fa-shop" ;
+   x:summary "Feel free to go outside today and get some fresh air." 
 ] .
 
 #
@@ -179,29 +179,29 @@
    x:explanation [
        a :RecommendationReasonExplanation ;
        x:object ?x ;
-       x:icon "fa-disease" ;
-       x:summary "Humidity Value." 
+       x:icon "fa-droplet-percent" ;
+       x:summary "Percentage of humidity in the air." 
    ] .
 #
 :hasHighHumidity x:explanation [
    a :RecommendationReasonExplanation ;
    x:object true ;
-   x:icon "fa-disease" ;
-   x:summary "High Humidity." 
+   x:icon "fa-droplet" ;
+   x:summary "High humidity is a known factor for triggering flare-ups." 
 ] .
 #
 :hasModerateHumidity x:explanation [
    a :RecommendationReasonExplanation ;
    x:object true ;
-   x:icon "fa-disease" ;
-   x:summary "Moderate Humidity." 
+   x:icon "fa-droplet" ;
+   x:summary "Low or high humidity is a known factor for triggering flare-ups." 
 ] .
 #
 :hasLowHumidity x:explanation [
    a :RecommendationReasonExplanation ;
    x:object true ;
-   x:icon "fa-disease" ;
-   x:summary "Low Humidity." 
+   x:icon "fa-droplet-slash" ;
+   x:summary "Low or high humidity is a known factor for triggering flare-ups." 
 ] .
 
 #
@@ -209,27 +209,27 @@
    x:explanation [
        a :RecommendationReasonExplanation ;
        x:object ?x ;
-       x:icon "fa-disease" ;
-       x:summary "Temperature Value." 
+       x:icon "fa-temperature-half" ;
+       x:summary "Outside temperature." 
    ] .
 #
 :hasHighTemperature x:explanation [
    a :RecommendationReasonExplanation ;
    x:object true ;
-   x:icon "fa-disease" ;
-   x:summary "High Temperature." 
+   x:icon "fa-temperature-sun" ;
+   x:summary "High temperatures are known factors for triggering flare-ups. " 
 ] .
 #
 :hasModerateTemperature x:explanation [
    a :RecommendationReasonExplanation ;
    x:object true ;
-   x:icon "fa-disease" ;
-   x:summary "Moderate Temperature." 
+   x:icon "fa-temperature-half" ;
+   x:summary "Low and high temperatures are known factors for triggering flare-ups." 
 ] .
 #
 :hasLowTemperature x:explanation [
    a :RecommendationReasonExplanation ;
    x:object true ;
-   x:icon "fa-disease" ;
-   x:summary "Low Temperature." 
+   x:icon "fa-temperature-snow" ;
+   x:summary "Low temperatures are known factors for triggering flare-ups. " 
 ] .

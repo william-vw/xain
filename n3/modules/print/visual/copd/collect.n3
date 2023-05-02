@@ -95,7 +95,7 @@
          <div class="card-body">
             <h5 class="card-title mb-0">%s<h5>
          </div>
-         <p class="card-content">%s <i class="fas fa-circle-question"></i></p>
+         <p class="card-content">%s %s</p>
       </div>
    </div>
 </div>
@@ -106,7 +106,7 @@
 
 #
 {
-   ?inf x:recommContainer ?container
+   ?inf x:recommContainer ?container 
 }
 <= 
 {
@@ -173,17 +173,18 @@
    # "reasonLabel" log:trace ( ?inf ?o ?icon ) .
    (
        {
-           ?inf x:evidence ?es .
            ?inf!x:evidence!list:length math:greaterThan 0 .
        }
        {
            :link_template rdf:value ?linkTemplate .
            ?inf log:localName ?ln .
            ( ?linkTemplate ?ln ) string:format ?attr .
+           ?linkIndic log:equalTo """<i class="fas fa-circle-question"></i>""" 
        }
        {
-           ?attr log:equalTo "" 
+           ?attr log:equalTo "" .
+           ?linkIndic log:equalTo "" 
        }
    ) log:ifThenElseIn _:t .
-   ( ?template ?attr ?icon ?descr ?summ ) string:format ?label .
+   ( ?template ?attr ?icon ?descr ?summ ?linkIndic ) string:format ?label .
 } .

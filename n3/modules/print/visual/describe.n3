@@ -42,10 +42,21 @@
 }
 <= 
 {
-   # TODO for false, add a "not"
    ?o list:in ( true false ) .
+   (
+      {
+         ?o log:equalTo false
+      }
+      {
+         ?insert log:equalTo "no "
+      }
+      {
+         ?insert log:equalTo ""
+      }
+   ) log:ifThenElseIn _:t .
+   #
    ?p!log:localN3String x:description ?pd .
-   ( "<span class='triple'><span class='predicate'>" ?pd "</span></span>" ) string:concatenation ?str .
+   ( "<span class='triple'><span class='predicate'>" ?insert ?pd "</span></span>" ) string:concatenation ?str .
    ( "!" ) e:derive true 
 } .
 
