@@ -22,13 +22,19 @@
     <script src="lib/nav.js"></script>
     <link rel="stylesheet" href="lib/nav.css" />
 
+    <style>
+        .fixed-bottom {
+            position: unset
+        }
+    </style>
+
     <script type="module">
         window.doCounterFactual = async function () {
             let humidity = $('#humidity_output').text().trim();
             let temperature = $('#temperature_output').text().trim();
-            let wind = $('#wind_output').text().trim();
-            let weather = $('#weather_output').text().trim();
-            console.log(humidity, temperature, wind, weather);
+            // let wind = $('#wind_output').text().trim();
+            // let weather = $('#weather_output').text().trim();
+            console.log(humidity, temperature);
 
             $('#out').html("<img src='img/loading.gif'>");
 
@@ -49,12 +55,12 @@
 
             let module = new Module(path, new EyeReasoner());
             let output = await module.run(inputs);
+            // console.log("output:\n", output.data);
 
             let end = performance.now();
             console.log("total:", (end - start));
 
             window.nav = new NavStack('#recomm0');
-            // console.log("output:\n", output.data);
             $('#out').html(output.data);
         }
     </script>
@@ -108,7 +114,7 @@
                             </div>
                         </div>
 
-                        <div class="row g-0 align-items-center text-expl">
+                        <!-- <div class="row g-0 align-items-center text-expl">
                             <div class="col-2 text-center">
                                 <i class="fas fa-wind card-img-top h-100 p-3 ms-2 icon-3"></i>
                             </div>
@@ -153,29 +159,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                         <button type="button" class="btn btn-info btn-advice" onclick="doCounterFactual()">Get
                             advice</button>
                     </div>
-
-                    <div class="fixed-bottom bg-section">
-                        <div class="row g-0 text-white">
-                            <div class="col-3 text-center back_btn" onclick="history.back()">
-                                <i class="fas fa-arrow-left card-img-top h-100 p-3 icon-2"></i>
-                            </div>
-                            <div class="col-3 text-center">
-                                <i class="fas fa-home card-img-top h-100 p-3 icon-2"></i>
-                            </div>
-                            <div class="col-3 text-center">
-                                <i class="fas fa-capsules card-img-top h-100 p-3 icon-2"></i>
-                            </div>
-                            <div class="col-3 text-center" onclick="location.href='./';">
-                                <i class="fas fa-bars card-img-top h-100 p-3 icon-2"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <script>
                     $(".dropdown-menu li a").click(function () {
