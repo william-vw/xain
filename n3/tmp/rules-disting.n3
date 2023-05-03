@@ -10,7 +10,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/1181334160569329314#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/353844450136239932#>.
 
 {
     ?U_0 :hasColoredPhlegm false.
@@ -87,7 +87,7 @@
     var:t_10 x:padding var:t_10.
 }.
 {
-    ?U_37 :hasLow02Saturation true.
+    ?U_37 :hasLowOxygenSaturation true.
 } => {
     ?U_37 :isStratified :RedZone.
     var:t_11 x:padding var:t_11.
@@ -107,15 +107,16 @@
     var:t_13 x:padding var:t_13.
 }.
 {
-    ?U_48 :has02SaturationValue ?U_49.
+    ?U_48 :hasOxygenSaturationValue ?U_49.
     ?U_49 math:lessThan 88.
 } => {
-    ?U_48 :hasLow02Saturation true.
+    ?U_48 :hasLowOxygenSaturation true.
     var:t_14 x:padding var:t_14.
 }.
 {
-    ?U_52 :hasModerateHumidity true.
-    ?U_52 :hasModerateTemperature true.
+    ?U_52 :hasHumidity :Moderate.
+    ?U_52 :hasTemperature :Moderate.
+    ?U_52 :hasWind :Low.
 } => {
     ?U_52 :recommendation :goOutside.
     var:t_15 x:padding var:t_15.
@@ -125,7 +126,7 @@
     ?U_56 math:notLessThan 10 .
     ?U_56 math:notGreaterThan 50.
 } => {
-    ?U_55 :hasModerateHumidity true.
+    ?U_55 :hasHumidity :Moderate.
     var:t_16 x:padding var:t_16.
 }.
 {
@@ -133,62 +134,68 @@
     ?U_60 math:notLessThan 0 .
     ?U_60 math:notGreaterThan 32.
 } => {
-    ?U_59 :hasModerateTemperature true.
+    ?U_59 :hasTemperature :Moderate.
     var:t_17 x:padding var:t_17.
 }.
 {
-    ?U_63 :hasLowHumidity true.
+    ?U_63 :hasHumidity :Low.
 } => {
     ?U_63 :recommendation :avoidGoingOutside.
     var:t_18 x:padding var:t_18.
 }.
 {
-    ?U_66 :hasHighHumidity true.
+    ?U_66 :hasHumidity :High.
 } => {
     ?U_66 :recommendation :avoidGoingOutside.
     var:t_19 x:padding var:t_19.
 }.
 {
-    ?U_69 :hasLowTemperature true.
+    ?U_69 :hasTemperature :Low.
 } => {
     ?U_69 :recommendation :avoidGoingOutside.
     var:t_20 x:padding var:t_20.
 }.
 {
-    ?U_72 :hasHighTemperature true.
+    ?U_72 :hasTemperature :High.
 } => {
     ?U_72 :recommendation :avoidGoingOutside.
     var:t_21 x:padding var:t_21.
 }.
 {
-    ?U_75 :hasHumidityValue ?U_76.
-    ?U_76 math:lessThan 10.
+    ?U_75 :hasWind :High.
 } => {
-    ?U_75 :hasLowHumidity true.
+    ?U_75 :recommendation :avoidGoingOutside.
     var:t_22 x:padding var:t_22.
 }.
 {
-    ?U_79 :hasHumidityValue ?U_80.
-    ?U_80 math:greaterThan 50.
+    ?U_78 :hasHumidityValue ?U_79.
+    ?U_79 math:lessThan 10.
 } => {
-    ?U_79 :hasHighHumidity true.
+    ?U_78 :hasHumidity :Low.
     var:t_23 x:padding var:t_23.
 }.
 {
-    ?U_83 :hasTemperatureValue ?U_84.
-    ?U_84 math:lessThan 0.
+    ?U_82 :hasHumidityValue ?U_83.
+    ?U_83 math:greaterThan 50.
 } => {
-    ?U_83 :hasLowTemperature true.
+    ?U_82 :hasHumidity :High.
     var:t_24 x:padding var:t_24.
 }.
 {
-    ?U_87 :hasTemperatureValue ?U_88.
-    ?U_88 math:greaterThan 32.
+    ?U_86 :hasTemperatureValue ?U_87.
+    ?U_87 math:lessThan 0.
 } => {
-    ?U_87 :hasHighTemperature true.
+    ?U_86 :hasTemperature :Low.
     var:t_25 x:padding var:t_25.
 }.
+{
+    ?U_90 :hasTemperatureValue ?U_91.
+    ?U_91 math:greaterThan 32.
+} => {
+    ?U_90 :hasTemperature :High.
+    var:t_26 x:padding var:t_26.
+}.
 
-# 2023-05-03T15:02:15.643Z in=53 out=26 ent=26 step=52 brake=2 inf=172232 sec=0.045 inf/sec=3827378
+# 2023-05-03T21:16:52.107Z in=55 out=27 ent=27 step=54 brake=2 inf=179344 sec=0.041 inf/sec=4374244
 # ENDS
 

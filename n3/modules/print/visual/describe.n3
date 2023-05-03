@@ -74,10 +74,11 @@
    } .
    ?cmp x:isComparator true .
    #
+   ?p!x:explanation x:unit ?unit .
    ?p!log:localN3String x:description ?pd .
    ?cmp!log:localN3String x:description ?cd .
    ?v!log:localN3String x:description ?vd .
-   ( "<span class='triple'><span class='predicate'>" ?pd "</span> " ?cd " " ?vd "</span>" ) string:concatenation ?str .
+   ( "<span class='triple'><span class='predicate'>" ?pd "</span> " ?cd " " ?vd " " ?unit "</span>" ) string:concatenation ?str .
    ( "!" ) e:derive true 
 } .
 
@@ -96,10 +97,11 @@
    ?gt x:isGEComparator true .
    ?lt x:isLEComparator true .
    #
+   ?p!x:explanation x:unit ?unit .
    ?p!log:localN3String x:description ?pd .
    ?l!log:localN3String x:description ?ld .
    ?u!log:localN3String x:description ?ud .
-   ( "<span class='triple'><span class='predicate'>" ?pd "</span> between " ?ld " and " ?ud "</span>" ) string:concatenation ?str .
+   ( "<span class='triple'><span class='predicate'>" ?pd "</span> between " ?ld ?unit " and " ?ud ?unit "</span>" ) string:concatenation ?str .
    ( "!" ) e:derive true 
 } .
 

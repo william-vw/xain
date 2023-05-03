@@ -32,7 +32,7 @@
         window.doCounterFactual = async function () {
             let humidity = $('#humidity_output').text().trim();
             let temperature = $('#temperature_output').text().trim();
-            // let wind = $('#wind_output').text().trim();
+            let wind = $('#wind_output').text().trim();
             // let weather = $('#weather_output').text().trim();
             console.log(humidity, temperature);
 
@@ -41,7 +41,8 @@
             let data =
                 `@prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
 :envA :hasHumidityValue ${humidity} .
-:envA :hasTemperatureValue ${temperature} .`;
+:envA :hasTemperatureValue ${temperature} .
+:envA :hasWind :${wind} .`;
             console.log("data:\n", data);
 
             let start = performance.now();
@@ -92,7 +93,7 @@
                                         <label for="humidity_range" class="form-label">Humidity: </label> <output
                                             id="humidity_output">50</output>%
                                     </h5>
-                                    <input type="range" class="form-range" min="0" max="100" step="10" default="50"
+                                    <input type="range" class="form-range" min="0" max="100" step="5" default="50"
                                         id="humidity_range" oninput="humidity_output.value = this.value">
                                 </div>
                             </div>
@@ -108,13 +109,13 @@
                                         <label for="temperature_range" class="form-label">Temperature: </label> <output
                                             id="temperature_output">10</output>&deg;C
                                     </h5>
-                                    <input type="range" class="form-range" min="-30" max="30" step="1" value="10"
+                                    <input type="range" class="form-range" min="-30" max="50" step="1" value="10"
                                         id="temperature_range" oninput="temperature_output.value = this.value">
                                 </div>
                             </div>
                         </div>
 
-                        <!-- <div class="row g-0 align-items-center text-expl">
+                        <div class="row g-0 align-items-center text-expl">
                             <div class="col-2 text-center">
                                 <i class="fas fa-wind card-img-top h-100 p-3 ms-2 icon-3"></i>
                             </div>
@@ -126,19 +127,19 @@
                                     <div class="dropdown">
                                         <button id="wind_output" class="btn btn-secondary dropdown-toggle" type="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
-                                            low
+                                            Low
                                         </button>
                                         <ul id="wind" class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">low</a></li>
-                                            <li><a class="dropdown-item" href="#">moderate</a></li>
-                                            <li><a class="dropdown-item" href="#">high</a></li>
+                                            <li><a class="dropdown-item" href="#">Low</a></li>
+                                            <!-- <li><a class="dropdown-item" href="#">Moderate</a></li> -->
+                                            <li><a class="dropdown-item" href="#">High</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row g-0 align-items-center text-expl">
+                        <!-- <div class="row g-0 align-items-center text-expl">
                             <div class="col-2 text-center">
                                 <i class="fas fa-cloud card-img-top h-100 p-3 ms-2 icon-3"></i>
                             </div>

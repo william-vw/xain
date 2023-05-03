@@ -60,6 +60,7 @@
        a :ZoneReasonExplanation ;
        x:object ?x ;
        x:icon "fa-person-running" ;
+       x:unit "" ;
        x:summary "Level of activity exertion." 
    ] .
 #
@@ -67,21 +68,27 @@
    a :ZoneReasonExplanation ;
    x:object :Low ;
    x:icon "fa-face-grin-beam-sweat" ;
-   x:summary "High levels of exertion when doing activities is a known factor for flare-ups." 
+   x:summary "High levels of exertion when doing activities is a known factor for flare-ups." ;
+   x:details """COPD patients often develop low tolerance of exercise and may experience worsening of symptoms, such as feeling breathless.
+This is caused by many COPD related factors, such as general difficulty in breathing (dyspnea), low oxygen in blood, impairment to ventilatory and respiratory mechanics, and peripheral muscle fatigue (such as leg fatigue).""" 
 ] .
 #
 :hasActivityExertion x:explanation [
    a :ZoneReasonExplanation ;
    x:object :High ;
    x:icon "fa-face-tongue-sweat" ;
-   x:summary "High levels of exertion when doing activities is a known factor for flare-ups." 
+   x:summary "High levels of exertion when doing activities is a known factor for flare-ups." ;
+   x:details """COPD patients often develop low tolerance of exercise and may experience worsening of symptoms, such as feeling breathless.
+This is caused by many COPD related factors, such as general difficulty in breathing (dyspnea), low oxygen in blood, impairment to ventilatory and respiratory mechanics, and peripheral muscle fatigue (such as leg fatigue).""" 
 ] .
 #
 :hasActivityExertion x:explanation [
    a :ZoneReasonExplanation ;
    x:object :Severe ;
    x:icon "fa-face-tongue-sweat" ;
-   x:summary "Severe levels of exertion when doing activities is a strong factor for flare-ups." 
+   x:summary "Severe levels of exertion when doing activities is a strong factor for flare-ups." ;
+   x:details """COPD patients often develop low tolerance of exercise and may experience worsening of symptoms, such as feeling breathless.
+This is caused by many COPD related factors, such as general difficulty in breathing (dyspnea), low oxygen in blood, impairment to ventilatory and respiratory mechanics, and peripheral muscle fatigue (such as leg fatigue).""" 
 ] .
 
 #
@@ -89,7 +96,16 @@
    a :ZoneReasonExplanation ;
    x:object true , false ;
    x:icon "fa-disease" ;
-   x:summary "Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups." 
+   x:summary "Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups." ;
+   x:details """COPD is characterized by a chronic inflammation of the airways, 
+causing your lungs to produce excess phlegm or mucus.
+As a result, a key symptom of COPD is coughing up thick mucus.
+The color of the mucus indicates the severity of the inflammation:
+<ol class="card-content">
+<li>mucus that is <b>clear or white</b> does not contain inflammatory cells</li>
+<li>mucus that is <b>pale green or yellow</b> contains a modest number of inflamatory cells</li>
+<li>mucus that is <b>green</b> contains large numbers of inflammatory cells</li>
+</ol>""" 
 ] .
 
 #
@@ -97,6 +113,7 @@
    x:explanation [
        a :ZoneReasonExplanation ;
        x:object ?x ;
+       x:unit "" ;
        x:icon "fa-scale-unbalanced" ;
        x:summary "Amount of phlegm." 
    ] .
@@ -105,21 +122,24 @@
    a :ZoneReasonExplanation ;
    x:object :Low ;
    x:icon "fa-disease" ;
-   x:summary "Moderate or higher amounts of phlegm are an indicator for flare-ups." 
+   x:summary "Moderate or higher amounts of phlegm are an indicator for flare-ups." ;
+   x:details "" 
 ] .
 #
 :hasPhlegmAmount x:explanation [
    a :ZoneReasonExplanation ;
    x:object :Moderate ;
    x:icon "fa-disease" ;
-   x:summary "Moderate amounts of phlegm are an indicator for flare-ups." 
+   x:summary "Moderate amounts of phlegm are an indicator for flare-ups." ;
+   x:details "" 
 ] .
 #
 :hasPhlegmAmount x:explanation [
    a :ZoneReasonExplanation ;
    x:object :Severe ;
    x:icon "fa-disease" ;
-   x:summary "Severe amounts of phlegm are a very strong indicator for flare-ups." 
+   x:summary "Severe amounts of phlegm are a very strong indicator for flare-ups." ;
+   x:details "" 
 ] .
 
 #
@@ -127,7 +147,8 @@
    a :ZoneReasonExplanation ;
    x:object true ;
    x:icon "fa-heart-half-stroke" ;
-   x:summary "Chest pain is a very strong indicator for flare-ups." 
+   x:summary "Chest pain is a very strong indicator for flare-ups." ;
+   x:details "" 
 ] .
 
 
@@ -137,14 +158,19 @@
        a :ZoneReasonExplanation ;
        x:object ?x ;
        x:icon "fa-vial" ;
-       x:summary "oxygen saturation value." 
+       x:unit "%" ;
+       x:summary "Oxygen saturation value." 
    ] .
 #
 :hasLowOxygenSaturation x:explanation [
    a :ZoneReasonExplanation ;
    x:object true ;
    x:icon "fa-mask-ventilator" ;
-   x:summary "Low oxygen saturation is a very strong indicator for flare-ups." 
+   x:summary "Low oxygen saturation is a very strong indicator for flare-ups." ;
+   x:details """When you breathe, oxygen goes into your lungs, where it travels through your airways out into tiny sacks called alveoli. 
+From there, it gets picked up in small bloodvessels close to the alveoli, called cappillaries. 
+Oxygen then travels through your blood out to tissues in your body. 
+Damage from COPD sometimes keeps these alveoli from getting enough oxygen, resulting in low levels of oxygen in your body tissues.""" 
 ] .
 #
 
@@ -180,28 +206,38 @@
        a :RecommendationReasonExplanation ;
        x:object ?x ;
        x:icon "fa-droplet-percent" ;
+       x:unit "%" ;
        x:summary "Percentage of humidity in the air." 
    ] .
 #
-:hasHighHumidity x:explanation [
+:hasHumidity x:explanation [
    a :RecommendationReasonExplanation ;
-   x:object true ;
+   x:object :High ;
    x:icon "fa-droplet" ;
-   x:summary "High humidity is a known factor for triggering flare-ups." 
+   x:summary "High humidity is a known factor for triggering flare-ups." ;
+   x:details """When breathing in air that is too humid, nerves in lungs are activated that narrow and tighten the airways.
+Humidity also makes the air stagnant enough to trap pollutants and allergens like pollen, dust, mold, dust mites, and smoke. These can set flare-up in COPD patients.""" 
 ] .
 #
-:hasModerateHumidity x:explanation [
+:hasHumidity x:explanation [
    a :RecommendationReasonExplanation ;
-   x:object true ;
+   x:object :Moderate ;
    x:icon "fa-droplet" ;
-   x:summary "Low or high humidity is a known factor for triggering flare-ups." 
+   x:summary "Low or high humidity is a known factor for triggering flare-ups." ;
+   x:details """Too little humidity cause the air to dry out. 
+Such dry air then dries out the mucous membranes in the respiratory tract, which can irritate the airways, and may cause the symptoms to flare.<br>
+<br>
+When breathing in air that is too humid, nerves in lungs are activated that narrow and tighten the airways.
+Humidity also makes the air stagnant enough to trap pollutants and allergens like pollen, dust, mold, dust mites, and smoke. These can set flare-up in COPD patients.""" 
 ] .
 #
-:hasLowHumidity x:explanation [
+:hasHumidity x:explanation [
    a :RecommendationReasonExplanation ;
-   x:object true ;
+   x:object :Low ;
    x:icon "fa-droplet-slash" ;
-   x:summary "Low or high humidity is a known factor for triggering flare-ups." 
+   x:summary "Low or high humidity is a known factor for triggering flare-ups." ;
+   x:details """Too little humidity cause the air to dry out. 
+Such dry air then dries out the mucous membranes in the respiratory tract, which can irritate the airways, and may cause the symptoms to flare.""" 
 ] .
 
 #
@@ -210,26 +246,43 @@
        a :RecommendationReasonExplanation ;
        x:object ?x ;
        x:icon "fa-temperature-half" ;
+       x:unit "&deg;C" ;
        x:summary "Outside temperature." 
    ] .
 #
-:hasHighTemperature x:explanation [
+:hasTemperature x:explanation [
    a :RecommendationReasonExplanation ;
-   x:object true ;
+   x:object :High ;
    x:icon "fa-temperature-sun" ;
-   x:summary "High temperatures are known factors for triggering flare-ups. " 
+   x:summary "High temperatures are known factors for triggering flare-ups." ;
+   x:details """High temperatures, especially &gt; 32&deg;C, worsens airway inflammation for patients with COPD;
+the cause of this is still unknown. Also, smog-related ozone levels also often rise in summer
+heat, which may contribute to breathing problems.""" 
 ] .
 #
-:hasModerateTemperature x:explanation [
+:hasTemperature x:explanation [
    a :RecommendationReasonExplanation ;
-   x:object true ;
+   x:object :Moderate ;
    x:icon "fa-temperature-half" ;
-   x:summary "Low and high temperatures are known factors for triggering flare-ups." 
+   x:summary "Low and high temperatures are known factors for triggering flare-ups." ;
+   x:details """When the temperature dips < 0°C, humidity levels fall as well. Humidity levels below 10% can dry out mucous membranes.<br>
+<br>
+High temperatures, especially &gt; 32&deg;C, worsens airway inflammation for patients with COPD;
+the cause of this is still unknown. Also, smog-related ozone levels also often rise in summer
+heat, which may contribute to breathing problems.""" 
 ] .
 #
-:hasLowTemperature x:explanation [
+:hasTemperature x:explanation [
    a :RecommendationReasonExplanation ;
-   x:object true ;
+   x:object :Low ;
    x:icon "fa-temperature-snow" ;
-   x:summary "Low temperatures are known factors for triggering flare-ups. " 
+   x:summary "Low temperatures are known factors for triggering flare-ups." ;
+   x:details """When the temperature dips < 0°C, humidity levels fall as well. Humidity levels below 10% can dry out mucous membranes.""" 
+] .
+#
+:hasWind x:explanation [
+   a :RecommendationReasonExplanation ;
+   x:object :Low , :High ;
+   x:icon "fa-wind" ;
+   x:summary "High winds lead to activity exertion and increase pollen and dust, both factors for flare-ups." 
 ] .

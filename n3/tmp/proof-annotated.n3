@@ -1,56 +1,75 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --nope --n3 n3/tmp/proof.n3 n3/modules/proof/contrast/aux_inv.n3 --query n3/modules/proof/query_proof.n3
+# eye --nope --n3 n3/tmp/proof.n3 n3/modules/proof/trace/aggr/aggregate_evidence.n3 n3/modules/aux.n3 n3/modules/proof/trace/aux_trace.n3 n3/modules/proof/trace/aggr/aux_aggr.n3 --query n3/modules/proof/query_proof.n3
 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix x: <http://wvw.org/xai#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix list: <http://www.w3.org/2000/10/swap/list#>.
-@prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
-@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/353844450136239932#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
-@prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3665620941541412109#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3746401242798223559#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 @prefix dc: <http://purl.org/dc/terms/>.
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix xmath: <http://wvw.org/xai/swap/math#>.
 
-skolem:lemma13 a x:RootNode.
-skolem:lemma13 x:gives {
-    :envA :recommendation :goOutside.
+_:bn_10 a x:Leaf.
+_:bn_10 x:gives {
+    5 math:notLessThan 0.
 }.
-skolem:lemma13 a x:Node.
-skolem:lemma13 x:evidence (skolem:lemma5 skolem:lemma7).
-skolem:lemma5 a x:Node.
-skolem:lemma5 x:evidence (skolem:lemma9).
-skolem:lemma7 a x:Node.
-skolem:lemma7 x:evidence (skolem:lemma11).
-skolem:lemma9 a x:Leaf.
-skolem:lemma9 x:evidence ().
-skolem:lemma11 a x:Leaf.
-skolem:lemma11 x:evidence ().
-skolem:lemma5 x:gives {
-    :envA :hasModerateHumidity true.
+_:bn_11 a x:Leaf.
+_:bn_11 x:gives {
+    5 math:notGreaterThan 32.
 }.
-skolem:lemma7 x:gives {
-    :envA :hasModerateTemperature true.
+_:bn_18 a x:Leaf.
+_:bn_18 x:gives {
+    55 math:greaterThan 50.
 }.
-skolem:lemma9 x:gives {
-    :envA :hasHumidityValue var:x_0.
-    var:x_0 <http://wvw.org/xai/swap/math#notLessThan> 10 .
-    var:x_0 <http://wvw.org/xai/swap/math#notGreaterThan> 50.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma10> a x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma10> x:gives {
+    :envA :hasTemperatureValue 5.
 }.
-skolem:lemma11 x:gives {
-    :envA :hasTemperatureValue var:x_0.
-    var:x_0 <http://wvw.org/xai/swap/math#notLessThan> 0 .
-    var:x_0 <http://wvw.org/xai/swap/math#notGreaterThan> 32.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma12> a x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma12> x:gives {
+    :envA :hasHumidityValue 55.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma4> a x:Node.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma4> x:gives {
+    :envA :hasTemperature :Moderate.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma6> a x:Node.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma6> x:gives {
+    :envA :hasHumidity :High.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma8> a x:Node.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma8> x:gives {
+    :envA :recommendation :avoidGoingOutside.
+}.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma4> a x:RootNode.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma8> a x:RootNode.
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma4> x:evidence (_:sk_13).
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma6> x:evidence (_:sk_14).
+<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma8> x:evidence (<http://eyereasoner.github.io/.well-known/genid/1485229177102128322#lemma6>).
+_:sk_13 a x:Leaf.
+_:sk_13 x:gives {
+    :envA :hasTemperatureValue 5 .
+    5 math:notLessThan 0 .
+    5 math:notGreaterThan 32.
+}.
+_:sk_14 a x:Leaf.
+_:sk_14 x:gives {
+    :envA :hasHumidityValue 55 .
+    55 math:greaterThan 50.
 }.
 
-# 2023-05-03T15:06:31.523Z in=155 out=16 ent=63 step=172 brake=5 inf=223394 sec=0.034 inf/sec=6570412
+# 2023-05-03T21:16:52.251Z in=134 out=25 ent=70 step=223 brake=5 inf=284517 sec=0.040 inf/sec=7112925
 # ENDS
 
