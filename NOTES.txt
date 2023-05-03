@@ -1,0 +1,61 @@
+- dealing with comparisons, and keeping them together, is ... difficult
+first, deal with it in proof modules:
+that way, print module can easily print this as single step
+
+some re-usable code is found in n3/modules/aux.n3
+
+
+-- trace
+for a single step, group evidences that include one or more comparators into single x:leaf
+
+e.g., 
+r:evidence (
+    :lemma10
+    [ a r:Fact; r:gives {5 math:notGreaterThan 5}]
+);
+:lemma10
+    x:gives { :patientA :hasPhlegmAmountValue 5 } .
+to
+x:evidence ([
+    a x:Leaf ;
+    x:gives {
+        :patientA :hasPhlegmAmountValue 5 .
+        5 math:notGreaterThan 5.
+    }
+])
+
+-- contrastive
+first: when inverting rules, all rules with compound rule body should be divided into separate rules:
+e.g., 
+{
+    ?t_0 :hasColoredPhlegm false.
+    ?t_0 :hasPhlegmAmount :Low.
+} => {
+    ?t_0 :isStratified :GreenZone.
+}.
+i.e., a separate rule for each body triple
+that way, evidences in the inverted proof will be atomic, each with their own supporting evidences, as with "regular" evidences
+otherwise, would get single piece of evidence like 
+    x:gives 
+    {
+        ?t_0 :hasColoredPhlegm false.
+        ?t_0 :hasPhlegmAmount :Low.
+    }
+
+but, we need to keep comparisons together in the same rule body:
+    ?x :hasPhlegmAmountValue ?v.
+    ?v <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    ?v <http://wvw.org/xai/swap/math#lessThan> 8.
+so the same checks here are needed as with the "trace" solution
+
+alternative here is to separate all body triples into separate rules
+but this leads to very big proofs
+also, re-merging the gives' later on (as with trace) will lead to "disconnected" gives'
+e.g., 
+    _:t :hasPhlegmAmountValue _:v1.
+    _:v2 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+
+
+-- printing
+here, we have to check for certain (merged) evidences whether they include comparators
+if so, we print the entire evidence in one go (e.g., <predicate> between X and Y)

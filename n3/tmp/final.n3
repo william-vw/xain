@@ -2,306 +2,291 @@
 # eye --nope --n3 n3/tmp/proof-annotated.n3 n3/modules/print/describe.n3 n3/modules/print/visual/describe.n3 n3/modules/print/visual/collect.n3 n3/modules/print/visual/copd/collect.n3 n3/test/copd/domain-kg.n3 n3/modules/print/visual/query.n3 n3/modules/print/visual/copd/query.n3 --pass-only-new
 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix x: <http://wvw.org/xai#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/1911974260827388297#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2997196570026162710#>.
+@prefix var: <http://eyereasoner.github.io/var#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3702909378568835155#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 @prefix dc: <http://purl.org/dc/terms/>.
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
-@prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-@prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix xmath: <http://wvw.org/xai/swap/math#>.
 @prefix func: <http://www.w3.org/2007/rif-builtin-function#>.
 
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#proof> x:gives {
+    :patientA :hasColoredPhlegm false.
+    :patientA :hasPhlegmAmount :Low.
+    :patientA :hasActivityExertion :Low.
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5 .
+    :patientA :hasActivityExertionValue var:x_1.
+    var:x_1 xmath:notGreaterThan 4.
+}.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma2> x:gives {
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5.
+}.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma3> x:gives {
+    :patientA :hasActivityExertionValue var:x_0.
+    var:x_0 xmath:notGreaterThan 4.
+}.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma5> x:gives {
+    {
+        var:x_0 :hasColoredPhlegm false.
+        var:x_0 :hasPhlegmAmount :Low.
+        var:x_0 :hasActivityExertion :Low.
+    } => {
+        var:x_0 :hasColoredPhlegm false.
+        var:x_0 :hasPhlegmAmount :Low.
+        var:x_0 :hasActivityExertion :Low.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma6> x:gives {
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5.
+}.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma7> x:gives {
+    {
+        var:x_0 :hasPhlegmAmountValue var:x_1.
+        var:x_1 xmath:notGreaterThan 5.
+    } => {
+        var:x_0 :hasPhlegmAmountValue var:x_1.
+        var:x_1 xmath:notGreaterThan 5.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma8> x:gives {
+    :patientA :hasActivityExertionValue var:x_0.
+    var:x_0 xmath:notGreaterThan 4.
+}.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma9> x:gives {
+    {
+        var:x_0 :hasActivityExertionValue var:x_1.
+        var:x_1 xmath:notGreaterThan 4.
+    } => {
+        var:x_0 :hasActivityExertionValue var:x_1.
+        var:x_1 xmath:notGreaterThan 4.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma11> x:gives {
+    {
+        var:x_0 :isStratified :GreenZone.
+    } => {
+        var:x_0 :hasColoredPhlegm false.
+        var:x_0 :hasPhlegmAmount :Low.
+        var:x_0 :hasActivityExertion :Low.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma12> x:gives {
+    {
+        var:x_0 :hasPhlegmAmount :Low.
+    } => {
+        var:x_0 :hasPhlegmAmountValue var:x_1.
+        var:x_1 xmath:notGreaterThan 5.
+    }.
+}.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma13> x:gives {
+    {
+        var:x_0 :hasActivityExertion :Low.
+    } => {
+        var:x_0 :hasActivityExertionValue var:x_1.
+        var:x_1 xmath:notGreaterThan 4.
+    }.
+}.
 {
-    7 math:greaterThan 5.
-} x:term 7 .
-{
-    7 math:greaterThan 5.
-} x:term math:greaterThan.
-{
-    7 math:greaterThan 5.
-} x:term 5 .
-{
-    7 math:lessThan 8.
-} x:term 7 .
-{
-    7 math:lessThan 8.
-} x:term math:lessThan.
-{
-    7 math:lessThan 8.
-} x:term 8 .
-{
-    7 math:greaterThan 4.
-} x:term 7 .
-{
-    7 math:greaterThan 4.
-} x:term math:greaterThan.
-{
-    7 math:greaterThan 4.
-} x:term 4 .
-{
-    :patientA :hasColoredPhlegm true.
+    :patientA :hasColoredPhlegm false.
+    :patientA :hasPhlegmAmount :Low.
+    :patientA :hasActivityExertion :Low.
 } x:term :patientA.
 {
-    :patientA :hasColoredPhlegm true.
+    :patientA :hasColoredPhlegm false.
+    :patientA :hasPhlegmAmount :Low.
+    :patientA :hasActivityExertion :Low.
 } x:term :hasColoredPhlegm.
 {
-    :patientA :hasColoredPhlegm true.
-} x:term true.
+    :patientA :hasColoredPhlegm false.
+    :patientA :hasPhlegmAmount :Low.
+    :patientA :hasActivityExertion :Low.
+} x:term false.
 {
-    :patientA :hasPhlegmAmountValue 7.
-} x:term :patientA.
-{
-    :patientA :hasPhlegmAmountValue 7.
-} x:term :hasPhlegmAmountValue.
-{
-    :patientA :hasPhlegmAmountValue 7.
-} x:term 7 .
-{
-    :patientA :hasActivityExertionValue 7.
-} x:term :patientA.
-{
-    :patientA :hasActivityExertionValue 7.
-} x:term :hasActivityExertionValue.
-{
-    :patientA :hasActivityExertionValue 7.
-} x:term 7 .
-{
-    :patientA :isStratified :YellowZone.
-} x:term :patientA.
-{
-    :patientA :isStratified :YellowZone.
-} x:term :isStratified.
-{
-    :patientA :isStratified :YellowZone.
-} x:term :YellowZone.
-{
-    :patientA :hasPhlegmAmount :Moderate.
-} x:term :patientA.
-{
-    :patientA :hasPhlegmAmount :Moderate.
+    :patientA :hasColoredPhlegm false.
+    :patientA :hasPhlegmAmount :Low.
+    :patientA :hasActivityExertion :Low.
 } x:term :hasPhlegmAmount.
 {
-    :patientA :hasPhlegmAmount :Moderate.
-} x:term :Moderate.
+    :patientA :hasColoredPhlegm false.
+    :patientA :hasPhlegmAmount :Low.
+    :patientA :hasActivityExertion :Low.
+} x:term :Low.
 {
-    :patientA :hasActivityExertion :High.
-} x:term :patientA.
-{
-    :patientA :hasActivityExertion :High.
+    :patientA :hasColoredPhlegm false.
+    :patientA :hasPhlegmAmount :Low.
+    :patientA :hasActivityExertion :Low.
 } x:term :hasActivityExertion.
 {
-    :patientA :hasActivityExertion :High.
-} x:term :High.
-{
-    :patientA :hasPhlegmAmountValue 7 .
-    7 math:greaterThan 5 .
-    7 math:lessThan 8.
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5.
 } x:term :patientA.
 {
-    :patientA :hasPhlegmAmountValue 7 .
-    7 math:greaterThan 5 .
-    7 math:lessThan 8.
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5.
 } x:term :hasPhlegmAmountValue.
 {
-    :patientA :hasPhlegmAmountValue 7 .
-    7 math:greaterThan 5 .
-    7 math:lessThan 8.
-} x:term 7 .
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5.
+} x:term var:x_0.
 {
-    :patientA :hasPhlegmAmountValue 7 .
-    7 math:greaterThan 5 .
-    7 math:lessThan 8.
-} x:term math:greaterThan.
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5.
+} x:term xmath:notGreaterThan.
 {
-    :patientA :hasPhlegmAmountValue 7 .
-    7 math:greaterThan 5 .
-    7 math:lessThan 8.
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5.
 } x:term 5 .
 {
-    :patientA :hasPhlegmAmountValue 7 .
-    7 math:greaterThan 5 .
-    7 math:lessThan 8.
-} x:term math:lessThan.
-{
-    :patientA :hasPhlegmAmountValue 7 .
-    7 math:greaterThan 5 .
-    7 math:lessThan 8.
-} x:term 8 .
-{
-    :patientA :hasActivityExertionValue 7 .
-    7 math:greaterThan 4 .
-    7 math:lessThan 8.
+    :patientA :hasActivityExertionValue var:x_0.
+    var:x_0 xmath:notGreaterThan 4.
 } x:term :patientA.
 {
-    :patientA :hasActivityExertionValue 7 .
-    7 math:greaterThan 4 .
-    7 math:lessThan 8.
+    :patientA :hasActivityExertionValue var:x_0.
+    var:x_0 xmath:notGreaterThan 4.
 } x:term :hasActivityExertionValue.
 {
-    :patientA :hasActivityExertionValue 7 .
-    7 math:greaterThan 4 .
-    7 math:lessThan 8.
-} x:term 7 .
+    :patientA :hasActivityExertionValue var:x_0.
+    var:x_0 xmath:notGreaterThan 4.
+} x:term var:x_0.
 {
-    :patientA :hasActivityExertionValue 7 .
-    7 math:greaterThan 4 .
-    7 math:lessThan 8.
-} x:term math:greaterThan.
+    :patientA :hasActivityExertionValue var:x_0.
+    var:x_0 xmath:notGreaterThan 4.
+} x:term xmath:notGreaterThan.
 {
-    :patientA :hasActivityExertionValue 7 .
-    7 math:greaterThan 4 .
-    7 math:lessThan 8.
+    :patientA :hasActivityExertionValue var:x_0.
+    var:x_0 xmath:notGreaterThan 4.
 } x:term 4 .
 {
-    :patientA :hasActivityExertionValue 7 .
-    7 math:greaterThan 4 .
-    7 math:lessThan 8.
-} x:term math:lessThan.
+    :patientA :isStratified :GreenZone.
+} x:term :patientA.
 {
-    :patientA :hasActivityExertionValue 7 .
-    7 math:greaterThan 4 .
-    7 math:lessThan 8.
-} x:term 8 .
+    :patientA :isStratified :GreenZone.
+} x:term :isStratified.
+{
+    :patientA :isStratified :GreenZone.
+} x:term :GreenZone.
+{
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5.
+} x:term :patientA.
+{
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5.
+} x:term :hasPhlegmAmountValue.
+{
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5.
+} x:term var:x_0.
+{
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5.
+} x:term xmath:notGreaterThan.
+{
+    :patientA :hasPhlegmAmountValue var:x_0.
+    var:x_0 xmath:notGreaterThan 5.
+} x:term 5 .
+{
+    :patientA :hasActivityExertionValue var:x_0.
+    var:x_0 xmath:notGreaterThan 4.
+} x:term :patientA.
+{
+    :patientA :hasActivityExertionValue var:x_0.
+    var:x_0 xmath:notGreaterThan 4.
+} x:term :hasActivityExertionValue.
+{
+    :patientA :hasActivityExertionValue var:x_0.
+    var:x_0 xmath:notGreaterThan 4.
+} x:term var:x_0.
+{
+    :patientA :hasActivityExertionValue var:x_0.
+    var:x_0 xmath:notGreaterThan 4.
+} x:term xmath:notGreaterThan.
+{
+    :patientA :hasActivityExertionValue var:x_0.
+    var:x_0 xmath:notGreaterThan 4.
+} x:term 4 .
 ":hasPhlegmAmountValue" x:description "phlegm amount".
 ":hasActivityExertionValue" x:description "activity level".
-"7" x:description 7 .
+"false" x:description false.
 "5" x:description 5 .
-"8" x:description 8 .
 "4" x:description 4 .
-"true" x:description true.
-_:e_sk_85_1 x:conclusionStr "<span class='triple'><span class='predicate'>phlegm amount</span> between 5 and 8</span>".
-_:e_sk_86_1 x:conclusionStr "<span class='triple'><span class='predicate'>activity level</span> between 4 and 8</span>".
-_:e_sk_85_1 x:output "<li class='fact'><span class='triple'><span class='predicate'>phlegm amount</span> between 5 and 8</span></li>".
-_:e_sk_86_1 x:output "<li class='fact'><span class='triple'><span class='predicate'>activity level</span> between 4 and 8</span></li>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#proof> x:printLabel r:Proof.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#proof> x:printLiteral r:Proof.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#proof> x:printLabel r:Conjunction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#proof> x:printLiteral r:Conjunction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma1> x:printLabel r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma1> x:printLiteral r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma2> x:printLabel r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma2> x:printLiteral r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma3> x:printLabel r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma3> x:printLiteral r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma4> x:printLabel r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma4> x:printLiteral r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma5> x:printLabel r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma5> x:printLiteral r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma6> x:printLabel r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma6> x:printLiteral r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma7> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma7> x:printLiteral r:Extraction.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#proof> x:printLabel r:Proof.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#proof> x:printLiteral r:Proof.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#proof> x:printLabel r:Conjunction.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#proof> x:printLiteral r:Conjunction.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma1> x:printLabel r:Inference.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma1> x:printLiteral r:Inference.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma2> x:printLabel r:Inference.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma2> x:printLiteral r:Inference.
+_:e_bn_9_1 x:printLabel r:Existential.
+_:e_bn_9_1 x:printLiteral r:Existential.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma3> x:printLabel r:Inference.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma3> x:printLiteral r:Inference.
+_:e_bn_15_1 x:printLabel r:Existential.
+_:e_bn_15_1 x:printLiteral r:Existential.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma4> x:printLabel r:Inference.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma4> x:printLiteral r:Inference.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma5> x:printLabel r:Extraction.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma5> x:printLiteral r:Extraction.
 _:e_bn_19_1 x:printLabel r:Parsing.
 _:e_bn_19_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma8> x:printLabel r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma8> x:printLiteral r:Inference.
-_:e_bn_20_1 x:printLabel r:Fact.
-_:e_bn_20_1 x:printLiteral r:Fact.
-_:e_bn_21_1 x:printLabel r:Fact.
-_:e_bn_21_1 x:printLiteral r:Fact.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma9> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma9> x:printLiteral r:Extraction.
-_:e_bn_27_1 x:printLabel r:Parsing.
-_:e_bn_27_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma10> x:printLabel r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma10> x:printLiteral r:Inference.
-_:e_bn_28_1 x:printLabel r:Fact.
-_:e_bn_28_1 x:printLiteral r:Fact.
-_:e_bn_29_1 x:printLabel r:Fact.
-_:e_bn_29_1 x:printLiteral r:Fact.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma11> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma11> x:printLiteral r:Extraction.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma6> x:printLabel r:Inference.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma6> x:printLiteral r:Inference.
+_:e_bn_25_1 x:printLabel r:Existential.
+_:e_bn_25_1 x:printLiteral r:Existential.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma7> x:printLabel r:Extraction.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma7> x:printLiteral r:Extraction.
+_:e_bn_26_1 x:printLabel r:Parsing.
+_:e_bn_26_1 x:printLiteral r:Parsing.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma8> x:printLabel r:Inference.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma8> x:printLiteral r:Inference.
+_:e_bn_32_1 x:printLabel r:Existential.
+_:e_bn_32_1 x:printLiteral r:Existential.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma9> x:printLabel r:Extraction.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma9> x:printLiteral r:Extraction.
+_:e_bn_33_1 x:printLabel r:Parsing.
+_:e_bn_33_1 x:printLiteral r:Parsing.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma10> x:printLabel r:Extraction.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma10> x:printLiteral r:Extraction.
+_:e_bn_34_1 x:printLabel r:Parsing.
+_:e_bn_34_1 x:printLiteral r:Parsing.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma11> x:printLabel r:Extraction.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma11> x:printLiteral r:Extraction.
 _:e_bn_35_1 x:printLabel r:Parsing.
 _:e_bn_35_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma12> x:printLabel r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma12> x:printLiteral r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma13> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma13> x:printLiteral r:Extraction.
-_:e_bn_39_1 x:printLabel r:Parsing.
-_:e_bn_39_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma14> x:printLabel r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma14> x:printLiteral r:Inference.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma15> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma15> x:printLiteral r:Extraction.
-_:e_bn_43_1 x:printLabel r:Parsing.
-_:e_bn_43_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma16> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma16> x:printLiteral r:Extraction.
-_:e_bn_44_1 x:printLabel r:Parsing.
-_:e_bn_44_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma17> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma17> x:printLiteral r:Extraction.
-_:e_bn_45_1 x:printLabel r:Parsing.
-_:e_bn_45_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma18> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma18> x:printLiteral r:Extraction.
-_:e_bn_46_1 x:printLabel r:Parsing.
-_:e_bn_46_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma19> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma19> x:printLiteral r:Extraction.
-_:e_bn_47_1 x:printLabel r:Parsing.
-_:e_bn_47_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma20> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma20> x:printLiteral r:Extraction.
-_:e_bn_48_1 x:printLabel r:Parsing.
-_:e_bn_48_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma21> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma21> x:printLiteral r:Extraction.
-_:e_bn_49_1 x:printLabel r:Parsing.
-_:e_bn_49_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma22> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma22> x:printLiteral r:Extraction.
-_:e_bn_50_1 x:printLabel r:Parsing.
-_:e_bn_50_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma23> x:printLabel r:Extraction.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma23> x:printLiteral r:Extraction.
-_:e_bn_51_1 x:printLabel r:Parsing.
-_:e_bn_51_1 x:printLiteral r:Parsing.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma6> x:printLabel x:Node.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma6> x:printLiteral x:Node.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma8> x:printLabel x:Node.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma8> x:printLiteral x:Node.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma10> x:printLabel x:Node.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma10> x:printLiteral x:Node.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma12> x:printLabel x:Node.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma12> x:printLiteral x:Node.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma14> x:printLabel x:Node.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma14> x:printLiteral x:Node.
-_:e_bn_20_1 x:printLabel x:Leaf.
-_:e_bn_20_1 x:printLiteral x:Leaf.
-_:e_bn_21_1 x:printLabel x:Leaf.
-_:e_bn_21_1 x:printLiteral x:Leaf.
-_:e_bn_28_1 x:printLabel x:Leaf.
-_:e_bn_28_1 x:printLiteral x:Leaf.
-_:e_bn_29_1 x:printLabel x:Leaf.
-_:e_bn_29_1 x:printLiteral x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma16> x:printLabel x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma16> x:printLiteral x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma18> x:printLabel x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma18> x:printLiteral x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma20> x:printLabel x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma20> x:printLiteral x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma6> x:printLabel x:RootNode.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma6> x:printLiteral x:RootNode.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma12> x:printLabel x:RootNode.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma12> x:printLiteral x:RootNode.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma14> x:printLabel x:RootNode.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma14> x:printLiteral x:RootNode.
-_:e_sk_85_1 x:printLabel x:Leaf.
-_:e_sk_85_1 x:printLiteral x:Leaf.
-_:e_sk_86_1 x:printLabel x:Leaf.
-_:e_sk_86_1 x:printLiteral x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma12> x:printLabel r:Extraction.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma12> x:printLiteral r:Extraction.
+_:e_bn_36_1 x:printLabel r:Parsing.
+_:e_bn_36_1 x:printLiteral r:Parsing.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma13> x:printLabel r:Extraction.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma13> x:printLiteral r:Extraction.
+_:e_bn_37_1 x:printLabel r:Parsing.
+_:e_bn_37_1 x:printLiteral r:Parsing.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma10> x:printLabel x:RootNode.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma10> x:printLiteral x:RootNode.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma10> x:printLabel x:Node.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma10> x:printLiteral x:Node.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma4> x:printLabel x:Node.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma4> x:printLiteral x:Node.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma6> x:printLabel x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma6> x:printLiteral x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma8> x:printLabel x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma8> x:printLiteral x:Leaf.
 _:bn_34 x:printLabel :ZoneExplanation.
 _:bn_34 x:printLiteral :ZoneExplanation.
 _:bn_34 x:header1 "You are in:".
@@ -402,50 +387,29 @@ _:bn_58 x:printLabel :RecommendationReasonExplanation.
 _:bn_58 x:printLiteral :RecommendationReasonExplanation.
 _:bn_58 x:header1 "Risk Factor:".
 _:bn_58 x:header2 "Impact on COPD:".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma6> x:printLabel x:NodeToPrint.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma6> x:printLiteral x:NodeToPrint.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma8> x:printLabel x:NodeToPrint.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma8> x:printLiteral x:NodeToPrint.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma10> x:printLabel x:NodeToPrint.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma10> x:printLiteral x:NodeToPrint.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma12> x:printLabel x:NodeToPrint.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma12> x:printLiteral x:NodeToPrint.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma14> x:printLabel x:NodeToPrint.
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma14> x:printLiteral x:NodeToPrint.
-"math:greaterThan" x:description "greater than".
-"math:lessThan" x:description "less than".
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma10> x:printLabel x:NodeToPrint.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma10> x:printLiteral x:NodeToPrint.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma4> x:printLabel x:NodeToPrint.
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma4> x:printLiteral x:NodeToPrint.
 ":patientA" x:description "patient".
 ":hasColoredPhlegm" x:description "colored phlegm".
-":isStratified" x:description "is stratified".
-":YellowZone" x:description "yellow zone".
 ":hasPhlegmAmount" x:description "phlegm amount".
-":Moderate" x:description "moderate".
+":Low" x:description "low".
 ":hasActivityExertion" x:description "activity exertion".
-":High" x:description "high".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma6> x:conclusionStr "<span class='triple'><span class='object'>yellow zone</span> <span class='predicate'>is stratified</span></span>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma8> x:conclusionStr "<span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlegm amount</span></span>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma10> x:conclusionStr "<span class='triple'><span class='object'>high</span> <span class='predicate'>activity exertion</span></span>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma12> x:conclusionStr "<span class='triple'><span class='object'>yellow zone</span> <span class='predicate'>is stratified</span></span>".
-_:e_bn_20_1 x:conclusionStr "<span class='triple'><span class='object'>5</span> <span class='predicate'>greater than</span></span>".
-_:e_bn_21_1 x:conclusionStr "<span class='triple'><span class='object'>8</span> <span class='predicate'>less than</span></span>".
-_:e_bn_28_1 x:conclusionStr "<span class='triple'><span class='object'>4</span> <span class='predicate'>greater than</span></span>".
-_:e_bn_29_1 x:conclusionStr "<span class='triple'><span class='object'>8</span> <span class='predicate'>less than</span></span>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma16> x:conclusionStr "<span class='triple'><span class='predicate'>colored phlegm</span></span>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma18> x:conclusionStr "<span class='triple'><span class='object'>7</span> <span class='predicate'>phlegm amount</span></span>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma20> x:conclusionStr "<span class='triple'><span class='object'>7</span> <span class='predicate'>activity level</span></span>".
-_:e_bn_20_1 x:output "<li class='fact'><span class='triple'><span class='object'>5</span> <span class='predicate'>greater than</span></span></li>".
-_:e_bn_21_1 x:output "<li class='fact'><span class='triple'><span class='object'>8</span> <span class='predicate'>less than</span></span></li>".
-_:e_bn_28_1 x:output "<li class='fact'><span class='triple'><span class='object'>4</span> <span class='predicate'>greater than</span></span></li>".
-_:e_bn_29_1 x:output "<li class='fact'><span class='triple'><span class='object'>8</span> <span class='predicate'>less than</span></span></li>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma16> x:output "<li class='fact'><span class='triple'><span class='predicate'>colored phlegm</span></span></li>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma18> x:output "<li class='fact'><span class='triple'><span class='object'>7</span> <span class='predicate'>phlegm amount</span></span></li>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma20> x:output "<li class='fact'><span class='triple'><span class='object'>7</span> <span class='predicate'>activity level</span></span></li>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma6> x:output "\n<div id=\"recomm0\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">You are in:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 text-orange\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-exclamation-circle card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h5 class=\"card-title pb-1 zone\">yellow zone</h5>\n               <p class=\"card-text mb-0 mt-1 zone-text\">This means you should follow your action plan immediately. If your symptoms don't improve after 48 hours, seek medical care immediately.</p>\n            </div>\n         </div>\n      </div>\n   </div>\n\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Because you have:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>colored phlegm</span></span><h5>\n         </div>\n         <p class=\"card-content\">Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" onclick=\"nav.goto('lemma8');\" style=\"cursor: pointer\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlegm amount</span></span><h5>\n         </div>\n         <p class=\"card-content\">Moderate Phlegm Amount. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" onclick=\"nav.goto('lemma10');\" style=\"cursor: pointer\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-face-tongue-sweat card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>high</span> <span class='predicate'>activity exertion</span></span><h5>\n         </div>\n         <p class=\"card-content\">High levels of exertion when doing activities is a known factor for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma8> x:output "\n<div id=\"lemma8\" class=\"level_n\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">Risk Factor:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 align-items-center text-section\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h3 class=\"card-title fw-bold\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlegm amount</span></span><h3>\n            </div>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Relation with COPD:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>phlegm amount</span> between 5 and 8</span><h5>\n         </div>\n         <p class=\"card-content\">Phlegm Amount Value. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma10> x:output "\n<div id=\"lemma10\" class=\"level_n\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">Risk Factor:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 align-items-center text-section\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-face-tongue-sweat card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h3 class=\"card-title fw-bold\"><span class='triple'><span class='object'>high</span> <span class='predicate'>activity exertion</span></span><h3>\n            </div>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Relation with COPD:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>activity level</span> between 4 and 8</span><h5>\n         </div>\n         <p class=\"card-content\">Activity Exertion Value. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div>".
-<http://eyereasoner.github.io/.well-known/genid/2757274197543365390#lemma12> x:output "\n<div id=\"recomm0\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">You are in:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 text-orange\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-exclamation-circle card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h5 class=\"card-title pb-1 zone\">yellow zone</h5>\n               <p class=\"card-text mb-0 mt-1 zone-text\">This means you should follow your action plan immediately. If your symptoms don't improve after 48 hours, seek medical care immediately.</p>\n            </div>\n         </div>\n      </div>\n   </div>\n\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Because you have:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>colored phlegm</span></span><h5>\n         </div>\n         <p class=\"card-content\">Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" onclick=\"nav.goto('lemma8');\" style=\"cursor: pointer\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlegm amount</span></span><h5>\n         </div>\n         <p class=\"card-content\">Moderate Phlegm Amount. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" onclick=\"nav.goto('lemma10');\" style=\"cursor: pointer\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-face-tongue-sweat card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>high</span> <span class='predicate'>activity exertion</span></span><h5>\n         </div>\n         <p class=\"card-content\">High levels of exertion when doing activities is a known factor for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div>".
-1 log:outputString "<div class=\"py-0 bg-white\">\n\t<div class=\"container-fluid mx-0 px-0\">\n<div id=\"recomm0\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">You are in:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 text-orange\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-exclamation-circle card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h5 class=\"card-title pb-1 zone\">yellow zone</h5>\n               <p class=\"card-text mb-0 mt-1 zone-text\">This means you should follow your action plan immediately. If your symptoms don't improve after 48 hours, seek medical care immediately.</p>\n            </div>\n         </div>\n      </div>\n   </div>\n\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Because you have:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>colored phlegm</span></span><h5>\n         </div>\n         <p class=\"card-content\">Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" onclick=\"nav.goto('lemma8');\" style=\"cursor: pointer\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlegm amount</span></span><h5>\n         </div>\n         <p class=\"card-content\">Moderate Phlegm Amount. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" onclick=\"nav.goto('lemma10');\" style=\"cursor: pointer\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-face-tongue-sweat card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>high</span> <span class='predicate'>activity exertion</span></span><h5>\n         </div>\n         <p class=\"card-content\">High levels of exertion when doing activities is a known factor for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div>\n<div id=\"lemma8\" class=\"level_n\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">Risk Factor:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 align-items-center text-section\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h3 class=\"card-title fw-bold\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlegm amount</span></span><h3>\n            </div>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Relation with COPD:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>phlegm amount</span> between 5 and 8</span><h5>\n         </div>\n         <p class=\"card-content\">Phlegm Amount Value. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div>\n<div id=\"lemma10\" class=\"level_n\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">Risk Factor:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 align-items-center text-section\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-face-tongue-sweat card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h3 class=\"card-title fw-bold\"><span class='triple'><span class='object'>high</span> <span class='predicate'>activity exertion</span></span><h3>\n            </div>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Relation with COPD:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>activity level</span> between 4 and 8</span><h5>\n         </div>\n         <p class=\"card-content\">Activity Exertion Value. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div>\n<div id=\"recomm0\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">You are in:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 text-orange\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-exclamation-circle card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h5 class=\"card-title pb-1 zone\">yellow zone</h5>\n               <p class=\"card-text mb-0 mt-1 zone-text\">This means you should follow your action plan immediately. If your symptoms don't improve after 48 hours, seek medical care immediately.</p>\n            </div>\n         </div>\n      </div>\n   </div>\n\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Because you have:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>colored phlegm</span></span><h5>\n         </div>\n         <p class=\"card-content\">Colored phlegm (yellow, green, or rust) can be an indicator for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" onclick=\"nav.goto('lemma8');\" style=\"cursor: pointer\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>moderate</span> <span class='predicate'>phlegm amount</span></span><h5>\n         </div>\n         <p class=\"card-content\">Moderate Phlegm Amount. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" onclick=\"nav.goto('lemma10');\" style=\"cursor: pointer\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-face-tongue-sweat card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='object'>high</span> <span class='predicate'>activity exertion</span></span><h5>\n         </div>\n         <p class=\"card-content\">High levels of exertion when doing activities is a known factor for flare-ups. <i class=\"fas fa-circle-question\"></i></p>\n      </div>\n   </div>\n</div>\n\n</div><div class=\"fixed-bottom bg-section\">\n\t\t\t<div class=\"row g-0 text-white\">\n\t\t\t\t<div class=\"col-3 text-center back_btn\" onclick=\"nav.goback()\">\n\t\t\t\t\t<i class=\"fas fa-arrow-left card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center back_btn\" onclick=\"nav.gohome()\">\n\t\t\t\t\t<i class=\"fas fa-home card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t<i class=\"fas fa-capsules card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t<i class=\"fas fa-bars card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>".
+"var:x_0" x:description "x".
+"xmath:notGreaterThan" x:description "not greater than".
+":isStratified" x:description "is stratified".
+":GreenZone" x:description "green zone".
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma10> x:conclusionStr "<span class='triple'><span class='object'>green zone</span> <span class='predicate'>is stratified</span></span>".
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma4> x:conclusionStr "<span class='triple'><span class='predicate'>no colored phlegm</span></span> <span class='triple'><span class='object'>low</span> <span class='predicate'>phlegm amount</span></span> <span class='triple'><span class='object'>low</span> <span class='predicate'>activity exertion</span></span>".
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma6> x:conclusionStr "<span class='triple'><span class='predicate'>phlegm amount</span> not greater than 5</span>".
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma8> x:conclusionStr "<span class='triple'><span class='predicate'>activity level</span> not greater than 4</span>".
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma6> x:output "<li class='fact'><span class='triple'><span class='predicate'>phlegm amount</span> not greater than 5</span></li>".
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma8> x:output "<li class='fact'><span class='triple'><span class='predicate'>activity level</span> not greater than 4</span></li>".
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma4> x:output "\n<div id=\"lemma4\" class=\"level_n\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">Risk Factor:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 align-items-center text-section\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h3 class=\"card-title fw-bold\"><span class='triple'><span class='predicate'>no colored phlegm</span></span> <span class='triple'><span class='object'>low</span> <span class='predicate'>phlegm amount</span></span> <span class='triple'><span class='object'>low</span> <span class='predicate'>activity exertion</span></span><h3>\n            </div>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Relation with COPD:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-scale-unbalanced card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>phlegm amount</span> not greater than 5</span><h5>\n         </div>\n         <p class=\"card-content\">Amount of phlegm. </p>\n      </div>\n   </div>\n</div>\n\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-person-running card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>activity level</span> not greater than 4</span><h5>\n         </div>\n         <p class=\"card-content\">Level of activity exertion. </p>\n      </div>\n   </div>\n</div>\n\n</div>".
+<http://eyereasoner.github.io/.well-known/genid/2978321967999007503#lemma4> x:output "\n<div id=\"lemma4\" class=\"level_n\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">Risk Factor:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 align-items-center text-section\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-face-grin-beam-sweat card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h3 class=\"card-title fw-bold\"><span class='triple'><span class='predicate'>no colored phlegm</span></span> <span class='triple'><span class='object'>low</span> <span class='predicate'>phlegm amount</span></span> <span class='triple'><span class='object'>low</span> <span class='predicate'>activity exertion</span></span><h3>\n            </div>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Relation with COPD:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-scale-unbalanced card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>phlegm amount</span> not greater than 5</span><h5>\n         </div>\n         <p class=\"card-content\">Amount of phlegm. </p>\n      </div>\n   </div>\n</div>\n\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-person-running card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>activity level</span> not greater than 4</span><h5>\n         </div>\n         <p class=\"card-content\">Level of activity exertion. </p>\n      </div>\n   </div>\n</div>\n\n</div>".
+1 log:outputString "<div class=\"py-0 bg-white\">\n\t<div class=\"container-fluid mx-0 px-0\">\n<div id=\"lemma4\" class=\"level_n\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">Risk Factor:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 align-items-center text-section\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-disease card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h3 class=\"card-title fw-bold\"><span class='triple'><span class='predicate'>no colored phlegm</span></span> <span class='triple'><span class='object'>low</span> <span class='predicate'>phlegm amount</span></span> <span class='triple'><span class='object'>low</span> <span class='predicate'>activity exertion</span></span><h3>\n            </div>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Relation with COPD:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-scale-unbalanced card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>phlegm amount</span> not greater than 5</span><h5>\n         </div>\n         <p class=\"card-content\">Amount of phlegm. </p>\n      </div>\n   </div>\n</div>\n\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-person-running card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>activity level</span> not greater than 4</span><h5>\n         </div>\n         <p class=\"card-content\">Level of activity exertion. </p>\n      </div>\n   </div>\n</div>\n\n</div>\n<div id=\"lemma4\" class=\"level_n\">\n   <div class=\"card rounded-0 border-0 mb-0 bg-section\">\n      <div class=\"row g-0 text-white\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3\">Risk Factor:<h5>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 bg-white\">\n      <div class=\"row g-0 align-items-center text-section\">\n         <div class=\"col-2 text-center\">\n            <i class=\"fas fa-face-grin-beam-sweat card-img-top h-100 p-3 ms-2 mt-1 icon-3\"></i>\n         </div>\n         <div class=\"col-9\">\n            <div class=\"card-body\">\n               <h3 class=\"card-title fw-bold\"><span class='triple'><span class='predicate'>no colored phlegm</span></span> <span class='triple'><span class='object'>low</span> <span class='predicate'>phlegm amount</span></span> <span class='triple'><span class='object'>low</span> <span class='predicate'>activity exertion</span></span><h3>\n            </div>\n         </div>\n      </div>\n   </div>\n\n   <div class=\"card rounded-0 border-0 my-0 bg-expl\">\n      <div class=\"row g-0\">\n         <div class=\"col-sm-12\">\n            <h5 class=\"m-3 text-white\">Relation with COPD:<h5>\n         </div>\n      </div>\n   </div>\n   \n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-scale-unbalanced card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>phlegm amount</span> not greater than 5</span><h5>\n         </div>\n         <p class=\"card-content\">Amount of phlegm. </p>\n      </div>\n   </div>\n</div>\n\n<div class=\"card border-0 mb-2 bg-white\">\n   <div class=\"row g-0 align-items-center text-expl\" >\n      <div class=\"col-2 text-center\">\n         <i class=\"fas fa-person-running card-img-top h-100 p-3 ms-2 icon-3\"></i>\n      </div>\n      <div class=\"col-9\">\n         <div class=\"card-body\">\n            <h5 class=\"card-title mb-0\"><span class='triple'><span class='predicate'>activity level</span> not greater than 4</span><h5>\n         </div>\n         <p class=\"card-content\">Level of activity exertion. </p>\n      </div>\n   </div>\n</div>\n\n</div><div class=\"fixed-bottom bg-section\">\n\t\t\t<div class=\"row g-0 text-white\">\n\t\t\t\t<div class=\"col-3 text-center back_btn\" onclick=\"nav.goback()\">\n\t\t\t\t\t<i class=\"fas fa-arrow-left card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center back_btn\" onclick=\"nav.gohome()\">\n\t\t\t\t\t<i class=\"fas fa-home card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t<i class=\"fas fa-capsules card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"col-3 text-center\">\n\t\t\t\t\t<i class=\"fas fa-bars card-img-top h-100 p-3 icon-2\"></i>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>".
 
-# 2023-05-02T19:45:29.597Z in=453 out=313 ent=317 step=3425 brake=9 inf=2830186 sec=0.193 inf/sec=14664176
+# 2023-05-03T11:54:41.590Z in=346 out=229 ent=236 step=2255 brake=9 inf=1924070 sec=0.145 inf/sec=13269448
 # ENDS
 

@@ -26,7 +26,7 @@
 <= 
 {
    ( ?cc "^([a-z]+)" ) string:scrapeAll ?group1 .
-   ( ?cc "([A-Z][a-z]+)" ) string:scrapeAll ?group2 .
+   ( ?cc "([A-Z0-9][a-z]+)" ) string:scrapeAll ?group2 .
    (
        {
            ?group1 log:equalTo ( "has" )

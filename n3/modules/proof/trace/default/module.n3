@@ -34,8 +34,13 @@
        mod:output :step2_output 
    ] [
        rdfs:comment "annotate the generated proof" ;
-       mod:target mod:deductions ;
+       mod:target mod:query ;
+       mod:query [
+           mod:path "n3/modules/proof/query_proof.n3" 
+       ] ;
        mod:input ( :step2_output [
+           mod:path "n3/modules/aux.n3" 
+       ] [
            mod:path "n3/modules/proof/trace/aux_trace.n3" 
        ] [
            mod:path "n3/modules/proof/trace/default/aux_default.n3" 

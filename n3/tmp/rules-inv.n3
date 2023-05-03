@@ -1,18 +1,34 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --nope --n3 n3/modules/proof/contrast/invert_rules.n3 n3/test/copd/rules.n3 --pass-only-new --quantify http://eyereasoner.github.io/var#
+# eye --nope --n3 n3/modules/aux.n3 n3/modules/proof/contrast/invert_rules.n3 n3/test/copd/rules.n3 --pass-only-new --quantify http://eyereasoner.github.io/var#
 
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix x: <http://wvw.org/xai#>.
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
+{
+    ?t_0 :isStratified :GreenZone.
+} => {
+    ?t_0 :hasColoredPhlegm false.
+}.
+{
+    ?t_0 :isStratified :GreenZone.
+} => {
+    ?t_0 :hasPhlegmAmount :Low.
+}.
+{
+    ?t_0 :isStratified :GreenZone.
+} => {
+    ?t_0 :hasActivityExertion :Low.
+}.
 {
     ?t_0 :isStratified :YellowZone.
 } => {
@@ -26,24 +42,7 @@
 {
     ?t_0 :isStratified :YellowZone.
 } => {
-    ?t_0 :hasSwollenAnkle true.
-}.
-{
-    ?t_0 :isStratified :YellowZone.
-} => {
-    ?t_0 :hasActivityExertion :Moderate.
-}.
-{
-    ?t_0 :hasPhlegmAmount :Moderate.
-} => {
-    ?t_0 :hasPhlegmAmountValue _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 8.
-}.
-{
-    ?t_0 :isStratified :RedZone.
-} => {
-    ?t_0 :hasCyanosis true.
+    ?t_0 :hasActivityExertion :High.
 }.
 {
     ?t_0 :isStratified :RedZone.
@@ -53,12 +52,12 @@
 {
     ?t_0 :isStratified :RedZone.
 } => {
-    ?t_0 :hasActivityExertion :Severe.
+    ?t_0 :hasPhlegmAmount :Severe.
 }.
 {
     ?t_0 :isStratified :RedZone.
 } => {
-    ?t_0 :hasCough :Severe.
+    ?t_0 :hasActivityExertion :Severe.
 }.
 {
     ?t_0 :isStratified :RedZone.
@@ -66,14 +65,19 @@
     ?t_0 :hasLow02Saturation true.
 }.
 {
-    ?t_0 :isStratified :RedZone.
+    ?t_0 :recommendation :goOutside.
 } => {
-    ?t_0 :hasFever :Severe.
+    ?t_0 :hasModerateHumidity true.
 }.
 {
-    ?t_0 :isStratified :RedZone.
+    ?t_0 :recommendation :goOutside.
 } => {
-    ?t_0 :hasConfusion true.
+    ?t_0 :hasModerateTemperature true.
+}.
+{
+    ?t_0 :recommendation :avoidGoingOutside.
+} => {
+    ?t_0 :hasLowHumidity true.
 }.
 {
     ?t_0 :recommendation :avoidGoingOutside.
@@ -89,6 +93,70 @@
     ?t_0 :recommendation :avoidGoingOutside.
 } => {
     ?t_0 :hasHighTemperature true.
+}.
+{
+    ?t_0 :hasPhlegmAmount :Low.
+} => {
+    ?t_0 :hasPhlegmAmountValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#notGreaterThan> 5.
+}.
+{
+    ?t_0 :hasActivityExertion :Low.
+} => {
+    ?t_0 :hasActivityExertionValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#notGreaterThan> 4.
+}.
+{
+    ?t_0 :hasPhlegmAmount :Moderate.
+} => {
+    ?t_0 :hasPhlegmAmountValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 5 .
+    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+}.
+{
+    ?t_0 :hasActivityExertion :High.
+} => {
+    ?t_0 :hasActivityExertionValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 4 .
+    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+}.
+{
+    ?t_0 :hasPhlegmAmount :Severe.
+} => {
+    ?t_0 :hasPhlegmAmountValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 8.
+}.
+{
+    ?t_0 :hasActivityExertion :Severe.
+} => {
+    ?t_0 :hasActivityExertionValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 8.
+}.
+{
+    ?t_0 :hasLow02Saturation true.
+} => {
+    ?t_0 :has02SaturationValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 88.
+}.
+{
+    ?t_0 :hasModerateHumidity true.
+} => {
+    ?t_0 :hasHumidityValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 10 .
+    _:t_1 <http://wvw.org/xai/swap/math#notGreaterThan> 50.
+}.
+{
+    ?t_0 :hasModerateTemperature true.
+} => {
+    ?t_0 :hasTemperatureValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 0 .
+    _:t_1 <http://wvw.org/xai/swap/math#notGreaterThan> 32.
+}.
+{
+    ?t_0 :hasLowHumidity true.
+} => {
+    ?t_0 :hasHumidityValue _:t_1.
+    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 10.
 }.
 {
     ?t_0 :hasHighHumidity true.
@@ -100,14 +168,13 @@
     ?t_0 :hasLowTemperature true.
 } => {
     ?t_0 :hasTemperatureValue _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> -10.
+    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 0.
 }.
 {
     ?t_0 :hasHighTemperature true.
 } => {
     ?t_0 :hasTemperatureValue _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 32 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 50.
+    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 32.
 }.
 {
     ?t_0 :hasPhlegmAmountValue ?t_1.
@@ -117,6 +184,37 @@
     ?t_0 :hasPhlegmAmount :Moderate.
 }.
 {
+    ?t_0 :hasActivityExertionValue ?t_1.
+    ?t_1 <http://wvw.org/xai/swap/math#greaterThan> 4 .
+    ?t_1 <http://wvw.org/xai/swap/math#lessThan> 8.
+} => {
+    ?t_0 :hasActivityExertion :High.
+}.
+{
+    ?t_0 :hasPhlegmAmountValue ?t_1.
+    ?t_1 <http://wvw.org/xai/swap/math#notLessThan> 8.
+} => {
+    ?t_0 :hasPhlegmAmount :Severe.
+}.
+{
+    ?t_0 :hasActivityExertionValue ?t_1.
+    ?t_1 <http://wvw.org/xai/swap/math#notLessThan> 8.
+} => {
+    ?t_0 :hasActivityExertion :Severe.
+}.
+{
+    ?t_0 :has02SaturationValue ?t_1.
+    ?t_1 <http://wvw.org/xai/swap/math#lessThan> 88.
+} => {
+    ?t_0 :hasLow02Saturation true.
+}.
+{
+    ?t_0 :hasHumidityValue ?t_1.
+    ?t_1 <http://wvw.org/xai/swap/math#lessThan> 10.
+} => {
+    ?t_0 :hasLowHumidity true.
+}.
+{
     ?t_0 :hasHumidityValue ?t_1.
     ?t_1 <http://wvw.org/xai/swap/math#greaterThan> 50.
 } => {
@@ -124,18 +222,17 @@
 }.
 {
     ?t_0 :hasTemperatureValue ?t_1.
-    ?t_1 <http://wvw.org/xai/swap/math#greaterThan> -10.
+    ?t_1 <http://wvw.org/xai/swap/math#lessThan> 0.
 } => {
     ?t_0 :hasLowTemperature true.
 }.
 {
     ?t_0 :hasTemperatureValue ?t_1.
-    ?t_1 <http://wvw.org/xai/swap/math#greaterThan> 32 .
-    ?t_1 <http://wvw.org/xai/swap/math#lessThan> 50.
+    ?t_1 <http://wvw.org/xai/swap/math#greaterThan> 32.
 } => {
     ?t_0 :hasHighTemperature true.
 }.
 
-# 2023-05-02T13:54:52.796Z in=42 out=22 ent=22 step=62 brake=5 inf=291259 sec=0.052 inf/sec=5601135
+# 2023-05-03T15:06:31.391Z in=63 out=38 ent=38 step=105 brake=5 inf=753774 sec=0.078 inf/sec=9663769
 # ENDS
 

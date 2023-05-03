@@ -1,295 +1,233 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --n3 n3/tmp/rules-disting.n3 n3/test/copd/data.n3 --query n3/tmp/rule-heads.n3
+# eye --n3 n3/test/copd/goal.n3 n3/tmp/rules-inv.n3 --query n3/tmp/rule-heads.n3
 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix x: <http://wvw.org/xai#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/2010737265281425209#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/43860605769971061#>.
+@prefix var: <http://eyereasoner.github.io/var#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3665620941541412109#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#proof> a r:Proof, r:Conjunction;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma1>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma2>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma3>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma4>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma5>;
+skolem:proof a r:Proof, r:Conjunction;
+    r:component skolem:lemma1;
+    r:component skolem:lemma2;
+    r:component skolem:lemma3;
+    r:component skolem:lemma4;
     r:gives {
-        :patientA :isStratified :YellowZone.
-        var:t_4 x:padding var:t_4.
-        :patientA :hasPhlegmAmount :Moderate.
-        var:t_6 x:padding var:t_6.
-        :patientA :hasActivityExertion :High.
-        var:t_7 x:padding var:t_7.
-        var:t_3 x:padding var:t_3.
-        var:t_5 x:padding var:t_5.
+        :envA :hasModerateHumidity true.
+        :envA :hasModerateTemperature true.
+        :envA :hasHumidityValue _:sk_0.
+        _:sk_0 <http://wvw.org/xai/swap/math#notLessThan> 10 .
+        _:sk_0 <http://wvw.org/xai/swap/math#notGreaterThan> 50 .
+        :envA :hasTemperatureValue _:sk_1.
+        _:sk_1 <http://wvw.org/xai/swap/math#notLessThan> 0 .
+        _:sk_1 <http://wvw.org/xai/swap/math#notGreaterThan> 32 .
     }.
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma1> a r:Inference;
+skolem:lemma1 a r:Inference;
     r:gives {
-        :patientA :isStratified :YellowZone.
-        var:t_4 x:padding var:t_4.
+        :envA :hasModerateHumidity true.
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma6>
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma6>
+        skolem:lemma5
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma7>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:rule skolem:lemma6.
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma2> a r:Inference;
+skolem:lemma2 a r:Inference;
     r:gives {
-        :patientA :hasPhlegmAmount :Moderate.
-        var:t_6 x:padding var:t_6.
+        :envA :hasModerateTemperature true.
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma8>
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma8>
+        skolem:lemma7
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma9>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:rule skolem:lemma8.
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma3> a r:Inference;
+skolem:lemma3 a r:Inference;
     r:gives {
-        :patientA :hasActivityExertion :High.
-        var:t_7 x:padding var:t_7.
+        :envA :hasHumidityValue _:sk_0.
+        _:sk_0 <http://wvw.org/xai/swap/math#notLessThan> 10 .
+        _:sk_0 <http://wvw.org/xai/swap/math#notGreaterThan> 50 .
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma10>
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma10>
+        skolem:lemma9
+        skolem:lemma9
+        skolem:lemma9
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma11>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo [ a r:Existential; n3:nodeId "_:sk_0"]];
+    r:rule skolem:lemma10.
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma4> a r:Inference;
+skolem:lemma4 a r:Inference;
     r:gives {
-        :patientA :isStratified :YellowZone.
-        var:t_3 x:padding var:t_3.
+        :envA :hasTemperatureValue _:sk_1.
+        _:sk_1 <http://wvw.org/xai/swap/math#notLessThan> 0 .
+        _:sk_1 <http://wvw.org/xai/swap/math#notGreaterThan> 32 .
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma6>
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma12>
+        skolem:lemma11
+        skolem:lemma11
+        skolem:lemma11
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma13>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo [ a r:Existential; n3:nodeId "_:sk_1"]];
+    r:rule skolem:lemma12.
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma5> a r:Inference;
+skolem:lemma5 a r:Inference;
     r:gives {
-        :patientA :isStratified :YellowZone.
-        var:t_5 x:padding var:t_5.
+        :envA :hasModerateHumidity true.
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma6>
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma14>
+        skolem:lemma13
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma15>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:rule skolem:lemma14.
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma6> a r:Inference;
+skolem:lemma6 a r:Extraction;
     r:gives {
-        :patientA :isStratified :YellowZone.
-        var:t_4 x:padding var:t_4.
-    };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma16>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma17>.
-
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma7> a r:Extraction;
-    r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :isStratified :YellowZone.
-            var:t_4 x:padding var:t_4.
+        @forAll var:x_0. {
+            var:x_0 :hasModerateHumidity true.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :isStratified :YellowZone.
-            var:t_4 x:padding var:t_4.
+            var:x_0 :hasModerateHumidity true.
         }.
     };
     r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma8> a r:Inference;
+skolem:lemma7 a r:Inference;
     r:gives {
-        :patientA :hasPhlegmAmount :Moderate.
-        var:t_6 x:padding var:t_6.
+        :envA :hasModerateTemperature true.
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma18>
-        [ a r:Fact; r:gives {7 math:greaterThan 5}]
-        [ a r:Fact; r:gives {7 math:lessThan 8}]
+        skolem:lemma13
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 7];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma19>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:rule skolem:lemma15.
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma9> a r:Extraction;
+skolem:lemma8 a r:Extraction;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :hasPhlegmAmount :Moderate.
-            var:t_6 x:padding var:t_6.
+        @forAll var:x_0. {
+            var:x_0 :hasModerateTemperature true.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :hasPhlegmAmount :Moderate.
-            var:t_6 x:padding var:t_6.
+            var:x_0 :hasModerateTemperature true.
         }.
     };
     r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma10> a r:Inference;
+skolem:lemma9 a r:Inference;
     r:gives {
-        :patientA :hasActivityExertion :High.
-        var:t_7 x:padding var:t_7.
+        :envA :hasHumidityValue _:sk_0.
+        _:sk_0 <http://wvw.org/xai/swap/math#notLessThan> 10 .
+        _:sk_0 <http://wvw.org/xai/swap/math#notGreaterThan> 50 .
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma20>
-        [ a r:Fact; r:gives {7 math:greaterThan 4}]
-        [ a r:Fact; r:gives {7 math:lessThan 8}]
+        skolem:lemma5
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 7];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma21>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo [ a r:Existential; n3:nodeId "_:sk_0"]];
+    r:rule skolem:lemma16.
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma11> a r:Extraction;
+skolem:lemma10 a r:Extraction;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :hasActivityExertion :High.
-            var:t_7 x:padding var:t_7.
+        @forAll var:x_0, var:x_1. {
+            var:x_0 :hasHumidityValue var:x_1.
+            var:x_1 <http://wvw.org/xai/swap/math#notLessThan> 10 .
+            var:x_1 <http://wvw.org/xai/swap/math#notGreaterThan> 50.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :hasActivityExertion :High.
-            var:t_7 x:padding var:t_7.
+            var:x_0 :hasHumidityValue var:x_1.
+            var:x_1 <http://wvw.org/xai/swap/math#notLessThan> 10 .
+            var:x_1 <http://wvw.org/xai/swap/math#notGreaterThan> 50.
         }.
     };
     r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma12> a r:Inference;
+skolem:lemma11 a r:Inference;
     r:gives {
-        :patientA :isStratified :YellowZone.
-        var:t_3 x:padding var:t_3.
+        :envA :hasTemperatureValue _:sk_1.
+        _:sk_1 <http://wvw.org/xai/swap/math#notLessThan> 0 .
+        _:sk_1 <http://wvw.org/xai/swap/math#notGreaterThan> 32 .
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma8>
+        skolem:lemma7
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma22>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo [ a r:Existential; n3:nodeId "_:sk_1"]];
+    r:rule skolem:lemma17.
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma13> a r:Extraction;
+skolem:lemma12 a r:Extraction;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :isStratified :YellowZone.
-            var:t_3 x:padding var:t_3.
+        @forAll var:x_0, var:x_1. {
+            var:x_0 :hasTemperatureValue var:x_1.
+            var:x_1 <http://wvw.org/xai/swap/math#notLessThan> 0 .
+            var:x_1 <http://wvw.org/xai/swap/math#notGreaterThan> 32.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :isStratified :YellowZone.
-            var:t_3 x:padding var:t_3.
+            var:x_0 :hasTemperatureValue var:x_1.
+            var:x_1 <http://wvw.org/xai/swap/math#notLessThan> 0 .
+            var:x_1 <http://wvw.org/xai/swap/math#notGreaterThan> 32.
         }.
     };
     r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma14> a r:Inference;
+skolem:lemma13 a r:Extraction;
     r:gives {
-        :patientA :isStratified :YellowZone.
-        var:t_5 x:padding var:t_5.
+        :envA :recommendation :goOutside.
     };
-    r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma10>
-    );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#patientA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma23>.
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/copd/goal.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma15> a r:Extraction;
+skolem:lemma14 a r:Extraction;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :isStratified :YellowZone.
-            var:t_5 x:padding var:t_5.
+        @forAll var:x_0. {
+            var:x_0 :recommendation :goOutside.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :isStratified :YellowZone.
-            var:t_5 x:padding var:t_5.
+            var:x_0 :hasModerateHumidity true.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-inv.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma16> a r:Extraction;
+skolem:lemma15 a r:Extraction;
     r:gives {
-        :patientA :hasColoredPhlegm true.
-    };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/copd/data.n3>].
-
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma17> a r:Extraction;
-    r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :hasColoredPhlegm true.
+        @forAll var:x_0. {
+            var:x_0 :recommendation :goOutside.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :isStratified :YellowZone.
-            var:t_4 x:padding var:t_4.
+            var:x_0 :hasModerateTemperature true.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-inv.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma18> a r:Extraction;
+skolem:lemma16 a r:Extraction;
     r:gives {
-        :patientA :hasPhlegmAmountValue 7 .
-    };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/copd/data.n3>].
-
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma19> a r:Extraction;
-    r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>, <http://eyereasoner.github.io/var#x_1>. {
-            <http://eyereasoner.github.io/var#x_0> :hasPhlegmAmountValue <http://eyereasoner.github.io/var#x_1>.
-            <http://eyereasoner.github.io/var#x_1> math:greaterThan 5 .
-            <http://eyereasoner.github.io/var#x_1> math:lessThan 8.
+        @forAll var:x_0. @forSome var:x_1. {
+            var:x_0 :hasModerateHumidity true.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :hasPhlegmAmount :Moderate.
-            var:t_6 x:padding var:t_6.
+            var:x_0 :hasHumidityValue var:x_1.
+            var:x_1 <http://wvw.org/xai/swap/math#notLessThan> 10 .
+            var:x_1 <http://wvw.org/xai/swap/math#notGreaterThan> 50.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-inv.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma20> a r:Extraction;
+skolem:lemma17 a r:Extraction;
     r:gives {
-        :patientA :hasActivityExertionValue 7 .
-    };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/copd/data.n3>].
-
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma21> a r:Extraction;
-    r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>, <http://eyereasoner.github.io/var#x_1>. {
-            <http://eyereasoner.github.io/var#x_0> :hasActivityExertionValue <http://eyereasoner.github.io/var#x_1>.
-            <http://eyereasoner.github.io/var#x_1> math:greaterThan 4 .
-            <http://eyereasoner.github.io/var#x_1> math:lessThan 8.
+        @forAll var:x_0. @forSome var:x_1. {
+            var:x_0 :hasModerateTemperature true.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :hasActivityExertion :High.
-            var:t_7 x:padding var:t_7.
+            var:x_0 :hasTemperatureValue var:x_1.
+            var:x_1 <http://wvw.org/xai/swap/math#notLessThan> 0 .
+            var:x_1 <http://wvw.org/xai/swap/math#notGreaterThan> 32.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-inv.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma22> a r:Extraction;
-    r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :hasPhlegmAmount :Moderate.
-        } => {
-            <http://eyereasoner.github.io/var#x_0> :isStratified :YellowZone.
-            var:t_3 x:padding var:t_3.
-        }.
-    };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
-
-<http://eyereasoner.github.io/.well-known/genid/2492445626074099707#lemma23> a r:Extraction;
-    r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :hasActivityExertion :High.
-        } => {
-            <http://eyereasoner.github.io/var#x_0> :isStratified :YellowZone.
-            var:t_5 x:padding var:t_5.
-        }.
-    };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
-
-# 2023-05-02T21:50:27.491Z in=56 out=8 ent=20 step=26 brake=3 inf=163350 sec=0.033 inf/sec=4950000
+# 2023-05-03T15:06:31.477Z in=68 out=8 ent=16 step=16 brake=2 inf=167754 sec=0.031 inf/sec=5411419
 # ENDS
 

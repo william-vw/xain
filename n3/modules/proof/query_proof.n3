@@ -1,0 +1,29 @@
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix r: <http://www.w3.org/2000/10/swap/reason#> .
+@prefix x: <http://wvw.org/xai#> .
+
+#
+{
+   ?x a ?type .
+   ?type list:in ( x:Leaf x:Node x:RootNode ) .
+   ?x x:evidence ?e .
+
+}
+=> 
+{
+    ?x a ?type ;
+        x:evidence ?e .
+} .
+
+#
+{
+   ?x a ?type .
+   ?type list:in ( x:Leaf x:Node x:RootNode ) .
+   ?x x:gives ?e .
+
+}
+=> 
+{
+    ?x a ?type ;
+        x:gives ?e .
+} .

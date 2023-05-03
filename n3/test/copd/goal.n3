@@ -5,4 +5,5 @@
 @prefix x: <http://wvw.org/xai#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:envA :recommendation :avoidGoingOutside .
+:envA :recommendation :goOutside .
+# :patientA :isStratified :RedZone .

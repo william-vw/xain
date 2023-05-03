@@ -11,14 +11,14 @@
    # :hasPhlegmAmountValue 5 ;
    # :hasActivityExertionValue 3 .
 # yellow
-	# :hasColoredPhlegm true ;
-   # :hasPhlegmAmountValue 7 ;
-   # :hasActivityExertionValue 7 .
+	:hasColoredPhlegm true ;
+   :hasPhlegmAmountValue 7 ;
+   :hasActivityExertionValue 7 .
 # red
-	:hasChestPain true ;
-   :hasPhlegmAmountValue 8 ;
-   :hasActivityExertionValue 9 ;
-   :has02SaturationValue 85 .
+	# :hasChestPain true ;
+   # :hasPhlegmAmountValue 8 ;
+   # :hasActivityExertionValue 9 ;
+   # :has02SaturationValue 85 .
 
 # :envA a :Environment ;
    # avoid going outside

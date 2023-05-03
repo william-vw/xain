@@ -1,5 +1,3 @@
-# @alsoload /Users/wvw/git/n3/eye-js/explain/test/yellow1-proof.n3
-
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
@@ -74,7 +72,8 @@
 #
 {
    ?n x:intermEvidence ?support .
-   ?support!x:getComparisons!list:length math:greaterThan 0 .
+   ?support x:getComparisons ?cmp .
+   ?cmp!list:length math:greaterThan 0 .
    #
    ?support x:mergeAllGives ?f 
 }
@@ -104,12 +103,11 @@
    (
        ?p
        {
-           ?support list:member ?m .
-           ?m!x:gives log:includes 
+           ?support!list:member!x:gives log:includes
            {
                ?x ?p ?y 
            } .
-           ?p list:in ( math:greaterThan math:lessThan math:notGreaterThan math:notLessThan ) .
+           ?p x:isComparator true 
        }
        ?cmps
    ) log:collectAllIn _:t .

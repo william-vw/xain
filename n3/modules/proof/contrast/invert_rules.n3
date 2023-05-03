@@ -1,21 +1,41 @@
 # @alsoload ../../test/yellow-rules.n3
 
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
 @prefix list: <http://www.w3.org/2000/10/swap/list#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
 @prefix string: <http://www.w3.org/2000/10/swap/string#> .
 @prefix x: <http://wvw.org/xai#> .
-@prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
 
 
+# if no comparisons: divide body into separate triples
 {
-   ?x => ?y ; a x:InputRule .
+   ?x => ?y ;
+       a x:InputRule .
+   ?x x:getComparisons () .
+   ?x!e:labelvars x:get ?x2 .
+   ?y!e:labelvars x:get ?y2 .
+   ?x2 graph:member ?t2 .
+}
+=> 
+{
+   ?y2 => ?t2 
+} .
+
+
+# in case of comparisons: keep body whole
+{
+   ?x => ?y ;
+       a x:InputRule .
+   ?x!x:getComparisons!list:length math:greaterThan 0 .
    ?x!e:labelvars x:get ?x2 .
    ?y!e:labelvars x:get ?y2 .
 }
 => 
 {
-   ?y2 => ?x2
+   ?y2 => ?x2 
 } .
 
 
@@ -42,7 +62,7 @@
        ?rws
    ) log:collectAllIn _:t .
    ?rws log:conjunction ?f2 .
-   # ( "!" ) e:derive true 
+   # ( "!" ) e:derive true
 } .
 
 
@@ -60,7 +80,7 @@
        }
        ?c2
    ) log:collectAllIn _:t .
-   # ( "!" ) e:derive true 
+   # ( "!" ) e:derive true
 } .
 
 
@@ -75,7 +95,7 @@
    ?tStr string:matches "http://www.w3.org/2000/10/swap/.*" .
    ( ?tStr "http://www.w3.org/2000/10/swap/" "http://wvw.org/xai/swap/" ) string:replace ?tStr2 .
    ?t2 log:uri ?tStr2 .
-   # ( "!" ) e:derive true 
+   # ( "!" ) e:derive true
 } .
 
 
@@ -87,7 +107,7 @@
 {
    ?t log:rawType log:Other .
    ?t!log:uri string:notMatches "http://www.w3.org/2000/10/swap/.*" .
-   # ( "!" ) e:derive true 
+   # ( "!" ) e:derive true
 } .
 
 
@@ -98,5 +118,25 @@
 <= 
 {
    ?t log:rawType log:Literal .
-   # ( "!" ) e:derive true 
+   # ( "!" ) e:derive true
+} .
+
+
+#
+{
+   ?f x:getComparisons ?cmps 
+}
+<= 
+{
+   (
+       ?p
+       {
+           ?f graph:member
+           {
+               ?x ?p ?y 
+           } .
+           ?p x:isComparator true .
+       }
+       ?cmps
+   ) log:collectAllIn _:t .
 } .

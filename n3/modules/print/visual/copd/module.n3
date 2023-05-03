@@ -18,6 +18,8 @@
        rdfs:comment "generate visual HTML" ;
        mod:target mod:strings ;
        mod:input ( :proof :ontology [
+           mod:path "n3/modules/aux.n3" 
+       ] [
            mod:path "n3/modules/print/describe.n3" 
        ] [
            mod:path "n3/modules/print/visual/describe.n3" 

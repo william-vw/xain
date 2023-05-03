@@ -36,11 +36,16 @@
        mod:target mod:proof ;
        mod:input ( :data :step1_out ) ;
        mod:query :step2_out ;
-       mod:output :step3_out
+       mod:output :step3_out 
    ] [
        rdfs:comment "aggregate evidences with same initial rule head; annotate the generated proof" ;
-       mod:target mod:closure ;
+       mod:target mod:query ;
+       mod:query [
+           mod:path "n3/modules/proof/query_proof.n3" 
+       ] ;
        mod:input ( :step3_out [
+           mod:path "n3/modules/aux.n3" 
+       ] [
            mod:path "n3/modules/proof/trace/aggr/aggregate_evidence.n3" 
        ] [
            mod:path "n3/modules/proof/trace/aux_trace.n3" 

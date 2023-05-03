@@ -61,9 +61,11 @@ ${outcome}`;
     Choose outcome:
     <select id="contrast" onchange="doContrast()">
         <option></option>
+        <option value=":patientA :isStratified :GreenZone .">When am I in the Green Zone?</option>
         <option value=":patientA :isStratified :YellowZone .">When am I in the Yellow Zone?</option>
         <option value=":patientA :isStratified :RedZone .">When am I in the Red Zone?</option>
         <option value=":envA :recommendation :avoidGoingOutside .">When should I avoid going outside?</option>
+        <option value=":envA :recommendation :goOutside .">When can I go outside?</option>
     </select>
     <br><br>
 

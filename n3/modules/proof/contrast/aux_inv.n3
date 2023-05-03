@@ -27,32 +27,34 @@
 }
 => 
 {
-   ?e a x:RootNode , x:Node
+   ?e a x:RootNode , x:Node 
 } .
 
 
 # gather inverted evidences for each element
-# (i.e., for element n, x:evidence's are all elements where n occurs as evidence)
+# (i.e., for y, x:evidence's are all elements where n occurs as evidence)
 {
-   ?n!rdf:type list:in ( r:Fact r:Extraction r:Inference ) .
+   ?y!rdf:type list:in ( r:Fact r:Extraction r:Inference ) .
    (
        ?x
        {
-           # n occurs as evidence for x
-           ?n list:in ?x!r:evidence .
+           # y occurs as evidence for x
+           ?y list:in ?x!r:evidence .
+           
            # (ignore top-level lemmas)
            _:t log:notIncludes 
            {
                ?z r:component ?x 
            }
        }
+       
        # all x's where n occurs as evidence
        ?support
    ) log:collectAllIn ( ?ctx 2 ) .
 }
 => 
 {
-   ?n x:evidence ?support 
+   ?y x:evidence ?support 
 } .
 
 
@@ -76,7 +78,7 @@
 }
 => 
 {
-   ?x a x:Leaf
+   ?x a x:Leaf 
 } .
 
 

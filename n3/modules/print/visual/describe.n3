@@ -44,15 +44,15 @@
 {
    ?o list:in ( true false ) .
    (
-      {
-         ?o log:equalTo false
-      }
-      {
-         ?insert log:equalTo "no "
-      }
-      {
-         ?insert log:equalTo ""
-      }
+       {
+           ?o log:equalTo false 
+       }
+       {
+           ?insert log:equalTo "no " 
+       }
+       {
+           ?insert log:equalTo "" 
+       }
    ) log:ifThenElseIn _:t .
    #
    ?p!log:localN3String x:description ?pd .
@@ -72,7 +72,7 @@
        ?x ?p ?y .
        ?y ?cmp ?v .
    } .
-   ?cmp!log:localName list:in ( "greaterThan" "lessThan" "notGreaterThan" "notLessThan" ) .
+   ?cmp x:isComparator true .
    #
    ?p!log:localN3String x:description ?pd .
    ?cmp!log:localN3String x:description ?cd .
@@ -93,8 +93,8 @@
        ?y ?gt ?l ;
            ?lt ?u .
    } .
-   ?gt!log:localName list:in ( "greaterThan" "notLessThan" ) .
-   ?lt!log:localName list:in ( "lessThan" "notGreaterThan" ) .
+   ?gt x:isGEComparator true .
+   ?lt x:isLEComparator true .
    #
    ?p!log:localN3String x:description ?pd .
    ?l!log:localN3String x:description ?ld .

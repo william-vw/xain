@@ -132,15 +132,15 @@
 
 
 #
-:has02SaturationValue rdfs:label "O2 saturation" ;
+:hasOxygenSaturationValue rdfs:label "oxygen saturation" ;
    x:explanation [
        a :ZoneReasonExplanation ;
        x:object ?x ;
        x:icon "fa-vial" ;
-       x:summary "O2 saturation value." 
+       x:summary "oxygen saturation value." 
    ] .
 #
-:hasLow02Saturation x:explanation [
+:hasLowOxygenSaturation x:explanation [
    a :ZoneReasonExplanation ;
    x:object true ;
    x:icon "fa-mask-ventilator" ;

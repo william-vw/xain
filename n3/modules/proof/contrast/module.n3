@@ -21,6 +21,8 @@
        rdfs:comment "invert rules" ;
        mod:target mod:deductions ;
        mod:input ( :rules [
+           mod:path "n3/modules/aux.n3" 
+       ] [
            mod:path "n3/modules/proof/contrast/invert_rules.n3" 
        ] ) ;
        mod:options ( [
@@ -42,7 +44,10 @@
        mod:output :step3_output 
    ] [
        rdfs:comment "annotate the generated proof" ;
-       mod:target mod:closure ;
+       mod:target mod:query ;
+       mod:query [
+           mod:path "n3/modules/proof/query_proof.n3" 
+       ] ;
        mod:input ( :step3_output [
            mod:path "n3/modules/proof/contrast/aux_inv.n3" 
        ] ) ;
