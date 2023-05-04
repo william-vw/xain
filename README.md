@@ -10,6 +10,10 @@
   
 \* _Generating the explanation may take a few seconds depending on your machine. The [eye-js](https://github.com/eyereasoner/eye-js) library, relying on the [SWIPL WASM](https://www.swi-prolog.org/pldoc/man?section=wasm) implementation, is not quite yet as performant as the desktop version._
 
+## Modules
+
+The repo contains the N3 code for the [pre-processing module](https://github.com/william-vw/xain/tree/main/n3/modules/proof) and [describe - collect modules](https://github.com/william-vw/xain/tree/main/n3/modules/print).
+
 ## COPD Use Case
 
 Recommendation rules, a domain KG, and example input for the COPD use case can be found [here](https://github.com/william-vw/xain/tree/main/n3/test/copd).
