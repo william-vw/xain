@@ -12,4 +12,4 @@
 
 ## XAI Questionnaire
 
-You can find the XAI Questionnaire [here](https://github.com/william-vw/xain/blob/main/xai%20questionnaire.docx).
+You can find our designed XAI Questionnaire [here](https://github.com/william-vw/xain/blob/main/xai%20questionnaire.docx).
