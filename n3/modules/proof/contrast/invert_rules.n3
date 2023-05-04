@@ -1,4 +1,6 @@
-# @alsoload ../../test/yellow-rules.n3
+# @concrete
+# @involves 'n3/modules/aux.n3'
+# @requires x:isComparator , 'n3/ontology/Proof.n3'
 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .

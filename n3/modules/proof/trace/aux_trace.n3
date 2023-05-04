@@ -1,3 +1,8 @@
+# @abstract
+# @involves 'n3/modules/aux.n3'
+# @requires x:intermEvidence , 'n3/ontology/Proof.n3' , x:isComparator , x:isLEComparator , x:isGEComparator , 'n3/ontology/Proof.n3'
+# @provides x:Node , x:Leaf, x:RootNode, x:gives , x:evidence
+
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#> .

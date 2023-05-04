@@ -1,3 +1,8 @@
+# @concrete
+# @involves 'n3/modules/print/describe.n3'
+# @requires x:expandCamelCase , 'n3/ontology/ProofAnnotation.n3'
+# @provides x:printLocalName , x:printLabel, x:printFormula
+
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
