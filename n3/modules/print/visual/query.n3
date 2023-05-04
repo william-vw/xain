@@ -1,4 +1,6 @@
-# @alsoload ../../test/contrast/yellow-inv-interm.n3 describe.n3 collect.n3
+# @abstract
+# @provides log:outputString
+# @requires x:NodeToPrint , x:output , x:printNode
 
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix list: <http://www.w3.org/2000/10/swap/list#> .

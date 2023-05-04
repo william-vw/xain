@@ -1,4 +1,6 @@
-# @alsoload ../../../test/yellow1-proof.n3 ../aux_trace.n3
+# @concrete
+# @requires 'n3/ontology/ProofAnnotation.n3'
+# @provides x:aggrGives, x:aggrEvidence
 
 @prefix copd: <http://niche.cs.dal.ca/ns/copd.owl#> .
 @prefix dc: <http://purl.org/dc/terms/> .

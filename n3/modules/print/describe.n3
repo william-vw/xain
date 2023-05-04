@@ -1,4 +1,6 @@
-# @alsoload ../../test/contrast/yellow-inv-interm.n3
+# @abstract
+# @provides x:expandCamelCase, x:term , x:description , x:conclusionStr
+# @requires x:printLocalName , x:printLabel, x:printFormula
 
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .

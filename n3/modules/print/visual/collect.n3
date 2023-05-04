@@ -1,4 +1,6 @@
-# @alsoload ../../test/contrast/yellow-inv-interm.n3 describe.n3
+# @abstract
+# @requires x:conclusionStr , x:recommContainer , x:reasonLabel , 'n3/ontology/ProofAnnotation.n3'
+# @provides x:output
 
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .

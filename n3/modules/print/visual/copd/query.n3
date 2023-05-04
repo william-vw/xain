@@ -1,3 +1,8 @@
+# @concrete
+# @involves 'n3/modules/print/visual/query.n3'
+# @requires 'n3/ontology/ProofAnnotation.n3'
+# @provides x:NodeToPrint , x:printNode
+
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix list: <http://www.w3.org/2000/10/swap/list#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
