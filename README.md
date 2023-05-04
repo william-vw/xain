@@ -12,7 +12,7 @@
 
 ## Modules
 
-The repo contains the N3 code for the [pre-processing module](https://github.com/william-vw/xain/tree/main/n3/modules/proof) and [describe - collect modules](https://github.com/william-vw/xain/tree/main/n3/modules/print).
+The repo contains the N3 code for the [pre-processing module](https://github.com/william-vw/xain/tree/main/n3/modules/proof), [describe & collect modules](https://github.com/william-vw/xain/tree/main/n3/modules/print).
 
 ## COPD Use Case
 
