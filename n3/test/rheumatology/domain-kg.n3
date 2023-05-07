@@ -44,13 +44,13 @@ Moroni et al., Clin Rheumatol., 2020. DOI: 10.1007/s10067-020-04963-2"""
 
 #
 :recommendation x:explanation [
-    x:object :CarefulOralHygieneRecommendation ;
-    x:summary "You have to practice careful oral hygiene" ;
-    x:details """Careful oral hygiene prevents the proliferation of Porphyromonas gingivalis, in order to avoid periodontal disease and worsen Rheumatoid Arthritis.
+   x:object :CarefulOralHygieneRecommendation ;
+   x:summary "You have to practice careful oral hygiene" ;
+   x:details """Careful oral hygiene prevents the proliferation of Porphyromonas gingivalis, in order to avoid periodontal disease and worsen Rheumatoid Arthritis.
 Direct links between Porphyromonas gingivalis bacterium and rheumatoid arthritis have led doctors to draw attention to patients' oral hygiene and the condition of parodentium, as this may be the cause of autoimmune lesions.
 
 Kriauciunas et al., Cureus, 2019. DOI: 10.7759/cureus.4775
-"""
+""" 
 ] .
 
 #
@@ -79,6 +79,9 @@ Leeb et al., Clin Exp Rheumatol, 2014. PMID: 25365090"""
    x:object :RheumatoidFactorPositive ;
    x:summary "You tested positive for rheumatoid factor" 
 ] .
+
+#
+:AntiCyclicCitrullinatedPeptideAntibodyPositive rdfs:label "anti-CPP antibody" .
 
 #
 :hasClinicalFinding rdfs:label "anti-CPP antibody" ;

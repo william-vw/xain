@@ -1,0 +1,11 @@
+@prefix x: <http://wvw.org/xai#> .
+@base <http://wvw.org/xai#> .
+
+
+{
+   ?x x:FAILED ?y 
+}
+=> 
+{
+   ?x x:FAILED ?y 
+} .
