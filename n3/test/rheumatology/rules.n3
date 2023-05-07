@@ -1,0 +1,380 @@
+@prefix : <http://swot.sisinflab.poliba.it/onto/rheumatology#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eo: <https://purl.org/heals/eo#> .
+@prefix ep: <http://linkedu.eu/dedalo/explanationPattern.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix x: <http://wvw.org/xai#> .
+
+
+# BMI Classification (adopted by WHO)
+# https://www.who.int/europe/news-room/fact-sheets/item/a-healthy-lifestyle---who-recommendations
+{
+   ?p schema:height ?h_cm .
+   ?p schema:weight ?w .
+   ( ?h_cm 100 ) math:quotient ?h_mt .
+   ( ?h_mt 2 ) math:exponentiation ?h_exp .
+   ( ?w ?h_exp ) math:quotient ?bmi .
+}
+=> 
+{
+   ?p :bmiValue ?bmi .
+} .
+
+#
+{
+   ?p :bmiValue ?v .
+   ?v math:notGreaterThan 18.5 .
+}
+=> 
+{
+   ?p :hasBmiClass :Underweight .
+} .
+
+#
+{
+   ?p :bmiValue ?v .
+   ?v math:greaterThan 18.5 .
+   ?v math:lessThan 25 .
+}
+=> 
+{
+   ?p :hasBmiClass :NormalWeight .
+} .
+
+#
+{
+   ?p :bmiValue ?v .
+   ?v math:greaterThan 24.9 .
+   ?v math:lessThan 30 .
+}
+=> 
+{
+   ?p :hasBmiClass :Overweight .
+} .
+
+#
+{
+   ?p :bmiValue ?v .
+   ?v math:greaterThan 29.9 .
+   ?v math:lessThan 35 .
+}
+=> 
+{
+   ?p :hasBmiClass :ObeseClass1 .
+} .
+
+#
+{
+   ?p :bmiValue ?v .
+   ?v math:greaterThan 34.9 .
+   ?v math:lessThan 40 .
+}
+=> 
+{
+   ?p :hasBmiClass :ObeseClass2 .
+} .
+
+#
+{
+   ?p :bmiValue ?v .
+   ?v math:greaterThan 39.9 .
+}
+=> 
+{
+   ?p :hasBmiClass :ObeseClass3 .
+} .
+
+
+# Clinical Disease Activity Index (CDAI)
+
+# CDAI = SJC + TJC + PtGA + PhGA
+# - SJC: Swollen Joint Count
+# - TJC: Tender Joint Count
+# - PtGA: Patient Global Assessment of Disease Activity
+# - PhGA: Physician Global Assessment of Disease Activity
+{
+   ?p :swollenJointCount ?v1 .
+   ?p :tenderJointCount ?v2 .
+   ?p :ptGaDiseaseActivityValue ?v3 .
+   ?p :phGaDiseaseActivityValue ?v4 .
+   ( ?v1 ?v2 ?v3 ?v4 ) math:sum ?index .
+}
+=> 
+{
+   ?p :cdaiIndex ?index .
+} .
+
+#
+{
+   ?p :cdaiIndex ?index .
+   ?index math:lessThan 2.8 .
+}
+=> 
+{
+   ?p :hasDiseaseActivity :Remission .
+} .
+
+#
+{
+   ?p :cdaiIndex ?index .
+   ?index math:notLessThan 2.8 .
+   ?index math:lessThan 10 .
+}
+=> 
+{
+   ?p :hasDiseaseActivity :LowDiseaseActivity .
+} .
+
+#
+{
+   ?p :cdaiIndex ?index .
+   ?index math:notLessThan 10 .
+   ?index math:lessThan 22 .
+}
+=> 
+{
+   ?p :hasDiseaseActivity :ModerateDiseaseActivity .
+} .
+
+#
+{
+   ?p :cdaiIndex ?index .
+   ?index math:notLessThan 22 .
+}
+=> 
+{
+   ?p :hasDiseaseActivity :HighDiseaseActivity .
+} .
+
+
+# Morning Stiffness Level
+{
+   ?p :morningStiffnessDuration 0 .
+}
+=> 
+{
+   ?p :morningStiffnessLevel 0 .
+} .
+
+#
+{
+   ?p :morningStiffnessDuration ?v .
+   ?v math:notLessThan 0 .
+   ?v math:lessThan 30 .
+}
+=> 
+{
+   ?p :morningStiffnessLevel 1 .
+} .
+
+#
+{
+   ?p :morningStiffnessDuration ?v .
+   ?v math:notLessThan 30 .
+   ?v math:lessThan 60 .
+}
+=> 
+{
+   ?p :morningStiffnessLevel 2 .
+} .
+
+#
+{
+   ?p :morningStiffnessDuration ?v .
+   ?v math:notLessThan 60 .
+   ?v math:lessThan 120 .
+}
+=> 
+{
+   ?p :morningStiffnessLevel 3 .
+} .
+
+#
+{
+   ?p :morningStiffnessDuration ?v .
+   ?v math:notLessThan 120 .
+   ?v math:lessThan 240 .
+}
+=> 
+{
+   ?p :morningStiffnessLevel 4 .
+} .
+
+#
+{
+   ?p :morningStiffnessDuration ?v .
+   ?v math:notLessThan 240 .
+   ?v math:lessThan 1440 .
+}
+=> 
+{
+   ?p :morningStiffnessLevel 5 .
+} .
+
+#
+{
+   ?p :morningStiffnessDuration ?v .
+   ?v math:notLessThan 1440 .
+}
+=> 
+{
+   ?p :morningStiffnessLevel 6 .
+} .
+
+
+# Rheumatoid Arthritis Disease Activity Index (RADAI) 
+# https://academic.oup.com/rheumatology/article/39/3/321/1783816
+
+# RADAI = (nGH + nJC + AP + nMS + nRTL) / 5
+# - nGH: Global Health Assessment / 10 			[Normalized 0-10]
+# - nJC: (SJC + TJC) / 56 						[Normalized 0-10]
+# - AP: VAS Arthritis Pain						[0-10]
+# - nMS: (Morning Stiffness Level / 6) * 10 	[Normalized 0-10]
+# - nRTL: (Rated Tender joints List / 48) * 10 	[Normalized 0-10]
+{
+   ?p :ghVasValue ?gh .
+   ( ?gh 10 ) math:quotient ?nGH .
+   ?p :swollenJointCount ?sjc .
+   ?p :tenderJointCount ?tjc .
+   ( ?sjc ?tjc ) math:sum ?jc .
+   ( ?jc 56 ) math:quotient ?nJC .
+   ?p :vasPainValue ?AP .
+   ?p :morningStiffnessLevel ?msl .
+   ( ?msl 6 ) math:quotient ?qmsl .
+   ( ?qmsl 10 ) math:product ?nMS .
+   ?p :ratedTenderJointsValue ?rtl .
+   ( ?rtl 48 ) math:quotient ?qrtl .
+   ( ?qrtl 10 ) math:product ?nRTL .
+   ( ?nGH ?nJC ?AP ?nMS ?nRTL ) math:sum ?sum .
+   ( ?sum 5 ) math:quotient ?index .
+}
+=> 
+{
+   ?p :radaiIndex ?index .
+} .
+
+#
+{
+   ?p :radaiIndex ?index .
+   ?index math:lessThan 1.4 .
+}
+=> 
+{
+   ?p :hasDiseaseActivity :Remission .
+} .
+
+#
+{
+   ?p :radaiIndex ?index .
+   ?index math:notLessThan 1.4 .
+   ?index math:lessThan 3 .
+}
+=> 
+{
+   ?p :hasDiseaseActivity :LowDiseaseActivity .
+} .
+
+#
+{
+   ?p :radaiIndex ?index .
+   ?index math:notLessThan 3 .
+   ?index math:lessThan 5.4 .
+}
+=> 
+{
+   ?p :hasDiseaseActivity :ModerateDiseaseActivity .
+} .
+
+#
+{
+   ?p :radaiIndex ?index .
+   ?index math:notLessThan 5.4 .
+}
+=> 
+{
+   ?p :hasDiseaseActivity :HighDiseaseActivity .
+} .
+
+
+# Recommendations
+
+# Contact your rheumatologist
+{
+   ?p :hasDiseaseActivity :ModerateDiseaseActivity 
+}
+=> 
+{
+   ?p :hasOutcome :SuspectedDiseaseActivity .
+} .
+
+#
+{
+   ?p :hasDiseaseActivity :HighDiseaseActivity 
+}
+=> 
+{
+   ?p :hasOutcome :SuspectedDiseaseActivity .
+} .
+
+#
+{
+   ?p :hasOutcome :SuspectedDiseaseActivity .
+}
+=> 
+{
+   ?p :recommendation :ContactRheumatologistRecommendation .
+} .
+
+
+# Quit smoking
+{
+   ?p :hasBehaviour :Smoker .
+   ?p :hasClinicalFinding :RheumatoidFactorPositive .
+   ?p :hasClinicalFinding :AntiCyclicCitrullinatedPeptideAntibodyPositive .
+}
+=> 
+{
+   ?p :recommendation :QuitSmokingRecommendation .
+} .
+
+
+
+# Lose weight
+{
+   ?p :hasBmiClass :ObeseClass1 
+}
+=> 
+{
+   ?p :recommendation :LoseWeightRecommendation .
+} .
+{
+   ?p :hasBmiClass :ObeseClass2 
+}
+=> 
+{
+   ?p :recommendation :LoseWeightRecommendation .
+} .
+{
+   ?p :hasBmiClass :ObeseClass3 
+}
+=> 
+{
+   ?p :recommendation :LoseWeightRecommendation .
+} .
+
+
+# Careful oral hygiene
+{
+   ?p :hasDisease :NonErosiveRheumatoidArthritis .
+}
+=> 
+{
+   ?p :recommendation :CarefulOralHygieneRecommendation .
+} .

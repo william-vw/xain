@@ -1,209 +1,150 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --n3 n3/modules/proof/query_heads.n3 n3/tmp/rules-disting.n3 --pass-only-new
+# eye --n3 ../n3/modules/proof/query_heads.n3 ../n3/test/rheumatology/rules.n3 --pass-only-new
 
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
+@prefix : <http://swot.sisinflab.poliba.it/onto/rheumatology#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix eo: <https://purl.org/heals/eo#>.
+@prefix ep: <http://linkedu.eu/dedalo/explanationPattern.owl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
-@prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
 @prefix x: <http://wvw.org/xai#>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/353844450136239932#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3746401242798223559#>.
+@prefix var: <http://eyereasoner.github.io/var#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2689822067452414031#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 {
-    ?U_0 :isStratified :GreenZone.
-    var:t_0 x:padding var:t_0.
+    ?U_0 :bmiValue ?U_5.
 } => {
-    ?U_0 :isStratified :GreenZone.
-    var:t_0 x:padding var:t_0.
+    ?U_0 :bmiValue ?U_5.
 }.
 {
-    ?U_3 :hasPhlegmAmount :Low.
-    var:t_1 x:padding var:t_1.
+    ?U_8 :hasBmiClass :Underweight.
 } => {
-    ?U_3 :hasPhlegmAmount :Low.
-    var:t_1 x:padding var:t_1.
+    ?U_8 :hasBmiClass :Underweight.
 }.
 {
-    ?U_7 :hasActivityExertion :Low.
-    var:t_2 x:padding var:t_2.
+    ?U_12 :hasBmiClass :NormalWeight.
 } => {
-    ?U_7 :hasActivityExertion :Low.
-    var:t_2 x:padding var:t_2.
+    ?U_12 :hasBmiClass :NormalWeight.
 }.
 {
-    ?U_11 :isStratified :YellowZone.
-    var:t_3 x:padding var:t_3.
+    ?U_16 :hasBmiClass :Overweight.
 } => {
-    ?U_11 :isStratified :YellowZone.
-    var:t_3 x:padding var:t_3.
+    ?U_16 :hasBmiClass :Overweight.
 }.
 {
-    ?U_14 :isStratified :YellowZone.
-    var:t_4 x:padding var:t_4.
+    ?U_20 :hasBmiClass :ObeseClass1.
 } => {
-    ?U_14 :isStratified :YellowZone.
-    var:t_4 x:padding var:t_4.
+    ?U_20 :hasBmiClass :ObeseClass1.
 }.
 {
-    ?U_17 :isStratified :YellowZone.
-    var:t_5 x:padding var:t_5.
+    ?U_24 :hasBmiClass :ObeseClass2.
 } => {
-    ?U_17 :isStratified :YellowZone.
-    var:t_5 x:padding var:t_5.
+    ?U_24 :hasBmiClass :ObeseClass2.
 }.
 {
-    ?U_20 :hasPhlegmAmount :Moderate.
-    var:t_6 x:padding var:t_6.
+    ?U_28 :hasBmiClass :ObeseClass3.
 } => {
-    ?U_20 :hasPhlegmAmount :Moderate.
-    var:t_6 x:padding var:t_6.
+    ?U_28 :hasBmiClass :ObeseClass3.
 }.
 {
-    ?U_24 :hasActivityExertion :High.
-    var:t_7 x:padding var:t_7.
+    ?U_32 :cdaiIndex ?U_37.
 } => {
-    ?U_24 :hasActivityExertion :High.
-    var:t_7 x:padding var:t_7.
+    ?U_32 :cdaiIndex ?U_37.
 }.
 {
-    ?U_28 :isStratified :RedZone.
-    var:t_8 x:padding var:t_8.
+    ?U_40 :hasDiseaseActivity :Remission.
 } => {
-    ?U_28 :isStratified :RedZone.
-    var:t_8 x:padding var:t_8.
+    ?U_40 :hasDiseaseActivity :Remission.
 }.
 {
-    ?U_31 :isStratified :RedZone.
-    var:t_9 x:padding var:t_9.
+    ?U_44 :hasDiseaseActivity :LowDiseaseActivity.
 } => {
-    ?U_31 :isStratified :RedZone.
-    var:t_9 x:padding var:t_9.
+    ?U_44 :hasDiseaseActivity :LowDiseaseActivity.
 }.
 {
-    ?U_34 :isStratified :RedZone.
-    var:t_10 x:padding var:t_10.
+    ?U_48 :hasDiseaseActivity :ModerateDiseaseActivity.
 } => {
-    ?U_34 :isStratified :RedZone.
-    var:t_10 x:padding var:t_10.
+    ?U_48 :hasDiseaseActivity :ModerateDiseaseActivity.
 }.
 {
-    ?U_37 :isStratified :RedZone.
-    var:t_11 x:padding var:t_11.
+    ?U_52 :hasDiseaseActivity :HighDiseaseActivity.
 } => {
-    ?U_37 :isStratified :RedZone.
-    var:t_11 x:padding var:t_11.
+    ?U_52 :hasDiseaseActivity :HighDiseaseActivity.
 }.
 {
-    ?U_40 :hasPhlegmAmount :Severe.
-    var:t_12 x:padding var:t_12.
+    ?U_56 :morningStiffnessLevel 0.
 } => {
-    ?U_40 :hasPhlegmAmount :Severe.
-    var:t_12 x:padding var:t_12.
+    ?U_56 :morningStiffnessLevel 0.
 }.
 {
-    ?U_44 :hasActivityExertion :Severe.
-    var:t_13 x:padding var:t_13.
+    ?U_59 :morningStiffnessLevel 1.
 } => {
-    ?U_44 :hasActivityExertion :Severe.
-    var:t_13 x:padding var:t_13.
+    ?U_59 :morningStiffnessLevel 1.
 }.
 {
-    ?U_48 :hasLowOxygenSaturation true.
-    var:t_14 x:padding var:t_14.
+    ?U_63 :morningStiffnessLevel 2.
 } => {
-    ?U_48 :hasLowOxygenSaturation true.
-    var:t_14 x:padding var:t_14.
+    ?U_63 :morningStiffnessLevel 2.
 }.
 {
-    ?U_52 :recommendation :goOutside.
-    var:t_15 x:padding var:t_15.
+    ?U_67 :morningStiffnessLevel 3.
 } => {
-    ?U_52 :recommendation :goOutside.
-    var:t_15 x:padding var:t_15.
+    ?U_67 :morningStiffnessLevel 3.
 }.
 {
-    ?U_55 :hasHumidity :Moderate.
-    var:t_16 x:padding var:t_16.
+    ?U_71 :morningStiffnessLevel 4.
 } => {
-    ?U_55 :hasHumidity :Moderate.
-    var:t_16 x:padding var:t_16.
+    ?U_71 :morningStiffnessLevel 4.
 }.
 {
-    ?U_59 :hasTemperature :Moderate.
-    var:t_17 x:padding var:t_17.
+    ?U_75 :morningStiffnessLevel 5.
 } => {
-    ?U_59 :hasTemperature :Moderate.
-    var:t_17 x:padding var:t_17.
+    ?U_75 :morningStiffnessLevel 5.
 }.
 {
-    ?U_63 :recommendation :avoidGoingOutside.
-    var:t_18 x:padding var:t_18.
+    ?U_79 :morningStiffnessLevel 6.
 } => {
-    ?U_63 :recommendation :avoidGoingOutside.
-    var:t_18 x:padding var:t_18.
+    ?U_79 :morningStiffnessLevel 6.
 }.
 {
-    ?U_66 :recommendation :avoidGoingOutside.
-    var:t_19 x:padding var:t_19.
+    ?U_83 :radaiIndex ?U_98.
 } => {
-    ?U_66 :recommendation :avoidGoingOutside.
-    var:t_19 x:padding var:t_19.
+    ?U_83 :radaiIndex ?U_98.
 }.
 {
-    ?U_69 :recommendation :avoidGoingOutside.
-    var:t_20 x:padding var:t_20.
+    ?U_101 :hasOutcome :SuspectedDiseaseActivity.
 } => {
-    ?U_69 :recommendation :avoidGoingOutside.
-    var:t_20 x:padding var:t_20.
+    ?U_101 :hasOutcome :SuspectedDiseaseActivity.
 }.
 {
-    ?U_72 :recommendation :avoidGoingOutside.
-    var:t_21 x:padding var:t_21.
+    ?U_104 :recommendation :ContactRheumatologistRecommendation.
 } => {
-    ?U_72 :recommendation :avoidGoingOutside.
-    var:t_21 x:padding var:t_21.
+    ?U_104 :recommendation :ContactRheumatologistRecommendation.
 }.
 {
-    ?U_75 :recommendation :avoidGoingOutside.
-    var:t_22 x:padding var:t_22.
+    ?U_107 :recommendation :QuitSmokingRecommendation.
 } => {
-    ?U_75 :recommendation :avoidGoingOutside.
-    var:t_22 x:padding var:t_22.
+    ?U_107 :recommendation :QuitSmokingRecommendation.
 }.
 {
-    ?U_78 :hasHumidity :Low.
-    var:t_23 x:padding var:t_23.
+    ?U_110 :recommendation :LoseWeightRecommendation.
 } => {
-    ?U_78 :hasHumidity :Low.
-    var:t_23 x:padding var:t_23.
+    ?U_110 :recommendation :LoseWeightRecommendation.
 }.
 {
-    ?U_82 :hasHumidity :High.
-    var:t_24 x:padding var:t_24.
+    ?U_113 :recommendation :CarefulOralHygieneRecommendation.
 } => {
-    ?U_82 :hasHumidity :High.
-    var:t_24 x:padding var:t_24.
-}.
-{
-    ?U_86 :hasTemperature :Low.
-    var:t_25 x:padding var:t_25.
-} => {
-    ?U_86 :hasTemperature :Low.
-    var:t_25 x:padding var:t_25.
-}.
-{
-    ?U_90 :hasTemperature :High.
-    var:t_26 x:padding var:t_26.
-} => {
-    ?U_90 :hasTemperature :High.
-    var:t_26 x:padding var:t_26.
+    ?U_113 :recommendation :CarefulOralHygieneRecommendation.
 }.
 
-# 2023-05-03T21:16:52.151Z in=28 out=27 ent=27 step=81 brake=2 inf=115856 sec=0.031 inf/sec=3737290
+# 2023-05-07T19:36:18.969Z in=33 out=25 ent=25 step=89 brake=2 inf=116808 sec=0.041 inf/sec=2848976
 # ENDS
 
