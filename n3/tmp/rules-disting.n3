@@ -1,5 +1,5 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --nope --n3 n3/test/copd/rules.n3 n3/modules/proof/trace/aggr/distinguish_rules.n3 --pass-only-new
+# eye --nope --n3 ../n3/test/copd/rules.n3 ../n3/modules/proof/trace/aggr/distinguish_rules.n3 --pass-only-new
 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
@@ -10,7 +10,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/353844450136239932#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/112459790277809440#>.
 
 {
     ?U_0 :hasColoredPhlegm false.
@@ -196,6 +196,6 @@
     var:t_26 x:padding var:t_26.
 }.
 
-# 2023-05-03T21:16:52.107Z in=55 out=27 ent=27 step=54 brake=2 inf=179344 sec=0.041 inf/sec=4374244
+# 2023-05-07T19:26:19.505Z in=55 out=27 ent=27 step=54 brake=2 inf=179304 sec=0.044 inf/sec=4075091
 # ENDS
 

@@ -1,5 +1,5 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --nope --n3 n3/modules/aux.n3 n3/modules/proof/contrast/invert_rules.n3 n3/test/copd/rules.n3 --pass-only-new --quantify http://eyereasoner.github.io/var#
+# eye --nope --n3 ../n3/modules/aux.n3 ../n3/modules/proof/contrast/invert_rules.n3 ../n3/test/copd/rules.n3 --pass-only-new --quantify http://eyereasoner.github.io/var#
 
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
@@ -62,37 +62,47 @@
 {
     ?t_0 :isStratified :RedZone.
 } => {
-    ?t_0 :hasLow02Saturation true.
+    ?t_0 :hasLowOxygenSaturation true.
 }.
 {
     ?t_0 :recommendation :goOutside.
 } => {
-    ?t_0 :hasModerateHumidity true.
+    ?t_0 :hasHumidity :Moderate.
 }.
 {
     ?t_0 :recommendation :goOutside.
 } => {
-    ?t_0 :hasModerateTemperature true.
+    ?t_0 :hasTemperature :Moderate.
+}.
+{
+    ?t_0 :recommendation :goOutside.
+} => {
+    ?t_0 :hasWind :Low.
 }.
 {
     ?t_0 :recommendation :avoidGoingOutside.
 } => {
-    ?t_0 :hasLowHumidity true.
+    ?t_0 :hasHumidity :Low.
 }.
 {
     ?t_0 :recommendation :avoidGoingOutside.
 } => {
-    ?t_0 :hasHighHumidity true.
+    ?t_0 :hasHumidity :High.
 }.
 {
     ?t_0 :recommendation :avoidGoingOutside.
 } => {
-    ?t_0 :hasLowTemperature true.
+    ?t_0 :hasTemperature :Low.
 }.
 {
     ?t_0 :recommendation :avoidGoingOutside.
 } => {
-    ?t_0 :hasHighTemperature true.
+    ?t_0 :hasTemperature :High.
+}.
+{
+    ?t_0 :recommendation :avoidGoingOutside.
+} => {
+    ?t_0 :hasWind :High.
 }.
 {
     ?t_0 :hasPhlegmAmount :Low.
@@ -133,45 +143,45 @@
     _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 8.
 }.
 {
-    ?t_0 :hasLow02Saturation true.
+    ?t_0 :hasLowOxygenSaturation true.
 } => {
-    ?t_0 :has02SaturationValue _:t_1.
+    ?t_0 :hasOxygenSaturationValue _:t_1.
     _:t_1 <http://wvw.org/xai/swap/math#lessThan> 88.
 }.
 {
-    ?t_0 :hasModerateHumidity true.
+    ?t_0 :hasHumidity :Moderate.
 } => {
     ?t_0 :hasHumidityValue _:t_1.
     _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 10 .
     _:t_1 <http://wvw.org/xai/swap/math#notGreaterThan> 50.
 }.
 {
-    ?t_0 :hasModerateTemperature true.
+    ?t_0 :hasTemperature :Moderate.
 } => {
     ?t_0 :hasTemperatureValue _:t_1.
     _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 0 .
     _:t_1 <http://wvw.org/xai/swap/math#notGreaterThan> 32.
 }.
 {
-    ?t_0 :hasLowHumidity true.
+    ?t_0 :hasHumidity :Low.
 } => {
     ?t_0 :hasHumidityValue _:t_1.
     _:t_1 <http://wvw.org/xai/swap/math#lessThan> 10.
 }.
 {
-    ?t_0 :hasHighHumidity true.
+    ?t_0 :hasHumidity :High.
 } => {
     ?t_0 :hasHumidityValue _:t_1.
     _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 50.
 }.
 {
-    ?t_0 :hasLowTemperature true.
+    ?t_0 :hasTemperature :Low.
 } => {
     ?t_0 :hasTemperatureValue _:t_1.
     _:t_1 <http://wvw.org/xai/swap/math#lessThan> 0.
 }.
 {
-    ?t_0 :hasHighTemperature true.
+    ?t_0 :hasTemperature :High.
 } => {
     ?t_0 :hasTemperatureValue _:t_1.
     _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 32.
@@ -203,36 +213,36 @@
     ?t_0 :hasActivityExertion :Severe.
 }.
 {
-    ?t_0 :has02SaturationValue ?t_1.
+    ?t_0 :hasOxygenSaturationValue ?t_1.
     ?t_1 <http://wvw.org/xai/swap/math#lessThan> 88.
 } => {
-    ?t_0 :hasLow02Saturation true.
+    ?t_0 :hasLowOxygenSaturation true.
 }.
 {
     ?t_0 :hasHumidityValue ?t_1.
     ?t_1 <http://wvw.org/xai/swap/math#lessThan> 10.
 } => {
-    ?t_0 :hasLowHumidity true.
+    ?t_0 :hasHumidity :Low.
 }.
 {
     ?t_0 :hasHumidityValue ?t_1.
     ?t_1 <http://wvw.org/xai/swap/math#greaterThan> 50.
 } => {
-    ?t_0 :hasHighHumidity true.
+    ?t_0 :hasHumidity :High.
 }.
 {
     ?t_0 :hasTemperatureValue ?t_1.
     ?t_1 <http://wvw.org/xai/swap/math#lessThan> 0.
 } => {
-    ?t_0 :hasLowTemperature true.
+    ?t_0 :hasTemperature :Low.
 }.
 {
     ?t_0 :hasTemperatureValue ?t_1.
     ?t_1 <http://wvw.org/xai/swap/math#greaterThan> 32.
 } => {
-    ?t_0 :hasHighTemperature true.
+    ?t_0 :hasTemperature :High.
 }.
 
-# 2023-05-03T15:06:31.391Z in=63 out=38 ent=38 step=105 brake=5 inf=753774 sec=0.078 inf/sec=9663769
+# 2023-05-07T19:28:49.149Z in=65 out=40 ent=40 step=111 brake=5 inf=801551 sec=0.083 inf/sec=9657241
 # ENDS
 
