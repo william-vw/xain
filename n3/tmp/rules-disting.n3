@@ -1,201 +1,303 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --nope --n3 ../n3/test/copd/rules.n3 ../n3/modules/proof/trace/aggr/distinguish_rules.n3 --pass-only-new
+# eye --nope --n3 ../n3/test/rheumatology/rules.n3 ../n3/modules/proof/trace/aggr/distinguish_rules.n3 --pass-only-new
 
-@prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
+@prefix : <http://swot.sisinflab.poliba.it/onto/rheumatology#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix eo: <https://purl.org/heals/eo#>.
+@prefix ep: <http://linkedu.eu/dedalo/explanationPattern.owl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
-@prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
 @prefix x: <http://wvw.org/xai#>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/112459790277809440#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3869772078260729943#>.
 
 {
-    ?U_0 :hasColoredPhlegm false.
-    ?U_0 :hasPhlegmAmount :Low.
-    ?U_0 :hasActivityExertion :Low.
+    ?U_0 schema:height ?U_1.
+    ?U_0 schema:weight ?U_1.
+    (?U_1 100) math:quotient ?U_2.
+    (?U_2 2) math:exponentiation 100 .
+    (?U_1 100) math:quotient ?U_2.
 } => {
-    ?U_0 :isStratified :GreenZone.
+    ?U_0 :bmiValue ?U_2.
     var:t_0 x:padding var:t_0.
 }.
 {
-    ?U_3 :hasPhlegmAmountValue ?U_4.
-    ?U_4 math:notGreaterThan 5.
+    ?U_5 schema:height ?U_6.
+    ?U_5 schema:weight ?U_7.
+    (?U_6 100) math:quotient ?U_8.
+    (?U_8 2) math:exponentiation ?U_9.
+    (?U_7 ?U_9) math:quotient ?U_10.
 } => {
-    ?U_3 :hasPhlegmAmount :Low.
+    ?U_5 :bmiValue ?U_10.
     var:t_1 x:padding var:t_1.
 }.
 {
-    ?U_7 :hasActivityExertionValue ?U_8.
-    ?U_8 math:notGreaterThan 4.
+    ?U_13 :bmiValue ?U_14.
+    ?U_14 math:notGreaterThan 18.5.
 } => {
-    ?U_7 :hasActivityExertion :Low.
+    ?U_13 :hasBmiClass :Underweight.
     var:t_2 x:padding var:t_2.
 }.
 {
-    ?U_11 :hasPhlegmAmount :Moderate.
+    ?U_17 :bmiValue ?U_18.
+    ?U_18 math:greaterThan 18.5 .
+    ?U_18 math:lessThan 25.
 } => {
-    ?U_11 :isStratified :YellowZone.
+    ?U_17 :hasBmiClass :NormalWeight.
     var:t_3 x:padding var:t_3.
 }.
 {
-    ?U_14 :hasColoredPhlegm true.
+    ?U_21 :bmiValue ?U_22.
+    ?U_22 math:greaterThan 24.9 .
+    ?U_22 math:lessThan 30.
 } => {
-    ?U_14 :isStratified :YellowZone.
+    ?U_21 :hasBmiClass :Overweight.
     var:t_4 x:padding var:t_4.
 }.
 {
-    ?U_17 :hasActivityExertion :High.
+    ?U_25 :bmiValue ?U_26.
+    ?U_26 math:greaterThan 29.9 .
+    ?U_26 math:lessThan 35.
 } => {
-    ?U_17 :isStratified :YellowZone.
+    ?U_25 :hasBmiClass :ObeseClass1.
     var:t_5 x:padding var:t_5.
 }.
 {
-    ?U_20 :hasPhlegmAmountValue ?U_21.
-    ?U_21 math:greaterThan 5 .
-    ?U_21 math:lessThan 8.
+    ?U_29 :bmiValue ?U_30.
+    ?U_30 math:greaterThan 34.9 .
+    ?U_30 math:lessThan 40.
 } => {
-    ?U_20 :hasPhlegmAmount :Moderate.
+    ?U_29 :hasBmiClass :ObeseClass2.
     var:t_6 x:padding var:t_6.
 }.
 {
-    ?U_24 :hasActivityExertionValue ?U_25.
-    ?U_25 math:greaterThan 4 .
-    ?U_25 math:lessThan 8.
+    ?U_33 :bmiValue ?U_34.
+    ?U_34 math:greaterThan 39.9.
 } => {
-    ?U_24 :hasActivityExertion :High.
+    ?U_33 :hasBmiClass :ObeseClass3.
     var:t_7 x:padding var:t_7.
 }.
 {
-    ?U_28 :hasChestPain true.
+    ?U_37 :swollenJointCount ?U_38.
+    ?U_37 :tenderJointCount ?U_39.
+    ?U_37 :ptGaDiseaseActivityValue ?U_40.
+    ?U_37 :phGaDiseaseActivityValue ?U_41.
+    (?U_38 ?U_39 ?U_40 ?U_41) math:sum ?U_42.
 } => {
-    ?U_28 :isStratified :RedZone.
+    ?U_37 :cdaiIndex ?U_42.
     var:t_8 x:padding var:t_8.
 }.
 {
-    ?U_31 :hasPhlegmAmount :Severe.
+    ?U_45 :cdaiIndex ?U_46.
+    ?U_46 math:lessThan 2.8.
 } => {
-    ?U_31 :isStratified :RedZone.
+    ?U_45 :hasDiseaseActivity :Remission.
     var:t_9 x:padding var:t_9.
 }.
 {
-    ?U_34 :hasActivityExertion :Severe.
+    ?U_49 :cdaiIndex ?U_50.
+    ?U_50 math:notLessThan 2.8 .
+    ?U_50 math:lessThan 10.
 } => {
-    ?U_34 :isStratified :RedZone.
+    ?U_49 :hasDiseaseActivity :LowDiseaseActivity.
     var:t_10 x:padding var:t_10.
 }.
 {
-    ?U_37 :hasLowOxygenSaturation true.
+    ?U_53 :cdaiIndex ?U_54.
+    ?U_54 math:notLessThan 10 .
+    ?U_54 math:lessThan 22.
 } => {
-    ?U_37 :isStratified :RedZone.
+    ?U_53 :hasDiseaseActivity :ModerateDiseaseActivity.
     var:t_11 x:padding var:t_11.
 }.
 {
-    ?U_40 :hasPhlegmAmountValue ?U_41.
-    ?U_41 math:notLessThan 8.
+    ?U_57 :cdaiIndex ?U_58.
+    ?U_58 math:notLessThan 22.
 } => {
-    ?U_40 :hasPhlegmAmount :Severe.
+    ?U_57 :hasDiseaseActivity :HighDiseaseActivity.
     var:t_12 x:padding var:t_12.
 }.
 {
-    ?U_44 :hasActivityExertionValue ?U_45.
-    ?U_45 math:notLessThan 8.
+    ?U_61 :morningStiffnessDuration 0.
 } => {
-    ?U_44 :hasActivityExertion :Severe.
+    ?U_61 :morningStiffnessLevel 0 .
     var:t_13 x:padding var:t_13.
 }.
 {
-    ?U_48 :hasOxygenSaturationValue ?U_49.
-    ?U_49 math:lessThan 88.
+    ?U_64 :morningStiffnessDuration ?U_65.
+    ?U_65 math:notLessThan 0 .
+    ?U_65 math:lessThan 30.
 } => {
-    ?U_48 :hasLowOxygenSaturation true.
+    ?U_64 :morningStiffnessLevel 1 .
     var:t_14 x:padding var:t_14.
 }.
 {
-    ?U_52 :hasHumidity :Moderate.
-    ?U_52 :hasTemperature :Moderate.
-    ?U_52 :hasWind :Low.
+    ?U_68 :morningStiffnessDuration ?U_69.
+    ?U_69 math:notLessThan 30 .
+    ?U_69 math:lessThan 60.
 } => {
-    ?U_52 :recommendation :goOutside.
+    ?U_68 :morningStiffnessLevel 2 .
     var:t_15 x:padding var:t_15.
 }.
 {
-    ?U_55 :hasHumidityValue ?U_56.
-    ?U_56 math:notLessThan 10 .
-    ?U_56 math:notGreaterThan 50.
+    ?U_72 :morningStiffnessDuration ?U_73.
+    ?U_73 math:notLessThan 60 .
+    ?U_73 math:lessThan 120.
 } => {
-    ?U_55 :hasHumidity :Moderate.
+    ?U_72 :morningStiffnessLevel 3 .
     var:t_16 x:padding var:t_16.
 }.
 {
-    ?U_59 :hasTemperatureValue ?U_60.
-    ?U_60 math:notLessThan 0 .
-    ?U_60 math:notGreaterThan 32.
+    ?U_76 :morningStiffnessDuration ?U_77.
+    ?U_77 math:notLessThan 120 .
+    ?U_77 math:lessThan 240.
 } => {
-    ?U_59 :hasTemperature :Moderate.
+    ?U_76 :morningStiffnessLevel 4 .
     var:t_17 x:padding var:t_17.
 }.
 {
-    ?U_63 :hasHumidity :Low.
+    ?U_80 :morningStiffnessDuration ?U_81.
+    ?U_81 math:notLessThan 240 .
+    ?U_81 math:lessThan 1440.
 } => {
-    ?U_63 :recommendation :avoidGoingOutside.
+    ?U_80 :morningStiffnessLevel 5 .
     var:t_18 x:padding var:t_18.
 }.
 {
-    ?U_66 :hasHumidity :High.
+    ?U_84 :morningStiffnessDuration ?U_85.
+    ?U_85 math:notLessThan 1440.
 } => {
-    ?U_66 :recommendation :avoidGoingOutside.
+    ?U_84 :morningStiffnessLevel 6 .
     var:t_19 x:padding var:t_19.
 }.
 {
-    ?U_69 :hasTemperature :Low.
+    ?U_88 :ghVasValue ?U_89.
+    (?U_89 10) math:quotient ?U_90.
+    ?U_88 :swollenJointCount ?U_91.
+    ?U_88 :tenderJointCount ?U_92.
+    (?U_91 ?U_92) math:sum ?U_93.
+    (?U_93 56) math:quotient ?U_94.
+    ?U_88 :vasPainValue ?U_95.
+    ?U_88 :morningStiffnessLevel ?U_96.
+    (?U_96 6) math:quotient ?U_97.
+    (?U_97 10) math:product ?U_98.
+    ?U_88 :ratedTenderJointsValue ?U_99.
+    (?U_99 48) math:quotient ?U_97.
+    (?U_97 10) math:product ?U_98.
+    (?U_90 ?U_94 ?U_95 ?U_98 ?U_98) math:sum ?U_100.
+    (?U_100 5) math:quotient ?U_101.
 } => {
-    ?U_69 :recommendation :avoidGoingOutside.
+    ?U_88 :radaiIndex ?U_101.
     var:t_20 x:padding var:t_20.
 }.
 {
-    ?U_72 :hasTemperature :High.
+    ?U_104 :ghVasValue ?U_105.
+    (?U_105 10) math:quotient ?U_106.
+    ?U_104 :swollenJointCount ?U_107.
+    ?U_104 :tenderJointCount ?U_108.
+    (?U_107 ?U_108) math:sum ?U_109.
+    (?U_109 56) math:quotient ?U_110.
+    ?U_104 :vasPainValue ?U_111.
+    ?U_104 :morningStiffnessLevel ?U_112.
+    (?U_112 6) math:quotient ?U_113.
+    (?U_113 10) math:product ?U_114.
+    ?U_104 :ratedTenderJointsValue ?U_115.
+    (?U_115 48) math:quotient ?U_116.
+    (?U_116 10) math:product ?U_117.
+    (?U_106 ?U_110 ?U_111 ?U_114 ?U_117) math:sum ?U_118.
+    (?U_118 5) math:quotient ?U_119.
 } => {
-    ?U_72 :recommendation :avoidGoingOutside.
+    ?U_104 :radaiIndex ?U_119.
     var:t_21 x:padding var:t_21.
 }.
 {
-    ?U_75 :hasWind :High.
+    ?U_122 :radaiIndex ?U_123.
+    ?U_123 math:lessThan 1.4.
 } => {
-    ?U_75 :recommendation :avoidGoingOutside.
+    ?U_122 :hasDiseaseActivity :Remission.
     var:t_22 x:padding var:t_22.
 }.
 {
-    ?U_78 :hasHumidityValue ?U_79.
-    ?U_79 math:lessThan 10.
+    ?U_126 :radaiIndex ?U_127.
+    ?U_127 math:notLessThan 1.4 .
+    ?U_127 math:lessThan 3.
 } => {
-    ?U_78 :hasHumidity :Low.
+    ?U_126 :hasDiseaseActivity :LowDiseaseActivity.
     var:t_23 x:padding var:t_23.
 }.
 {
-    ?U_82 :hasHumidityValue ?U_83.
-    ?U_83 math:greaterThan 50.
+    ?U_130 :radaiIndex ?U_131.
+    ?U_131 math:notLessThan 3 .
+    ?U_131 math:lessThan 5.4.
 } => {
-    ?U_82 :hasHumidity :High.
+    ?U_130 :hasDiseaseActivity :ModerateDiseaseActivity.
     var:t_24 x:padding var:t_24.
 }.
 {
-    ?U_86 :hasTemperatureValue ?U_87.
-    ?U_87 math:lessThan 0.
+    ?U_134 :radaiIndex ?U_135.
+    ?U_135 math:notLessThan 5.4.
 } => {
-    ?U_86 :hasTemperature :Low.
+    ?U_134 :hasDiseaseActivity :HighDiseaseActivity.
     var:t_25 x:padding var:t_25.
 }.
 {
-    ?U_90 :hasTemperatureValue ?U_91.
-    ?U_91 math:greaterThan 32.
+    ?U_138 :hasDiseaseActivity :ModerateDiseaseActivity.
 } => {
-    ?U_90 :hasTemperature :High.
+    ?U_138 :hasOutcome :SuspectedDiseaseActivity.
     var:t_26 x:padding var:t_26.
 }.
+{
+    ?U_141 :hasDiseaseActivity :HighDiseaseActivity.
+} => {
+    ?U_141 :hasOutcome :SuspectedDiseaseActivity.
+    var:t_27 x:padding var:t_27.
+}.
+{
+    ?U_144 :hasOutcome :SuspectedDiseaseActivity.
+} => {
+    ?U_144 :recommendation :ContactRheumatologistRecommendation.
+    var:t_28 x:padding var:t_28.
+}.
+{
+    ?U_147 :hasBehaviour :Smoker.
+    ?U_147 :hasClinicalFinding :RheumatoidFactorPositive.
+    ?U_147 :hasClinicalFinding :AntiCyclicCitrullinatedPeptideAntibodyPositive.
+} => {
+    ?U_147 :recommendation :QuitSmokingRecommendation.
+    var:t_29 x:padding var:t_29.
+}.
+{
+    ?U_150 :hasBmiClass :ObeseClass1.
+} => {
+    ?U_150 :recommendation :LoseWeightRecommendation.
+    var:t_30 x:padding var:t_30.
+}.
+{
+    ?U_153 :hasBmiClass :ObeseClass2.
+} => {
+    ?U_153 :recommendation :LoseWeightRecommendation.
+    var:t_31 x:padding var:t_31.
+}.
+{
+    ?U_156 :hasBmiClass :ObeseClass3.
+} => {
+    ?U_156 :recommendation :LoseWeightRecommendation.
+    var:t_32 x:padding var:t_32.
+}.
+{
+    ?U_159 :hasDisease :NonErosiveRheumatoidArthritis.
+} => {
+    ?U_159 :recommendation :CarefulOralHygieneRecommendation.
+    var:t_33 x:padding var:t_33.
+}.
 
-# 2023-05-07T19:26:19.505Z in=55 out=27 ent=27 step=54 brake=2 inf=179304 sec=0.044 inf/sec=4075091
+# 2023-05-09T14:11:28.257Z in=65 out=34 ent=34 step=124 brake=2 inf=403395 sec=0.057 inf/sec=7077105
 # ENDS
 

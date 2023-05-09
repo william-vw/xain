@@ -25,46 +25,52 @@
 
 <body>
     <script type="module">
+        // - inputs
+        // const usecase = 'copd';
+        const usecase = 'rheumatology';
+
         // - runs
 
         // -- trace
-        // let path = "n3/runs/default-visual.n3";
-        let path = "n3/runs/aggr-visual.n3";
+        let path = "n3/runs/default-visual.n3";
+        // let path = "n3/runs/aggr-visual.n3";
         let inputs = [
-            { path: "n3/test/copd/rules.n3" },
-            { path: "n3/test/copd/data.n3" },
-            { path: "n3/test/copd/domain-kg.n3" }
+            { path: `n3/test/${usecase}/rules.n3` },
+            { path: `n3/test/${usecase}/data.n3` },
+            { path: `n3/test/${usecase}/domain-kg.n3` }
         ];
 
         // // -- contrast
         // let path = "n3/runs/contrast-visual.n3";
         // let inputs = [
-        //     { path: "n3/test/copd/rules.n3" },
-        //     { path: "n3/test/copd/goal.n3" },
-        //     { path: "n3/test/copd/domain-kg.n3" }
+        //     { path: `n3/test/${usecase}/rules.n3` },
+        //     { path: `n3/test/${usecase}/goal.n3` },
+        //     { path: `n3/test/${usecase}/domain-kg.n3` }
         // ];
 
         // - trace
         // let path = "n3/modules/proof/trace/default/module.n3";
         // // let path = "n3/modules/proof/trace/aggr/module.n3";
         // let inputs = [
-        //     { path: "n3/test/copd/rules.n3" },
-        //     { path: "n3/test/copd/data.n3" }
+        //     { path: `n3/test/${usecase}/rules.n3` },
+        //     { path: `n3/test/${usecase}/data.n3` }
         // ];
 
         // // - contrast
         // let path = "n3/modules/proof/contrast/module.n3";
         // let inputs = [
-        //     { path: "n3/test/yellow-rules.n3" },
-        //     { path: "n3/test/contrast/red-goal.n3" }
+        //     { path: `n3/test/yellow-rules.n3` },
+        //     { path: `n3/test/${usecase}/goal.n3` }
         // ];
 
         let module = new Module(path, new EyeReasoner());
         let output = await module.run(inputs);
         // console.log("output", output.data);
 
-        window.nav = new NavStack('#recomm0');
         $("#output").html(output.data);
+        
+        window.nav = new NavListOnCls();
+        nav.show();
     </script>
 
     <div id="output"></div>

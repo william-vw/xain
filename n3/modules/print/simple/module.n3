@@ -29,7 +29,7 @@
    ] ) ;
    #
    mod:checks ( [
-       mod:path "n3/modules/print/checks/describe.n3" 
+       mod:path "n3/modules/print/check/describe.n3" 
    ] [
-       mod:path "n3/modules/print/checks/collect.n3 " 
+       mod:path "n3/modules/print/check/collect.n3 " 
    ] ) .

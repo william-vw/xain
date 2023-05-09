@@ -1,3 +1,4 @@
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix : <http://swot.sisinflab.poliba.it/onto/rheumatology#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -12,28 +13,58 @@
 @prefix schema: <http://schema.org/> .
 @prefix x: <http://wvw.org/xai#> .
 
+{
+   ?x a ?type .
+   ?type ?p ?y .
+   ?p!log:namespace <-log:uri x: 
+}
+=> 
+{
+   ?x ?p ?y 
+} .
+
+#
+:RecommendationExplanation x:header1 "Recommendation:" ;
+   x:header2 "Because of:" .
+#
+x:defaultRecommendationExplanation x:explanation [
+   a :RecommendationExplanation ;
+   x:icon "fa-exclamation-circle" ;
+   x:style "text-orange" ;
+   x:summary "Dummy Summary." ;
+   x:details """Dummy Details.""" 
+] .
+#
+:recommendation a x:RecommendationProperty .
 #
 :recommendation x:explanation [
+   a :RecommendationExplanation ;
    x:object :ContactRheumatologistRecommendation ;
+   x:icon "fa-exclamation-circle" ;
+   x:style "text-orange" ;
    x:summary "You have a suspected (moderate or high) disease activity." ;
    x:details """Treatment strategy change possibly needed.
 Treat-to-target approach aims at remission or low disease activity.
 
 Smolen et al., Ann Rheum Dis, 2009, PMID: 19772784""" 
 ] .
-
 #
 :recommendation x:explanation [
+   a :RecommendationExplanation ;
    x:object :QuitSmokingRecommendation ;
+   x:icon "fa-exclamation-circle" ;
+   x:style "text-orange" ;
    x:summary "Without smoking, the risk of RA-related Interstitial Lung Disease would decrease." ;
    x:details """Smoking, positive rheumatoid factor and positive Anti-CCP are predictors of Interstitial Lung Disease, one of the most relevant extra-articular manifestations of RA.
 
 Cavagna et al., BioMed Research Int., 2013, DOI: 10.1155/2013/759760""" 
 ] .
-
 #
 :recommendation x:explanation [
+   a :RecommendationExplanation ;
    x:object :LoseWeightRecommendation ;
+   x:icon "fa-exclamation-circle" ;
+   x:style "text-orange" ;
    x:summary "Lower weight could help improve RA disease activity and disability" ;
    x:details """Negative influence of obesity has been observed on arthritis drug therapies.
 Higher rheumatoid arthritis disease activity and disability have been observed in obese patients.
@@ -41,10 +72,12 @@ Higher rheumatoid arthritis disease activity and disability have been observed i
 Vidal et al., J Rheumatol., 2015. DOI: 10.3899/jrheum.150224
 Moroni et al., Clin Rheumatol., 2020. DOI: 10.1007/s10067-020-04963-2""" 
 ] .
-
 #
 :recommendation x:explanation [
+   a :RecommendationExplanation ;
    x:object :CarefulOralHygieneRecommendation ;
+   x:icon "fa-exclamation-circle" ;
+   x:style "text-orange" ;
    x:summary "You have to practice careful oral hygiene" ;
    x:details """Careful oral hygiene prevents the proliferation of Porphyromonas gingivalis, in order to avoid periodontal disease and worsen Rheumatoid Arthritis.
 Direct links between Porphyromonas gingivalis bacterium and rheumatoid arthritis have led doctors to draw attention to patients' oral hygiene and the condition of parodentium, as this may be the cause of autoimmune lesions.
@@ -53,9 +86,24 @@ Kriauciunas et al., Cureus, 2019. DOI: 10.7759/cureus.4775
 """ 
 ] .
 
+
+#
+:RecommendationReasonExplanation x:header1 "Risk Factor:" ;
+   x:header2 "Impact on RA:" ;
+   x:style "" .
+#
+x:defaultRecommendationReasonExplanation x:explanation [
+   a :RecommendationReasonExplanation ;
+   x:icon "fa-disease" ;
+   x:summary "Dummy Summary." ;
+   x:details """Dummy Details.""" 
+] .
+
 #
 :hasDiseaseActivity x:explanation [
+   a :RecommendationReasonExplanation ;
    x:object :LowDiseaseActivity ;
+   x:icon "fa-disease" ;
    x:summary "You have low suspected disease activity" ;
    x:details """A disease activity can be identified according to studies on CDAI and RADAI scales.
 Lower CDAI values indicate remission (<=3) or low disease activity (<=10)
@@ -66,7 +114,9 @@ Leeb et al., Clin Exp Rheumatol, 2014. PMID: 25365090"""
 
 #
 :hasDiseaseActivity x:explanation [
+   a :RecommendationReasonExplanation ;
    x:object :ModerateDiseaseActivity , :HighDiseaseActivity ;
+   x:icon "fa-disease" ;
    x:summary "You have a suspected (moderate or high) disease activity" ;
    x:details """A disease activity can be identified according to studies on CDAI and RADAI scales.
 
@@ -76,7 +126,9 @@ Leeb et al., Clin Exp Rheumatol, 2014. PMID: 25365090"""
 
 #
 :hasClinicalFinding x:explanation [
+   a :RecommendationReasonExplanation ;
    x:object :RheumatoidFactorPositive ;
+   x:icon "fa-disease" ;
    x:summary "You tested positive for rheumatoid factor" 
 ] .
 
@@ -86,6 +138,8 @@ Leeb et al., Clin Exp Rheumatol, 2014. PMID: 25365090"""
 #
 :hasClinicalFinding rdfs:label "anti-CPP antibody" ;
    x:explanation [
+       a :RecommendationReasonExplanation ;
        x:object :AntiCyclicCitrullinatedPeptideAntibodyPositive ;
+       x:icon "fa-disease" ;
        x:summary "You tested positive for anti-CCP antibody" 
    ] .

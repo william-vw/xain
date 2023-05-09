@@ -21,7 +21,7 @@
    ] [
        mod:target [
            a mod:Module ;
-           mod:path "n3/modules/print/visual/copd/module.n3"
+           mod:path "n3/modules/print/visual/html/module.n3"
        ] ;
        mod:input ( :annotated_proof :ontology ) ;
        mod:output :html 

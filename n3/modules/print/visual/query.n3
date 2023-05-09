@@ -22,7 +22,7 @@
        {
            ?root a x:NodeToPrint ;
                x:gives ?inf .
-           ?root x:output ?html . 
+           ?root x:output ?html .
        }
        ?htmls
    ) log:collectAllIn ( ?ctx 5 ) .

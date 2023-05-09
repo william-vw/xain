@@ -25,7 +25,9 @@
 => 
 {
    ?p :bmiValue ?bmi .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -35,7 +37,9 @@
 => 
 {
    ?p :hasBmiClass :Underweight .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -46,7 +50,9 @@
 => 
 {
    ?p :hasBmiClass :NormalWeight .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -57,7 +63,9 @@
 => 
 {
    ?p :hasBmiClass :Overweight .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -68,7 +76,9 @@
 => 
 {
    ?p :hasBmiClass :ObeseClass1 .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -79,7 +89,9 @@
 => 
 {
    ?p :hasBmiClass :ObeseClass2 .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -89,7 +101,9 @@
 => 
 {
    ?p :hasBmiClass :ObeseClass3 .
-} .
+}
+;
+   a x:InputRule .
 
 
 # Clinical Disease Activity Index (CDAI)
@@ -109,7 +123,9 @@
 => 
 {
    ?p :cdaiIndex ?index .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -119,7 +135,9 @@
 => 
 {
    ?p :hasDiseaseActivity :Remission .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -130,7 +148,9 @@
 => 
 {
    ?p :hasDiseaseActivity :LowDiseaseActivity .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -141,7 +161,9 @@
 => 
 {
    ?p :hasDiseaseActivity :ModerateDiseaseActivity .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -151,7 +173,9 @@
 => 
 {
    ?p :hasDiseaseActivity :HighDiseaseActivity .
-} .
+}
+;
+   a x:InputRule .
 
 
 # Morning Stiffness Level
@@ -161,7 +185,9 @@
 => 
 {
    ?p :morningStiffnessLevel 0 .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -172,7 +198,9 @@
 => 
 {
    ?p :morningStiffnessLevel 1 .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -183,7 +211,9 @@
 => 
 {
    ?p :morningStiffnessLevel 2 .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -194,7 +224,9 @@
 => 
 {
    ?p :morningStiffnessLevel 3 .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -205,7 +237,9 @@
 => 
 {
    ?p :morningStiffnessLevel 4 .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -216,7 +250,9 @@
 => 
 {
    ?p :morningStiffnessLevel 5 .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -226,7 +262,9 @@
 => 
 {
    ?p :morningStiffnessLevel 6 .
-} .
+}
+;
+   a x:InputRule .
 
 
 # Rheumatoid Arthritis Disease Activity Index (RADAI) 
@@ -258,7 +296,9 @@
 => 
 {
    ?p :radaiIndex ?index .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -268,7 +308,9 @@
 => 
 {
    ?p :hasDiseaseActivity :Remission .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -279,7 +321,9 @@
 => 
 {
    ?p :hasDiseaseActivity :LowDiseaseActivity .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -290,7 +334,9 @@
 => 
 {
    ?p :hasDiseaseActivity :ModerateDiseaseActivity .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -300,7 +346,9 @@
 => 
 {
    ?p :hasDiseaseActivity :HighDiseaseActivity .
-} .
+}
+;
+   a x:InputRule .
 
 
 # Recommendations
@@ -312,7 +360,9 @@
 => 
 {
    ?p :hasOutcome :SuspectedDiseaseActivity .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -321,7 +371,9 @@
 => 
 {
    ?p :hasOutcome :SuspectedDiseaseActivity .
-} .
+}
+;
+   a x:InputRule .
 
 #
 {
@@ -330,7 +382,9 @@
 => 
 {
    ?p :recommendation :ContactRheumatologistRecommendation .
-} .
+}
+;
+   a x:InputRule .
 
 
 # Quit smoking
@@ -342,7 +396,9 @@
 => 
 {
    ?p :recommendation :QuitSmokingRecommendation .
-} .
+}
+;
+   a x:InputRule .
 
 
 
@@ -353,21 +409,27 @@
 => 
 {
    ?p :recommendation :LoseWeightRecommendation .
-} .
+}
+;
+   a x:InputRule .
 {
    ?p :hasBmiClass :ObeseClass2 
 }
 => 
 {
    ?p :recommendation :LoseWeightRecommendation .
-} .
+}
+;
+   a x:InputRule .
 {
    ?p :hasBmiClass :ObeseClass3 
 }
 => 
 {
    ?p :recommendation :LoseWeightRecommendation .
-} .
+}
+;
+   a x:InputRule .
 
 
 # Careful oral hygiene
@@ -377,4 +439,6 @@
 => 
 {
    ?p :recommendation :CarefulOralHygieneRecommendation .
-} .
+}
+;
+   a x:InputRule .

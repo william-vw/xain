@@ -26,9 +26,7 @@
 :ZoneExplanation x:header1 "You are in:" ;
    x:header2 "Because you have:" .
 #
-:ZoneReasonExplanation x:header1 "Risk Factor:" ;
-   x:header2 "Relation with COPD:" .
-
+:isStratified a x:RecommendationProperty .
 #
 :isStratified x:explanation [
    a :ZoneExplanation ;
@@ -54,6 +52,9 @@
    x:summary "Take Action - Get Help! Call 911 for an ambulance to take you to the emergency room." 
 ] .
 
+#
+:ZoneReasonExplanation x:header1 "Risk Factor:" ;
+   x:header2 "Relation with COPD:" .
 #
 :hasActivityExertionValue rdfs:label "activity level" ;
    x:explanation [
@@ -180,9 +181,15 @@ Damage from COPD sometimes keeps these alveoli from getting enough oxygen, resul
 :RecommendationExplanation x:header1 "Today's recommendation:" ;
    x:header2 "Because of:" .
 #
-:RecommendationReasonExplanation x:header1 "Risk Factor:" ;
-   x:header2 "Impact on COPD:" .
-
+x:defaultRecommendationExplanation x:explanation [
+   a :RecommendationExplanation ;
+   x:icon "fa-exclamation-circle" ;
+   x:style "text-orange" ;
+   x:summary "Dummy Summary." ;
+   x:details """Dummy Details.""" 
+] .
+#
+:recommendation a x:RecommendationProperty .
 #
 :recommendation x:explanation [
    a :RecommendationExplanation ;
@@ -198,6 +205,17 @@ Damage from COPD sometimes keeps these alveoli from getting enough oxygen, resul
    x:style "text-section" ;
    x:icon "fa-shop" ;
    x:summary "Feel free to go outside today and get some fresh air." 
+] .
+
+#
+:RecommendationReasonExplanation x:header1 "Risk Factor:" ;
+   x:header2 "Impact on COPD:" .
+#
+x:defaultRecommendationReasonExplanation x:explanation [
+   a :RecommendationReasonExplanation ;
+   x:icon "fa-exclamation-circle" ;
+   x:summary "Dummy Summary." ;
+   x:details "Dummy Details." 
 ] .
 
 #

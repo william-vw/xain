@@ -20,8 +20,8 @@
 
 #
 
-:recomm0_template rdf:value """
-<div id="recomm0">
+:recomm_0_template rdf:value """
+<div id="%s" class="level_0">
    <div class="card rounded-0 border-0 mb-0 bg-section">
       <div class="row g-0 text-white">
          <div class="col-sm-12">
@@ -56,7 +56,7 @@
 </div>""" .
 
 #
-:recomm1_template rdf:value """
+:recomm_n_template rdf:value """
 <div id="%s" class="level_n">
    <div class="card rounded-0 border-0 mb-0 bg-section">
       <div class="row g-0 text-white">
@@ -120,50 +120,54 @@
 
 #
 {
+   ?x x:leafLabel ?label .
+}
+<= 
+{
+   ?x x:conclusionStr ?str .
+   ( "<li class='fact'>" ?str "</li>" ) string:concatenation ?label .
+} .
+
+#
+{
    ?inf x:recommContainer ?container 
 }
 <= 
 {
+   ?inf x:getExplanation ?exp .
+   ?exp x:icon ?icon ;
+       x:header1 ?h1 ;
+       x:header2 ?h2 .
+   #
    ?inf!x:gives!e:labelvars log:includes 
    {
        ?s ?p ?o 
    } .
+   ?inf log:localName ?ln .
+   #
    (
        {
-           ?inf a x:RootNode 
+           ?inf a x:RootNode .
+           ?p a x:RecommendationProperty
        }
        {
            ?o!log:localN3String x:description ?descr .
+           ?exp x:style ?style ;
+               x:summary ?summ .
            #
-           ?p x:explanation [
-               x:object ?o ;
-               x:icon ?icon ;
-               x:style ?style ;
-               x:header1 ?h1 ;
-               x:header2 ?h2 ;
-               x:summary ?summ 
-           ] .
-           :recomm0_template rdf:value ?template .
-           ( ?template ?h1 ?style ?icon ?descr ?summ ?h2 ) string:format ?container .
+           :recomm_0_template rdf:value ?template .
+           ( ?template ?ln ?h1 ?style ?icon ?descr ?summ ?h2 ) string:format ?container .
          #   "recommContainer0" log:trace ( ?inf ?o ?icon ) .
        }
        {
            ?inf x:conclusionStr ?descr .
+           ?exp x:details ?d .
            #
-           ?p x:explanation [
-               x:object ?o ;
-               x:icon ?icon ;
-               x:header1 ?h1 ;
-               x:header2 ?h2 ;
-               x:details ?d
-           ] .
-           :recomm1_template rdf:value ?template .
-           ?inf log:localName ?ln .
+           :recomm_n_template rdf:value ?template .
            ( ?template ?ln ?h1 ?icon ?descr ?h2 ?d ) string:format ?container .
          #   "recommContainer1" log:trace ( ?inf ?o ?icon ) .
        }
    ) log:ifThenElseIn _:t .
-   #
 } .
 
 
@@ -173,19 +177,14 @@
 }
 <= 
 {
-   ?inf!x:gives!e:labelvars log:includes 
-   {
-       ?s ?p ?o 
-   } .
+   ?inf x:getExplanation ?exp .
+   ?exp x:icon ?icon ;
+       x:summary ?summ .
+   #
    ?inf x:conclusionStr ?descr .
    #
-   ?p x:explanation [
-       x:object ?o ;
-       x:icon ?icon ;
-       x:summary ?summ 
-   ] .
    :reason_template rdf:value ?template .
-   # "reasonLabel" log:trace ( ?inf ?o ?icon ) .
+   # "reasonLabel" log:trace ( ?inf ?icon ) .
    (
        {
            ?inf!x:evidence!list:length math:greaterThan 0 .
@@ -202,4 +201,40 @@
        }
    ) log:ifThenElseIn _:t .
    ( ?template ?attr ?icon ?descr ?summ ?linkIndic ) string:format ?label .
+} .
+
+
+#
+{
+   ?inf x:getExplanation ?exp 
+}
+<= 
+{
+   ?inf!x:gives!e:labelvars log:includes 
+   {
+       ?s ?p ?o 
+   } .
+   ?p x:explanation ?exp .
+   ?exp x:object ?o .
+   #
+   ( "!" ) e:derive true 
+} .
+
+#
+{
+   ?inf x:getExplanation ?exp 
+}
+<= 
+{
+   (
+       {
+           ?inf a x:RootNode 
+       }
+       {
+           x:defaultRecommendationExplanation x:explanation ?exp .
+       }
+       {
+           x:defaultRecommendationReasonExplanation x:explanation ?exp .
+       }
+   ) log:ifThenElseIn _:t .
 } .

@@ -4,6 +4,7 @@
 # @provides x:NodeToPrint , x:printNode
 
 @prefix dc: <http://purl.org/dc/terms/> .
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
 @prefix list: <http://www.w3.org/2000/10/swap/list#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix math: <http://www.w3.org/2000/10/swap/math#> .
@@ -16,7 +17,9 @@
 @prefix x: <http://wvw.org/xai#> .
 @base <http://wvw.org/xai#> .
 
-:header rdf:value """<div class="py-0 bg-white">
+:header rdf:value """
+<button class="prior-btn" onclick="nav.prior()"><<</button><button class="next-btn" onclick="nav.next()">>></button>
+<div class="py-0 bg-white">
 	<div class="container-fluid mx-0 px-0">""" .
 #
 :footer rdf:value """<div class="fixed-bottom bg-section">

@@ -26,17 +26,17 @@
        ] [
            mod:path "n3/modules/print/visual/collect.n3" 
        ] [
-           mod:path "n3/modules/print/visual/copd/collect.n3" 
+           mod:path "n3/modules/print/visual/html/collect.n3" 
        ] [
            mod:path "n3/modules/print/visual/query.n3" 
        ] [
-           mod:path "n3/modules/print/visual/copd/query.n3" 
+           mod:path "n3/modules/print/visual/html/query.n3" 
        ] ) ;
        mod:output :output 
    ] ) ;
    # 
    mod:checks ( [
-       mod:path "n3/modules/print/checks/describe.n3" 
+       mod:path "n3/modules/print/check/describe.n3" 
    ] [
-       mod:path "n3/modules/print/checks/collect.n3 " 
+       mod:path "n3/modules/print/check/collect.n3 " 
    ] ) .

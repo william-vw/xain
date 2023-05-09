@@ -20,18 +20,18 @@
 #
 {
    ?x a x:Leaf ;
-       x:conclusionStr ?str .
-   ( "<li class='fact'>" ?str "</li>" ) string:concatenation ?html .
+       x:leafLabel ?output .
 }
 => 
 {
-   ?x x:output ?html 
+   ?x x:output ?output
 } .
 
 #
 {
    ?inf a x:Node .
    ?inf x:evidence ?evidences .
+   ?inf x:recommContainer ?container .
    # gather evidences & their strings
    ?evidences list:removeDuplicates ?evidences2 .
    (
@@ -50,12 +50,10 @@
    # "collect" log:trace ( ?inf ?l ?l2 ) .
    ?evidences2 list:length ?lis2!list:length .
    ?lis2 string:concatenation ?lisStr .
-   #
-   ?inf x:recommContainer ?container .
-   ( ?container "_content_" ?lisStr ) string:replace ?html .
-   #( ?label ?lisStr ) string:concatenation ?html .
+   ( ?container "_content_" ?lisStr ) string:replace ?output .
+   #( ?label ?lisStr ) string:concatenation ?output .
 }
 => 
 {
-   ?inf x:output ?html 
+   ?inf x:output ?output 
 } .

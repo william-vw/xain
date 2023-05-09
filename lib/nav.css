@@ -1,3 +1,16 @@
 .level_n {
     display: none
 }
+
+.level_0 {
+    display: none
+}
+
+#output {
+    position: absolute;
+}
+
+.next-btn {
+    position: absolute;
+    right: 0;
+}

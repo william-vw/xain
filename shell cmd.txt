@@ -8,4 +8,11 @@
 ./contrast.sh ../n3/test/rheumatology/rules.n3 ../n3/test/rheumatology/goal.n3
 
 ./print_simple.sh
-./print_visual.sh
+./print_visual.sh ../n3/test/copd/domain-kg.n3
+./print_visual.sh ../n3/test/rheumatology/domain-kg.n3
+
+./check_print_visual.sh ../n3/test/copd/domain-kg.n3
+./check_all_print_visual.sh ../n3/test/copd/domain-kg.n3
+
+./check_proof_domain-kg.sh ../n3/test/rheumatology/domain-kg.n3
+./check_rules_domain-kg.sh ../n3/test/rheumatology/domain-kg.n3 ../n3/test/rheumatology/rules.n3

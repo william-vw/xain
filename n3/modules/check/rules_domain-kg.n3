@@ -15,60 +15,34 @@
 
 #
 {
-   ?x!rdf:type list:in ( x:Node x:Leaf ) .
+   ?x => ?y ;
+       a x:InputRule .
+   ?y log:includes 
+   {
+       ?s ?p ?o 
+   }
+}
+=> 
+{
+   ?p a x:PropertyOfInterest 
+} .
+
+#
+{
+   ?p a x:PropertyOfInterest .
    #
    _:t log:notIncludes 
    {
-       ?x x:conclusionStr ?s 
-   }
-}
-=> 
-{
-   x:conclusionStr x:FAILED ( ?x ) 
-} .
-
-#
-{
-   ?x a x:Node .
-    
-    #
-   _:t log:notIncludes 
-   {
-       ?x x:recommContainer ?c 
+       ?p x:explanation [
+           x:object ?o ;
+           x:icon ?icon ;
+           x:header1 ?h1 ;
+           x:header2 ?h2 ;
+           x:details ?d 
+       ] 
    } .
 }
 => 
 {
-   x:recommContainer x:FAILED ( ?x ) 
-} .
-
-#
-{
-   ?x a x:Node .
-   ?x!x:evidence list:member ?e .
-    
-    #
-   _:t log:notIncludes 
-   {
-       ?e x:reasonLabel ?l 
-   } .
-}
-=> 
-{
-   x:reasonLabel x:FAILED ( ?x ?e ) 
-} .
-
-
-#
-{
-   ?x!rdf:type list:in ( x:Leaf x:Node ) .
-    #
-   _:t log:notIncludes 
-   {
-       ?x x:output ?o 
-   }
-}
-=> 
-{
-   x:output x:FAILED ( ?x ) 
+   x:explanation x:FAILED ( ?p ) 
 } .
