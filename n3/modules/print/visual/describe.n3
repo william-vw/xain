@@ -82,8 +82,9 @@
    ?p x:getUnit ?unit .
    ?p!log:localN3String x:description ?pd .
    ?cmp!log:localN3String x:description ?cd .
+   ?y!log:localN3String x:description ?yd .
    ?v!log:localN3String x:description ?vd .
-   ( "<span class='triple'><span class='predicate'>" ?pd "</span> " ?cd " " ?vd " " ?unit "</span>" ) string:concatenation ?str .
+   ( "<span class='triple'><span class='predicate'>" ?pd "</span> of " ?yd " is " ?cd " " ?vd " " ?unit "</span>" ) string:concatenation ?str .
    ( "!" ) e:derive true 
 } .
 
@@ -104,9 +105,10 @@
    #
    ?p x:getUnit ?unit .
    ?p!log:localN3String x:description ?pd .
+   ?y!log:localN3String x:description ?yd .
    ?l!log:localN3String x:description ?ld .
    ?u!log:localN3String x:description ?ud .
-   ( "<span class='triple'><span class='predicate'>" ?pd "</span> between " ?ld ?unit " and " ?ud ?unit "</span>" ) string:concatenation ?str .
+   ( "<span class='triple'><span class='predicate'>" ?pd "</span> of " ?yd " is between " ?ld ?unit " and " ?ud ?unit "</span>" ) string:concatenation ?str .
    ( "!" ) e:derive true 
 } .
 
@@ -150,6 +152,22 @@
    ?strs!list:length math:equalTo ?f!graph:length .
    ( ?strs " " ) string:join ?str .
 } .
+
+
+#
+{
+   ( ?s ?p ?o ) x:printTriple ?str .
+}
+<= 
+{
+   ( ?o 1 ) math:sum ?x .
+   ?p!log:localN3String x:description ?pd .
+   ?o!log:localN3String x:description ?od .
+   ( "<span class='triple'><span class='predicate'>" ?pd "</span> <span class='object'>" ?od "</span></span>" ) string:concatenation ?str .
+   #
+   ("!") e:derive true
+} .
+
 
 #
 {

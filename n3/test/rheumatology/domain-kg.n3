@@ -125,6 +125,10 @@ Leeb et al., Clin Exp Rheumatol, 2014. PMID: 25365090"""
 ] .
 
 #
+:ModerateDiseaseActivity rdfs:label "moderate" .
+:HighDiseaseActivity rdfs:label "high" .
+
+#
 :hasClinicalFinding x:explanation [
    a :RecommendationReasonExplanation ;
    x:object :RheumatoidFactorPositive ;

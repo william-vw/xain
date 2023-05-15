@@ -1,3 +1,4 @@
+- proof
 ./trace_default.sh ../n3/test/copd/rules.n3 ../n3/test/copd/data.n3
 ./trace_default.sh ../n3/test/rheumatology/rules.n3 ../n3/test/rheumatology/data.n3
 
@@ -7,7 +8,9 @@
 ./contrast.sh ../n3/test/copd/rules.n3 ../n3/test/copd/goal.n3
 ./contrast.sh ../n3/test/rheumatology/rules.n3 ../n3/test/rheumatology/goal.n3
 
+- print
 ./print_simple.sh
+
 ./print_visual.sh ../n3/test/copd/domain-kg.n3
 ./print_visual.sh ../n3/test/rheumatology/domain-kg.n3
 

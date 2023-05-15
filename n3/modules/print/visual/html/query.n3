@@ -18,7 +18,7 @@
 @base <http://wvw.org/xai#> .
 
 :header rdf:value """
-<button class="prior-btn" onclick="nav.prior()"><<</button><button class="next-btn" onclick="nav.next()">>></button>
+<button class="prior-btn" onclick="nav.prior()"><< prior recommendation</button><button class="next-btn" onclick="nav.next()">next recommendation >></button>
 <div class="py-0 bg-white">
 	<div class="container-fluid mx-0 px-0">""" .
 #

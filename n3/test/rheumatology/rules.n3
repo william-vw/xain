@@ -292,10 +292,11 @@
    ( ?qrtl 10 ) math:product ?nRTL .
    ( ?nGH ?nJC ?AP ?nMS ?nRTL ) math:sum ?sum .
    ( ?sum 5 ) math:quotient ?index .
+   ( ?index 1 ) math:roundedTo ?roundedIndex
 }
 => 
 {
-   ?p :radaiIndex ?index .
+   ?p :radaiIndex ?roundedIndex .
 }
 ;
    a x:InputRule .

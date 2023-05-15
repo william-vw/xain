@@ -80,12 +80,35 @@
    ?support x:getComparisons ?cmp .
    ?cmp!list:length math:greaterThan 0 .
    #
-   ?support x:mergeAllGives ?f 
+   ?support x:mergeAllGives ?f .
+   #
+   (
+       ?evSupport
+       {
+           ?ev list:in ?support .
+           ?ev x:intermEvidence ?evSupport 
+       }
+       ?evSupports
+   ) log:collectAllIn _:t .
+   ?evSupports list:append ?support2 .
+   #
+   (
+       {
+           ?support2!list:length math:greaterThan 0 
+       }
+       {
+           ?type log:equalTo x:Node 
+       }
+       {
+           ?type log:equalTo x:Leaf 
+       }
+   ) log:ifThenElseIn _:t .
 }
 => 
 {
-   _:b1 a x:Leaf ;
-       x:gives ?f .
+   _:b1 a ?type ;
+       x:gives ?f ;
+       x:evidence ?support2 .
    ?n x:evidence ( _:b1 ) 
 } .
 
@@ -108,7 +131,7 @@
    (
        ?p
        {
-           ?support!list:member!x:gives log:includes
+           ?support!list:member!x:gives log:includes 
            {
                ?x ?p ?y 
            } .

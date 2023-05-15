@@ -1,0 +1,15 @@
+@prefix : <http://swot.sisinflab.poliba.it/onto/rheumatology#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eo: <https://purl.org/heals/eo#> .
+@prefix ep: <http://linkedu.eu/dedalo/explanationPattern.owl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix list: <http://www.w3.org/2000/10/swap/list#> .
+@prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix x: <http://wvw.org/xai#> .
+
+:patientA :recommendation :ContactRheumatologistRecommendation .
