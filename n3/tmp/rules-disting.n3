@@ -16,7 +16,7 @@
 @prefix x: <http://wvw.org/xai#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/3592538130196668459#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/3733025960669328341#>.
 
 {
     ?U_0 schema:height ?U_1.
@@ -193,111 +193,113 @@
     (?U_97 10) math:product ?U_98.
     (?U_90 ?U_94 ?U_95 ?U_98 ?U_98) math:sum ?U_100.
     (?U_100 5) math:quotient ?U_101.
+    (?U_101 1) math:roundedTo ?U_102.
 } => {
-    ?U_88 :radaiIndex ?U_101.
+    ?U_88 :radaiIndex ?U_102.
     var:t_20 x:padding var:t_20.
 }.
 {
-    ?U_104 :ghVasValue ?U_105.
-    (?U_105 10) math:quotient ?U_106.
-    ?U_104 :swollenJointCount ?U_107.
-    ?U_104 :tenderJointCount ?U_108.
-    (?U_107 ?U_108) math:sum ?U_109.
-    (?U_109 56) math:quotient ?U_110.
-    ?U_104 :vasPainValue ?U_111.
-    ?U_104 :morningStiffnessLevel ?U_112.
-    (?U_112 6) math:quotient ?U_113.
-    (?U_113 10) math:product ?U_114.
-    ?U_104 :ratedTenderJointsValue ?U_115.
-    (?U_115 48) math:quotient ?U_116.
-    (?U_116 10) math:product ?U_117.
-    (?U_106 ?U_110 ?U_111 ?U_114 ?U_117) math:sum ?U_118.
-    (?U_118 5) math:quotient ?U_119.
+    ?U_105 :ghVasValue ?U_106.
+    (?U_106 10) math:quotient ?U_107.
+    ?U_105 :swollenJointCount ?U_108.
+    ?U_105 :tenderJointCount ?U_109.
+    (?U_108 ?U_109) math:sum ?U_110.
+    (?U_110 56) math:quotient ?U_111.
+    ?U_105 :vasPainValue ?U_112.
+    ?U_105 :morningStiffnessLevel ?U_113.
+    (?U_113 6) math:quotient ?U_114.
+    (?U_114 10) math:product ?U_115.
+    ?U_105 :ratedTenderJointsValue ?U_116.
+    (?U_116 48) math:quotient ?U_117.
+    (?U_117 10) math:product ?U_118.
+    (?U_107 ?U_111 ?U_112 ?U_115 ?U_118) math:sum ?U_119.
+    (?U_119 5) math:quotient ?U_120.
+    (?U_120 1) math:roundedTo ?U_121.
 } => {
-    ?U_104 :radaiIndex ?U_119.
+    ?U_105 :radaiIndex ?U_121.
     var:t_21 x:padding var:t_21.
 }.
 {
-    ?U_122 :radaiIndex ?U_123.
-    ?U_123 math:lessThan 1.4.
+    ?U_124 :radaiIndex ?U_125.
+    ?U_125 math:lessThan 1.4.
 } => {
-    ?U_122 :hasDiseaseActivity :Remission.
+    ?U_124 :hasDiseaseActivity :Remission.
     var:t_22 x:padding var:t_22.
 }.
 {
-    ?U_126 :radaiIndex ?U_127.
-    ?U_127 math:notLessThan 1.4 .
-    ?U_127 math:lessThan 3.
+    ?U_128 :radaiIndex ?U_129.
+    ?U_129 math:notLessThan 1.4 .
+    ?U_129 math:lessThan 3.
 } => {
-    ?U_126 :hasDiseaseActivity :LowDiseaseActivity.
+    ?U_128 :hasDiseaseActivity :LowDiseaseActivity.
     var:t_23 x:padding var:t_23.
 }.
 {
-    ?U_130 :radaiIndex ?U_131.
-    ?U_131 math:notLessThan 3 .
-    ?U_131 math:lessThan 5.4.
+    ?U_132 :radaiIndex ?U_133.
+    ?U_133 math:notLessThan 3 .
+    ?U_133 math:lessThan 5.4.
 } => {
-    ?U_130 :hasDiseaseActivity :ModerateDiseaseActivity.
+    ?U_132 :hasDiseaseActivity :ModerateDiseaseActivity.
     var:t_24 x:padding var:t_24.
 }.
 {
-    ?U_134 :radaiIndex ?U_135.
-    ?U_135 math:notLessThan 5.4.
+    ?U_136 :radaiIndex ?U_137.
+    ?U_137 math:notLessThan 5.4.
 } => {
-    ?U_134 :hasDiseaseActivity :HighDiseaseActivity.
+    ?U_136 :hasDiseaseActivity :HighDiseaseActivity.
     var:t_25 x:padding var:t_25.
 }.
 {
-    ?U_138 :hasDiseaseActivity :ModerateDiseaseActivity.
+    ?U_140 :hasDiseaseActivity :ModerateDiseaseActivity.
 } => {
-    ?U_138 :hasOutcome :SuspectedDiseaseActivity.
+    ?U_140 :hasOutcome :SuspectedDiseaseActivity.
     var:t_26 x:padding var:t_26.
 }.
 {
-    ?U_141 :hasDiseaseActivity :HighDiseaseActivity.
+    ?U_143 :hasDiseaseActivity :HighDiseaseActivity.
 } => {
-    ?U_141 :hasOutcome :SuspectedDiseaseActivity.
+    ?U_143 :hasOutcome :SuspectedDiseaseActivity.
     var:t_27 x:padding var:t_27.
 }.
 {
-    ?U_144 :hasOutcome :SuspectedDiseaseActivity.
+    ?U_146 :hasOutcome :SuspectedDiseaseActivity.
 } => {
-    ?U_144 :recommendation :ContactRheumatologistRecommendation.
+    ?U_146 :recommendation :ContactRheumatologistRecommendation.
     var:t_28 x:padding var:t_28.
 }.
 {
-    ?U_147 :hasBehaviour :Smoker.
-    ?U_147 :hasClinicalFinding :RheumatoidFactorPositive.
-    ?U_147 :hasClinicalFinding :AntiCyclicCitrullinatedPeptideAntibodyPositive.
+    ?U_149 :hasBehaviour :Smoker.
+    ?U_149 :hasClinicalFinding :RheumatoidFactorPositive.
+    ?U_149 :hasClinicalFinding :AntiCyclicCitrullinatedPeptideAntibodyPositive.
 } => {
-    ?U_147 :recommendation :QuitSmokingRecommendation.
+    ?U_149 :recommendation :QuitSmokingRecommendation.
     var:t_29 x:padding var:t_29.
 }.
 {
-    ?U_150 :hasBmiClass :ObeseClass1.
+    ?U_152 :hasBmiClass :ObeseClass1.
 } => {
-    ?U_150 :recommendation :LoseWeightRecommendation.
+    ?U_152 :recommendation :LoseWeightRecommendation.
     var:t_30 x:padding var:t_30.
 }.
 {
-    ?U_153 :hasBmiClass :ObeseClass2.
+    ?U_155 :hasBmiClass :ObeseClass2.
 } => {
-    ?U_153 :recommendation :LoseWeightRecommendation.
+    ?U_155 :recommendation :LoseWeightRecommendation.
     var:t_31 x:padding var:t_31.
 }.
 {
-    ?U_156 :hasBmiClass :ObeseClass3.
+    ?U_158 :hasBmiClass :ObeseClass3.
 } => {
-    ?U_156 :recommendation :LoseWeightRecommendation.
+    ?U_158 :recommendation :LoseWeightRecommendation.
     var:t_32 x:padding var:t_32.
 }.
 {
-    ?U_159 :hasDisease :NonErosiveRheumatoidArthritis.
+    ?U_161 :hasDisease :NonErosiveRheumatoidArthritis.
 } => {
-    ?U_159 :recommendation :CarefulOralHygieneRecommendation.
+    ?U_161 :recommendation :CarefulOralHygieneRecommendation.
     var:t_33 x:padding var:t_33.
 }.
 
-# 2023-05-15T19:52:58.672Z in=65 out=34 ent=34 step=124 brake=2 inf=403396 sec=0.050 inf/sec=8067920
+# 2023-05-16T11:48:57.300Z in=65 out=34 ent=34 step=124 brake=2 inf=418702 sec=0.056 inf/sec=7476821
 # ENDS
 

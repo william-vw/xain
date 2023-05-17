@@ -73,54 +73,96 @@
    ?i a x:RootNode 
 } .
 
+#
+{
+   ?x a x:RootNode .
+   ( ?x ) x:getNodeEvidence ( ( ) ?local ( ) ?all ) .
+   ( ?node ?gives ?evidence ) list:in ?all .
+   "emit" log:trace ( ?node ?evidence ) .
+}
+=> 
+{
+   ?x :blah ?all .
+   ?node x:gives ?gives ;
+       x:evidence ?evidence 
+} .
 
 #
 {
-   ?n x:intermEvidence ?support .
+   ?list x:getNodeEvidence ( ?local ?local2 ?all ?all2 ) 
+}
+<= 
+{
+   ?list list:firstRest ( ?x ?rest ) .
+   #
+   ?x x:getNode ( ?x2 ?gives2 ) .
+   #
+   ?x x:childrenEvidence ( ( ) ?myLocal ?all ?myAll ) .
+   ( ?myAll ( ( ?x2 ?gives2 ?myLocal ) ) ) list:append ?all1 .
+   ( ?local ( ?x2 ) ) list:append ?local1 .
+   #
+   ?rest x:getNodeEvidence ( ?local1 ?local2 ?all1 ?all2 ) 
+} .
+
+#
+{
+   ?x x:childrenEvidence ( ?local ?myLocal ?all ?myAll ) 
+}
+<= 
+{
+   ?x x:intermEvidence ?children .
+   ?children x:getNodeEvidence ( ?local ?myLocal ?all ?myAll ) 
+} .
+
+#
+{
+   ?x x:childrenEvidence ( ?local ?local ?all ?all ) 
+}
+<= 
+{
+   ?x a x:Leaf .
+} .
+
+#
+{
+   ( ) x:getNodeEvidence ( ?local ?local ?all ?all ) 
+}
+<= {} .
+
+#
+{
+   ?x x:getNode ( ?x ?f ) 
+}
+<= 
+{
+   ?x!x:intermEvidence x:getComparisons ( ) .
+   ?x r:gives ?f .
+} .
+
+#
+{
+   ?x x:getNode ( ?x ?f ) 
+}
+<= 
+{
+   ?x a x:Leaf ;
+       r:gives ?f .
+} .
+
+#
+{
+   ?x x:getNode ( ?n ?f ) 
+}
+<= 
+{
+   ?x x:intermEvidence ?support .
    ?support x:getComparisons ?cmp .
    ?cmp!list:length math:greaterThan 0 .
    #
    ?support x:mergeAllGives ?f .
-   #
-   (
-       ?evSupport
-       {
-           ?ev list:in ?support .
-           ?ev x:intermEvidence ?evSupport 
-       }
-       ?evSupports
-   ) log:collectAllIn _:t .
-   ?evSupports list:append ?support2 .
-   #
-   (
-       {
-           ?support2!list:length math:greaterThan 0 
-       }
-       {
-           ?type log:equalTo x:Node 
-       }
-       {
-           ?type log:equalTo x:Leaf 
-       }
-   ) log:ifThenElseIn _:t .
-}
-=> 
-{
-   _:b1 a ?type ;
-       x:gives ?f ;
-       x:evidence ?support2 .
-   ?n x:evidence ( _:b1 ) 
+   ( ?x ) log:skolem ?n .
 } .
 
-#
-{
-   ?n x:intermEvidence ?support .
-   ?support x:getComparisons ( ) .
-}
-=> 
-{
-   ?n x:evidence ?support .
-} .
 
 #
 {
@@ -151,7 +193,7 @@
        ?t
        {
            ?support list:member ?m .
-           ?m x:gives ?t 
+           ?m r:gives ?t 
        }
        ?ts
    ) log:collectAllIn _:t .

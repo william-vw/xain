@@ -1,188 +1,133 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --nope --n3 ../n3/tmp/proof.n3 ../n3/modules/proof/contrast/aux_inv.n3 --query ../n3/modules/proof/query_proof.n3
+# eye --nope --n3 n3/tmp/proof.n3 n3/modules/aux.n3 n3/modules/proof/trace/aux_trace.n3 n3/modules/proof/trace/default/aux_default.n3 --pass-only-new
 
-@prefix : <http://swot.sisinflab.poliba.it/onto/rheumatology#>.
-@prefix dc: <http://purl.org/dc/elements/1.1/>.
-@prefix dcterms: <http://purl.org/dc/terms/>.
-@prefix eo: <https://purl.org/heals/eo#>.
-@prefix ep: <http://linkedu.eu/dedalo/explanationPattern.owl#>.
-@prefix foaf: <http://xmlns.com/foaf/0.1/>.
-@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix schema: <http://schema.org/>.
 @prefix x: <http://wvw.org/xai#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix ns1: <http://niche.cs.dal.ca/ns/copd.owl#>.
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
-@prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
 @prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/179991065723715243#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3726018239096554297#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
-@prefix pml: <http://provenanceweb.org/ns/pml#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix dc: <http://purl.org/dc/terms/>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix xmath: <http://wvw.org/xai/swap/math#>.
+@prefix ns1: <http://eyereasoner.github.io/.well-known/genid/1873236109646666512#>.
 
-skolem:lemma80 a x:RootNode.
-skolem:lemma80 x:gives {
-    :patientA :recommendation :ContactRheumatologistRecommendation.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma4> a x:Node.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma6> a x:Node.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma8> a x:Node.
+_:bn_10 a x:Leaf.
+_:bn_17 a x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma10> a x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma12> a x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma1> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma4>).
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma2> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma6>).
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma3> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma8>).
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma4> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma10> _:bn_10).
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma6> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma12> _:bn_17).
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma8> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma4>).
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#proof> x:gives {
+    :envA :hasHumidity :High.
+    :envA :hasTemperature :Low.
+    :envA :recommendation :avoidGoingOutside.
 }.
-skolem:lemma80 a x:Node.
-skolem:lemma80 x:evidence (skolem:lemma30).
-skolem:lemma30 a x:Node.
-skolem:lemma30 x:evidence (skolem:lemma32 skolem:lemma34).
-skolem:lemma51 a x:Leaf.
-skolem:lemma51 x:evidence ().
-skolem:lemma54 a x:Leaf.
-skolem:lemma54 x:evidence ().
-skolem:lemma56 a x:Leaf.
-skolem:lemma56 x:evidence ().
-skolem:lemma58 a x:Leaf.
-skolem:lemma58 x:evidence ().
-skolem:lemma60 a x:Leaf.
-skolem:lemma60 x:evidence ().
-skolem:lemma53 a x:Leaf.
-skolem:lemma53 x:evidence ().
-skolem:lemma62 a x:Leaf.
-skolem:lemma62 x:evidence ().
-skolem:lemma44 a x:Leaf.
-skolem:lemma44 x:evidence ().
-skolem:lemma47 a x:Leaf.
-skolem:lemma47 x:evidence ().
-skolem:lemma48 a x:Leaf.
-skolem:lemma48 x:evidence ().
-skolem:lemma49 a x:Leaf.
-skolem:lemma49 x:evidence ().
-skolem:lemma50 a x:Leaf.
-skolem:lemma50 x:evidence ().
-skolem:lemma63 a x:Leaf.
-skolem:lemma63 x:evidence ().
-skolem:lemma66 a x:Leaf.
-skolem:lemma66 x:evidence ().
-skolem:lemma68 a x:Leaf.
-skolem:lemma68 x:evidence ().
-skolem:lemma70 a x:Leaf.
-skolem:lemma70 x:evidence ().
-skolem:lemma72 a x:Leaf.
-skolem:lemma72 x:evidence ().
-skolem:lemma74 a x:Leaf.
-skolem:lemma74 x:evidence ().
-skolem:lemma76 a x:Leaf.
-skolem:lemma76 x:evidence ().
-skolem:lemma78 a x:Leaf.
-skolem:lemma78 x:evidence ().
-skolem:lemma46 a x:Leaf.
-skolem:lemma46 x:evidence ().
-skolem:lemma65 a x:Leaf.
-skolem:lemma65 x:evidence ().
-skolem:lemma30 x:gives {
-    :patientA :hasOutcome :SuspectedDiseaseActivity.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma1> x:gives {
+    :envA :hasHumidity :High.
 }.
-skolem:lemma51 x:gives {
-    :patientA :swollenJointCount var:x_0.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma2> x:gives {
+    :envA :hasTemperature :Low.
 }.
-skolem:lemma54 x:gives {
-    :patientA :tenderJointCount var:x_0.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma3> x:gives {
+    :envA :recommendation :avoidGoingOutside.
 }.
-skolem:lemma56 x:gives {
-    :patientA :ptGaDiseaseActivityValue var:x_0.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma4> x:gives {
+    :envA :hasHumidity :High.
 }.
-skolem:lemma58 x:gives {
-    :patientA :phGaDiseaseActivityValue var:x_0.
+_:bn_10 x:gives {
+    55 math:greaterThan 50.
 }.
-skolem:lemma60 x:gives {
-    (var:x_0 var:x_1 var:x_2 var:x_3) <http://wvw.org/xai/swap/math#sum> var:x_4.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma5> x:gives {
+    {
+        ?U_4 :hasHumidity :High.
+    } => {
+        ?U_4 :hasHumidity :High.
+    }.
 }.
-skolem:lemma53 x:gives {
-    :patientA :swollenJointCount var:x_0.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma6> x:gives {
+    :envA :hasTemperature :Low.
 }.
-skolem:lemma62 x:gives {
-    (var:x_0 var:x_1 var:x_2 var:x_3) <http://wvw.org/xai/swap/math#sum> var:x_4.
+_:bn_17 x:gives {
+    -5 math:lessThan 0.
 }.
-skolem:lemma44 x:gives {
-    (var:x_0 10) <http://wvw.org/xai/swap/math#quotient> var:x_1.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma7> x:gives {
+    {
+        ?U_5 :hasTemperature :Low.
+    } => {
+        ?U_5 :hasTemperature :Low.
+    }.
 }.
-skolem:lemma47 x:gives {
-    (var:x_0 56) <http://wvw.org/xai/swap/math#quotient> var:x_1.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma8> x:gives {
+    :envA :recommendation :avoidGoingOutside.
 }.
-skolem:lemma48 x:gives {
-    (var:x_0 6) <http://wvw.org/xai/swap/math#quotient> var:x_1.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma9> x:gives {
+    {
+        ?U_6 :recommendation :avoidGoingOutside.
+    } => {
+        ?U_6 :recommendation :avoidGoingOutside.
+    }.
 }.
-skolem:lemma49 x:gives {
-    (var:x_0 48) <http://wvw.org/xai/swap/math#quotient> var:x_1.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma10> x:gives {
+    :envA :hasHumidityValue 55.
 }.
-skolem:lemma50 x:gives {
-    (var:x_0 5) <http://wvw.org/xai/swap/math#quotient> var:x_1.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma11> x:gives {
+    {
+        ?U_7 :hasHumidityValue ?U_8.
+        ?U_8 math:greaterThan 50.
+    } => {
+        ?U_7 :hasHumidity :High.
+    }.
 }.
-skolem:lemma63 x:gives {
-    :patientA :ghVasValue var:x_0.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma12> x:gives {
+    :envA :hasTemperatureValue -5.
 }.
-skolem:lemma66 x:gives {
-    (var:x_0 var:x_1) <http://wvw.org/xai/swap/math#sum> var:x_2.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma13> x:gives {
+    {
+        ?U_9 :hasTemperatureValue ?U_10.
+        ?U_10 math:lessThan 0.
+    } => {
+        ?U_9 :hasTemperature :Low.
+    }.
 }.
-skolem:lemma68 x:gives {
-    :patientA :vasPainValue var:x_0.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma14> x:gives {
+    {
+        ?U_11 :hasHumidity :High.
+    } => {
+        ?U_11 :recommendation :avoidGoingOutside.
+    }.
 }.
-skolem:lemma70 x:gives {
-    :patientA :morningStiffnessLevel var:x_0.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma6> a x:RootNode.
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma8> a x:RootNode.
+ns1:t_0 x:gives {
+    :envA :hasTemperatureValue -5 .
+    -5 math:lessThan 0.
 }.
-skolem:lemma72 x:gives {
-    (var:x_0 10) <http://wvw.org/xai/swap/math#product> var:x_1.
+ns1:t_0 x:evidence ().
+ns1:t_1 x:gives {
+    :envA :hasHumidityValue 55 .
+    55 math:greaterThan 50.
 }.
-skolem:lemma74 x:gives {
-    :patientA :ratedTenderJointsValue var:x_0.
-}.
-skolem:lemma76 x:gives {
-    (var:x_0 var:x_1 var:x_2 var:x_3 var:x_3) <http://wvw.org/xai/swap/math#sum> var:x_4.
-}.
-skolem:lemma78 x:gives {
-    (var:x_0 1) <http://wvw.org/xai/swap/math#roundedTo> var:x_1.
-}.
-skolem:lemma46 x:gives {
-    (var:x_0 10) <http://wvw.org/xai/swap/math#quotient> var:x_1.
-}.
-skolem:lemma65 x:gives {
-    :patientA :ghVasValue var:x_0.
-}.
-skolem:lemma32 a x:Node.
-skolem:lemma32 x:evidence (skolem:lemma36 skolem:lemma40).
-skolem:lemma34 a x:Node.
-skolem:lemma34 x:evidence (skolem:lemma38 skolem:lemma42).
-skolem:lemma32 x:gives {
-    :patientA :hasDiseaseActivity :ModerateDiseaseActivity.
-}.
-skolem:lemma34 x:gives {
-    :patientA :hasDiseaseActivity :HighDiseaseActivity.
-}.
-skolem:lemma36 a x:Node.
-skolem:lemma36 x:evidence (skolem:lemma51 skolem:lemma54 skolem:lemma56 skolem:lemma58 skolem:lemma60).
-skolem:lemma40 a x:Node.
-skolem:lemma40 x:evidence (skolem:lemma44 skolem:lemma47 skolem:lemma48 skolem:lemma49 skolem:lemma50 skolem:lemma63 skolem:lemma66 skolem:lemma68 skolem:lemma70 skolem:lemma72 skolem:lemma74 skolem:lemma76 skolem:lemma78).
-skolem:lemma38 a x:Node.
-skolem:lemma38 x:evidence (skolem:lemma53 skolem:lemma62).
-skolem:lemma42 a x:Node.
-skolem:lemma42 x:evidence (skolem:lemma46 skolem:lemma65).
-skolem:lemma36 x:gives {
-    :patientA :cdaiIndex var:x_0.
-    var:x_0 <http://wvw.org/xai/swap/math#notLessThan> 10 .
-    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 22.
-}.
-skolem:lemma40 x:gives {
-    :patientA :radaiIndex var:x_0.
-    var:x_0 <http://wvw.org/xai/swap/math#notLessThan> 3 .
-    var:x_0 <http://wvw.org/xai/swap/math#lessThan> 5.4.
-}.
-skolem:lemma38 x:gives {
-    :patientA :cdaiIndex var:x_0.
-    var:x_0 <http://wvw.org/xai/swap/math#notLessThan> 22.
-}.
-skolem:lemma42 x:gives {
-    :patientA :radaiIndex var:x_0.
-    var:x_0 <http://wvw.org/xai/swap/math#notLessThan> 5.4.
-}.
+ns1:t_1 x:evidence ().
+<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma8> x:evidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma4>).
 
-# 2023-05-15T20:21:42.566Z in=1420 out=91 ent=364 step=1509 brake=7 inf=2311929 sec=0.146 inf/sec=15835130
+# 2023-05-17T20:18:29.945Z in=131 out=37 ent=38 step=134 brake=4 inf=214379 sec=0.047 inf/sec=4561255
 # ENDS
 

@@ -67,7 +67,11 @@
         //     { path: `n3/test/${usecase}/goal.n3` }
         // ];
 
+        let start2 = performance.now();
         let module = new Module(path, new EyeReasoner());
+        let end2 = performance.now();
+        console.log("reasoner:", (end2 - start2));
+
         let output = await module.run(inputs);
         // console.log("output", output.data);
 

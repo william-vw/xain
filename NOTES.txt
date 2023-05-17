@@ -1,6 +1,7 @@
 - dealing with comparisons, and keeping them together, is ... difficult
 first, deal with it in proof modules:
 that way, print module can easily print this as single step
+    (makes it a lot easier here; just consider the gives')
 
 some re-usable code is found in n3/modules/aux.n3
 
@@ -13,6 +14,7 @@ r:evidence (
     :lemma10
     [ a r:Fact; r:gives {5 math:notGreaterThan 5}]
 );
+with
 :lemma10
     x:gives { :patientA :hasPhlegmAmountValue 5 } .
 to
@@ -48,14 +50,14 @@ but, we need to keep comparisons together in the same rule body:
     ?v <http://wvw.org/xai/swap/math#lessThan> 8.
 so the same checks here are needed as with the "trace" solution
 
-alternative here is to separate all body triples into separate rules
+(alternative here is to separate all body triples into separate rules
 but this leads to very big proofs
 also, re-merging the gives' later on (as with trace) will lead to "disconnected" gives'
 e.g., 
     _:t :hasPhlegmAmountValue _:v1.
-    _:v2 <http://wvw.org/xai/swap/math#greaterThan> 5 .
-
+    _:v2 <http://wvw.org/xai/swap/math#greaterThan> 5 .)
 
 -- printing
 here, we have to check for certain (merged) evidences whether they include comparators
 if so, we print the entire evidence in one go (e.g., <predicate> between X and Y)
+quite simple here
