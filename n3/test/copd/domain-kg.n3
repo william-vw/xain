@@ -225,7 +225,26 @@ x:defaultRecommendationReasonExplanation x:explanation [
        x:object ?x ;
        x:icon "fa-droplet-percent" ;
        x:unit "%" ;
-       x:summary "Percentage of humidity in the air." 
+       x:summary "Percentage of humidity in the air." ;
+       x:details "" 
+   ] .
+:hasHumidityValue2 rdfs:label "humidity" ;
+   x:explanation [
+       a :RecommendationReasonExplanation ;
+       x:object ?x ;
+       x:icon "fa-droplet-percent" ;
+       x:unit "%" ;
+       x:summary "Percentage of humidity in the air." ;
+       x:details "" 
+   ] .
+:hasHumidityValue3 rdfs:label "humidity" ;
+   x:explanation [
+       a :RecommendationReasonExplanation ;
+       x:object ?x ;
+       x:icon "fa-droplet-percent" ;
+       x:unit "%" ;
+       x:summary "Percentage of humidity in the air." ;
+       x:details "" 
    ] .
 #
 :hasHumidity x:explanation [
@@ -265,7 +284,8 @@ Such dry air then dries out the mucous membranes in the respiratory tract, which
        x:object ?x ;
        x:icon "fa-temperature-half" ;
        x:unit "&deg;C" ;
-       x:summary "Outside temperature." 
+       x:summary "Outside temperature." ;
+       x:details "" 
    ] .
 #
 :hasTemperature x:explanation [

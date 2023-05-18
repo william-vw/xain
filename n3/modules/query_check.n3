@@ -9,3 +9,12 @@
 {
    ?x x:FAILED ?y 
 } .
+
+#
+{
+   ?x x:MISSING ?y 
+}
+=> 
+{
+   ?x x:MISSING ?y 
+} .

@@ -1,5 +1,5 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --n3 n3/modules/proof/query_heads.n3 n3/test/copd/rules.n3 --pass-only-new
+# eye --n3 ../n3/modules/proof/query_heads.n3 ../n3/tmp/rules-disting.n3 --pass-only-new
 
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
@@ -9,101 +9,215 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix x: <http://wvw.org/xai#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/1442680595314791011#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
-@prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2512373759013451889#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3055288544445213413#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 {
     ?U_0 :isStratified :GreenZone.
+    var:t_0 x:padding var:t_0.
 } => {
     ?U_0 :isStratified :GreenZone.
+    var:t_0 x:padding var:t_0.
 }.
 {
     ?U_3 :hasPhlegmAmount :Low.
+    var:t_1 x:padding var:t_1.
 } => {
     ?U_3 :hasPhlegmAmount :Low.
+    var:t_1 x:padding var:t_1.
 }.
 {
     ?U_7 :hasActivityExertion :Low.
+    var:t_2 x:padding var:t_2.
 } => {
     ?U_7 :hasActivityExertion :Low.
+    var:t_2 x:padding var:t_2.
 }.
 {
     ?U_11 :isStratified :YellowZone.
+    var:t_3 x:padding var:t_3.
 } => {
     ?U_11 :isStratified :YellowZone.
+    var:t_3 x:padding var:t_3.
 }.
 {
-    ?U_14 :hasPhlegmAmount :Moderate.
+    ?U_14 :isStratified :YellowZone.
+    var:t_4 x:padding var:t_4.
 } => {
-    ?U_14 :hasPhlegmAmount :Moderate.
+    ?U_14 :isStratified :YellowZone.
+    var:t_4 x:padding var:t_4.
 }.
 {
-    ?U_18 :hasActivityExertion :High.
+    ?U_17 :isStratified :YellowZone.
+    var:t_5 x:padding var:t_5.
 } => {
-    ?U_18 :hasActivityExertion :High.
+    ?U_17 :isStratified :YellowZone.
+    var:t_5 x:padding var:t_5.
 }.
 {
-    ?U_22 :isStratified :RedZone.
+    ?U_20 :hasPhlegmAmount :Moderate.
+    var:t_6 x:padding var:t_6.
 } => {
-    ?U_22 :isStratified :RedZone.
+    ?U_20 :hasPhlegmAmount :Moderate.
+    var:t_6 x:padding var:t_6.
 }.
 {
-    ?U_25 :hasPhlegmAmount :Severe.
+    ?U_24 :hasActivityExertion :High.
+    var:t_7 x:padding var:t_7.
 } => {
-    ?U_25 :hasPhlegmAmount :Severe.
+    ?U_24 :hasActivityExertion :High.
+    var:t_7 x:padding var:t_7.
 }.
 {
-    ?U_29 :hasActivityExertion :Severe.
+    ?U_28 :isStratified :RedZone.
+    var:t_8 x:padding var:t_8.
 } => {
-    ?U_29 :hasActivityExertion :Severe.
+    ?U_28 :isStratified :RedZone.
+    var:t_8 x:padding var:t_8.
 }.
 {
-    ?U_33 :hasLowOxygenSaturation true.
+    ?U_31 :isStratified :RedZone.
+    var:t_9 x:padding var:t_9.
 } => {
-    ?U_33 :hasLowOxygenSaturation true.
+    ?U_31 :isStratified :RedZone.
+    var:t_9 x:padding var:t_9.
 }.
 {
-    ?U_37 :recommendation :goOutside.
+    ?U_34 :isStratified :RedZone.
+    var:t_10 x:padding var:t_10.
 } => {
-    ?U_37 :recommendation :goOutside.
+    ?U_34 :isStratified :RedZone.
+    var:t_10 x:padding var:t_10.
 }.
 {
-    ?U_40 :hasHumidity :Moderate.
+    ?U_37 :isStratified :RedZone.
+    var:t_11 x:padding var:t_11.
 } => {
-    ?U_40 :hasHumidity :Moderate.
+    ?U_37 :isStratified :RedZone.
+    var:t_11 x:padding var:t_11.
 }.
 {
-    ?U_44 :hasTemperature :Moderate.
+    ?U_40 :hasPhlegmAmount :Severe.
+    var:t_12 x:padding var:t_12.
 } => {
-    ?U_44 :hasTemperature :Moderate.
+    ?U_40 :hasPhlegmAmount :Severe.
+    var:t_12 x:padding var:t_12.
 }.
 {
-    ?U_48 :recommendation :avoidGoingOutside.
+    ?U_44 :hasActivityExertion :Severe.
+    var:t_13 x:padding var:t_13.
 } => {
-    ?U_48 :recommendation :avoidGoingOutside.
+    ?U_44 :hasActivityExertion :Severe.
+    var:t_13 x:padding var:t_13.
 }.
 {
-    ?U_51 :hasHumidity :Low.
+    ?U_48 :hasLowOxygenSaturation true.
+    var:t_14 x:padding var:t_14.
 } => {
-    ?U_51 :hasHumidity :Low.
+    ?U_48 :hasLowOxygenSaturation true.
+    var:t_14 x:padding var:t_14.
 }.
 {
-    ?U_55 :hasHumidity :High.
+    ?U_52 :recommendation :goOutside.
+    var:t_15 x:padding var:t_15.
 } => {
-    ?U_55 :hasHumidity :High.
+    ?U_52 :recommendation :goOutside.
+    var:t_15 x:padding var:t_15.
 }.
 {
-    ?U_59 :hasTemperature :Low.
+    ?U_55 :hasHumidity :Moderate.
+    var:t_16 x:padding var:t_16.
 } => {
-    ?U_59 :hasTemperature :Low.
+    ?U_55 :hasHumidity :Moderate.
+    var:t_16 x:padding var:t_16.
 }.
 {
-    ?U_63 :hasTemperature :High.
+    ?U_59 :hasTemperature :Moderate.
+    var:t_17 x:padding var:t_17.
 } => {
-    ?U_63 :hasTemperature :High.
+    ?U_59 :hasTemperature :Moderate.
+    var:t_17 x:padding var:t_17.
+}.
+{
+    ?U_63 :recommendation :avoidGoingOutside.
+    var:t_18 x:padding var:t_18.
+} => {
+    ?U_63 :recommendation :avoidGoingOutside.
+    var:t_18 x:padding var:t_18.
+}.
+{
+    ?U_66 :recommendation :avoidGoingOutside.
+    var:t_19 x:padding var:t_19.
+} => {
+    ?U_66 :recommendation :avoidGoingOutside.
+    var:t_19 x:padding var:t_19.
+}.
+{
+    ?U_69 :recommendation :avoidGoingOutside.
+    var:t_20 x:padding var:t_20.
+} => {
+    ?U_69 :recommendation :avoidGoingOutside.
+    var:t_20 x:padding var:t_20.
+}.
+{
+    ?U_72 :recommendation :avoidGoingOutside.
+    var:t_21 x:padding var:t_21.
+} => {
+    ?U_72 :recommendation :avoidGoingOutside.
+    var:t_21 x:padding var:t_21.
+}.
+{
+    ?U_75 :recommendation :avoidGoingOutside.
+    var:t_22 x:padding var:t_22.
+} => {
+    ?U_75 :recommendation :avoidGoingOutside.
+    var:t_22 x:padding var:t_22.
+}.
+{
+    ?U_78 :hasHumidity :Low.
+    var:t_23 x:padding var:t_23.
+} => {
+    ?U_78 :hasHumidity :Low.
+    var:t_23 x:padding var:t_23.
+}.
+{
+    ?U_82 :hasHumidityValue2 ?U_83.
+    var:t_24 x:padding var:t_24.
+} => {
+    ?U_82 :hasHumidityValue2 ?U_83.
+    var:t_24 x:padding var:t_24.
+}.
+{
+    ?U_86 :hasHumidityValue ?U_87.
+    var:t_25 x:padding var:t_25.
+} => {
+    ?U_86 :hasHumidityValue ?U_87.
+    var:t_25 x:padding var:t_25.
+}.
+{
+    ?U_90 :hasHumidity :High.
+    var:t_26 x:padding var:t_26.
+} => {
+    ?U_90 :hasHumidity :High.
+    var:t_26 x:padding var:t_26.
+}.
+{
+    ?U_94 :hasTemperature :Low.
+    var:t_27 x:padding var:t_27.
+} => {
+    ?U_94 :hasTemperature :Low.
+    var:t_27 x:padding var:t_27.
+}.
+{
+    ?U_98 :hasTemperature :High.
+    var:t_28 x:padding var:t_28.
+} => {
+    ?U_98 :hasTemperature :High.
+    var:t_28 x:padding var:t_28.
 }.
 
-# 2023-05-18T12:45:51.790Z in=55 out=18 ent=18 step=72 brake=2 inf=91300 sec=0.040 inf/sec=2282500
+# 2023-05-18T17:27:44.097Z in=30 out=29 ent=29 step=87 brake=2 inf=122578 sec=0.030 inf/sec=4085933
 # ENDS
 

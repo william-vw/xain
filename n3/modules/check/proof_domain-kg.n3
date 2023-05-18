@@ -12,47 +12,38 @@
 @prefix x: <http://wvw.org/xai#> .
 @base <http://wvw.org/xai#> .
 
+<> x:rootNodeProperties ( x:object x:icon x:style x:header1 x:header2 x:summary ) .
+<> x:nodeProperties ( x:object x:icon x:header1 x:header2 x:details ) .
 
+#
 {
    ?x a x:Node .
-   ?x!x:gives!e:labelvars log:includes 
-   {
-       ?s ?p ?o 
-   } .
    (
        {
            ?x a x:RootNode 
        }
        {
-           _:t log:notIncludes 
-           {
-               ?p x:explanation [
-                   x:object ?o ;
-                   x:icon ?icon ;
-                   x:style ?style ;
-                   x:header1 ?h1 ;
-                   x:header2 ?h2 ;
-                   x:summary ?summ 
-               ] 
-           } .
-           ?type log:equalTo x:RootNode .
+           <> x:rootNodeProperties ?list .
        }
        {
-           _:t log:notIncludes 
-           {
-               ?p x:explanation [
-                   x:object ?o ;
-                   x:icon ?icon ;
-                   x:header1 ?h1 ;
-                   x:header2 ?h2 ;
-                   x:details ?d 
-               ] 
-           } .
-           ?type log:equalTo x:Node .
+           <> x:nodeProperties ?list .
        }
    ) log:ifThenElseIn _:t .
+   #
+   ?x!x:gives!e:labelvars log:includes 
+   {
+       ?s ?p ?o 
+   } .
+   #
+   ?p!log:uri string:notMatches "http://www.w3.org/2000/10/swap.*" .
+   #
+   ?prp list:in ?list .
+   _:t log:notIncludes 
+   {
+       ?p!x:explanation ?prp ?v 
+   } .
 }
 => 
 {
-   x:explanation x:FAILED ( ?x ?type ) 
+   ?x x:MISSING ( ?p ?prp ) 
 } .

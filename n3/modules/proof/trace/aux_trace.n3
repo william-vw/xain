@@ -112,19 +112,20 @@
 }
 <= 
 {
-   ?cells list:firstRest ( ( ?x ?gives ?children ) ?rest ) .
-   "x" log:trace ( ( ?x ?gives ?children ) ?all ) .
+   # x: current node; extra; any extra triples; children: current child nodes
+   ?cells list:firstRest ( ( ?x ?extra ?children ) ?rest ) .
+   # "x" log:trace ( ( ?x ?extra ?children ) ?all ) .
 
    # may be needed to merge child nodes (if they contain comparisons)
    # (if so, their own children should all be considered children of the merged node)
    #     newChildren: new set of children
-   #     childCells: each child with their 'extra' triples (if any) and own current set of children
+   #     childCells: each child with their 'extra' triples (if any) and own set of children
    #
    ( ?x ?children ) x:processChildNodes ( ?newChildren ?childCells ) .
-   "children" log:trace ( ?x ?children ?newChildren ?childCells ) .
+   # "children" log:trace ( ?x ?children ?newChildren ?childCells ) .
    
    # add new cell to "all" list with updated children
-   ( ?all ( ( ?x ?gives ?newChildren ) ) ) list:append ?all11 .
+   ( ?all ( ( ?x ?extra ?newChildren ) ) ) list:append ?all11 .
    
    # now, go over each child cell with their current set of children
    ?childCells x:recurseNodeTree ( ?all11 ?all12 ) .
@@ -140,7 +141,7 @@
 <= {} .
 
 
-# children do not need to be merged
+# if children do not need to be merged
 # subject: input; object: output
 # (in this case, input children are same as output children)
 {
@@ -166,13 +167,14 @@
    ) log:collectAllIn _:t .
 } .
 
-# no children
+# if no children
+# subject: input; object: output
 {
    ( ?x ( ) ) x:processChildNodes ( ( ) ( ) ) 
 }
 <= {} .
 
-# children should be merged
+# if children should be merged
 # subject: input; object: output
 {
    ( ?x ?children ) x:processChildNodes (
@@ -200,7 +202,7 @@
    (
        ?f
        {
-           ?children!list:member r:gives ?f 
+           ?children!list:member x:gives ?f 
        }
        ?fs
    ) log:collectAllIn _:t .
@@ -246,7 +248,7 @@
        ?t
        {
            ?support list:member ?m .
-           ?m r:gives ?t 
+           ?m x:gives ?t 
        }
        ?ts
    ) log:collectAllIn _:t .

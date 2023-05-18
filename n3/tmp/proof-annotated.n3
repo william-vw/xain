@@ -1,5 +1,5 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --nope --n3 n3/tmp/proof.n3 n3/modules/aux.n3 n3/modules/proof/trace/aux_trace.n3 n3/modules/proof/trace/default/aux_default.n3 --pass-only-new
+# eye --nope --n3 ../n3/tmp/proof.n3 ../n3/modules/proof/trace/aggr/aggregate_evidence.n3 ../n3/modules/aux.n3 ../n3/modules/proof/trace/aux_trace.n3 ../n3/modules/proof/trace/aggr/aux_aggr.n3 --query ../n3/modules/proof/query_proof.n3
 
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
@@ -8,91 +8,83 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix x: <http://wvw.org/xai#>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
-@prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2512373759013451889#>.
-@prefix n3: <http://www.w3.org/2004/06/rei#>.
-@prefix list: <http://www.w3.org/2000/10/swap/list#>.
-@prefix dc: <http://purl.org/dc/terms/>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/1442680595314791011#>.
+@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3055288544445213413#>.
+@prefix n3: <http://www.w3.org/2004/06/rei#>.
+@prefix dc: <http://purl.org/dc/terms/>.
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix xmath: <http://wvw.org/xai/swap/math#>.
-@prefix ns1: <http://eyereasoner.github.io/.well-known/genid/4181428255128361845#>.
+@prefix ns1: <http://eyereasoner.github.io/.well-known/genid/1430817360849752450#>.
 
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3> a x:Node.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma5> a x:Node.
-_:bn_7 a x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma7> a x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma1> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3>).
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma2> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma5>).
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma7> _:bn_7).
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma5> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3>).
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#proof> x:gives {
-    :envA :hasHumidity :High.
-    :envA :recommendation :avoidGoingOutside.
+_:bn_29 a x:Leaf.
+_:bn_29 x:gives {
+    55 math:greaterThan 1.
 }.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma1> x:gives {
-    :envA :hasHumidity :High.
-}.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma2> x:gives {
-    :envA :recommendation :avoidGoingOutside.
-}.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3> x:gives {
-    :envA :hasHumidity :High.
-}.
-_:bn_7 x:gives {
+_:bn_36 a x:Leaf.
+_:bn_36 x:gives {
     55 math:greaterThan 50.
 }.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma4> x:gives {
-    {
-        ?U_2 :hasHumidity :High.
-    } => {
-        ?U_2 :hasHumidity :High.
-    }.
+_:bn_43 a x:Leaf.
+_:bn_43 x:gives {
+    -5 math:lessThan 0.
 }.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma5> x:gives {
-    :envA :recommendation :avoidGoingOutside.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma19> a x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma19> x:gives {
+    :envA :hasHumidityValue3 55.
 }.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma6> x:gives {
-    {
-        ?U_3 :recommendation :avoidGoingOutside.
-    } => {
-        ?U_3 :recommendation :avoidGoingOutside.
-    }.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma23> a x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma23> x:gives {
+    :envA :hasTemperatureValue -5.
 }.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma7> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma7> a x:Node.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma7> x:gives {
+    :envA :hasHumidityValue2 55.
+}.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma9> a x:Node.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma9> x:gives {
     :envA :hasHumidityValue 55.
 }.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma8> x:gives {
-    {
-        ?U_4 :hasHumidityValue ?U_5.
-        ?U_5 math:greaterThan 50.
-    } => {
-        ?U_4 :hasHumidity :High.
-    }.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma11> a x:Node.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma11> x:gives {
+    :envA :hasHumidity :High.
 }.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma9> x:gives {
-    {
-        ?U_6 :hasHumidity :High.
-    } => {
-        ?U_6 :recommendation :avoidGoingOutside.
-    }.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma13> a x:Node.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma13> x:gives {
+    :envA :hasTemperature :Low.
 }.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma5> a x:RootNode.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma5> x:evidence (<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3>).
-:envA :recommendation :avoidGoingOutside.
-<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3> x:evidence (ns1:t_0).
-"true(true,true)".
-ns1:t_0 x:evidence ().
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma15> a x:Node.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma15> x:gives {
+    :envA :recommendation :avoidGoingOutside.
+}.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma15> a x:RootNode.
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma11> x:evidence (ns1:t_0).
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma13> x:evidence (ns1:t_2).
+<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma15> x:evidence (<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma11> <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma13>).
 ns1:t_0 a x:Node.
+ns1:t_0 x:evidence (ns1:t_1).
+ns1:t_1 a x:Node.
+ns1:t_1 x:evidence (<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma19>).
+ns1:t_2 a x:Node.
+ns1:t_2 x:evidence ().
 ns1:t_0 x:gives {
     :envA :hasHumidityValue 55 .
     55 math:greaterThan 50.
 }.
+ns1:t_1 x:gives {
+    :envA :hasHumidityValue2 55 .
+    55 math:greaterThan 1.
+}.
+ns1:t_2 x:gives {
+    :envA :hasTemperatureValue -5 .
+    -5 math:lessThan 0.
+}.
 
-# 2023-05-18T14:34:34.406Z in=90 out=27 ent=28 step=98 brake=4 inf=173011 sec=0.043 inf/sec=4023512
+# 2023-05-18T17:27:44.205Z in=242 out=33 ent=108 step=358 brake=5 inf=480148 sec=0.047 inf/sec=10215915
 # ENDS
 

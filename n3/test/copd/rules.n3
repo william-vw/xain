@@ -238,7 +238,7 @@
 }
 => 
 {
-   ?env :hasTemperature :Moderate
+   ?env :hasTemperature :Moderate 
 }
 ;
    a x:InputRule .
@@ -249,7 +249,7 @@
 
 #
 {
-   ?env :hasHumidity :Low
+   ?env :hasHumidity :Low 
 }
 => 
 {
@@ -260,7 +260,7 @@
 
 #
 {
-   ?env :hasHumidity :High
+   ?env :hasHumidity :High 
 }
 => 
 {
@@ -271,7 +271,7 @@
 
 #
 {
-   ?env :hasTemperature :Low
+   ?env :hasTemperature :Low 
 }
 => 
 {
@@ -282,7 +282,7 @@
    
 #
 {
-   ?env :hasTemperature :High
+   ?env :hasTemperature :High 
 }
 => 
 {
@@ -293,7 +293,7 @@
 
 #
 {
-   ?env :hasWind :High
+   ?env :hasWind :High 
 }
 => 
 {
@@ -309,7 +309,7 @@
 }
 => 
 {
-   ?env :hasHumidity :Low
+   ?env :hasHumidity :Low 
 }
 ;
    a x:InputRule .
@@ -321,7 +321,7 @@
 }
 => 
 {
-   ?env :hasHumidity :High
+   ?env :hasHumidity :High 
 }
 ;
    a x:InputRule .
@@ -333,7 +333,7 @@
 }
 => 
 {
-   ?env :hasTemperature :Low
+   ?env :hasTemperature :Low 
 }
 ;
    a x:InputRule .
@@ -345,7 +345,7 @@
 }
 => 
 {
-   ?env :hasTemperature :High
+   ?env :hasTemperature :High 
 }
 ;
    a x:InputRule .
