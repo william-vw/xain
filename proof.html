@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="lib/rdflib/rdflib.min.js"></script>
+    <script src="https://eyereasoner.github.io/eye-js/latest/index.js"></script>
+    <script src="lib/eye_aux.js"></script>
+    <script src="lib/mod4n3.js"></script>
+    <script src="lib/explain.js"></script>
+
+    <title>XAIN</title>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+
+<body>
+    <script type="module">
+        let start = performance.now();
+
+        // const type = 'trace';
+        const type = 'contrast';
+
+        const usecase = 'copd';
+        // const usecase = 'rheumatology';
+
+        let proof = await explain(type, usecase);
+
+        let end = performance.now();
+        console.log("total time :-(", (end - start));
+
+        console.log(proof);
+    </script>
+
+</body>
+
+</html>

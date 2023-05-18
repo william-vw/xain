@@ -1,341 +1,714 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --n3 ../n3/tmp/rules-disting.n3 ../n3/test/copd/data.n3 --query ../n3/tmp/rule-heads.n3
+# eye --n3 ../n3/test/rheumatology/rules.n3 ../n3/test/rheumatology/data.n3 --query ../n3/tmp/rule-heads.n3
 
-@prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
+@prefix : <http://swot.sisinflab.poliba.it/onto/rheumatology#>.
+@prefix dc: <http://purl.org/dc/elements/1.1/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix eo: <https://purl.org/heals/eo#>.
+@prefix ep: <http://linkedu.eu/dedalo/explanationPattern.owl#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
-@prefix pml: <http://provenanceweb.org/ns/pml#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix schema: <http://schema.org/>.
 @prefix x: <http://wvw.org/xai#>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/1442680595314791011#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3055288544445213413#>.
+@prefix var: <http://eyereasoner.github.io/var#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/875771084731707311#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#proof> a r:Proof, r:Conjunction;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma1>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma2>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma3>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma4>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma5>;
-    r:component <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma6>;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#proof> a r:Proof, r:Conjunction;
+    r:component <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma1>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma2>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma3>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma4>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma5>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma6>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma7>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma8>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma9>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma10>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma11>;
+    r:component <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma12>;
     r:gives {
-        :envA :hasHumidityValue2 55 .
-        var:t_24 x:padding var:t_24.
-        :envA :hasHumidityValue 55 .
-        var:t_25 x:padding var:t_25.
-        :envA :hasHumidity :High.
-        var:t_26 x:padding var:t_26.
-        :envA :hasTemperature :Low.
-        var:t_27 x:padding var:t_27.
-        :envA :recommendation :avoidGoingOutside.
-        var:t_19 x:padding var:t_19.
-        var:t_20 x:padding var:t_20.
+        :patientA :bmiValue 32.871972318339104 .
+        :patientA :hasBmiClass :ObeseClass1.
+        :patientA :cdaiIndex 34 .
+        :patientA :hasDiseaseActivity :ModerateDiseaseActivity.
+        :patientA :hasDiseaseActivity :HighDiseaseActivity.
+        :patientA :morningStiffnessLevel 3 .
+        :patientA :radaiIndex 4.3 .
+        :patientA :hasOutcome :SuspectedDiseaseActivity.
+        :patientA :recommendation :ContactRheumatologistRecommendation.
+        :patientA :recommendation :QuitSmokingRecommendation.
+        :patientA :recommendation :LoseWeightRecommendation.
+        :patientA :recommendation :CarefulOralHygieneRecommendation.
     }.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma1> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma1> a r:Inference;
     r:gives {
-        :envA :hasHumidityValue2 55 .
-        var:t_24 x:padding var:t_24.
+        :patientA :bmiValue 32.871972318339104 .
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma7>
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma7>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma13>
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 55];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma8>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 32.871972318339104];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma14>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma2> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma2> a r:Inference;
     r:gives {
-        :envA :hasHumidityValue 55 .
-        var:t_25 x:padding var:t_25.
+        :patientA :hasBmiClass :ObeseClass1.
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma9>
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma9>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma15>
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 55];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma10>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma16>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma3> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma3> a r:Inference;
     r:gives {
-        :envA :hasHumidity :High.
-        var:t_26 x:padding var:t_26.
+        :patientA :cdaiIndex 34 .
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma11>
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma11>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma17>
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma12>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 34];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma18>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma4> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma4> a r:Inference;
     r:gives {
-        :envA :hasTemperature :Low.
-        var:t_27 x:padding var:t_27.
+        :patientA :hasDiseaseActivity :ModerateDiseaseActivity.
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma13>
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma13>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma19>
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma14>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma20>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma5> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma5> a r:Inference;
     r:gives {
-        :envA :recommendation :avoidGoingOutside.
-        var:t_19 x:padding var:t_19.
+        :patientA :hasDiseaseActivity :HighDiseaseActivity.
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma15>
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma15>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma21>
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma16>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma22>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma6> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma6> a r:Inference;
     r:gives {
-        :envA :recommendation :avoidGoingOutside.
-        var:t_20 x:padding var:t_20.
+        :patientA :morningStiffnessLevel 3 .
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma15>
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma17>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma23>
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma18>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma24>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma7> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma7> a r:Inference;
     r:gives {
-        :envA :hasHumidityValue2 55 .
-        var:t_24 x:padding var:t_24.
+        :patientA :radaiIndex 4.3 .
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma19>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma25>
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 55];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma20>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 4.3];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma26>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma8> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma8> a r:Inference;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>, <http://eyereasoner.github.io/var#x_1>. {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidityValue2 <http://eyereasoner.github.io/var#x_1>.
-            var:t_24 x:padding var:t_24.
+        :patientA :hasOutcome :SuspectedDiseaseActivity.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma27>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma28>.
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma9> a r:Inference;
+    r:gives {
+        :patientA :recommendation :ContactRheumatologistRecommendation.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma29>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma30>.
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma10> a r:Inference;
+    r:gives {
+        :patientA :recommendation :QuitSmokingRecommendation.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma31>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma32>.
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma11> a r:Inference;
+    r:gives {
+        :patientA :recommendation :LoseWeightRecommendation.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma33>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma34>.
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma12> a r:Inference;
+    r:gives {
+        :patientA :recommendation :CarefulOralHygieneRecommendation.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma35>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma36>.
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma13> a r:Inference;
+    r:gives {
+        :patientA :bmiValue 32.871972318339104 .
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma37>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma38>
+        [ a r:Fact; r:gives {(170 100) math:quotient 1.7}]
+        [ a r:Fact; r:gives {(1.7 2) math:exponentiation 2.8899999999999997}]
+        [ a r:Fact; r:gives {(95 2.8899999999999997) math:quotient 32.871972318339104}]
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 170];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_2"]; r:boundTo 95];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_3"]; r:boundTo 1.7];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_4"]; r:boundTo 2.8899999999999997];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_5"]; r:boundTo 32.871972318339104];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma39>.
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma14> a r:Extraction;
+    r:gives {
+        @forAll var:x_0, var:x_1. {
+            var:x_0 :bmiValue var:x_1.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidityValue2 <http://eyereasoner.github.io/var#x_1>.
-            var:t_24 x:padding var:t_24.
+            var:x_0 :bmiValue var:x_1.
         }.
     };
     r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma9> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma15> a r:Inference;
     r:gives {
-        :envA :hasHumidityValue 55 .
-        var:t_25 x:padding var:t_25.
+        :patientA :hasBmiClass :ObeseClass1.
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma7>
-        [ a r:Fact; r:gives {55 math:greaterThan 1}]
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma13>
+        [ a r:Fact; r:gives {32.871972318339104 math:greaterThan 29.9}]
+        [ a r:Fact; r:gives {32.871972318339104 math:lessThan 35}]
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 55];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma21>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 32.871972318339104];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma40>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma10> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma16> a r:Extraction;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>, <http://eyereasoner.github.io/var#x_1>. {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidityValue <http://eyereasoner.github.io/var#x_1>.
-            var:t_25 x:padding var:t_25.
+        @forAll var:x_0. {
+            var:x_0 :hasBmiClass :ObeseClass1.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidityValue <http://eyereasoner.github.io/var#x_1>.
-            var:t_25 x:padding var:t_25.
+            var:x_0 :hasBmiClass :ObeseClass1.
         }.
     };
     r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma11> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma17> a r:Inference;
     r:gives {
-        :envA :hasHumidity :High.
-        var:t_26 x:padding var:t_26.
+        :patientA :cdaiIndex 34 .
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma9>
-        [ a r:Fact; r:gives {55 math:greaterThan 50}]
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma41>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma42>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma43>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma44>
+        [ a r:Fact; r:gives {(3 18 8 5) math:sum 34}]
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 55];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma22>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 3];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_2"]; r:boundTo 18];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_3"]; r:boundTo 8];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_4"]; r:boundTo 5];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_5"]; r:boundTo 34];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma45>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma12> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma18> a r:Extraction;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidity :High.
-            var:t_26 x:padding var:t_26.
+        @forAll var:x_0, var:x_1. {
+            var:x_0 :cdaiIndex var:x_1.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidity :High.
-            var:t_26 x:padding var:t_26.
+            var:x_0 :cdaiIndex var:x_1.
         }.
     };
     r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma13> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma19> a r:Inference;
     r:gives {
-        :envA :hasTemperature :Low.
-        var:t_27 x:padding var:t_27.
+        :patientA :hasDiseaseActivity :ModerateDiseaseActivity.
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma23>
-        [ a r:Fact; r:gives {-5 math:lessThan 0}]
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma25>
+        [ a r:Fact; r:gives {4.3 math:notLessThan 3}]
+        [ a r:Fact; r:gives {4.3 math:lessThan 5.4}]
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo -5];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma24>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 4.3];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma46>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma14> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma20> a r:Extraction;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :hasTemperature :Low.
-            var:t_27 x:padding var:t_27.
+        @forAll var:x_0. {
+            var:x_0 :hasDiseaseActivity :ModerateDiseaseActivity.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :hasTemperature :Low.
-            var:t_27 x:padding var:t_27.
+            var:x_0 :hasDiseaseActivity :ModerateDiseaseActivity.
         }.
     };
     r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma15> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma21> a r:Inference;
     r:gives {
-        :envA :recommendation :avoidGoingOutside.
-        var:t_19 x:padding var:t_19.
+        :patientA :hasDiseaseActivity :HighDiseaseActivity.
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma11>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma17>
+        [ a r:Fact; r:gives {34 math:notLessThan 22}]
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma25>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 34];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma47>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma16> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma22> a r:Extraction;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :recommendation :avoidGoingOutside.
-            var:t_19 x:padding var:t_19.
+        @forAll var:x_0. {
+            var:x_0 :hasDiseaseActivity :HighDiseaseActivity.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :recommendation :avoidGoingOutside.
-            var:t_19 x:padding var:t_19.
+            var:x_0 :hasDiseaseActivity :HighDiseaseActivity.
         }.
     };
     r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma17> a r:Inference;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma23> a r:Inference;
     r:gives {
-        :envA :recommendation :avoidGoingOutside.
-        var:t_20 x:padding var:t_20.
+        :patientA :morningStiffnessLevel 3 .
     };
     r:evidence (
-        <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma13>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma48>
+        [ a r:Fact; r:gives {90 math:notLessThan 60}]
+        [ a r:Fact; r:gives {90 math:lessThan 120}]
     );
-    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://niche.cs.dal.ca/ns/copd.owl#envA"]];
-    r:rule <http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma26>.
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 90];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma49>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma18> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma24> a r:Extraction;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :recommendation :avoidGoingOutside.
-            var:t_20 x:padding var:t_20.
+        @forAll var:x_0. {
+            var:x_0 :morningStiffnessLevel 3.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :recommendation :avoidGoingOutside.
-            var:t_20 x:padding var:t_20.
+            var:x_0 :morningStiffnessLevel 3.
         }.
     };
     r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma19> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma25> a r:Inference;
     r:gives {
-        :envA :hasHumidityValue3 55 .
+        :patientA :radaiIndex 4.3 .
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/copd/data.n3>].
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma50>
+        [ a r:Fact; r:gives {(40 10) math:quotient 4}]
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma41>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma42>
+        [ a r:Fact; r:gives {(3 18) math:sum 21}]
+        [ a r:Fact; r:gives {(21 56) math:quotient 0.375}]
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma51>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma23>
+        [ a r:Fact; r:gives {(3 6) math:quotient 0.5}]
+        [ a r:Fact; r:gives {(0.5 10) math:product 5.0}]
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma52>
+        [ a r:Fact; r:gives {(20 48) math:quotient 0.4166666666666667}]
+        [ a r:Fact; r:gives {(0.4166666666666667 10) math:product 4.166666666666667}]
+        [ a r:Fact; r:gives {(4 0.375 8 5.0 4.166666666666667) math:sum 21.541666666666668}]
+        [ a r:Fact; r:gives {(21.541666666666668 5) math:quotient 4.308333333333334}]
+        [ a r:Fact; r:gives {(4.308333333333334 1) math:roundedTo 4.3}]
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_1"]; r:boundTo 40];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_2"]; r:boundTo 4];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_3"]; r:boundTo 3];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_4"]; r:boundTo 18];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_5"]; r:boundTo 21];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_6"]; r:boundTo 0.375];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_7"]; r:boundTo 8];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_8"]; r:boundTo 3];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_9"]; r:boundTo 0.5];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_10"]; r:boundTo 5.0];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_11"]; r:boundTo 20];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_12"]; r:boundTo 0.4166666666666667];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_13"]; r:boundTo 4.166666666666667];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_14"]; r:boundTo 21.541666666666668];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_15"]; r:boundTo 4.308333333333334];
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_16"]; r:boundTo 4.3];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma53>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma20> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma26> a r:Extraction;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>, <http://eyereasoner.github.io/var#x_1>. {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidityValue3 <http://eyereasoner.github.io/var#x_1>.
+        @forAll var:x_0, var:x_1. {
+            var:x_0 :radaiIndex var:x_1.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidityValue2 <http://eyereasoner.github.io/var#x_1>.
-            var:t_24 x:padding var:t_24.
+            var:x_0 :radaiIndex var:x_1.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma21> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma27> a r:Inference;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>, <http://eyereasoner.github.io/var#x_1>. {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidityValue2 <http://eyereasoner.github.io/var#x_1>.
-            <http://eyereasoner.github.io/var#x_1> math:greaterThan 1.
+        :patientA :hasOutcome :SuspectedDiseaseActivity.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma19>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma54>.
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma28> a r:Extraction;
+    r:gives {
+        @forAll var:x_0. {
+            var:x_0 :hasOutcome :SuspectedDiseaseActivity.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidityValue <http://eyereasoner.github.io/var#x_1>.
-            var:t_25 x:padding var:t_25.
+            var:x_0 :hasOutcome :SuspectedDiseaseActivity.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma22> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma29> a r:Inference;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>, <http://eyereasoner.github.io/var#x_1>. {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidityValue <http://eyereasoner.github.io/var#x_1>.
-            <http://eyereasoner.github.io/var#x_1> math:greaterThan 50.
+        :patientA :recommendation :ContactRheumatologistRecommendation.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma27>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma55>.
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma30> a r:Extraction;
+    r:gives {
+        @forAll var:x_0. {
+            var:x_0 :recommendation :ContactRheumatologistRecommendation.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidity :High.
-            var:t_26 x:padding var:t_26.
+            var:x_0 :recommendation :ContactRheumatologistRecommendation.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma23> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma31> a r:Inference;
     r:gives {
-        :envA :hasTemperatureValue -5 .
+        :patientA :recommendation :QuitSmokingRecommendation.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/copd/data.n3>].
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma56>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma57>
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma58>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma59>.
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma24> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma32> a r:Extraction;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>, <http://eyereasoner.github.io/var#x_1>. {
-            <http://eyereasoner.github.io/var#x_0> :hasTemperatureValue <http://eyereasoner.github.io/var#x_1>.
-            <http://eyereasoner.github.io/var#x_1> math:lessThan 0.
+        @forAll var:x_0. {
+            var:x_0 :recommendation :QuitSmokingRecommendation.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :hasTemperature :Low.
-            var:t_27 x:padding var:t_27.
+            var:x_0 :recommendation :QuitSmokingRecommendation.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma25> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma33> a r:Inference;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :hasHumidity :High.
+        :patientA :recommendation :LoseWeightRecommendation.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma15>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma60>.
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma34> a r:Extraction;
+    r:gives {
+        @forAll var:x_0. {
+            var:x_0 :recommendation :LoseWeightRecommendation.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :recommendation :avoidGoingOutside.
-            var:t_19 x:padding var:t_19.
+            var:x_0 :recommendation :LoseWeightRecommendation.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-<http://eyereasoner.github.io/.well-known/genid/2438462883962456866#lemma26> a r:Extraction;
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma35> a r:Inference;
     r:gives {
-        @forAll <http://eyereasoner.github.io/var#x_0>. {
-            <http://eyereasoner.github.io/var#x_0> :hasTemperature :Low.
+        :patientA :recommendation :CarefulOralHygieneRecommendation.
+    };
+    r:evidence (
+        <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma61>
+    );
+    r:binding [ r:variable [ n3:uri "http://eyereasoner.github.io/var#x_0"]; r:boundTo [ n3:uri "http://swot.sisinflab.poliba.it/onto/rheumatology#patientA"]];
+    r:rule <http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma62>.
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma36> a r:Extraction;
+    r:gives {
+        @forAll var:x_0. {
+            var:x_0 :recommendation :CarefulOralHygieneRecommendation.
         } => {
-            <http://eyereasoner.github.io/var#x_0> :recommendation :avoidGoingOutside.
-            var:t_20 x:padding var:t_20.
+            var:x_0 :recommendation :CarefulOralHygieneRecommendation.
         }.
     };
-    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rules-disting.n3>].
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/tmp/rule-heads.n3>].
 
-# 2023-05-18T17:27:44.144Z in=61 out=11 ent=24 step=32 brake=3 inf=179206 sec=0.033 inf/sec=5430485
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma37> a r:Extraction;
+    r:gives {
+        :patientA schema:height 170 .
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma38> a r:Extraction;
+    r:gives {
+        :patientA schema:weight 95 .
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma39> a r:Extraction;
+    r:gives {
+        @forAll var:x_0, var:x_1, var:x_2, var:x_3, var:x_4, var:x_5. {
+            var:x_0 schema:height var:x_1.
+            var:x_0 schema:weight var:x_2.
+            (var:x_1 100) math:quotient var:x_3.
+            (var:x_3 2) math:exponentiation var:x_4.
+            (var:x_2 var:x_4) math:quotient var:x_5.
+        } => {
+            var:x_0 :bmiValue var:x_5.
+        }.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/rules.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma40> a r:Extraction;
+    r:gives {
+        @forAll var:x_0, var:x_1. {
+            var:x_0 :bmiValue var:x_1.
+            var:x_1 math:greaterThan 29.9 .
+            var:x_1 math:lessThan 35.
+        } => {
+            var:x_0 :hasBmiClass :ObeseClass1.
+        }.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/rules.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma41> a r:Extraction;
+    r:gives {
+        :patientA :swollenJointCount 3 .
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma42> a r:Extraction;
+    r:gives {
+        :patientA :tenderJointCount 18 .
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma43> a r:Extraction;
+    r:gives {
+        :patientA :ptGaDiseaseActivityValue 8 .
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma44> a r:Extraction;
+    r:gives {
+        :patientA :phGaDiseaseActivityValue 5 .
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma45> a r:Extraction;
+    r:gives {
+        @forAll var:x_0, var:x_1, var:x_2, var:x_3, var:x_4, var:x_5. {
+            var:x_0 :swollenJointCount var:x_1.
+            var:x_0 :tenderJointCount var:x_2.
+            var:x_0 :ptGaDiseaseActivityValue var:x_3.
+            var:x_0 :phGaDiseaseActivityValue var:x_4.
+            (var:x_1 var:x_2 var:x_3 var:x_4) math:sum var:x_5.
+        } => {
+            var:x_0 :cdaiIndex var:x_5.
+        }.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/rules.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma46> a r:Extraction;
+    r:gives {
+        @forAll var:x_0, var:x_1. {
+            var:x_0 :radaiIndex var:x_1.
+            var:x_1 math:notLessThan 3 .
+            var:x_1 math:lessThan 5.4.
+        } => {
+            var:x_0 :hasDiseaseActivity :ModerateDiseaseActivity.
+        }.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/rules.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma47> a r:Extraction;
+    r:gives {
+        @forAll var:x_0, var:x_1. {
+            var:x_0 :cdaiIndex var:x_1.
+            var:x_1 math:notLessThan 22.
+        } => {
+            var:x_0 :hasDiseaseActivity :HighDiseaseActivity.
+        }.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/rules.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma48> a r:Extraction;
+    r:gives {
+        :patientA :morningStiffnessDuration 90 .
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma49> a r:Extraction;
+    r:gives {
+        @forAll var:x_0, var:x_1. {
+            var:x_0 :morningStiffnessDuration var:x_1.
+            var:x_1 math:notLessThan 60 .
+            var:x_1 math:lessThan 120.
+        } => {
+            var:x_0 :morningStiffnessLevel 3.
+        }.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/rules.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma50> a r:Extraction;
+    r:gives {
+        :patientA :ghVasValue 40 .
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma51> a r:Extraction;
+    r:gives {
+        :patientA :vasPainValue 8 .
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma52> a r:Extraction;
+    r:gives {
+        :patientA :ratedTenderJointsValue 20 .
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma53> a r:Extraction;
+    r:gives {
+        @forAll var:x_0, var:x_1, var:x_2, var:x_3, var:x_4, var:x_5, var:x_6, var:x_7, var:x_8, var:x_9, var:x_10, var:x_11, var:x_12, var:x_13, var:x_14, var:x_15, var:x_16. {
+            var:x_0 :ghVasValue var:x_1.
+            (var:x_1 10) math:quotient var:x_2.
+            var:x_0 :swollenJointCount var:x_3.
+            var:x_0 :tenderJointCount var:x_4.
+            (var:x_3 var:x_4) math:sum var:x_5.
+            (var:x_5 56) math:quotient var:x_6.
+            var:x_0 :vasPainValue var:x_7.
+            var:x_0 :morningStiffnessLevel var:x_8.
+            (var:x_8 6) math:quotient var:x_9.
+            (var:x_9 10) math:product var:x_10.
+            var:x_0 :ratedTenderJointsValue var:x_11.
+            (var:x_11 48) math:quotient var:x_12.
+            (var:x_12 10) math:product var:x_13.
+            (var:x_2 var:x_6 var:x_7 var:x_10 var:x_13) math:sum var:x_14.
+            (var:x_14 5) math:quotient var:x_15.
+            (var:x_15 1) math:roundedTo var:x_16.
+        } => {
+            var:x_0 :radaiIndex var:x_16.
+        }.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/rules.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma54> a r:Extraction;
+    r:gives {
+        @forAll var:x_0. {
+            var:x_0 :hasDiseaseActivity :ModerateDiseaseActivity.
+        } => {
+            var:x_0 :hasOutcome :SuspectedDiseaseActivity.
+        }.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/rules.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma55> a r:Extraction;
+    r:gives {
+        @forAll var:x_0. {
+            var:x_0 :hasOutcome :SuspectedDiseaseActivity.
+        } => {
+            var:x_0 :recommendation :ContactRheumatologistRecommendation.
+        }.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/rules.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma56> a r:Extraction;
+    r:gives {
+        :patientA :hasBehaviour :Smoker.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma57> a r:Extraction;
+    r:gives {
+        :patientA :hasClinicalFinding :RheumatoidFactorPositive.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma58> a r:Extraction;
+    r:gives {
+        :patientA :hasClinicalFinding :AntiCyclicCitrullinatedPeptideAntibodyPositive.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma59> a r:Extraction;
+    r:gives {
+        @forAll var:x_0. {
+            var:x_0 :hasBehaviour :Smoker.
+            var:x_0 :hasClinicalFinding :RheumatoidFactorPositive.
+            var:x_0 :hasClinicalFinding :AntiCyclicCitrullinatedPeptideAntibodyPositive.
+        } => {
+            var:x_0 :recommendation :QuitSmokingRecommendation.
+        }.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/rules.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma60> a r:Extraction;
+    r:gives {
+        @forAll var:x_0. {
+            var:x_0 :hasBmiClass :ObeseClass1.
+        } => {
+            var:x_0 :recommendation :LoseWeightRecommendation.
+        }.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/rules.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma61> a r:Extraction;
+    r:gives {
+        :patientA :hasDisease :NonErosiveRheumatoidArthritis.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/data.n3>].
+
+<http://eyereasoner.github.io/.well-known/genid/639403949968345504#lemma62> a r:Extraction;
+    r:gives {
+        @forAll var:x_0. {
+            var:x_0 :hasDisease :NonErosiveRheumatoidArthritis.
+        } => {
+            var:x_0 :recommendation :CarefulOralHygieneRecommendation.
+        }.
+    };
+    r:because [ a r:Parsing; r:source <file:///Users/wvw/git/xai/xain/n3/test/rheumatology/rules.n3>].
+
+# 2023-05-18T18:42:30.110Z in=106 out=12 ent=24 step=50 brake=2 inf=213479 sec=0.037 inf/sec=5769703
 # ENDS
 
