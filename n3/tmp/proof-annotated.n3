@@ -11,7 +11,7 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
 @prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3726018239096554297#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2512373759013451889#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix dc: <http://purl.org/dc/terms/>.
@@ -20,114 +20,79 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
 @prefix xmath: <http://wvw.org/xai/swap/math#>.
-@prefix ns1: <http://eyereasoner.github.io/.well-known/genid/1873236109646666512#>.
+@prefix ns1: <http://eyereasoner.github.io/.well-known/genid/4181428255128361845#>.
 
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma4> a x:Node.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma6> a x:Node.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma8> a x:Node.
-_:bn_10 a x:Leaf.
-_:bn_17 a x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma10> a x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma12> a x:Leaf.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma1> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma4>).
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma2> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma6>).
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma3> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma8>).
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma4> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma10> _:bn_10).
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma6> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma12> _:bn_17).
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma8> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma4>).
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#proof> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3> a x:Node.
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma5> a x:Node.
+_:bn_7 a x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma7> a x:Leaf.
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma1> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3>).
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma2> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma5>).
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma7> _:bn_7).
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma5> x:intermEvidence (<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3>).
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#proof> x:gives {
     :envA :hasHumidity :High.
-    :envA :hasTemperature :Low.
     :envA :recommendation :avoidGoingOutside.
 }.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma1> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma1> x:gives {
     :envA :hasHumidity :High.
 }.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma2> x:gives {
-    :envA :hasTemperature :Low.
-}.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma3> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma2> x:gives {
     :envA :recommendation :avoidGoingOutside.
 }.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma4> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3> x:gives {
     :envA :hasHumidity :High.
 }.
-_:bn_10 x:gives {
+_:bn_7 x:gives {
     55 math:greaterThan 50.
 }.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma5> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma4> x:gives {
     {
-        ?U_4 :hasHumidity :High.
+        ?U_2 :hasHumidity :High.
     } => {
-        ?U_4 :hasHumidity :High.
+        ?U_2 :hasHumidity :High.
     }.
 }.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma6> x:gives {
-    :envA :hasTemperature :Low.
-}.
-_:bn_17 x:gives {
-    -5 math:lessThan 0.
-}.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma7> x:gives {
-    {
-        ?U_5 :hasTemperature :Low.
-    } => {
-        ?U_5 :hasTemperature :Low.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma8> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma5> x:gives {
     :envA :recommendation :avoidGoingOutside.
 }.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma9> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma6> x:gives {
     {
-        ?U_6 :recommendation :avoidGoingOutside.
+        ?U_3 :recommendation :avoidGoingOutside.
     } => {
-        ?U_6 :recommendation :avoidGoingOutside.
+        ?U_3 :recommendation :avoidGoingOutside.
     }.
 }.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma10> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma7> x:gives {
     :envA :hasHumidityValue 55.
 }.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma11> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma8> x:gives {
     {
-        ?U_7 :hasHumidityValue ?U_8.
-        ?U_8 math:greaterThan 50.
+        ?U_4 :hasHumidityValue ?U_5.
+        ?U_5 math:greaterThan 50.
     } => {
-        ?U_7 :hasHumidity :High.
+        ?U_4 :hasHumidity :High.
     }.
 }.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma12> x:gives {
-    :envA :hasTemperatureValue -5.
-}.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma13> x:gives {
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma9> x:gives {
     {
-        ?U_9 :hasTemperatureValue ?U_10.
-        ?U_10 math:lessThan 0.
+        ?U_6 :hasHumidity :High.
     } => {
-        ?U_9 :hasTemperature :Low.
+        ?U_6 :recommendation :avoidGoingOutside.
     }.
 }.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma14> x:gives {
-    {
-        ?U_11 :hasHumidity :High.
-    } => {
-        ?U_11 :recommendation :avoidGoingOutside.
-    }.
-}.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma6> a x:RootNode.
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma8> a x:RootNode.
-ns1:t_0 x:gives {
-    :envA :hasTemperatureValue -5 .
-    -5 math:lessThan 0.
-}.
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma5> a x:RootNode.
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma5> x:evidence (<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3>).
+:envA :recommendation :avoidGoingOutside.
+<http://eyereasoner.github.io/.well-known/genid/52323260884540886#lemma3> x:evidence (ns1:t_0).
+"true(true,true)".
 ns1:t_0 x:evidence ().
-ns1:t_1 x:gives {
+ns1:t_0 a x:Node.
+ns1:t_0 x:gives {
     :envA :hasHumidityValue 55 .
     55 math:greaterThan 50.
 }.
-ns1:t_1 x:evidence ().
-<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma8> x:evidence (<http://eyereasoner.github.io/.well-known/genid/451443171710351393#lemma4>).
 
-# 2023-05-17T20:18:29.945Z in=131 out=37 ent=38 step=134 brake=4 inf=214379 sec=0.047 inf/sec=4561255
+# 2023-05-18T14:34:34.406Z in=90 out=27 ent=28 step=98 brake=4 inf=173011 sec=0.043 inf/sec=4023512
 # ENDS
 

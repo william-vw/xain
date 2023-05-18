@@ -22,8 +22,8 @@
 
 :envA a :Environment ;
    # avoid going outside
-   :hasHumidityValue 55 ;
-   :hasTemperatureValue -5 .
+   :hasHumidityValue 55 .
+   # :hasTemperatureValue -5 .
    # go outside
    # :hasHumidityValue 10 ;
    # :hasTemperatureValue 10 ;

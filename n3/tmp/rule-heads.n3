@@ -11,7 +11,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
 @prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/3726018239096554297#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/2512373759013451889#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 {
     ?U_0 :isStratified :GreenZone.
@@ -104,6 +104,6 @@
     ?U_63 :hasTemperature :High.
 }.
 
-# 2023-05-17T18:42:23.033Z in=55 out=18 ent=18 step=72 brake=2 inf=91300 sec=0.031 inf/sec=2945161
+# 2023-05-18T12:45:51.790Z in=55 out=18 ent=18 step=72 brake=2 inf=91300 sec=0.040 inf/sec=2282500
 # ENDS
 

@@ -76,91 +76,144 @@
 #
 {
    ?x a x:RootNode .
-   ( ?x ) x:getNodeEvidence ( ( ) ?local ( ) ?all ) .
-   ( ?node ?gives ?evidence ) list:in ?all .
-   "emit" log:trace ( ?node ?evidence ) .
+   # collect nodes, any extra triples, and their evidence
+   ?x x:recurseRoot ?all .
+   # "all" log:trace ?all .
+   # for each cell in 'all', output relevant triples
+   ( ?node ?extra ?evidence ) list:in ?all .
+   ?extra log:includes 
+   {
+       ?s ?p ?o 
+   } .
+   # "out" log:trace ( ?node ?extra ?evidence )
 }
 => 
 {
-   ?x :blah ?all .
-   ?node x:gives ?gives ;
-       x:evidence ?evidence 
+   ?node x:evidence ?evidence .
+   ?s ?p ?o .
 } .
 
-#
+# recurse over node tree starting from root
 {
-   ?list x:getNodeEvidence ( ?local ?local2 ?all ?all2 ) 
+   ?x x:recurseRoot ?all 
 }
 <= 
 {
-   ?list list:firstRest ( ?x ?rest ) .
+   ?x x:gives ?gives ;
+       x:intermEvidence ?children .
    #
-   ?x x:getNode ( ?x2 ?gives2 ) .
-   #
-   ?x x:childrenEvidence ( ( ) ?myLocal ?all ?myAll ) .
-   ( ?myAll ( ( ?x2 ?gives2 ?myLocal ) ) ) list:append ?all1 .
-   ( ?local ( ?x2 ) ) list:append ?local1 .
-   #
-   ?rest x:getNodeEvidence ( ?local1 ?local2 ?all1 ?all2 ) 
+   ( ( ?x ?gives ?children ) ) x:recurseNodeTree ( ( ) ?all ) .
 } .
 
-#
+# recurse over node tree & perform some action
+# in this case, merge child nodes if needed
 {
-   ?x x:childrenEvidence ( ?local ?myLocal ?all ?myAll ) 
+   ?cells x:recurseNodeTree ( ?all ?all2 ) 
 }
 <= 
 {
-   ?x x:intermEvidence ?children .
-   ?children x:getNodeEvidence ( ?local ?myLocal ?all ?myAll ) 
+   ?cells list:firstRest ( ( ?x ?gives ?children ) ?rest ) .
+   "x" log:trace ( ( ?x ?gives ?children ) ?all ) .
+
+   # may be needed to merge child nodes (if they contain comparisons)
+   # (if so, their own children should all be considered children of the merged node)
+   #     newChildren: new set of children
+   #     childCells: each child with their 'extra' triples (if any) and own current set of children
+   #
+   ( ?x ?children ) x:processChildNodes ( ?newChildren ?childCells ) .
+   "children" log:trace ( ?x ?children ?newChildren ?childCells ) .
+   
+   # add new cell to "all" list with updated children
+   ( ?all ( ( ?x ?gives ?newChildren ) ) ) list:append ?all11 .
+   
+   # now, go over each child cell with their current set of children
+   ?childCells x:recurseNodeTree ( ?all11 ?all12 ) .
+   
+   # finally, go over rest of the given list of cells
+   ?rest x:recurseNodeTree ( ?all12 ?all2 ) 
 } .
 
-#
+# if no more elements in list of cells, copy current 'all' to output 'all'
 {
-   ?x x:childrenEvidence ( ?local ?local ?all ?all ) 
-}
-<= 
-{
-   ?x a x:Leaf .
-} .
-
-#
-{
-   ( ) x:getNodeEvidence ( ?local ?local ?all ?all ) 
+   ( ) x:recurseNodeTree ( ?all ?all ) 
 }
 <= {} .
 
-#
-{
-   ?x x:getNode ( ?x ?f ) 
-}
-<= 
-{
-   ?x!x:intermEvidence x:getComparisons ( ) .
-   ?x r:gives ?f .
-} .
 
-#
+# children do not need to be merged
+# subject: input; object: output
+# (in this case, input children are same as output children)
 {
-   ?x x:getNode ( ?x ?f ) 
+   ( ?x ?children ) x:processChildNodes ( ?children ?childCells ) 
 }
 <= 
 {
-   ?x a x:Leaf ;
-       r:gives ?f .
-} .
-
-#
-{
-   ?x x:getNode ( ?n ?f ) 
-}
-<= 
-{
-   ?x x:intermEvidence ?support .
-   ?support x:getComparisons ?cmp .
-   ?cmp!list:length math:greaterThan 0 .
+   ?children x:getComparisons ( ) .
    #
-   ?support x:mergeAllGives ?f .
+   (
+       (
+           ?m
+           {
+               true true true 
+           }
+           ?e
+       )
+       {
+           ?children list:member ?m .
+           ?m x:intermEvidence ?e 
+       }
+       ?childCells
+   ) log:collectAllIn _:t .
+} .
+
+# no children
+{
+   ( ?x ( ) ) x:processChildNodes ( ( ) ( ) ) 
+}
+<= {} .
+
+# children should be merged
+# subject: input; object: output
+{
+   ( ?x ?children ) x:processChildNodes (
+       # (new child node)
+       ( ?n )
+       (
+           (
+               # (new child node, merged gives, & merged children)
+               ?n
+               {
+                   ?n a x:Node ;
+                       x:gives ?mergedGives 
+               }
+               ?mergedChildren
+           )
+       )
+   ) 
+}
+<= 
+{
+   ?children!x:getComparisons!list:length math:greaterThan 0 .
+   #
    ( ?x ) log:skolem ?n .
+   #
+   (
+       ?f
+       {
+           ?children!list:member r:gives ?f 
+       }
+       ?fs
+   ) log:collectAllIn _:t .
+   ?fs log:conjunction ?mergedGives .
+   #
+   (
+       ?e
+       {
+           ?children!list:member x:intermEvidence ?e .
+       }
+       ?es
+   ) log:collectAllIn _:t .
+   ?es list:append ?mergedChildren .
 } .
 
 
