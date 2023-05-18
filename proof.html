@@ -18,9 +18,11 @@
     <script type="module">
         let start = performance.now();
 
-        // const type = 'trace';
-        const type = 'contrast';
+        // - explanation type
+        const type = 'trace';
+        // const type = 'contrast';
 
+        // - use case
         const usecase = 'copd';
         // const usecase = 'rheumatology';
 
@@ -39,30 +41,83 @@
             console.log(err)
         }
 
-        // example: navigate the "proof tree"
+        // - example: simple navigation of "proof tree"
 
         const rdf = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
         const x = $rdf.Namespace("http://wvw.org/xai#");
 
-        // (print entire store contents)
-        // for (let stmt of store.statementsMatching(undefined, undefined, undefined)) {
+        // (sanity check: print store contents)
+        // for (let stmt of store.statementsMatching(undefined, undefined, undefined))
         //     console.log(stmt);
-        // }
 
         let root = store.any(null, rdf("type"), x("RootNode"));
-        recurseTree(root);
+        recurseTree(root, 0);
 
-        function recurseTree(node) {
+        function recurseTree(node, indent) {
             let evidences = store.any(node, x("evidence"), null);
             let inference = store.any(node, x("gives"), null);
-            console.log(node.localName(), printGraph(inference));
-            for (let evidence of evidences.elements) {
-                recurseTree(evidence);
+
+            console.log(printGraph(inference, indent), "(" + print(node) + ")");
+            if (evidences) {
+                for (let evidence of evidences.elements) {
+                    recurseTree(evidence, indent + 4);
+                }
             }
         }
 
-        function printGraph(graph) {
-            return graph.statements.map(t => t.subject.value + " " + t.predicate.value + " " + t.object.value).join("\n");
+        function printGraph(graph, indent) {
+            if (!graph)
+                return "";
+
+            let triples = [];
+
+            let iterator = graph.statements[Symbol.iterator]();
+            while (true) {
+                const el = iterator.next();
+                if (el.done) break;
+
+                let t = el.value;
+
+                // deal with lists in subject position (not supported by rdflib :-(
+                let subject = null;
+                if (t.predicate.value == rdf("first").value) {
+                    // (consume the list-related triples in the iterator)
+                    [subject, t] = printCollection(t, iterator);
+                }
+                else
+                    subject = print(t.subject);
+
+                let predicate = print(t.predicate);
+                let object = print(t.object);
+
+                triples.push(spaces(indent) + (indent ? "<-- " : "") + subject + " " + predicate + " " + object);
+            }
+
+            return triples.join("\n");
+        }
+
+        function printCollection(t, iterator) {
+            let t2 = t;
+
+            let elements = [];
+            while (true) {
+                if (t2.predicate.value == rdf("first").value)
+                    elements.push(print(t2.object));
+                else if (t2.predicate.value != rdf("rest").value)
+                    break;
+
+                t2 = iterator.next().value;
+            }
+
+            return ["( " + elements.join(", ") + " )", t2];
+        }
+
+        function spaces(indent) {
+            return new Array(indent + 1).join(" ");
+        }
+
+        function print(term) {
+            return (term.termType == 'NamedNode' ? term.localName() : term.value);
         }
 
     </script>

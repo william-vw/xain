@@ -1,5 +1,5 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --n3 ../n3/modules/proof/query_heads.n3 ../n3/test/rheumatology/rules.n3 --pass-only-new
+# eye --n3 ../n3/modules/proof/query_heads.n3 ../n3/tmp/rules-disting.n3 --pass-only-new
 
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
 @prefix : <http://swot.sisinflab.poliba.it/onto/rheumatology#>.
@@ -15,136 +15,250 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix schema: <http://schema.org/>.
 @prefix x: <http://wvw.org/xai#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix var: <http://eyereasoner.github.io/.well-known/genid/4433696860146621338#>.
 @prefix r: <http://www.w3.org/2000/10/swap/reason#>.
-@prefix var: <http://eyereasoner.github.io/var#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/875771084731707311#>.
+@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/790553134974465772#>.
 @prefix n3: <http://www.w3.org/2004/06/rei#>.
 {
-    ?U_0 :bmiValue ?U_5.
+    ?U_0 :bmiValue ?U_2.
+    var:t_0 x:padding var:t_0.
 } => {
-    ?U_0 :bmiValue ?U_5.
+    ?U_0 :bmiValue ?U_2.
+    var:t_0 x:padding var:t_0.
 }.
 {
-    ?U_8 :hasBmiClass :Underweight.
+    ?U_5 :bmiValue ?U_10.
+    var:t_1 x:padding var:t_1.
 } => {
-    ?U_8 :hasBmiClass :Underweight.
+    ?U_5 :bmiValue ?U_10.
+    var:t_1 x:padding var:t_1.
 }.
 {
-    ?U_12 :hasBmiClass :NormalWeight.
+    ?U_13 :hasBmiClass :Underweight.
+    var:t_2 x:padding var:t_2.
 } => {
-    ?U_12 :hasBmiClass :NormalWeight.
+    ?U_13 :hasBmiClass :Underweight.
+    var:t_2 x:padding var:t_2.
 }.
 {
-    ?U_16 :hasBmiClass :Overweight.
+    ?U_17 :hasBmiClass :NormalWeight.
+    var:t_3 x:padding var:t_3.
 } => {
-    ?U_16 :hasBmiClass :Overweight.
+    ?U_17 :hasBmiClass :NormalWeight.
+    var:t_3 x:padding var:t_3.
 }.
 {
-    ?U_20 :hasBmiClass :ObeseClass1.
+    ?U_21 :hasBmiClass :Overweight.
+    var:t_4 x:padding var:t_4.
 } => {
-    ?U_20 :hasBmiClass :ObeseClass1.
+    ?U_21 :hasBmiClass :Overweight.
+    var:t_4 x:padding var:t_4.
 }.
 {
-    ?U_24 :hasBmiClass :ObeseClass2.
+    ?U_25 :hasBmiClass :ObeseClass1.
+    var:t_5 x:padding var:t_5.
 } => {
-    ?U_24 :hasBmiClass :ObeseClass2.
+    ?U_25 :hasBmiClass :ObeseClass1.
+    var:t_5 x:padding var:t_5.
 }.
 {
-    ?U_28 :hasBmiClass :ObeseClass3.
+    ?U_29 :hasBmiClass :ObeseClass2.
+    var:t_6 x:padding var:t_6.
 } => {
-    ?U_28 :hasBmiClass :ObeseClass3.
+    ?U_29 :hasBmiClass :ObeseClass2.
+    var:t_6 x:padding var:t_6.
 }.
 {
-    ?U_32 :cdaiIndex ?U_37.
+    ?U_33 :hasBmiClass :ObeseClass3.
+    var:t_7 x:padding var:t_7.
 } => {
-    ?U_32 :cdaiIndex ?U_37.
+    ?U_33 :hasBmiClass :ObeseClass3.
+    var:t_7 x:padding var:t_7.
 }.
 {
-    ?U_40 :hasDiseaseActivity :Remission.
+    ?U_37 :cdaiIndex ?U_42.
+    var:t_8 x:padding var:t_8.
 } => {
-    ?U_40 :hasDiseaseActivity :Remission.
+    ?U_37 :cdaiIndex ?U_42.
+    var:t_8 x:padding var:t_8.
 }.
 {
-    ?U_44 :hasDiseaseActivity :LowDiseaseActivity.
+    ?U_45 :hasDiseaseActivity :Remission.
+    var:t_9 x:padding var:t_9.
 } => {
-    ?U_44 :hasDiseaseActivity :LowDiseaseActivity.
+    ?U_45 :hasDiseaseActivity :Remission.
+    var:t_9 x:padding var:t_9.
 }.
 {
-    ?U_48 :hasDiseaseActivity :ModerateDiseaseActivity.
+    ?U_49 :hasDiseaseActivity :LowDiseaseActivity.
+    var:t_10 x:padding var:t_10.
 } => {
-    ?U_48 :hasDiseaseActivity :ModerateDiseaseActivity.
+    ?U_49 :hasDiseaseActivity :LowDiseaseActivity.
+    var:t_10 x:padding var:t_10.
 }.
 {
-    ?U_52 :hasDiseaseActivity :HighDiseaseActivity.
+    ?U_53 :hasDiseaseActivity :ModerateDiseaseActivity.
+    var:t_11 x:padding var:t_11.
 } => {
-    ?U_52 :hasDiseaseActivity :HighDiseaseActivity.
+    ?U_53 :hasDiseaseActivity :ModerateDiseaseActivity.
+    var:t_11 x:padding var:t_11.
 }.
 {
-    ?U_56 :morningStiffnessLevel 0.
+    ?U_57 :hasDiseaseActivity :HighDiseaseActivity.
+    var:t_12 x:padding var:t_12.
 } => {
-    ?U_56 :morningStiffnessLevel 0.
+    ?U_57 :hasDiseaseActivity :HighDiseaseActivity.
+    var:t_12 x:padding var:t_12.
 }.
 {
-    ?U_59 :morningStiffnessLevel 1.
+    ?U_61 :morningStiffnessLevel 0 .
+    var:t_13 x:padding var:t_13.
 } => {
-    ?U_59 :morningStiffnessLevel 1.
+    ?U_61 :morningStiffnessLevel 0 .
+    var:t_13 x:padding var:t_13.
 }.
 {
-    ?U_63 :morningStiffnessLevel 2.
+    ?U_64 :morningStiffnessLevel 1 .
+    var:t_14 x:padding var:t_14.
 } => {
-    ?U_63 :morningStiffnessLevel 2.
+    ?U_64 :morningStiffnessLevel 1 .
+    var:t_14 x:padding var:t_14.
 }.
 {
-    ?U_67 :morningStiffnessLevel 3.
+    ?U_68 :morningStiffnessLevel 2 .
+    var:t_15 x:padding var:t_15.
 } => {
-    ?U_67 :morningStiffnessLevel 3.
+    ?U_68 :morningStiffnessLevel 2 .
+    var:t_15 x:padding var:t_15.
 }.
 {
-    ?U_71 :morningStiffnessLevel 4.
+    ?U_72 :morningStiffnessLevel 3 .
+    var:t_16 x:padding var:t_16.
 } => {
-    ?U_71 :morningStiffnessLevel 4.
+    ?U_72 :morningStiffnessLevel 3 .
+    var:t_16 x:padding var:t_16.
 }.
 {
-    ?U_75 :morningStiffnessLevel 5.
+    ?U_76 :morningStiffnessLevel 4 .
+    var:t_17 x:padding var:t_17.
 } => {
-    ?U_75 :morningStiffnessLevel 5.
+    ?U_76 :morningStiffnessLevel 4 .
+    var:t_17 x:padding var:t_17.
 }.
 {
-    ?U_79 :morningStiffnessLevel 6.
+    ?U_80 :morningStiffnessLevel 5 .
+    var:t_18 x:padding var:t_18.
 } => {
-    ?U_79 :morningStiffnessLevel 6.
+    ?U_80 :morningStiffnessLevel 5 .
+    var:t_18 x:padding var:t_18.
 }.
 {
-    ?U_83 :radaiIndex ?U_99.
+    ?U_84 :morningStiffnessLevel 6 .
+    var:t_19 x:padding var:t_19.
 } => {
-    ?U_83 :radaiIndex ?U_99.
+    ?U_84 :morningStiffnessLevel 6 .
+    var:t_19 x:padding var:t_19.
 }.
 {
-    ?U_102 :hasOutcome :SuspectedDiseaseActivity.
+    ?U_88 :radaiIndex ?U_102.
+    var:t_20 x:padding var:t_20.
 } => {
-    ?U_102 :hasOutcome :SuspectedDiseaseActivity.
+    ?U_88 :radaiIndex ?U_102.
+    var:t_20 x:padding var:t_20.
 }.
 {
-    ?U_105 :recommendation :ContactRheumatologistRecommendation.
+    ?U_105 :radaiIndex ?U_121.
+    var:t_21 x:padding var:t_21.
 } => {
-    ?U_105 :recommendation :ContactRheumatologistRecommendation.
+    ?U_105 :radaiIndex ?U_121.
+    var:t_21 x:padding var:t_21.
 }.
 {
-    ?U_108 :recommendation :QuitSmokingRecommendation.
+    ?U_124 :hasDiseaseActivity :Remission.
+    var:t_22 x:padding var:t_22.
 } => {
-    ?U_108 :recommendation :QuitSmokingRecommendation.
+    ?U_124 :hasDiseaseActivity :Remission.
+    var:t_22 x:padding var:t_22.
 }.
 {
-    ?U_111 :recommendation :LoseWeightRecommendation.
+    ?U_128 :hasDiseaseActivity :LowDiseaseActivity.
+    var:t_23 x:padding var:t_23.
 } => {
-    ?U_111 :recommendation :LoseWeightRecommendation.
+    ?U_128 :hasDiseaseActivity :LowDiseaseActivity.
+    var:t_23 x:padding var:t_23.
 }.
 {
-    ?U_114 :recommendation :CarefulOralHygieneRecommendation.
+    ?U_132 :hasDiseaseActivity :ModerateDiseaseActivity.
+    var:t_24 x:padding var:t_24.
 } => {
-    ?U_114 :recommendation :CarefulOralHygieneRecommendation.
+    ?U_132 :hasDiseaseActivity :ModerateDiseaseActivity.
+    var:t_24 x:padding var:t_24.
+}.
+{
+    ?U_136 :hasDiseaseActivity :HighDiseaseActivity.
+    var:t_25 x:padding var:t_25.
+} => {
+    ?U_136 :hasDiseaseActivity :HighDiseaseActivity.
+    var:t_25 x:padding var:t_25.
+}.
+{
+    ?U_140 :hasOutcome :SuspectedDiseaseActivity.
+    var:t_26 x:padding var:t_26.
+} => {
+    ?U_140 :hasOutcome :SuspectedDiseaseActivity.
+    var:t_26 x:padding var:t_26.
+}.
+{
+    ?U_143 :hasOutcome :SuspectedDiseaseActivity.
+    var:t_27 x:padding var:t_27.
+} => {
+    ?U_143 :hasOutcome :SuspectedDiseaseActivity.
+    var:t_27 x:padding var:t_27.
+}.
+{
+    ?U_146 :recommendation :ContactRheumatologistRecommendation.
+    var:t_28 x:padding var:t_28.
+} => {
+    ?U_146 :recommendation :ContactRheumatologistRecommendation.
+    var:t_28 x:padding var:t_28.
+}.
+{
+    ?U_149 :recommendation :QuitSmokingRecommendation.
+    var:t_29 x:padding var:t_29.
+} => {
+    ?U_149 :recommendation :QuitSmokingRecommendation.
+    var:t_29 x:padding var:t_29.
+}.
+{
+    ?U_152 :recommendation :LoseWeightRecommendation.
+    var:t_30 x:padding var:t_30.
+} => {
+    ?U_152 :recommendation :LoseWeightRecommendation.
+    var:t_30 x:padding var:t_30.
+}.
+{
+    ?U_155 :recommendation :LoseWeightRecommendation.
+    var:t_31 x:padding var:t_31.
+} => {
+    ?U_155 :recommendation :LoseWeightRecommendation.
+    var:t_31 x:padding var:t_31.
+}.
+{
+    ?U_158 :recommendation :LoseWeightRecommendation.
+    var:t_32 x:padding var:t_32.
+} => {
+    ?U_158 :recommendation :LoseWeightRecommendation.
+    var:t_32 x:padding var:t_32.
+}.
+{
+    ?U_161 :recommendation :CarefulOralHygieneRecommendation.
+    var:t_33 x:padding var:t_33.
+} => {
+    ?U_161 :recommendation :CarefulOralHygieneRecommendation.
+    var:t_33 x:padding var:t_33.
 }.
 
-# 2023-05-18T18:42:30.058Z in=65 out=25 ent=25 step=89 brake=2 inf=133288 sec=0.038 inf/sec=3507579
+# 2023-05-18T20:27:58.153Z in=35 out=34 ent=34 step=102 brake=2 inf=171081 sec=0.032 inf/sec=5346281
 # ENDS
 

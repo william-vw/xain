@@ -430,6 +430,6 @@
     ?t_0 ns1:hasDiseaseActivity ns1:HighDiseaseActivity.
 }.
 
-# 2023-05-15T20:21:42.286Z in=75 out=73 ent=73 step=1046 brake=5 inf=3271167 sec=0.236 inf/sec=13860877
+# 2023-05-18T20:27:25.198Z in=75 out=73 ent=73 step=1046 brake=5 inf=3271169 sec=0.236 inf/sec=13860886
 # ENDS
 
