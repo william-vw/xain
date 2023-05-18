@@ -29,7 +29,42 @@
         let end = performance.now();
         console.log("total time :-(", (end - start));
 
-        console.log(proof);
+        // console.log(proof);
+
+        let store = $rdf.graph();
+        let mimeType = 'text/n3';
+        try {
+            $rdf.parse(proof, store, "http://wvw.org/xai#", mimeType)
+        } catch (err) {
+            console.log(err)
+        }
+
+        // example: navigate the "proof tree"
+
+        const rdf = $rdf.Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#");
+        const x = $rdf.Namespace("http://wvw.org/xai#");
+
+        // (print entire store contents)
+        // for (let stmt of store.statementsMatching(undefined, undefined, undefined)) {
+        //     console.log(stmt);
+        // }
+
+        let root = store.any(null, rdf("type"), x("RootNode"));
+        recurseTree(root);
+
+        function recurseTree(node) {
+            let evidences = store.any(node, x("evidence"), null);
+            let inference = store.any(node, x("gives"), null);
+            console.log(node.localName(), printGraph(inference));
+            for (let evidence of evidences.elements) {
+                recurseTree(evidence);
+            }
+        }
+
+        function printGraph(graph) {
+            return graph.statements.map(t => t.subject.value + " " + t.predicate.value + " " + t.object.value).join("\n");
+        }
+
     </script>
 
 </body>
