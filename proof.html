@@ -54,14 +54,16 @@
         recurseTree(root, 0);
 
         function recurseTree(node, indent) {
-            let evidences = store.any(node, x("evidence"), null);
+            // get inference
             let inference = store.any(node, x("gives"), null);
-
             console.log(printGraph(inference, indent), "(" + print(node) + ")");
+
+            // get evidences of node
+            let evidences = store.any(node, x("evidence"), null);
             if (evidences) {
-                for (let evidence of evidences.elements) {
+                // recursively go over evidences
+                for (let evidence of evidences.elements)
                     recurseTree(evidence, indent + 4);
-                }
             }
         }
 
