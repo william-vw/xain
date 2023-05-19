@@ -9,73 +9,75 @@
                                 class='predicate'>:hasDiseaseActivity</span> <span
                                 class='object'>:ModerateDiseaseActivity</span> .</span> } <ul>
                             <li class='inf'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                                        class='predicate'>:radaiIndex</span> <span class='object'>"4.3"</span> .</span>
-                                <span class='triple'><span class='subject'>"4.3"</span> <span
-                                        class='predicate'>:notLessThan</span> <span class='object'>"3"</span> .</span>
-                                <span class='triple'><span class='subject'>"4.3"</span> <span
-                                        class='predicate'>:lessThan</span> <span class='object'>"5.4"</span> .</span> }
+                                        class='predicate'>:cdaiIndex</span> <span class='object'>:x_0</span> .</span>
+                                <span class='triple'><span class='subject'>:x_0</span> <span
+                                        class='predicate'>:notLessThan</span> <span class='object'>"10"</span> .</span>
+                                <span class='triple'><span class='subject'>:x_0</span> <span
+                                        class='predicate'>:lessThan</span> <span class='object'>"22"</span> .</span> }
                                 <ul>
                                     <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                                                class='predicate'>:ghVasValue</span> <span class='object'>"40"</span>
-                                            .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>( "40" "10" )</span>
-                                            <span class='predicate'>:quotient</span> <span class='object'>"4"</span>
-                                            .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
                                                 class='predicate'>:swollenJointCount</span> <span
-                                                class='object'>"3"</span> .</span> }</li>
+                                                class='object'>:x_0</span> .</span> }</li>
                                     <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
                                                 class='predicate'>:tenderJointCount</span> <span
-                                                class='object'>"18"</span> .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>( "3" "18" )</span>
-                                            <span class='predicate'>:sum</span> <span class='object'>"21"</span>
+                                                class='object'>:x_0</span> .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
+                                                class='predicate'>:ptGaDiseaseActivityValue</span> <span
+                                                class='object'>:x_0</span> .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
+                                                class='predicate'>:phGaDiseaseActivityValue</span> <span
+                                                class='object'>:x_0</span> .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>( :x_0 :x_1 :x_2 :x_3
+                                                )</span> <span class='predicate'>:sum</span> <span
+                                                class='object'>:x_4</span> .</span> }</li>
+                                </ul>
+                            </li>
+                            <li class='inf'>{ <span class='triple'><span class='subject'>:patientA</span> <span
+                                        class='predicate'>:radaiIndex</span> <span class='object'>:x_0</span> .</span>
+                                <span class='triple'><span class='subject'>:x_0</span> <span
+                                        class='predicate'>:notLessThan</span> <span class='object'>"3"</span> .</span>
+                                <span class='triple'><span class='subject'>:x_0</span> <span
+                                        class='predicate'>:lessThan</span> <span class='object'>"5.4"</span> .</span> }
+                                <ul>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>( :x_0 "10" )</span>
+                                            <span class='predicate'>:quotient</span> <span class='object'>:x_1</span>
                                             .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>( "21" "56" )</span>
-                                            <span class='predicate'>:quotient</span> <span class='object'>"0.375"</span>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>( :x_0 "56" )</span>
+                                            <span class='predicate'>:quotient</span> <span class='object'>:x_1</span>
+                                            .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>( :x_0 "6" )</span>
+                                            <span class='predicate'>:quotient</span> <span class='object'>:x_1</span>
+                                            .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>( :x_0 "48" )</span>
+                                            <span class='predicate'>:quotient</span> <span class='object'>:x_1</span>
+                                            .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>( :x_0 "5" )</span>
+                                            <span class='predicate'>:quotient</span> <span class='object'>:x_1</span>
                                             .</span> }</li>
                                     <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                                                class='predicate'>:vasPainValue</span> <span class='object'>"8"</span>
+                                                class='predicate'>:ghVasValue</span> <span class='object'>:x_0</span>
                                             .</span> }</li>
-                                    <li class='inf'>{ <span class='triple'><span class='subject'>:patientA</span> <span
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>( :x_0 :x_1 )</span>
+                                            <span class='predicate'>:sum</span> <span class='object'>:x_2</span>
+                                            .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
+                                                class='predicate'>:vasPainValue</span> <span class='object'>:x_0</span>
+                                            .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
                                                 class='predicate'>:morningStiffnessLevel</span> <span
-                                                class='object'>"3"</span> .</span> } <ul>
-                                            <li class='inf'>{ <span class='triple'><span
-                                                        class='subject'>:patientA</span> <span
-                                                        class='predicate'>:morningStiffnessDuration</span> <span
-                                                        class='object'>"90"</span> .</span> <span class='triple'><span
-                                                        class='subject'>"90"</span> <span
-                                                        class='predicate'>:notLessThan</span> <span
-                                                        class='object'>"60"</span> .</span> <span class='triple'><span
-                                                        class='subject'>"90"</span> <span
-                                                        class='predicate'>:lessThan</span> <span
-                                                        class='object'>"120"</span> .</span> } <ul></ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>( "3" "6" )</span>
-                                            <span class='predicate'>:quotient</span> <span class='object'>"0.5"</span>
-                                            .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>( "0.5" "10" )</span>
-                                            <span class='predicate'>:product</span> <span class='object'>"5.0"</span>
+                                                class='object'>:x_0</span> .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>( :x_0 "10" )</span>
+                                            <span class='predicate'>:product</span> <span class='object'>:x_1</span>
                                             .</span> }</li>
                                     <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
                                                 class='predicate'>:ratedTenderJointsValue</span> <span
-                                                class='object'>"20"</span> .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>( "20" "48" )</span>
-                                            <span class='predicate'>:quotient</span> <span
-                                                class='object'>"0.4166666666666667"</span> .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>( "0.4166666666666667"
-                                                "10" )</span> <span class='predicate'>:product</span> <span
-                                                class='object'>"4.166666666666667"</span> .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>( "4" "0.375" "8"
-                                                "5.0" "4.166666666666667" )</span> <span class='predicate'>:sum</span>
-                                            <span class='object'>"21.541666666666668"</span> .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>( "21.541666666666668"
-                                                "5" )</span> <span class='predicate'>:quotient</span> <span
-                                                class='object'>"4.308333333333334"</span> .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>( "4.308333333333334"
-                                                "1" )</span> <span class='predicate'>:roundedTo</span> <span
-                                                class='object'>"4.3"</span> .</span> }</li>
+                                                class='object'>:x_0</span> .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>( :x_0 :x_1 :x_2 :x_3
+                                                :x_3 )</span> <span class='predicate'>:sum</span> <span
+                                                class='object'>:x_4</span> .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>( :x_0 "1" )</span>
+                                            <span class='predicate'>:roundedTo</span> <span class='object'>:x_1</span>
+                                            .</span> }</li>
                                 </ul>
                             </li>
                         </ul>
@@ -84,84 +86,35 @@
                                 class='predicate'>:hasDiseaseActivity</span> <span
                                 class='object'>:HighDiseaseActivity</span> .</span> } <ul>
                             <li class='inf'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                                        class='predicate'>:cdaiIndex</span> <span class='object'>"34"</span> .</span>
-                                <span class='triple'><span class='subject'>"34"</span> <span
+                                        class='predicate'>:cdaiIndex</span> <span class='object'>:x_0</span> .</span>
+                                <span class='triple'><span class='subject'>:x_0</span> <span
                                         class='predicate'>:notLessThan</span> <span class='object'>"22"</span> .</span>
                                 } <ul>
                                     <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
                                                 class='predicate'>:swollenJointCount</span> <span
-                                                class='object'>"3"</span> .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                                                class='predicate'>:tenderJointCount</span> <span
-                                                class='object'>"18"</span> .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                                                class='predicate'>:ptGaDiseaseActivityValue</span> <span
-                                                class='object'>"8"</span> .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                                                class='predicate'>:phGaDiseaseActivityValue</span> <span
-                                                class='object'>"5"</span> .</span> }</li>
-                                    <li class='fact'>{ <span class='triple'><span class='subject'>( "3" "18" "8" "5"
+                                                class='object'>:x_0</span> .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>( :x_0 :x_1 :x_2 :x_3
                                                 )</span> <span class='predicate'>:sum</span> <span
-                                                class='object'>"34"</span> .</span> }</li>
+                                                class='object'>:x_4</span> .</span> }</li>
+                                </ul>
+                            </li>
+                            <li class='inf'>{ <span class='triple'><span class='subject'>:patientA</span> <span
+                                        class='predicate'>:radaiIndex</span> <span class='object'>:x_0</span> .</span>
+                                <span class='triple'><span class='subject'>:x_0</span> <span
+                                        class='predicate'>:notLessThan</span> <span class='object'>"5.4"</span> .</span>
+                                } <ul>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>( :x_0 "10" )</span>
+                                            <span class='predicate'>:quotient</span> <span class='object'>:x_1</span>
+                                            .</span> }</li>
+                                    <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
+                                                class='predicate'>:ghVasValue</span> <span class='object'>:x_0</span>
+                                            .</span> }</li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </li>
-        </ul>
-    </li>
-    <li class='inf'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                class='predicate'>:recommendation</span> <span class='object'>:QuitSmokingRecommendation</span> .</span>
-        } <ul>
-            <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                        class='predicate'>:hasBehaviour</span> <span class='object'>:Smoker</span> .</span> }</li>
-            <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                        class='predicate'>:hasClinicalFinding</span> <span
-                        class='object'>:RheumatoidFactorPositive</span> .</span> }</li>
-            <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                        class='predicate'>:hasClinicalFinding</span> <span
-                        class='object'>:AntiCyclicCitrullinatedPeptideAntibodyPositive</span> .</span> }</li>
-        </ul>
-    </li>
-    <li class='inf'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                class='predicate'>:recommendation</span> <span class='object'>:LoseWeightRecommendation</span> .</span>
-        } <ul>
-            <li class='inf'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                        class='predicate'>:hasBmiClass</span> <span class='object'>:ObeseClass1</span> .</span> } <ul>
-                    <li class='inf'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                                class='predicate'>:bmiValue</span> <span class='object'>"32.871972318339104"</span>
-                            .</span> <span class='triple'><span class='subject'>"32.871972318339104"</span> <span
-                                class='predicate'>:greaterThan</span> <span class='object'>"29.9"</span> .</span> <span
-                            class='triple'><span class='subject'>"32.871972318339104"</span> <span
-                                class='predicate'>:lessThan</span> <span class='object'>"35"</span> .</span> } <ul>
-                            <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                                        class='predicate'>:height</span> <span class='object'>"170"</span> .</span> }
-                            </li>
-                            <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                                        class='predicate'>:weight</span> <span class='object'>"95"</span> .</span> }
-                            </li>
-                            <li class='fact'>{ <span class='triple'><span class='subject'>( "170" "100" )</span> <span
-                                        class='predicate'>:quotient</span> <span class='object'>"1.7"</span> .</span> }
-                            </li>
-                            <li class='fact'>{ <span class='triple'><span class='subject'>( "1.7" "2" )</span> <span
-                                        class='predicate'>:exponentiation</span> <span
-                                        class='object'>"2.8899999999999997"</span> .</span> }</li>
-                            <li class='fact'>{ <span class='triple'><span class='subject'>( "95" "2.8899999999999997"
-                                        )</span> <span class='predicate'>:quotient</span> <span
-                                        class='object'>"32.871972318339104"</span> .</span> }</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li class='inf'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                class='predicate'>:recommendation</span> <span class='object'>:CarefulOralHygieneRecommendation</span>
-            .</span> } <ul>
-            <li class='fact'>{ <span class='triple'><span class='subject'>:patientA</span> <span
-                        class='predicate'>:hasDisease</span> <span class='object'>:NonErosiveRheumatoidArthritis</span>
-                    .</span> }</li>
         </ul>
     </li>
 </ul>

@@ -1,264 +1,372 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --n3 ../n3/modules/proof/query_heads.n3 ../n3/tmp/rules-disting.n3 --pass-only-new
+# eye --nope --n3 ../n3/modules/proof/query_heads.n3 ../n3/tmp/rules-inv.n3 --pass-only-new --quantify http://eyereasoner.github.io/var#
 
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
-@prefix : <http://swot.sisinflab.poliba.it/onto/rheumatology#>.
+@prefix list: <http://www.w3.org/2000/10/swap/list#>.
+@prefix math: <http://www.w3.org/2000/10/swap/math#>.
+@prefix x: <http://wvw.org/xai#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
+@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
+@prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
+@prefix string: <http://www.w3.org/2000/10/swap/string#>.
+@prefix ns1: <http://swot.sisinflab.poliba.it/onto/rheumatology#>.
 @prefix dc: <http://purl.org/dc/elements/1.1/>.
 @prefix dcterms: <http://purl.org/dc/terms/>.
 @prefix eo: <https://purl.org/heals/eo#>.
 @prefix ep: <http://linkedu.eu/dedalo/explanationPattern.owl#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
-@prefix list: <http://www.w3.org/2000/10/swap/list#>.
-@prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix prov: <http://www.w3.org/ns/prov#>.
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix schema: <http://schema.org/>.
-@prefix x: <http://wvw.org/xai#>.
-@prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
-@prefix var: <http://eyereasoner.github.io/.well-known/genid/4433696860146621338#>.
-@prefix r: <http://www.w3.org/2000/10/swap/reason#>.
-@prefix skolem: <http://eyereasoner.github.io/.well-known/genid/790553134974465772#>.
-@prefix n3: <http://www.w3.org/2004/06/rei#>.
+
 {
-    ?U_0 :bmiValue ?U_2.
-    var:t_0 x:padding var:t_0.
+    ?U_0 schema:height ?U_1.
 } => {
-    ?U_0 :bmiValue ?U_2.
-    var:t_0 x:padding var:t_0.
+    ?U_0 schema:height ?U_1.
 }.
 {
-    ?U_5 :bmiValue ?U_10.
-    var:t_1 x:padding var:t_1.
+    ?U_4 schema:weight ?U_5.
 } => {
-    ?U_5 :bmiValue ?U_10.
-    var:t_1 x:padding var:t_1.
+    ?U_4 schema:weight ?U_5.
 }.
 {
-    ?U_13 :hasBmiClass :Underweight.
-    var:t_2 x:padding var:t_2.
+    (?U_9 100) <http://wvw.org/xai/swap/math#quotient> ?U_193.
 } => {
-    ?U_13 :hasBmiClass :Underweight.
-    var:t_2 x:padding var:t_2.
+    (?U_9 100) <http://wvw.org/xai/swap/math#quotient> ?U_193.
 }.
 {
-    ?U_17 :hasBmiClass :NormalWeight.
-    var:t_3 x:padding var:t_3.
+    (?t_0 2) <http://wvw.org/xai/swap/math#exponentiation> 100.
 } => {
-    ?U_17 :hasBmiClass :NormalWeight.
-    var:t_3 x:padding var:t_3.
+    (?t_0 2) <http://wvw.org/xai/swap/math#exponentiation> 100.
 }.
 {
-    ?U_21 :hasBmiClass :Overweight.
-    var:t_4 x:padding var:t_4.
+    (?t_0 2) <http://wvw.org/xai/swap/math#exponentiation> ?t_1.
 } => {
-    ?U_21 :hasBmiClass :Overweight.
-    var:t_4 x:padding var:t_4.
+    (?t_0 2) <http://wvw.org/xai/swap/math#exponentiation> ?t_1.
 }.
 {
-    ?U_25 :hasBmiClass :ObeseClass1.
-    var:t_5 x:padding var:t_5.
+    (?t_0 ?t_1) <http://wvw.org/xai/swap/math#quotient> ?t_2.
 } => {
-    ?U_25 :hasBmiClass :ObeseClass1.
-    var:t_5 x:padding var:t_5.
+    (?t_0 ?t_1) <http://wvw.org/xai/swap/math#quotient> ?t_2.
 }.
 {
-    ?U_29 :hasBmiClass :ObeseClass2.
-    var:t_6 x:padding var:t_6.
+    ?U_24 ns1:swollenJointCount ?U_25.
 } => {
-    ?U_29 :hasBmiClass :ObeseClass2.
-    var:t_6 x:padding var:t_6.
+    ?U_24 ns1:swollenJointCount ?U_25.
 }.
 {
-    ?U_33 :hasBmiClass :ObeseClass3.
-    var:t_7 x:padding var:t_7.
+    ?U_28 ns1:tenderJointCount ?U_194.
 } => {
-    ?U_33 :hasBmiClass :ObeseClass3.
-    var:t_7 x:padding var:t_7.
+    ?U_28 ns1:tenderJointCount ?U_194.
 }.
 {
-    ?U_37 :cdaiIndex ?U_42.
-    var:t_8 x:padding var:t_8.
+    ?U_32 ns1:ptGaDiseaseActivityValue ?U_195.
 } => {
-    ?U_37 :cdaiIndex ?U_42.
-    var:t_8 x:padding var:t_8.
+    ?U_32 ns1:ptGaDiseaseActivityValue ?U_195.
 }.
 {
-    ?U_45 :hasDiseaseActivity :Remission.
-    var:t_9 x:padding var:t_9.
+    ?U_36 ns1:phGaDiseaseActivityValue ?U_196.
 } => {
-    ?U_45 :hasDiseaseActivity :Remission.
-    var:t_9 x:padding var:t_9.
+    ?U_36 ns1:phGaDiseaseActivityValue ?U_196.
 }.
 {
-    ?U_49 :hasDiseaseActivity :LowDiseaseActivity.
-    var:t_10 x:padding var:t_10.
+    (?U_41 ?U_197 ?U_198 ?U_199) <http://wvw.org/xai/swap/math#sum> ?U_200.
 } => {
-    ?U_49 :hasDiseaseActivity :LowDiseaseActivity.
-    var:t_10 x:padding var:t_10.
+    (?U_41 ?U_197 ?U_198 ?U_199) <http://wvw.org/xai/swap/math#sum> ?U_200.
 }.
 {
-    ?U_53 :hasDiseaseActivity :ModerateDiseaseActivity.
-    var:t_11 x:padding var:t_11.
+    ?U_44 ns1:morningStiffnessDuration 0.
 } => {
-    ?U_53 :hasDiseaseActivity :ModerateDiseaseActivity.
-    var:t_11 x:padding var:t_11.
+    ?U_44 ns1:morningStiffnessDuration 0.
 }.
 {
-    ?U_57 :hasDiseaseActivity :HighDiseaseActivity.
-    var:t_12 x:padding var:t_12.
+    ?U_47 ns1:ghVasValue ?U_48.
 } => {
-    ?U_57 :hasDiseaseActivity :HighDiseaseActivity.
-    var:t_12 x:padding var:t_12.
+    ?U_47 ns1:ghVasValue ?U_48.
 }.
 {
-    ?U_61 :morningStiffnessLevel 0 .
-    var:t_13 x:padding var:t_13.
+    (?U_52 10) <http://wvw.org/xai/swap/math#quotient> ?U_201.
 } => {
-    ?U_61 :morningStiffnessLevel 0 .
-    var:t_13 x:padding var:t_13.
+    (?U_52 10) <http://wvw.org/xai/swap/math#quotient> ?U_201.
 }.
 {
-    ?U_64 :morningStiffnessLevel 1 .
-    var:t_14 x:padding var:t_14.
+    (?t_0 ?t_1) <http://wvw.org/xai/swap/math#sum> ?t_2.
 } => {
-    ?U_64 :morningStiffnessLevel 1 .
-    var:t_14 x:padding var:t_14.
+    (?t_0 ?t_1) <http://wvw.org/xai/swap/math#sum> ?t_2.
 }.
 {
-    ?U_68 :morningStiffnessLevel 2 .
-    var:t_15 x:padding var:t_15.
+    (?t_0 56) <http://wvw.org/xai/swap/math#quotient> ?t_1.
 } => {
-    ?U_68 :morningStiffnessLevel 2 .
-    var:t_15 x:padding var:t_15.
+    (?t_0 56) <http://wvw.org/xai/swap/math#quotient> ?t_1.
 }.
 {
-    ?U_72 :morningStiffnessLevel 3 .
-    var:t_16 x:padding var:t_16.
+    ?U_63 ns1:vasPainValue ?U_202.
 } => {
-    ?U_72 :morningStiffnessLevel 3 .
-    var:t_16 x:padding var:t_16.
+    ?U_63 ns1:vasPainValue ?U_202.
 }.
 {
-    ?U_76 :morningStiffnessLevel 4 .
-    var:t_17 x:padding var:t_17.
+    ?U_67 ns1:morningStiffnessLevel ?U_203.
 } => {
-    ?U_76 :morningStiffnessLevel 4 .
-    var:t_17 x:padding var:t_17.
+    ?U_67 ns1:morningStiffnessLevel ?U_203.
 }.
 {
-    ?U_80 :morningStiffnessLevel 5 .
-    var:t_18 x:padding var:t_18.
+    (?t_0 6) <http://wvw.org/xai/swap/math#quotient> ?t_1.
 } => {
-    ?U_80 :morningStiffnessLevel 5 .
-    var:t_18 x:padding var:t_18.
+    (?t_0 6) <http://wvw.org/xai/swap/math#quotient> ?t_1.
 }.
 {
-    ?U_84 :morningStiffnessLevel 6 .
-    var:t_19 x:padding var:t_19.
+    (?t_0 10) <http://wvw.org/xai/swap/math#product> ?t_1.
 } => {
-    ?U_84 :morningStiffnessLevel 6 .
-    var:t_19 x:padding var:t_19.
+    (?t_0 10) <http://wvw.org/xai/swap/math#product> ?t_1.
 }.
 {
-    ?U_88 :radaiIndex ?U_102.
-    var:t_20 x:padding var:t_20.
+    ?U_79 ns1:ratedTenderJointsValue ?U_204.
 } => {
-    ?U_88 :radaiIndex ?U_102.
-    var:t_20 x:padding var:t_20.
+    ?U_79 ns1:ratedTenderJointsValue ?U_204.
 }.
 {
-    ?U_105 :radaiIndex ?U_121.
-    var:t_21 x:padding var:t_21.
+    (?t_0 48) <http://wvw.org/xai/swap/math#quotient> ?t_1.
 } => {
-    ?U_105 :radaiIndex ?U_121.
-    var:t_21 x:padding var:t_21.
+    (?t_0 48) <http://wvw.org/xai/swap/math#quotient> ?t_1.
 }.
 {
-    ?U_124 :hasDiseaseActivity :Remission.
-    var:t_22 x:padding var:t_22.
+    (?t_0 ?t_1 ?t_2 ?t_3 ?t_3) <http://wvw.org/xai/swap/math#sum> ?t_4.
 } => {
-    ?U_124 :hasDiseaseActivity :Remission.
-    var:t_22 x:padding var:t_22.
+    (?t_0 ?t_1 ?t_2 ?t_3 ?t_3) <http://wvw.org/xai/swap/math#sum> ?t_4.
 }.
 {
-    ?U_128 :hasDiseaseActivity :LowDiseaseActivity.
-    var:t_23 x:padding var:t_23.
+    (?t_0 5) <http://wvw.org/xai/swap/math#quotient> ?t_1.
 } => {
-    ?U_128 :hasDiseaseActivity :LowDiseaseActivity.
-    var:t_23 x:padding var:t_23.
+    (?t_0 5) <http://wvw.org/xai/swap/math#quotient> ?t_1.
 }.
 {
-    ?U_132 :hasDiseaseActivity :ModerateDiseaseActivity.
-    var:t_24 x:padding var:t_24.
+    (?t_0 1) <http://wvw.org/xai/swap/math#roundedTo> ?t_1.
 } => {
-    ?U_132 :hasDiseaseActivity :ModerateDiseaseActivity.
-    var:t_24 x:padding var:t_24.
+    (?t_0 1) <http://wvw.org/xai/swap/math#roundedTo> ?t_1.
 }.
 {
-    ?U_136 :hasDiseaseActivity :HighDiseaseActivity.
-    var:t_25 x:padding var:t_25.
+    (?t_0 ?t_1 ?t_2 ?t_3 ?t_4) <http://wvw.org/xai/swap/math#sum> ?t_5.
 } => {
-    ?U_136 :hasDiseaseActivity :HighDiseaseActivity.
-    var:t_25 x:padding var:t_25.
+    (?t_0 ?t_1 ?t_2 ?t_3 ?t_4) <http://wvw.org/xai/swap/math#sum> ?t_5.
 }.
 {
-    ?U_140 :hasOutcome :SuspectedDiseaseActivity.
-    var:t_26 x:padding var:t_26.
+    ?U_103 ns1:hasDiseaseActivity ns1:ModerateDiseaseActivity.
 } => {
-    ?U_140 :hasOutcome :SuspectedDiseaseActivity.
-    var:t_26 x:padding var:t_26.
+    ?U_103 ns1:hasDiseaseActivity ns1:ModerateDiseaseActivity.
 }.
 {
-    ?U_143 :hasOutcome :SuspectedDiseaseActivity.
-    var:t_27 x:padding var:t_27.
+    ?U_106 ns1:hasDiseaseActivity ns1:HighDiseaseActivity.
 } => {
-    ?U_143 :hasOutcome :SuspectedDiseaseActivity.
-    var:t_27 x:padding var:t_27.
+    ?U_106 ns1:hasDiseaseActivity ns1:HighDiseaseActivity.
 }.
 {
-    ?U_146 :recommendation :ContactRheumatologistRecommendation.
-    var:t_28 x:padding var:t_28.
+    ?U_109 ns1:hasOutcome ns1:SuspectedDiseaseActivity.
 } => {
-    ?U_146 :recommendation :ContactRheumatologistRecommendation.
-    var:t_28 x:padding var:t_28.
+    ?U_109 ns1:hasOutcome ns1:SuspectedDiseaseActivity.
 }.
 {
-    ?U_149 :recommendation :QuitSmokingRecommendation.
-    var:t_29 x:padding var:t_29.
+    ?U_112 ns1:hasBehaviour ns1:Smoker.
 } => {
-    ?U_149 :recommendation :QuitSmokingRecommendation.
-    var:t_29 x:padding var:t_29.
+    ?U_112 ns1:hasBehaviour ns1:Smoker.
 }.
 {
-    ?U_152 :recommendation :LoseWeightRecommendation.
-    var:t_30 x:padding var:t_30.
+    ?U_115 ns1:hasClinicalFinding ns1:RheumatoidFactorPositive.
 } => {
-    ?U_152 :recommendation :LoseWeightRecommendation.
-    var:t_30 x:padding var:t_30.
+    ?U_115 ns1:hasClinicalFinding ns1:RheumatoidFactorPositive.
 }.
 {
-    ?U_155 :recommendation :LoseWeightRecommendation.
-    var:t_31 x:padding var:t_31.
+    ?U_118 ns1:hasClinicalFinding ns1:AntiCyclicCitrullinatedPeptideAntibodyPositive.
 } => {
-    ?U_155 :recommendation :LoseWeightRecommendation.
-    var:t_31 x:padding var:t_31.
+    ?U_118 ns1:hasClinicalFinding ns1:AntiCyclicCitrullinatedPeptideAntibodyPositive.
 }.
 {
-    ?U_158 :recommendation :LoseWeightRecommendation.
-    var:t_32 x:padding var:t_32.
+    ?U_121 ns1:hasBmiClass ns1:ObeseClass1.
 } => {
-    ?U_158 :recommendation :LoseWeightRecommendation.
-    var:t_32 x:padding var:t_32.
+    ?U_121 ns1:hasBmiClass ns1:ObeseClass1.
 }.
 {
-    ?U_161 :recommendation :CarefulOralHygieneRecommendation.
-    var:t_33 x:padding var:t_33.
+    ?U_124 ns1:hasBmiClass ns1:ObeseClass2.
 } => {
-    ?U_161 :recommendation :CarefulOralHygieneRecommendation.
-    var:t_33 x:padding var:t_33.
+    ?U_124 ns1:hasBmiClass ns1:ObeseClass2.
+}.
+{
+    ?U_127 ns1:hasBmiClass ns1:ObeseClass3.
+} => {
+    ?U_127 ns1:hasBmiClass ns1:ObeseClass3.
+}.
+{
+    ?U_130 ns1:hasDisease ns1:NonErosiveRheumatoidArthritis.
+} => {
+    ?U_130 ns1:hasDisease ns1:NonErosiveRheumatoidArthritis.
+}.
+{
+    ?U_133 ns1:bmiValue ?U_205.
+    ?U_205 <http://wvw.org/xai/swap/math#notGreaterThan> 18.5.
+} => {
+    ?U_133 ns1:bmiValue ?U_205.
+    ?U_205 <http://wvw.org/xai/swap/math#notGreaterThan> 18.5.
+}.
+{
+    ?U_136 ns1:bmiValue ?U_206.
+    ?U_206 <http://wvw.org/xai/swap/math#greaterThan> 18.5 .
+    ?U_206 <http://wvw.org/xai/swap/math#lessThan> 25.
+} => {
+    ?U_136 ns1:bmiValue ?U_206.
+    ?U_206 <http://wvw.org/xai/swap/math#greaterThan> 18.5 .
+    ?U_206 <http://wvw.org/xai/swap/math#lessThan> 25.
+}.
+{
+    ?U_139 ns1:bmiValue ?U_207.
+    ?U_207 <http://wvw.org/xai/swap/math#greaterThan> 24.9 .
+    ?U_207 <http://wvw.org/xai/swap/math#lessThan> 30.
+} => {
+    ?U_139 ns1:bmiValue ?U_207.
+    ?U_207 <http://wvw.org/xai/swap/math#greaterThan> 24.9 .
+    ?U_207 <http://wvw.org/xai/swap/math#lessThan> 30.
+}.
+{
+    ?U_142 ns1:bmiValue ?U_208.
+    ?U_208 <http://wvw.org/xai/swap/math#greaterThan> 29.9 .
+    ?U_208 <http://wvw.org/xai/swap/math#lessThan> 35.
+} => {
+    ?U_142 ns1:bmiValue ?U_208.
+    ?U_208 <http://wvw.org/xai/swap/math#greaterThan> 29.9 .
+    ?U_208 <http://wvw.org/xai/swap/math#lessThan> 35.
+}.
+{
+    ?U_145 ns1:bmiValue ?U_209.
+    ?U_209 <http://wvw.org/xai/swap/math#greaterThan> 34.9 .
+    ?U_209 <http://wvw.org/xai/swap/math#lessThan> 40.
+} => {
+    ?U_145 ns1:bmiValue ?U_209.
+    ?U_209 <http://wvw.org/xai/swap/math#greaterThan> 34.9 .
+    ?U_209 <http://wvw.org/xai/swap/math#lessThan> 40.
+}.
+{
+    ?U_148 ns1:bmiValue ?U_210.
+    ?U_210 <http://wvw.org/xai/swap/math#greaterThan> 39.9.
+} => {
+    ?U_148 ns1:bmiValue ?U_210.
+    ?U_210 <http://wvw.org/xai/swap/math#greaterThan> 39.9.
+}.
+{
+    ?U_151 ns1:cdaiIndex ?U_211.
+    ?U_211 <http://wvw.org/xai/swap/math#lessThan> 2.8.
+} => {
+    ?U_151 ns1:cdaiIndex ?U_211.
+    ?U_211 <http://wvw.org/xai/swap/math#lessThan> 2.8.
+}.
+{
+    ?U_154 ns1:cdaiIndex ?U_212.
+    ?U_212 <http://wvw.org/xai/swap/math#notLessThan> 2.8 .
+    ?U_212 <http://wvw.org/xai/swap/math#lessThan> 10.
+} => {
+    ?U_154 ns1:cdaiIndex ?U_212.
+    ?U_212 <http://wvw.org/xai/swap/math#notLessThan> 2.8 .
+    ?U_212 <http://wvw.org/xai/swap/math#lessThan> 10.
+}.
+{
+    ?U_157 ns1:cdaiIndex ?U_213.
+    ?U_213 <http://wvw.org/xai/swap/math#notLessThan> 10 .
+    ?U_213 <http://wvw.org/xai/swap/math#lessThan> 22.
+} => {
+    ?U_157 ns1:cdaiIndex ?U_213.
+    ?U_213 <http://wvw.org/xai/swap/math#notLessThan> 10 .
+    ?U_213 <http://wvw.org/xai/swap/math#lessThan> 22.
+}.
+{
+    ?U_160 ns1:cdaiIndex ?U_214.
+    ?U_214 <http://wvw.org/xai/swap/math#notLessThan> 22.
+} => {
+    ?U_160 ns1:cdaiIndex ?U_214.
+    ?U_214 <http://wvw.org/xai/swap/math#notLessThan> 22.
+}.
+{
+    ?U_163 ns1:morningStiffnessDuration ?U_215.
+    ?U_215 <http://wvw.org/xai/swap/math#notLessThan> 0 .
+    ?U_215 <http://wvw.org/xai/swap/math#lessThan> 30.
+} => {
+    ?U_163 ns1:morningStiffnessDuration ?U_215.
+    ?U_215 <http://wvw.org/xai/swap/math#notLessThan> 0 .
+    ?U_215 <http://wvw.org/xai/swap/math#lessThan> 30.
+}.
+{
+    ?U_166 ns1:morningStiffnessDuration ?U_216.
+    ?U_216 <http://wvw.org/xai/swap/math#notLessThan> 30 .
+    ?U_216 <http://wvw.org/xai/swap/math#lessThan> 60.
+} => {
+    ?U_166 ns1:morningStiffnessDuration ?U_216.
+    ?U_216 <http://wvw.org/xai/swap/math#notLessThan> 30 .
+    ?U_216 <http://wvw.org/xai/swap/math#lessThan> 60.
+}.
+{
+    ?U_169 ns1:morningStiffnessDuration ?U_217.
+    ?U_217 <http://wvw.org/xai/swap/math#notLessThan> 60 .
+    ?U_217 <http://wvw.org/xai/swap/math#lessThan> 120.
+} => {
+    ?U_169 ns1:morningStiffnessDuration ?U_217.
+    ?U_217 <http://wvw.org/xai/swap/math#notLessThan> 60 .
+    ?U_217 <http://wvw.org/xai/swap/math#lessThan> 120.
+}.
+{
+    ?U_172 ns1:morningStiffnessDuration ?U_218.
+    ?U_218 <http://wvw.org/xai/swap/math#notLessThan> 120 .
+    ?U_218 <http://wvw.org/xai/swap/math#lessThan> 240.
+} => {
+    ?U_172 ns1:morningStiffnessDuration ?U_218.
+    ?U_218 <http://wvw.org/xai/swap/math#notLessThan> 120 .
+    ?U_218 <http://wvw.org/xai/swap/math#lessThan> 240.
+}.
+{
+    ?U_175 ns1:morningStiffnessDuration ?U_219.
+    ?U_219 <http://wvw.org/xai/swap/math#notLessThan> 240 .
+    ?U_219 <http://wvw.org/xai/swap/math#lessThan> 1440.
+} => {
+    ?U_175 ns1:morningStiffnessDuration ?U_219.
+    ?U_219 <http://wvw.org/xai/swap/math#notLessThan> 240 .
+    ?U_219 <http://wvw.org/xai/swap/math#lessThan> 1440.
+}.
+{
+    ?U_178 ns1:morningStiffnessDuration ?U_220.
+    ?U_220 <http://wvw.org/xai/swap/math#notLessThan> 1440.
+} => {
+    ?U_178 ns1:morningStiffnessDuration ?U_220.
+    ?U_220 <http://wvw.org/xai/swap/math#notLessThan> 1440.
+}.
+{
+    ?U_181 ns1:radaiIndex ?U_221.
+    ?U_221 <http://wvw.org/xai/swap/math#lessThan> 1.4.
+} => {
+    ?U_181 ns1:radaiIndex ?U_221.
+    ?U_221 <http://wvw.org/xai/swap/math#lessThan> 1.4.
+}.
+{
+    ?U_184 ns1:radaiIndex ?U_222.
+    ?U_222 <http://wvw.org/xai/swap/math#notLessThan> 1.4 .
+    ?U_222 <http://wvw.org/xai/swap/math#lessThan> 3.
+} => {
+    ?U_184 ns1:radaiIndex ?U_222.
+    ?U_222 <http://wvw.org/xai/swap/math#notLessThan> 1.4 .
+    ?U_222 <http://wvw.org/xai/swap/math#lessThan> 3.
+}.
+{
+    ?U_187 ns1:radaiIndex ?U_223.
+    ?U_223 <http://wvw.org/xai/swap/math#notLessThan> 3 .
+    ?U_223 <http://wvw.org/xai/swap/math#lessThan> 5.4.
+} => {
+    ?U_187 ns1:radaiIndex ?U_223.
+    ?U_223 <http://wvw.org/xai/swap/math#notLessThan> 3 .
+    ?U_223 <http://wvw.org/xai/swap/math#lessThan> 5.4.
+}.
+{
+    ?U_190 ns1:radaiIndex ?U_224.
+    ?U_224 <http://wvw.org/xai/swap/math#notLessThan> 5.4.
+} => {
+    ?U_190 ns1:radaiIndex ?U_224.
+    ?U_224 <http://wvw.org/xai/swap/math#notLessThan> 5.4.
 }.
 
-# 2023-05-18T20:27:58.153Z in=35 out=34 ent=34 step=102 brake=2 inf=171081 sec=0.032 inf/sec=5346281
+# 2023-05-19T17:39:52.024Z in=74 out=56 ent=56 step=202 brake=2 inf=240011 sec=0.036 inf/sec=6666972
 # ENDS
 

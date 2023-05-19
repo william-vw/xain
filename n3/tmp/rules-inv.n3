@@ -1,435 +1,49 @@
 # Processed by EYE v3.21.1 (2023-04-23)
-# eye --nope --n3 ../n3/modules/aux.n3 ../n3/modules/proof/contrast/invert_rules.n3 ../n3/test/rheumatology/rules.n3 --pass-only-new --quantify http://eyereasoner.github.io/var#
+# eye --nope --n3 ../n3/modules/aux.n3 ../n3/modules/proof/contrast/invert_rules.n3 --query ../n3/modules/proof/contrast/query_rules.n3 --quantify http://eyereasoner.github.io/var#
 
 @prefix list: <http://www.w3.org/2000/10/swap/list#>.
 @prefix log: <http://www.w3.org/2000/10/swap/log#>.
 @prefix math: <http://www.w3.org/2000/10/swap/math#>.
 @prefix x: <http://wvw.org/xai#>.
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#>.
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#>.
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix string: <http://www.w3.org/2000/10/swap/string#>.
-@prefix ns1: <http://swot.sisinflab.poliba.it/onto/rheumatology#>.
-@prefix dc: <http://purl.org/dc/elements/1.1/>.
-@prefix dcterms: <http://purl.org/dc/terms/>.
-@prefix eo: <https://purl.org/heals/eo#>.
-@prefix ep: <http://linkedu.eu/dedalo/explanationPattern.owl#>.
-@prefix foaf: <http://xmlns.com/foaf/0.1/>.
-@prefix prov: <http://www.w3.org/ns/prov#>.
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
-@prefix schema: <http://schema.org/>.
 
 {
-    ?t_0 ns1:bmiValue ?t_1.
-} => {
-    ?t_0 schema:height ?t_1.
-}.
-{
-    ?t_0 ns1:bmiValue ?t_1.
-} => {
-    ?t_0 schema:weight ?t_1.
-}.
-{
-    ?t_0 ns1:bmiValue ?t_1.
-} => {
-    (?t_1 100) <http://wvw.org/xai/swap/math#quotient> _:t_2.
-}.
-{
-    ?t_0 ns1:bmiValue ?t_1.
-} => {
-    (_:t_2 2) <http://wvw.org/xai/swap/math#exponentiation> 100.
-}.
-{
-    ?t_0 ns1:bmiValue ?t_1.
-} => {
-    ?t_0 schema:weight _:t_2.
-}.
-{
-    ?t_0 ns1:bmiValue ?t_1.
-} => {
-    (?t_1 100) <http://wvw.org/xai/swap/math#quotient> _:t_3.
-}.
-{
-    ?t_0 ns1:bmiValue ?t_1.
-} => {
-    (_:t_3 2) <http://wvw.org/xai/swap/math#exponentiation> _:t_4.
-}.
-{
-    ?t_0 ns1:bmiValue ?t_1.
-} => {
-    (_:t_2 _:t_4) <http://wvw.org/xai/swap/math#quotient> _:t_5.
-}.
-{
-    ?t_0 ns1:cdaiIndex ?t_1.
-} => {
-    ?t_0 ns1:swollenJointCount ?t_1.
-}.
-{
-    ?t_0 ns1:cdaiIndex ?t_1.
-} => {
-    ?t_0 ns1:tenderJointCount _:t_2.
-}.
-{
-    ?t_0 ns1:cdaiIndex ?t_1.
-} => {
-    ?t_0 ns1:ptGaDiseaseActivityValue _:t_3.
-}.
-{
-    ?t_0 ns1:cdaiIndex ?t_1.
-} => {
-    ?t_0 ns1:phGaDiseaseActivityValue _:t_4.
-}.
-{
-    ?t_0 ns1:cdaiIndex ?t_1.
-} => {
-    (?t_1 _:t_2 _:t_3 _:t_4) <http://wvw.org/xai/swap/math#sum> _:t_5.
-}.
-{
-    ?t_0 ns1:morningStiffnessLevel 0.
-} => {
-    ?t_0 ns1:morningStiffnessDuration 0.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    ?t_0 ns1:ghVasValue ?t_1.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (?t_1 10) <http://wvw.org/xai/swap/math#quotient> _:t_2.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    ?t_0 ns1:swollenJointCount _:t_3.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    ?t_0 ns1:tenderJointCount _:t_4.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_3 _:t_4) <http://wvw.org/xai/swap/math#sum> _:t_5.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_5 56) <http://wvw.org/xai/swap/math#quotient> _:t_6.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    ?t_0 ns1:vasPainValue _:t_7.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    ?t_0 ns1:morningStiffnessLevel _:t_8.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_8 6) <http://wvw.org/xai/swap/math#quotient> _:t_9.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_9 10) <http://wvw.org/xai/swap/math#product> _:t_10.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    ?t_0 ns1:ratedTenderJointsValue _:t_11.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_11 48) <http://wvw.org/xai/swap/math#quotient> _:t_9.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_2 _:t_6 _:t_7 _:t_10 _:t_10) <http://wvw.org/xai/swap/math#sum> _:t_12.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_12 5) <http://wvw.org/xai/swap/math#quotient> _:t_13.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_13 1) <http://wvw.org/xai/swap/math#roundedTo> _:t_14.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_11 48) <http://wvw.org/xai/swap/math#quotient> _:t_12.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_12 10) <http://wvw.org/xai/swap/math#product> _:t_13.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_2 _:t_6 _:t_7 _:t_10 _:t_13) <http://wvw.org/xai/swap/math#sum> _:t_14.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_14 5) <http://wvw.org/xai/swap/math#quotient> _:t_15.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-} => {
-    (_:t_15 1) <http://wvw.org/xai/swap/math#roundedTo> _:t_16.
-}.
-{
-    ?t_0 ns1:hasOutcome ns1:SuspectedDiseaseActivity.
-} => {
-    ?t_0 ns1:hasDiseaseActivity ns1:ModerateDiseaseActivity.
-}.
-{
-    ?t_0 ns1:hasOutcome ns1:SuspectedDiseaseActivity.
-} => {
-    ?t_0 ns1:hasDiseaseActivity ns1:HighDiseaseActivity.
-}.
-{
-    ?t_0 ns1:recommendation ns1:ContactRheumatologistRecommendation.
-} => {
-    ?t_0 ns1:hasOutcome ns1:SuspectedDiseaseActivity.
-}.
-{
-    ?t_0 ns1:recommendation ns1:QuitSmokingRecommendation.
-} => {
-    ?t_0 ns1:hasBehaviour ns1:Smoker.
-}.
-{
-    ?t_0 ns1:recommendation ns1:QuitSmokingRecommendation.
-} => {
-    ?t_0 ns1:hasClinicalFinding ns1:RheumatoidFactorPositive.
-}.
-{
-    ?t_0 ns1:recommendation ns1:QuitSmokingRecommendation.
-} => {
-    ?t_0 ns1:hasClinicalFinding ns1:AntiCyclicCitrullinatedPeptideAntibodyPositive.
-}.
-{
-    ?t_0 ns1:recommendation ns1:LoseWeightRecommendation.
-} => {
-    ?t_0 ns1:hasBmiClass ns1:ObeseClass1.
-}.
-{
-    ?t_0 ns1:recommendation ns1:LoseWeightRecommendation.
-} => {
-    ?t_0 ns1:hasBmiClass ns1:ObeseClass2.
-}.
-{
-    ?t_0 ns1:recommendation ns1:LoseWeightRecommendation.
-} => {
-    ?t_0 ns1:hasBmiClass ns1:ObeseClass3.
-}.
-{
-    ?t_0 ns1:recommendation ns1:CarefulOralHygieneRecommendation.
-} => {
-    ?t_0 ns1:hasDisease ns1:NonErosiveRheumatoidArthritis.
-}.
-{
-    ?t_0 ns1:hasBmiClass ns1:Underweight.
-} => {
-    ?t_0 ns1:bmiValue _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notGreaterThan> 18.5.
-}.
-{
-    ?t_0 ns1:hasBmiClass ns1:NormalWeight.
-} => {
-    ?t_0 ns1:bmiValue _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 18.5 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 25.
-}.
-{
-    ?t_0 ns1:hasBmiClass ns1:Overweight.
-} => {
-    ?t_0 ns1:bmiValue _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 24.9 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 30.
-}.
-{
-    ?t_0 ns1:hasBmiClass ns1:ObeseClass1.
-} => {
-    ?t_0 ns1:bmiValue _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 29.9 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 35.
-}.
-{
-    ?t_0 ns1:hasBmiClass ns1:ObeseClass2.
-} => {
-    ?t_0 ns1:bmiValue _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 34.9 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 40.
-}.
-{
-    ?t_0 ns1:hasBmiClass ns1:ObeseClass3.
-} => {
-    ?t_0 ns1:bmiValue _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#greaterThan> 39.9.
-}.
-{
-    ?t_0 ns1:hasDiseaseActivity ns1:Remission.
-} => {
-    ?t_0 ns1:cdaiIndex _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 2.8.
-}.
-{
-    ?t_0 ns1:hasDiseaseActivity ns1:LowDiseaseActivity.
-} => {
-    ?t_0 ns1:cdaiIndex _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 2.8 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 10.
-}.
-{
-    ?t_0 ns1:hasDiseaseActivity ns1:ModerateDiseaseActivity.
-} => {
-    ?t_0 ns1:cdaiIndex _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 10 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 22.
-}.
-{
-    ?t_0 ns1:hasDiseaseActivity ns1:HighDiseaseActivity.
-} => {
-    ?t_0 ns1:cdaiIndex _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 22.
-}.
-{
-    ?t_0 ns1:morningStiffnessLevel 1.
-} => {
-    ?t_0 ns1:morningStiffnessDuration _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 0 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 30.
-}.
-{
-    ?t_0 ns1:morningStiffnessLevel 2.
-} => {
-    ?t_0 ns1:morningStiffnessDuration _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 30 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 60.
-}.
-{
-    ?t_0 ns1:morningStiffnessLevel 3.
-} => {
-    ?t_0 ns1:morningStiffnessDuration _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 60 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 120.
-}.
-{
-    ?t_0 ns1:morningStiffnessLevel 4.
-} => {
-    ?t_0 ns1:morningStiffnessDuration _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 120 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 240.
-}.
-{
-    ?t_0 ns1:morningStiffnessLevel 5.
-} => {
-    ?t_0 ns1:morningStiffnessDuration _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 240 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 1440.
-}.
-{
-    ?t_0 ns1:morningStiffnessLevel 6.
-} => {
-    ?t_0 ns1:morningStiffnessDuration _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 1440.
-}.
-{
-    ?t_0 ns1:hasDiseaseActivity ns1:Remission.
-} => {
-    ?t_0 ns1:radaiIndex _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 1.4.
-}.
-{
-    ?t_0 ns1:hasDiseaseActivity ns1:LowDiseaseActivity.
-} => {
-    ?t_0 ns1:radaiIndex _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 1.4 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 3.
-}.
-{
-    ?t_0 ns1:hasDiseaseActivity ns1:ModerateDiseaseActivity.
-} => {
-    ?t_0 ns1:radaiIndex _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 3 .
-    _:t_1 <http://wvw.org/xai/swap/math#lessThan> 5.4.
-}.
-{
-    ?t_0 ns1:hasDiseaseActivity ns1:HighDiseaseActivity.
-} => {
-    ?t_0 ns1:radaiIndex _:t_1.
-    _:t_1 <http://wvw.org/xai/swap/math#notLessThan> 5.4.
-}.
-{
-    ?t_0 ns1:hasDiseaseActivity ns1:ModerateDiseaseActivity.
-} => {
-    ?t_0 ns1:hasOutcome ns1:SuspectedDiseaseActivity.
-}.
-{
-    ?t_0 ns1:hasDiseaseActivity ns1:HighDiseaseActivity.
-} => {
-    ?t_0 ns1:hasOutcome ns1:SuspectedDiseaseActivity.
-}.
-{
-    ?t_0 ns1:bmiValue ?t_1.
-    ?t_1 <http://wvw.org/xai/swap/math#greaterThan> 29.9 .
-    ?t_1 <http://wvw.org/xai/swap/math#lessThan> 35.
-} => {
-    ?t_0 ns1:hasBmiClass ns1:ObeseClass1.
-}.
-{
-    ?t_0 ns1:bmiValue ?t_1.
-    ?t_1 <http://wvw.org/xai/swap/math#greaterThan> 34.9 .
-    ?t_1 <http://wvw.org/xai/swap/math#lessThan> 40.
-} => {
-    ?t_0 ns1:hasBmiClass ns1:ObeseClass2.
-}.
-{
-    ?t_0 ns1:bmiValue ?t_1.
-    ?t_1 <http://wvw.org/xai/swap/math#greaterThan> 39.9.
-} => {
-    ?t_0 ns1:hasBmiClass ns1:ObeseClass3.
-}.
-{
-    ?t_0 ns1:cdaiIndex ?t_1.
-    ?t_1 <http://wvw.org/xai/swap/math#notLessThan> 10 .
-    ?t_1 <http://wvw.org/xai/swap/math#lessThan> 22.
-} => {
-    ?t_0 ns1:hasDiseaseActivity ns1:ModerateDiseaseActivity.
-}.
-{
-    ?t_0 ns1:cdaiIndex ?t_1.
-    ?t_1 <http://wvw.org/xai/swap/math#notLessThan> 22.
-} => {
-    ?t_0 ns1:hasDiseaseActivity ns1:HighDiseaseActivity.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-    ?t_1 <http://wvw.org/xai/swap/math#notLessThan> 3 .
-    ?t_1 <http://wvw.org/xai/swap/math#lessThan> 5.4.
-} => {
-    ?t_0 ns1:hasDiseaseActivity ns1:ModerateDiseaseActivity.
-}.
-{
-    ?t_0 ns1:radaiIndex ?t_1.
-    ?t_1 <http://wvw.org/xai/swap/math#notLessThan> 5.4.
-} => {
-    ?t_0 ns1:hasDiseaseActivity ns1:HighDiseaseActivity.
+    ?U_0 => ?U_1.
+    ?U_0 a x:InputRule.
+    ?U_0 x:getComparisons ().
+    ?U_0 e:labelvars ?U_2.
+    ?U_2 x:get ?U_3.
+    ?U_1 e:labelvars ?U_4.
+    ?U_4 x:get ?U_5.
+    ?U_6 log:notIncludes {
+        ?U_5 x:inverted ?U_3.
+    }.
+    ?U_3 graph:member ?U_7.
+} => {
+    ?U_5 => ?U_7.
+}.
+{
+    ?U_8 => ?U_9.
+    ?U_8 a x:InputRule.
+    ?U_8 x:getComparisons ?U_10.
+    ?U_10 list:length ?U_11.
+    ?U_11 math:greaterThan 0 .
+    ?U_8 e:labelvars ?U_12.
+    ?U_12 x:get ?U_13.
+    ?U_9 e:labelvars ?U_14.
+    ?U_14 x:get ?U_15.
+    ?U_16 log:notIncludes {
+        ?U_15 x:inverted ?U_13.
+    }.
+} => {
+    ?U_15 => ?U_13.
+    ?U_13 x:inverted ?U_15.
 }.
 
-# 2023-05-18T20:27:25.198Z in=75 out=73 ent=73 step=1046 brake=5 inf=3271169 sec=0.236 inf/sec=13860886
+# 2023-05-19T18:55:50.534Z in=12 out=2 ent=2 step=4 brake=2 inf=59418 sec=0.035 inf/sec=1697657
 # ENDS
 

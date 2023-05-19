@@ -2,13 +2,13 @@
 # @involves 'n3/modules/aux.n3'
 # @requires x:isComparator , 'n3/ontology/Proof.n3'
 
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix : <http://niche.cs.dal.ca/ns/copd.owl#> .
 @prefix e: <http://eulersharp.sourceforge.net/2003/03swap/log-rules#> .
 @prefix graph: <http://www.w3.org/2000/10/swap/graph#> .
 @prefix list: <http://www.w3.org/2000/10/swap/list#> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 @prefix math: <http://www.w3.org/2000/10/swap/math#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix string: <http://www.w3.org/2000/10/swap/string#> .
 @prefix x: <http://wvw.org/xai#> .
 
@@ -17,16 +17,19 @@
 {
    ?x => ?y ;
        a x:InputRule .
-   ?x x:getComparisons () .
+   ?x x:getComparisons ( ) .
    ?x!e:labelvars x:get ?x2 .
    ?y!e:labelvars x:get ?y2 .
+   _:t log:notIncludes 
+   {
+       ?y2 x:inverted ?x2 
+   } .
    ?x2 graph:member ?t2 .
 }
 => 
 {
    ?y2 => ?t2 
 } .
-
 
 # in case of comparisons: keep body whole
 {
@@ -35,10 +38,18 @@
    ?x!x:getComparisons!list:length math:greaterThan 0 .
    ?x!e:labelvars x:get ?x2 .
    ?y!e:labelvars x:get ?y2 .
+   # avoid same rule being inverted multiple times
+   # (possible when rule head acts as rule body in other rule; 
+   # i.e., it is also annotated w/ x:InputRule)
+   _:t log:notIncludes 
+   {
+       ?y2 x:inverted ?x2 
+   } .
 }
 => 
 {
-   ?y2 => ?x2 
+   ?y2 => ?x2 .
+   ?x2 x:inverted ?y2 .
 } .
 
 
@@ -134,7 +145,7 @@
    (
        ?p
        {
-           ?f graph:member
+           ?f graph:member 
            {
                ?x ?p ?y 
            } .

@@ -1,0 +1,8 @@
+@prefix x: <http://wvw.org/xai#> .
+
+{
+    ?x => ?y
+} =>
+{
+    ?x => ?y
+} .
